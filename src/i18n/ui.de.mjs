@@ -1,0 +1,227 @@
+// Deutsche UI- und Seitentexte (Sie-Form). Gleiche Struktur wie ui.cs.mjs (der Build prüft Schlüssel, Platzhalter und Links).
+// Strings, die in Attributen landen (aria-label, alt, title …), verwenden ein einfaches „&“ – sie werden beim Ausgeben maskiert.
+export default {
+  city: `Prag 2`,
+  orderMessage: `Ich möchte einen Termin vereinbaren`,
+  from: `ab`,
+
+  skip: `Zum Inhalt springen`,
+  brandLabel: `ICONO STUDIO – Nails & Barber, Startseite`,
+  logoAlt: `ICONO STUDIO Nails & Barber`,
+  ogAlt: `ICONO STUDIO – Nails & Barber, Prag 2`,
+  legal: { ico: `IČO (Firmen-ID)` },
+
+  nav: {
+    aria: `Hauptnavigation`, mobileAria: `Mobile Navigation`, langAria: `Sprache`,
+    services: `Leistungen`, all: `Gesamte Preisliste`, cenik: `Preisliste`, kontakt: `Kontakt`, home: `Startseite`,
+  },
+  groups: { nails: `Nägel`, beauty: `Beauty`, barber: `Barber` },
+  areas: {
+    nails: { label: `Nails`, title: `Nägel`, blurb: `Maniküre, künstliche Nägel, Pediküre, Nail Art und weitere Leistungen.` },
+    beauty: { label: `Beauty`, title: `Wimpern, Augenbrauen & Pflege`, blurb: `Wimpernverlängerung, Augenbrauen, Kosmetik und Head Spa.` },
+    barber: { label: `Barber`, title: `Barber`, blurb: `Herrenhaarschnitte, Bartpflege und Barber-Pflege.` },
+  },
+  burger: { open: `Menü öffnen`, close: `Menü schließen` },
+  order: { toggle: `Termin buchen`, title: `Schreiben Sie uns oder rufen Sie an` },
+  bar: { aria: `Schnelle Terminbuchung`, call: `Anrufen` },
+  btn: {
+    whatsapp: `Per WhatsApp buchen`, whatsappShort: `WhatsApp`, call: `Anrufen`, sms: `SMS schreiben`, smsShort: `SMS`,
+    directions: `Route anzeigen`, openMap: `Karte öffnen`,
+  },
+  crumbs: { home: `Startseite`, aria: `Pfadnavigation` },
+  footer: {
+    servicesAria: `Leistungen im Footer`, linksAria: `Links im Footer`, services: `Leistungen`, web: `Website`, order: `Termin`,
+  },
+
+  days: { weekdays: `Mo–Fr`, sat: `Sa`, sun: `So` },
+  hours: { title: `Öffnungszeiten`, sundayText: `geschlossen oder nach Vereinbarung` },
+  badge: {
+    open: `Jetzt geöffnet · bis {t} Uhr`,
+    before: `Derzeit geschlossen · heute ab {t} Uhr geöffnet`,
+    next: `Derzeit geschlossen · {d} ab {t} Uhr geöffnet`,
+    tomorrow: `morgen`,
+    days: [`am Sonntag`, `am Montag`, `am Dienstag`, `am Mittwoch`, `am Donnerstag`, `am Freitag`, `am Samstag`],
+  },
+  map: {
+    title: `Karte – ICONO STUDIO, Bělehradská 77, Prag 2`, eyebrow: `Karte`, heading: `So finden Sie uns`,
+    lead: `Sie finden uns in der Bělehradská 77 in Vinohrady, in der Nähe von I. P. Pavlova und Náměstí Míru.`,
+  },
+  location: {
+    heading: `ICONO STUDIO in der Bělehradská`,
+    eyebrow: `So finden Sie uns`,
+    lead: `Sie finden uns in der Bělehradská in Vinohrady, in der Nähe von I. P. Pavlova und Náměstí Míru.`,
+  },
+  photos: {
+    hero: `Barber schneidet Haare mit Schere und Kamm im ICONO STUDIO`,
+    barber: `Herrenhaarschnitt und Fade mit dem Haarschneider im ICONO STUDIO in der Bělehradská in Prag 2`,
+    nails: `Maniküre und Nagellackierung im ICONO STUDIO in Prag 2`,
+    entrance: `Eingang zum ICONO STUDIO in der Bělehradská 77 in Prag 2`,
+  },
+  faq: { heading: `Häufige Fragen`, eyebrow: `FAQ` },
+  cta: { heading: `Termin gewünscht? Schreiben Sie uns.`, text: `Wählen Sie den Weg, der Ihnen am besten passt.` },
+  prices: { more: `Mehr zu dieser Leistung` },
+  reviews: { eyebrow: `Bewertungen`, heading: `Das sagen unsere Kunden`, stars: `von 5 Sternen`, cta: `Bewertungen auf Google ansehen` },
+  team: { eyebrow: `Team`, heading: `Die Menschen, bei denen Sie buchen`, at: `im ICONO STUDIO` },
+  gallery: { eyebrow: `Galerie`, heading: `Aus dem ICONO STUDIO` },
+  schema: {
+    description: `Barbershop und Nagelstudio in der Bělehradská 77 in Prag 2: Herrenhaarschnitte, Bartpflege, Maniküre, Gel- und Acrylnägel, Pediküre, Wimpernverlängerung, Augenbrauen und Head Spa.`,
+    catalog: `Preisliste`,
+  },
+
+  faqs: {
+    order: {
+      q: `Wie kann ich einen Termin buchen?`,
+      a: `Schreiben Sie uns über {wa} oder senden Sie eine {sms} an {phone} – oder {call}. Die Nachricht „{msg}“ wird automatisch vorausgefüllt.`,
+      callWord: `rufen Sie einfach an`,
+    },
+    where: {
+      q: `Wo finde ich das ICONO STUDIO?`,
+      a: `Unsere Adresse: {address}, in der Nähe von I. P. Pavlova und Náměstí Míru. {map}.`,
+      map: `Route auf der Karte anzeigen`,
+    },
+    hours: { q: `Wie sind Ihre Öffnungszeiten?`, a: `{hours}. Sonntags ist geschlossen, bei Bedarf nach Vereinbarung – schreiben Sie uns einfach.` },
+    prices: { q: `Wo finde ich die vollständige Preisliste?`, a: `Alle Leistungen und Preise finden Sie auf der Seite <a href="/cenik/">Preisliste</a>. Die Preise sind in tschechischen Kronen (CZK) angegeben.` },
+  },
+
+  facts: { aria: `Wichtige Informationen`, prices: `Preise`, address: `Adresse`, phone: `Telefon`, open: `Geöffnet` },
+  orderSteps: {
+    eyebrow: `Terminbuchung`,
+    heading: `In drei einfachen Schritten`,
+    s1: { h: `Schreiben oder anrufen`, t: `WhatsApp, SMS oder Telefon – die Nachricht „{msg}“ ist bereits vorausgefüllt.` },
+    s2: { h: `Wir vereinbaren einen Termin`, t: `Sagen Sie uns, an welcher Leistung Sie interessiert sind, und wir finden gemeinsam eine passende Zeit.` },
+    s3: { h: `Kommen Sie in die Bělehradská` },
+  },
+  teaser: { default: `Preise im Überblick`, eyebrow: `Preisliste`, link: `Gesamte Preisliste` },
+
+  svc: {
+    steps: `Ablauf`, about: `Zur Leistung`, variants: `Varianten & Preise`, overview: `Überblick`,
+    pricesOf: `Preise: {name}`, care: `Pflege`, faqHeading: `Häufige Fragen: {name}`,
+    related: {
+      eyebrow: `Verwandte Leistungen`, heading: `Das könnte Sie auch interessieren`,
+      allBarber: `Alle Barber-Leistungen`, allNails: `Alle Nagel- und Beauty-Leistungen`,
+    },
+    ctaText: `{name}: {street}, {city}. Wählen Sie den Weg, der Ihnen am besten passt.`,
+  },
+
+  home: {
+    title: `ICONO STUDIO | Nails & Barber Prag 2, Bělehradská 77`,
+    description: `Nagelstudio und Barbershop in der Bělehradská 77 in Prag 2: Maniküre, Gelnägel, Pediküre, Wimpern, Herrenschnitte und Bartpflege. Preisliste und Online-Termin.`,
+    hero: {
+      eyebrow: `ICONO STUDIO · BĚLEHRADSKÁ 77`,
+      aria: `Nagelstudio & Barbershop in Prag 2`,
+      l1: `Nails &amp; Barber`, l2: `im Zentrum`, l3: `von Prag 2`,
+      lead: `Nagelstudio und Barbershop an einem Ort: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen, Herrenschnitte und Bartpflege.`,
+      pricelist: `Preisliste`,
+      cardAria: `Kontakt und Öffnungszeiten`,
+    },
+    marquee: [`Nails`, `Barber`, `Prag 2`, `Bělehradská 77`],
+    statement: `Nails &amp; Barber. Präzise. An einem Ort.`,
+    about: {
+      eyebrow: `Über das Studio`,
+      heading: `Eine Adresse, zwei Handwerke`,
+      p1: `Das ICONO STUDIO finden Sie in der Bělehradská 77 in Prag 2, in Vinohrady, nahe I. P. Pavlova und Náměstí Míru. Unter einem Dach vereinen wir Nagelstudio und Barbershop: Herrenhaarschnitte und Bartpflege, Maniküre, Gel- und Acrylnägel, Pediküre, Wimpernverlängerung, Augenbrauen und Head Spa.`,
+      p2: `Jede Leistung hat eine eigene Seite, die Preise stehen in der übersichtlichen <a href="/cenik/">Preisliste</a>. Termine vereinbaren Sie per WhatsApp, SMS oder Telefon {phone}. Wir haben {hours} geöffnet, sonntags geschlossen oder nach Vereinbarung.`,
+    },
+    duo: {
+      barber: { title: `Barbershop`, text: `Haarschnitte, Bärte und umfassende Barber-Pflege.`, cta: `Barber-Leistungen ansehen` },
+      nails: { title: `Nails &amp; Beauty`, text: `Maniküre, Nägel, Pediküre, Wimpern, Augenbrauen und Head Spa.`, cta: `Nagel-Leistungen ansehen` },
+    },
+    services: { eyebrow: `Leistungen`, heading: `Unsere Leistungen` },
+    why: {
+      eyebrow: `Warum ICONO STUDIO`,
+      heading: `Eine Marke, zwei Handwerke.`,
+      items: [
+        { h: `Nails &amp; Barber an einem Ort`, t: `Herrenschnitte, Bartpflege, Maniküre und Pediküre unter einer Marke und an einer Adresse.` },
+        { h: `Transparente Preise`, t: `Die komplette Preisliste aller Leistungen finden Sie online – einschließlich Vorteilspaketen.` },
+        { h: `Zentrum von Prag 2`, t: `Bělehradská 77 in Vinohrady, nahe I. P. Pavlova und Náměstí Míru.` },
+        { h: `Einfache Terminbuchung`, t: `Schreiben Sie uns per WhatsApp, senden Sie eine SMS oder rufen Sie an. Auch samstags geöffnet.` },
+      ],
+    },
+  },
+
+  hubs: {
+    advice: `Unsere Empfehlung`,
+    choose: `Was passt zu Ihnen?`,
+    nails: {
+      crumb: `Nagelstudio`,
+      title: `Nagelstudio Prag 2 | Maniküre & Pediküre | ICONO STUDIO`,
+      description: `Nagelstudio und Beauty in der Bělehradská 77 in Prag 2: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen und Head Spa. Preisliste und Termin per WhatsApp.`,
+      eyebrow: `Nails & Beauty · Bělehradská 77`,
+      h1: `Nagelstudio & Beauty Prag 2`,
+      lead: `Maniküre, Gel- und Acrylnägel, Pediküre, Wimpernverlängerung, Augenbrauen und Head Spa an einem Ort – in der Bělehradská 77 in Vinohrady.`,
+      imageAlt: `Maniküre im Nagelstudio ICONO STUDIO in Prag 2`,
+      introEyebrow: `Nails &amp; Beauty`,
+      introHeading: `Nägel und Beauty in Vinohrady`,
+      intro: [
+        `Im ICONO STUDIO in der Bělehradská 77 in Prag 2 kümmern wir uns um Nägel, Wimpern, Augenbrauen und Haut. Von der klassischen Maniküre über Gel- und Acrylnägel bis zur Pediküre mit Footlogix-Produkten – jede Leistung hat eine eigene Seite mit Beschreibung, Varianten und Preisen.`,
+        `Sie wissen nicht, welche Leistung die richtige ist? Stöbern Sie in den Bereichen unten oder schreiben Sie uns per WhatsApp. Die aktuellen Preise finden Sie in der <a href="/cenik/">Preisliste</a>.`,
+      ],
+      nailsHeading: `Maniküre, Nägel und Pediküre`,
+      nailsPrices: `Preise Nägel`,
+      beautyHeading: `Wimpern, Augenbrauen und Head Spa`,
+      beautyPrices: `Preise Beauty`,
+      choose: [
+        { h: `Gepflegte Hände`, t: `Sie möchten nur Pflege und einen sauberen Look? Schauen Sie sich die <a href="/manikura-praha-2/">Maniküre</a> an. Sie möchten Farbe, die hält? Wählen Sie Gellak oder CND Shellac.` },
+        { h: `Länge und Form`, t: `Sie möchten längere Nägel? Wählen Sie <a href="/gelove-akrylove-nehty-praha-2/">Gel- oder Acrylnägel</a> oder Gel X.` },
+        { h: `Wohlfühlen und Entspannen`, t: `Für die Füße gibt es die <a href="/pedikura-praha-2/">Pediküre</a>, für die Kopfhaut <a href="/head-spa-praha-2/">Head Spa</a>, für den Blick <a href="/prodluzovani-ras-praha-2/">Wimpern</a> und <a href="/oboci-kosmetika-praha-2/">Augenbrauen</a>.` },
+      ],
+      teaser: `Preise für Nägel und Beauty`,
+      faqServices: `Welche Nagel- und Beauty-Leistungen bieten Sie an?`,
+    },
+    barber: {
+      crumb: `Barbershop`,
+      title: `Barbershop Prag 2 | Herrenschnitt & Bart | ICONO STUDIO`,
+      description: `Barbershop in der Bělehradská 77 in Prag 2: Herrenhaarschnitt, Bartpflege, Haarwäsche und Herrenkosmetik. Preise ab 100 CZK, Termin per WhatsApp oder Telefon.`,
+      eyebrow: `Barber · Bělehradská 77`,
+      h1: `Barbershop Prag 2`,
+      lead: `Herrenhaarschnitte, Bartpflege, Haarwäsche und Herrenkosmetik in der Bělehradská 77 in Prag 2 – Vinohrady. Termin per WhatsApp, SMS oder Telefon.`,
+      imageAlt: `Barber arbeitet mit dem Haarschneider an den Seiten und im Nacken im ICONO STUDIO in Prag 2`,
+      introHeading: `Barber im Zentrum von Prag 2`,
+      intro: [
+        `Das ICONO STUDIO ist ein moderner Barbershop in der Bělehradská in Vinohrady. Herrenhaarschnitt, Haarschnitt mit Bartpflege oder Bartpflege allein – wählen Sie die Leistung danach, was Sie gerade brauchen. Zu jedem Cut gehören Styling und zum Abschluss Balsam oder Eau de Cologne.`,
+        `Der Barbershop ist Teil eines gemeinsamen Studios mit dem Nagelstudio, sodass sich bei uns beide Hälften der Marke unter einem Dach treffen. Die Nagel- und Beauty-Leistungen finden Sie auf der Seite <a href="/nail-studio-praha-2/">Nagelstudio</a>.`,
+      ],
+      servicesEyebrow: `Barber-Leistungen`,
+      servicesHeading: `Haarschnitte, Bart und Pflege`,
+      prices: `Preise Barber`,
+      choose: [
+        { h: `Nur ein Haarschnitt`, t: `Der Klassische Cut umfasst Haarwäsche, Haarschnitt, Styling und Balsam oder Eau de Cologne. Schüler bis 18 Jahre und Kinder haben vergünstigte Preise. Mehr auf der Seite <a href="/panske-strihy-praha-2/">Herrenhaarschnitt</a>.` },
+        { h: `Haare und Bart`, t: `Der VIP Cut verbindet den Haarschnitt mit der Bartpflege in einem Termin. Den Bart allein finden Sie auf der Seite <a href="/uprava-vousu-praha-2/">Bartpflege</a>.` },
+        { h: `Pflege obendrauf`, t: `VIP-Gesichtsreinigung, Kopfmassage oder Haarwäsche – siehe <a href="/panska-kosmetika-praha-2/">Herrenkosmetik</a>. Alle zwei Wochen zum Haarschnitt: −100 CZK auf alle Cuts.` },
+      ],
+      teaser: `Preise Barber im Überblick`,
+      faqServices: `Welche Barber-Leistungen bieten Sie an?`,
+      cta: `Zeit für einen Haarschnitt? Schreiben Sie uns.`,
+    },
+  },
+
+  cenik: {
+    title: `Preisliste | ICONO STUDIO Prag 2 – Nails & Barber`,
+    description: `Preisliste ICONO STUDIO, Bělehradská 77, Prag 2: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen, Head Spa, Herrenschnitt und Bart. Alle Preise im Überblick.`,
+    h1: `Preisliste des ICONO STUDIO`,
+    lead: `Übersicht aller Leistungen und Preise: Maniküre, Nägel, Pediküre, Nail Art, Wimpern, Augenbrauen, Head Spa und Barber. Die Preise sind in tschechischen Kronen (CZK) angegeben; bei jeder Leistung finden Sie einen Link zu den Details.`,
+    chipsAria: `Schnellnavigation in der Preisliste`,
+    moreServices: `Mehr zu diesen Leistungen`,
+    cta: `Schon etwas gefunden? Schreiben Sie uns.`,
+  },
+
+  kontakt: {
+    title: `Kontakt & Öffnungszeiten | ICONO STUDIO Prag 2`,
+    description: `Kontakt ICONO STUDIO – {address}. Telefon {phone}, WhatsApp und SMS. Geöffnet {hours}. IČO {ico}.`,
+    h1: `Kontakt und Öffnungszeiten`,
+    lead: `ICONO STUDIO · {address}. Termine per WhatsApp, SMS oder Telefon {phone}.`,
+    premises: `Betriebsstätte`,
+    legal: `Unternehmensdaten`,
+    servicesHeading: `Wobei wir Ihnen helfen können`,
+    servicesLead: `Nagelstudio und Barbershop an einer Adresse. Wählen Sie eine Leistung und sehen Sie sich Details, Varianten und Preise an.`,
+    schemaName: `Kontakt ICONO STUDIO`,
+  },
+
+  notFound: {
+    title: `Seite nicht gefunden | ICONO STUDIO`,
+    description: `Seite nicht gefunden.`,
+    h1: `Seite nicht gefunden`,
+    lead: `Diese Seite haben wir nicht gefunden. Gehen Sie zurück zur Startseite, sehen Sie sich die Preisliste an oder buchen Sie gleich einen Termin.`,
+    home: `Zur Startseite`,
+  },
+};

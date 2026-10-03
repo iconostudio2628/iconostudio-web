@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<rect width="800" height="1000" fill="#f1e9d9" stroke="none"/>
+<g stroke="#ddd2ba" stroke-width="2"><circle cx="400" cy="500" r="250"/><circle cx="400" cy="500" r="330"/><circle cx="400" cy="500" r="410"/></g>
+<g transform="translate(400 480) scale(1) translate(-400 -500)">
+
+<g transform="rotate(-22 222 690)"><rect x="170" y="500" width="104" height="400" rx="52" fill="#f1e9d9"/>
+<line x1="190" y1="560" x2="254" y2="560" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="588" x2="254" y2="588" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="616" x2="254" y2="616" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="644" x2="254" y2="644" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="672" x2="254" y2="672" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="700" x2="254" y2="700" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="728" x2="254" y2="728" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="756" x2="254" y2="756" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="784" x2="254" y2="784" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="812" x2="254" y2="812" stroke="#7c7466" stroke-width="3"/><line x1="190" y1="840" x2="254" y2="840" stroke="#7c7466" stroke-width="3"/></g>
+<rect x="346" y="226" width="108" height="236" rx="16" fill="#f1e9d9"/>
+<line x1="366" y1="252" x2="366" y2="436" stroke="#7c7466" stroke-width="3"/><line x1="380" y1="252" x2="380" y2="436" stroke="#7c7466" stroke-width="3"/><line x1="394" y1="252" x2="394" y2="436" stroke="#7c7466" stroke-width="3"/><line x1="408" y1="252" x2="408" y2="436" stroke="#7c7466" stroke-width="3"/><line x1="422" y1="252" x2="422" y2="436" stroke="#7c7466" stroke-width="3"/><line x1="436" y1="252" x2="436" y2="436" stroke="#7c7466" stroke-width="3"/>
+<rect x="372" y="462" width="56" height="34" fill="#f1e9d9"/>
+<rect x="296" y="496" width="208" height="292" rx="44" fill="#b9a78a"/>
+<path d="M328 540 V700" stroke="#f1e9d9" stroke-width="9" opacity=".7"/>
+<ellipse cx="400" cy="824" rx="170" ry="16" stroke="#ddd2ba" stroke-width="3"/>
+<path d="M610 660 C586 700 570 722 570 748 a40 40 0 0 0 80 0 C650 722 634 700 610 660 Z" fill="#141414"/>
+</g>
+</svg>
