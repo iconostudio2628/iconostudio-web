@@ -8,9 +8,9 @@ import { fileURLToPath } from 'node:url';
 
 const out = join(dirname(fileURLToPath(import.meta.url)), '..', 'images', 'art');
 
-// bg = the site's two backgrounds exactly: black (#000) and cream (#f1e9d9)
+// bg = the site's two backgrounds exactly: black (#000) and beige (#e3d1b3)
 const DARK = { bg: '#000000', ink: '#efe7d8', accent: '#b9a78a', faint: '#26241f', mid: '#8f8677' };
-const LIGHT = { bg: '#f1e9d9', ink: '#141414', accent: '#b9a78a', faint: '#ddd2ba', mid: '#7c7466' };
+const LIGHT = { bg: '#e3d1b3', ink: '#141414', accent: '#8f7b57', faint: '#cdb994', mid: '#6a604f' };
 
 const f = (n) => Number(n.toFixed(1));
 const rad = (d) => (d * Math.PI) / 180;

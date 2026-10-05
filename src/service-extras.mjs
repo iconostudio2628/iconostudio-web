@@ -30,7 +30,7 @@ const P = (p, v) => (v === undefined ? { p } : { p, v });
 
 const CFG = {
   'manikura-praha-2': {
-    order: ['intro', 'sig0', 'options', 'band', 'price', 'guide', 'steps', 'combos', 'care', 'faq', 'band', 'related', 'location'],
+    order: ['intro', 'sig0', 'options', 'band', 'price', 'guide', 'notes', 'steps', 'combos', 'care', 'faq', 'band', 'related', 'location'],
     sigs: [{
       type: 'compare',
       rows: [
@@ -49,7 +49,7 @@ const CFG = {
   },
 
   'gelove-akrylove-nehty-praha-2': {
-    order: ['intro', 'sig0', 'sig1', 'options', 'band', 'price', 'guide', 'steps', 'care', 'combos', 'faq', 'band', 'related', 'location'],
+    order: ['intro', 'sig0', 'sig1', 'options', 'band', 'price', 'guide', 'notes', 'steps', 'care', 'combos', 'faq', 'band', 'related', 'location'],
     sigs: [
       { type: 'shapes', shapes: ['square', 'round', 'oval', 'almond', 'coffin'] },
       {
@@ -64,7 +64,7 @@ const CFG = {
   },
 
   'pedikura-praha-2': {
-    order: ['intro', 'sig0', 'options', 'guide', 'band', 'steps', 'price', 'care', 'faq', 'combos', 'band', 'related', 'location'],
+    order: ['intro', 'sig0', 'options', 'guide', 'notes', 'band', 'steps', 'price', 'care', 'faq', 'combos', 'band', 'related', 'location'],
     sigs: [{
       type: 'problem',
       items: [
@@ -81,7 +81,7 @@ const CFG = {
   },
 
   'prodluzovani-ras-praha-2': {
-    order: ['intro', 'sig0', 'options', 'steps', 'care', 'band', 'price', 'guide', 'faq', 'combos', 'band', 'related', 'location'],
+    order: ['intro', 'sig0', 'options', 'steps', 'care', 'band', 'price', 'guide', 'notes', 'faq', 'combos', 'band', 'related', 'location'],
     sigs: [{ type: 'density', items: [{ k: 1, p: 'ras-klasik' }, { k: 3, p: 'ras-volume' }, { k: 5, p: 'ras-mega' }] }],
     combos: [
       { pages: ['prodluzovani-ras-praha-2', 'oboci-kosmetika-praha-2'], items: [P('ras-klasik', 1), P('ob-barveni')] },

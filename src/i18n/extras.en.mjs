@@ -11,6 +11,7 @@ export const extrasEn = {
     scrollHint: `You can scroll the table sideways.`,
     chipsAria: `On this page`,
     chips: {
+      notes: `Good to know`,
       options: `Options`, price: `Prices`, guide: `How to choose`, steps: `Process`, care: `Aftercare`,
       combos: `Combinations`, faq: `FAQ`, location: `Find us`,
     },
@@ -41,7 +42,7 @@ export const extrasEn = {
           { label: `Package with hand spa` },
           { label: `Gel polish removal` },
         ],
-        note: `Gel polish usually lasts several weeks, depending on nail growth and how hard you work your hands. Leave removal to the studio and do not peel the polish off at home.`,
+        note: `CND Shellac lasts from around 10 days to 3 weeks and can be soaked off; Gellak is harder, usually lasts longer and often needs an electric nail drill for removal. Leave removal to the studio and do not peel the polish off at home.`,
       }],
       combos: {
         h2: `Combine your manicure with another service`,
@@ -113,7 +114,7 @@ export const extrasEn = {
         lead: `Find the sentence that fits – you see the option and the price straight away.`,
         items: [
           { need: `I just want tidy feet`, pick: `Classic pedicure`, text: `Nail and cuticle care, removal of hardened skin and skin treatment.` },
-          { need: `I want colour that lasts`, pick: `Pedicure with Gellak or CND Shellac`, text: `Gel polish is cured in a lamp. Nails are dry at once and the colour lasts several weeks.` },
+          { need: `I want colour that lasts`, pick: `Pedicure with Gellak or CND Shellac`, text: `Gel polish is cured in a lamp. Nails are dry at once and the colour lasts longer than regular polish.` },
           { need: `I have dry heels and hardened skin`, pick: `Medical pedicure Footlogix`, text: `Professional skincare for dry and heavily used feet. Not a medical treatment.` },
           { need: `I want to relax`, pick: `Value package with foot spa`, text: `Pampering foot care on top – in a value package.` },
         ],

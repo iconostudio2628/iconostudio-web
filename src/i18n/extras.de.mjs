@@ -11,6 +11,7 @@ export const extrasDe = {
     scrollHint: `Die Tabelle lässt sich seitlich verschieben.`,
     chipsAria: `Auf dieser Seite`,
     chips: {
+      notes: `Gut zu wissen`,
       options: `Varianten`, price: `Preise`, guide: `Auswahlhilfe`, steps: `Ablauf`, care: `Pflege`,
       combos: `Kombinationen`, faq: `Häufige Fragen`, location: `So finden Sie uns`,
     },
@@ -41,7 +42,7 @@ export const extrasDe = {
           { label: `Paket mit Hand-Spa` },
           { label: `Entfernen des Gel-Lacks` },
         ],
-        note: `Gel-Lack hält in der Regel mehrere Wochen – je nach Nagelwachstum und Beanspruchung der Hände. Lassen Sie ihn im Studio entfernen und ziehen Sie den Lack zu Hause nicht ab.`,
+        note: `CND Shellac hält ungefähr 10 Tage bis 3 Wochen und lässt sich einweichen; Gellak ist härter, hält in der Regel länger und braucht zum Entfernen oft eine elektrische Feile. Lassen Sie den Lack im Studio entfernen und ziehen Sie ihn zu Hause nicht ab.`,
       }],
       combos: {
         h2: `Maniküre mit einer weiteren Leistung kombinieren`,
@@ -113,7 +114,7 @@ export const extrasDe = {
         lead: `Finden Sie den Satz, der passt – Variante und Preis sehen Sie sofort.`,
         items: [
           { need: `Ich möchte einfach gepflegte Füße`, pick: `Klassische Pediküre`, text: `Pflege von Nägeln und Nagelhaut, Entfernen von Hornhaut und Hautpflege.` },
-          { need: `Ich möchte Farbe, die hält`, pick: `Pediküre mit Gellak oder CND Shellac`, text: `Gel-Lack wird in der Lampe ausgehärtet. Die Nägel sind sofort trocken und die Farbe hält mehrere Wochen.` },
+          { need: `Ich möchte Farbe, die hält`, pick: `Pediküre mit Gellak oder CND Shellac`, text: `Gel-Lack wird in der Lampe ausgehärtet. Die Nägel sind sofort trocken und die Farbe hält länger als bei normalem Lack.` },
           { need: `Ich habe trockene Fersen und Hornhaut`, pick: `Medizinische Pediküre Footlogix`, text: `Professionelle Kosmetik für trockene und stark beanspruchte Füße. Keine ärztliche Behandlung.` },
           { need: `Ich möchte mich entspannen`, pick: `Vorteilspaket mit Fuß-Spa`, text: `Verwöhnende Fußpflege on top – im Vorteilspaket.` },
         ],

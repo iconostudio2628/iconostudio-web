@@ -165,11 +165,11 @@
     });
   });
 
-  // Hero photo: settles in on load, then drifts slower than the page
-  const heroImg = $('.hero-bg img');
-  if (heroImg) {
-    intro.from(heroImg, { scale: 1.12, duration: 1.8, ease: 'power3.out' }, 0);
-    gsap.to(heroImg, { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  // Hero photo blobs: settle in on load, then drift at different speeds
+  const blobPhotos = $$('.blob-photo');
+  if (blobPhotos.length) {
+    intro.from(blobPhotos, { scale: 0.85, opacity: 0, duration: 1.4, stagger: 0.18, ease: 'power3.out', ...clean }, 0.2);
+    blobPhotos.forEach((el, i) => gsap.to(el, { yPercent: i ? -10 : 6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } }));
   }
 
   // Hero card drifts a little slower than the copy (desktop only)

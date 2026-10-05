@@ -16,6 +16,7 @@ export const extrasCs = {
     scrollHint: `Tabulku můžete posouvat do stran.`,
     chipsAria: `Na této stránce`,
     chips: {
+      notes: `Dobré vědět`,
       options: `Varianty`, price: `Ceník`, guide: `Jak vybrat`, steps: `Postup`, care: `Péče`,
       combos: `Kombinace`, faq: `Časté dotazy`, location: `Kde nás najdete`,
     },
@@ -46,7 +47,7 @@ export const extrasCs = {
           { label: `Balíček s hand spa` },
           { label: `Odstranění gel laku` },
         ],
-        note: `Gel lak obvykle vydrží několik týdnů – podle růstu nehtů a zátěže rukou. Odstranění nechte na studiu, doma lak nestrhávejte.`,
+        note: `CND Shellac vydrží přibližně od 10 dnů do 3 týdnů a dá se odmočit, Gellak je tvrdší, obvykle vydrží déle a k odstranění často potřebuje brusku. Odstranění nechte na studiu, doma lak nestrhávejte.`,
       }],
       combos: {
         h2: `Spojte manikúru s další službou`,
@@ -118,7 +119,7 @@ export const extrasCs = {
         lead: `Najděte větu, která sedí – hned vidíte variantu i cenu.`,
         items: [
           { need: `Chci jen upravené nohy`, pick: `Klasická pedikúra`, text: `Úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky.` },
-          { need: `Chci barvu, která vydrží`, pick: `Pedikúra s Gellakem nebo CND Shellac`, text: `Gel lak se vytvrzuje v lampě. Nehty jsou hned suché a barva drží několik týdnů.` },
+          { need: `Chci barvu, která vydrží`, pick: `Pedikúra s Gellakem nebo CND Shellac`, text: `Gel lak se vytvrzuje v lampě. Nehty jsou hned suché a barva drží déle než u běžného laku.` },
           { need: `Trápí mě suché paty a ztvrdlá kůže`, pick: `Medicínální pedikúra Footlogix`, text: `Profesionální kosmetika pro suchou a namáhanou pokožku nohou. Nejde o lékařské ošetření.` },
           { need: `Chci si odpočinout`, pick: `Výhodný balíček s foot spa`, text: `Hýčkací péče o nohy navíc – ve výhodném balíčku.` },
         ],

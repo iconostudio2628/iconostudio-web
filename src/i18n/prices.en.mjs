@@ -99,6 +99,7 @@ export const pricesEn = {
   'Styling': 'Styling',
   'Balzám/Kolínská': 'Balm/cologne',
   'Mytí hlavy': 'Hair wash',
+  'Mytí hlavy navíc': 'Additional hair wash',
   'Masáž': 'Massage',
   'Úprava vousů': 'Beard trim',
   'Timer/Strojek': 'Trimmer/clipper',

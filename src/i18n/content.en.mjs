@@ -27,11 +27,26 @@ export const contentEn = {
         { title: `Manicure with CND Shellac`, text: `The same polish treatment, but with CND Shellac, a branded gel polish. It costs 100 CZK more than the Gellak option. Here too you can choose a package with hand spa, which costs 50 CZK more than the manicure alone.` },
       ],
     },
+    notes: {
+      h2: `CND Shellac, Gellak and P.Shine: what is what`,
+      items: [
+        { h: `CND Shellac`, paras: [
+          `CND Shellac is a hybrid polish that combines the benefits of traditional nail polish and gel polish. It feels thin, lightweight and natural, requires minimal filing of the natural nail, is very easy to remove by soaking, and typically lasts from around 10 days to 3 weeks.`,
+          `Actual durability depends on the condition of your natural nails and your daily habits. If you are frequently in contact with water, cleaning products or do a lot of manual work, Shellac may start to lift or chip sooner.`,
+        ] },
+        { h: `Gel polish (Gellak)`, paras: [
+          `Gel polish (Gellak) also uses a base coat and follows a similar application process to CND Shellac. The main difference is that gel polish is harder and has stronger adhesion, which usually makes it more durable than Shellac. The trade-off is that removal often requires an electric nail drill rather than soaking alone.`,
+        ] },
+        { h: `P.Shine`, paras: [
+          `P.Shine is a Japanese natural nail care treatment designed to nourish, strengthen and give natural nails a healthy, high-gloss finish.`,
+          `No coloured nail polish is used during this treatment. The result is smooth, well-groomed and naturally shiny nails.`,
+        ] },
+      ] },
     guide: {
       h2: `Which manicure should you choose?`,
       paras: [
         `If you simply want tidy hands and no colour, a <strong>classic manicure</strong> is enough. It is the quickest and cheapest option and works well as regular maintenance between polish appointments.`,
-        `If you want colour that lasts, choose <strong>Gellak</strong> or <strong>CND Shellac</strong>. Both are gel polishes cured in a lamp – the nails are dry straight away, nothing smudges, and the polish usually lasts several weeks without chipping. The difference is mainly the brand and the price.`,
+        `If you want colour that lasts, choose <strong>Gellak</strong> or <strong>CND Shellac</strong>. Both are gel polishes cured in a lamp – the nails are dry straight away and nothing smudges. <strong>CND Shellac</strong> is thin and lightweight, can be soaked off and lasts from around 10 days to 3 weeks. <strong>Gellak</strong> is harder and has stronger adhesion, so it usually lasts longer, but removal often needs an electric nail drill.`,
         `If you want to relax, choose a <strong>package with hand spa</strong>. For the gel polish options, the package costs only 50 CZK more than the manicure alone, so it is worth it whenever you fancy a little extra.`,
         `And if you would like to decorate your nails, add nail art – from simple colour accents through French tips and ombré to rhinestones or hand-painted designs. You will find the nail art prices in the table below.`,
       ],
@@ -57,8 +72,8 @@ export const contentEn = {
     },
     faq: [
       { q: `How much does a manicure cost in Prague 2?`, a: `A classic manicure costs 350 CZK, a manicure with Gellak 550 CZK and a manicure with CND Shellac 650 CZK. Value packages with hand spa start at 490 CZK. Current prices are in the <a href="/cenik/">price list</a>.` },
-      { q: `What is the difference between Gellak and CND Shellac?`, a: `Both are gel polishes that are cured in a lamp and last longer than regular polish. CND Shellac is a branded product, and Gellak is the other gel polish option we offer. The difference is mainly the price – a manicure with Gellak is 100 CZK cheaper.` },
-      { q: `How long does gel polish last?`, a: `Usually several weeks. It depends on how fast your nails grow, how hard you use your hands and how you look after them. Once your nail has grown out, we recommend booking removal and a fresh polish so the polish does not crack or peel.` },
+      { q: `What is the difference between Gellak and CND Shellac?`, a: `Both are gel polishes cured in a lamp and applied over a base coat. CND Shellac feels thin, lightweight and natural, needs minimal filing of the natural nail, can be soaked off and lasts from around 10 days to 3 weeks. Gellak is harder and has stronger adhesion, so it usually lasts longer, but removal often requires an electric nail drill rather than soaking alone. Prices are in the <a href="/cenik/">price list</a>.` },
+      { q: `How long does gel polish last?`, a: `CND Shellac usually lasts from around 10 days to 3 weeks; Gellak, being harder and more adhesive, usually lasts longer. Actual durability depends on the condition of your natural nails and your daily habits – if you are often in contact with water or cleaning products, or do a lot of manual work, the polish may start to lift sooner. Once your nail has grown out, we recommend booking removal and a fresh polish.` },
       { q: `What is a hand spa?`, a: `A hand spa is extra pampering care for your hands that you can add to a manicure in a value package. We are happy to explain the exact procedure when you book.` },
       { q: `Can you remove gel polish that was applied elsewhere?`, a: `Yes, we offer Shellac / Gellak removal separately: Shellac for 200 CZK, Gellak for 150 CZK. Please do not peel it off yourself, as you would damage the nail.` },
     ],
@@ -88,6 +103,29 @@ export const contentEn = {
         { title: `Gel X nails`, text: `A modern technique in which the nail is extended with pre-shaped gel tips. The result tends to feel light and look natural. The price is the same as for new gel or acrylic nails with colour.` },
       ],
     },
+    notes: {
+      h2: `Gel, acrylic and Gel X: comparing the materials`,
+      items: [
+        { h: `Gel`, paras: [
+          `Gel has a liquid or thicker gel-like consistency, has little to no noticeable odour, provides medium hardness and is cured under a UV/LED lamp. It has good adhesion, a smooth glossy finish and feels lightweight and natural on the nails.`,
+          `It is suitable for nails with few imperfections and for clients whose daily activities do not involve heavy manual work. Gel is generally softer and more flexible, so removal is usually quicker.`,
+        ] },
+        { h: `Acrylic`, paras: [
+          `Acrylic is created by combining acrylic powder with liquid monomer. It has a characteristic smell, is harder and more durable than gel, and air-dries without the need for a UV/LED lamp.`,
+          `It is particularly suitable for long nail extensions, creating and correcting nail shapes, nails with imperfections, and clients who frequently use their hands for manual work.`,
+          `However, there is no rule that short nails must always be done with gel. A thin layer of acrylic works well on short nails too, making them stronger while keeping a natural appearance. Whether gel or acrylic is more suitable also depends on the individual condition and characteristics of your natural nails.`,
+        ] },
+        { h: `Gel X nails`, paras: [
+          `A modern nail extension method using soft gel tips (Soft Gel Tips), providing a natural appearance and a very lightweight feel on the nails.`,
+        ] },
+        { h: `Warmth under the lamp`, paras: [
+          `A mild warming or burning sensation while curing gel under the lamp is completely normal. The intensity of the heat may vary from one appointment to another. If the gel feels hotter than during your previous appointment, this may be because the natural nail is slightly thinner after the old gel has been removed, or because the layer of gel being cured is thicker.`,
+          `If it feels too hot, simply remove your hand from the lamp for a few seconds and then place it back inside.`,
+        ] },
+        { h: `CND Shellac and gel polish (Gellak)`, paras: [
+          `Not sure whether to choose gel, acrylic or a polish? CND Shellac is thin, can be soaked off and lasts from around 10 days to 3 weeks. Gel polish (Gellak) is harder, has stronger adhesion and usually lasts longer, but removal often needs an electric nail drill. More on the <a href="/manikura-praha-2/">Manicure</a> page.`,
+        ] },
+      ] },
     guide: {
       h2: `Gel, acrylic or Gel X: which should you choose?`,
       paras: [
@@ -151,6 +189,19 @@ export const contentEn = {
         { title: `Medical pedicure with Footlogix`, text: `A pedicure using Footlogix professional skincare, focused on dry and stressed skin, hardened areas and cracked heels. This is not a medical treatment. It can be combined with Gellak or CND Shellac polish.` },
       ],
     },
+    notes: {
+      h2: `Footlogix Pedicure: professional foot care`,
+      items: [
+        { h: `What Footlogix Pedicure is`, paras: [
+          `Footlogix Pedicure is a specialised foot and heel care treatment using products from Footlogix, a professional Canadian brand.`,
+          `Footlogix is a well-established brand and one of the pioneers of the Pediceutical concept, combining professional beauty care with targeted foot care.`,
+          `Unlike traditional heel care, which may rely mainly on filing, grinding or prolonged soaking in water, Footlogix focuses on treating common foot skin concerns in a safe, professional and targeted way.`,
+        ] },
+        { h: `Who it is for`, paras: [
+          `The treatment is gentle and can provide highly effective results.`,
+          `It is also suitable for clients with sensitive skin and, when professionally applied, may be suitable for clients with diabetes or gestational diabetes. Clients with these conditions should always inform the salon before treatment.`,
+        ] },
+      ] },
     guide: {
       h2: `Which pedicure should you choose?`,
       paras: [
@@ -184,7 +235,8 @@ export const contentEn = {
       { q: `What is Footlogix?`, a: `Footlogix is a range of professional foot skincare, designed above all for dry and stressed skin. In our price list, the medical pedicure with Footlogix is available with Gellak or CND Shellac polish.` },
       { q: `How often should I get a pedicure?`, a: `Usually once every four to six weeks, depending on how fast your nails grow and how hard you are on your feet. If your nails are polished, plan maintenance according to how long your polish lasts.` },
       { q: `Can I get a pedicure if I have diabetes or a fungal nail infection?`, a: `Please consult a doctor first. A pedicure at the studio is cosmetic care and does not replace medical treatment. Before your visit, please tell us about any health problems.` },
-      { q: `How long does polish on toes last?`, a: `Gel polish usually lasts several weeks. It depends on how fast your nails grow and the footwear you wear.` },
+      { q: `How long does polish on toes last?`, a: `It depends on how fast your nails grow, on the footwear you wear and on the polish you choose – CND Shellac is thinner and easier to soak off, Gellak is harder and usually lasts longer.` },
+      { q: `Is Footlogix pedicure suitable for people with diabetes?`, a: `When professionally applied, it may be suitable for clients with diabetes or gestational diabetes. Clients with these conditions should always inform the salon before treatment.` },
     ],
   },
 
@@ -213,6 +265,25 @@ export const contentEn = {
         { title: `Design effect and removal`, text: `Lash extensions with a special effect that we agree when you book. If you want your lashes taken off, leave the removal to us – at home you risk damaging your natural lashes.` },
       ],
     },
+    notes: {
+      h2: `Designer lashes and the health of your natural lashes`,
+      items: [
+        { h: `Designer eyelash extensions`, paras: [
+          `Designer lash styles are characterised by layered shapes and distinctive details. For the best appearance, they should be regularly brushed and shaped. This type of lash extension requires slightly more careful daily maintenance from the client.`,
+          `If you prefer lashes that remain beautiful for up to 3–4 weeks without needing much daily brushing or styling, we can recommend more classic styles, such as Classic or Volume lashes, which may better suit your needs.`,
+        ] },
+        { h: `The health of your natural lashes comes first`, paras: [
+          `The health of your natural lashes is always our top priority.`,
+          `If your natural lashes are thin, weak or sparse, extensions that are too thick or too long can place excessive weight on them. This may cause the natural lashes to break, fall out more easily or take longer to recover.`,
+          `In these cases, we will recommend lighter and more natural lash styles that enhance the shape of your eyes while helping to protect your natural lashes.`,
+          `If your natural lashes are severely weakened, we recommend temporarily removing the extensions and using a lash serum or other strengthening treatment for a period of time before having extensions applied again.`,
+        ] },
+        { h: `Very full lashes at your request`, paras: [
+          `If your natural lashes are thin or weak but you still wish to have very full extensions, we can provide the service at your request after explaining the possible risks in detail.`,
+          `Before the treatment, you will be asked to sign a consultation acknowledgement form.`,
+          `We cannot provide a warranty or compensation for breakage or loss of natural lashes caused by excessive weight from lash extensions applied at the client's specific request after consultation.`,
+        ] },
+      ] },
     guide: {
       h2: `How to choose the type of lashes`,
       paras: [

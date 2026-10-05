@@ -44,11 +44,26 @@ export const servicePagesBase = [
         { title: 'Manikúra s CND Shellac', ids: ['man-cnd', 'man-pk-cnd'], text: 'Totéž lakování, ale se značkovým gel lakem CND Shellac. Je o 100 Kč dražší než varianta s Gellakem. I tady si můžete vybrat balíček s hand spa, který stojí o 50 Kč víc než samotná manikúra.' },
       ],
     },
+    notes: {
+      h2: 'CND Shellac, Gellak a P.Shine: co je co',
+      items: [
+        { h: 'CND Shellac', paras: [
+          'CND Shellac je hybridní lak, který kombinuje výhody klasického laku a gelu. Je tenký, lehký a působí přirozeně. Při aplikaci není nutné výrazně pilovat přírodní nehet, odstranění je velmi snadné pomocí odmočení a výdrž se pohybuje přibližně od 10 dnů do 3 týdnů.',
+          'Skutečná výdrž závisí na kvalitě přírodních nehtů i na každodenních návycích. U klientek, které jsou často v kontaktu s vodou, čisticími prostředky nebo vykonávají manuální práci, se může Shellac začít odlupovat dříve.',
+        ] },
+        { h: 'Gel lak (Gellak)', paras: [
+          'Gel lak se také aplikuje na podkladovou bázi a postup aplikace je podobný jako u CND Shellac. Hlavní rozdíl spočívá v tom, že gel lak je tvrdší a má vyšší přilnavost, takže obvykle vydrží déle než Shellac. Při odstranění je však často nutné použít elektrickou brusku, protože samotné odmočení nemusí být dostačující.',
+        ] },
+        { h: 'P.Shine', paras: [
+          'P.Shine je japonská metoda přírodní péče o nehty, která je zaměřená na výživu, posílení a vysoký přirozený lesk vlastních nehtů.',
+          'Při této metodě se nepoužívá barevný lak. Výsledkem jsou upravené, hladké a přirozeně lesklé nehty.',
+        ] },
+      ] },
     guide: {
       h2: 'Jakou manikúru zvolit?',
       paras: [
         'Pokud chcete jednoduše upravené ruce a nechcete barvu, stačí <strong>klasická manikúra</strong>. Je nejrychlejší a nejlevnější a hodí se i jako pravidelná údržba mezi lakováními.',
-        'Pokud chcete barvu, která vydrží, zvolte <strong>Gellak</strong> nebo <strong>CND Shellac</strong>. Oba jsou gel laky vytvrzované v lampě – nehty jsou hned suché, nemažou se a lak obvykle vydrží několik týdnů bez odštípnutí. Rozdíl je především ve značce a v ceně.',
+        'Pokud chcete barvu, která vydrží, zvolte <strong>Gellak</strong> nebo <strong>CND Shellac</strong>. Oba jsou gel laky vytvrzované v lampě – nehty jsou hned suché a nemažou se. <strong>CND Shellac</strong> je tenký a lehký, dá se odmočit a vydrží přibližně od 10 dnů do 3 týdnů. <strong>Gellak</strong> je tvrdší a lépe přilne, takže obvykle vydrží déle, k odstranění ale často potřebuje brusku.',
         'Pokud si chcete odpočinout, vyberte <strong>balíček s hand spa</strong>. U variant s gel lakem je cena balíčku jen o 50 Kč vyšší než samotná manikúra, takže se vyplatí, kdykoli máte chuť na něco navíc.',
         'A pokud chcete nehty ozdobit, přidejte zdobení – od jednoduchých barevných akcentů přes francii a ombré až po kamínky nebo malování. Ceny zdobení najdete v tabulce níže.',
       ],
@@ -74,8 +89,8 @@ export const servicePagesBase = [
     },
     faq: [
       { q: 'Kolik stojí manikúra v Praze 2?', a: 'Klasická manikúra stojí 350 Kč, manikúra s Gellakem 550 Kč a manikúra s CND Shellac 650 Kč. Výhodné balíčky s hand spa začínají na 490 Kč. Aktuální ceny najdete v <a href="/cenik/">ceníku</a>.' },
-      { q: 'Jaký je rozdíl mezi Gellakem a CND Shellacem?', a: 'Oboje jsou gel laky, které se vytvrzují v lampě a drží déle než běžný lak. CND Shellac je značkový produkt, Gellak je druhá varianta gel laku v naší nabídce. Liší se hlavně cenou – manikúra s Gellakem je o 100 Kč levnější.' },
-      { q: 'Jak dlouho gel lak vydrží?', a: 'Obvykle několik týdnů. Záleží na rychlosti růstu nehtů, na tom, jak ruce zatěžujete, a na následné péči. Jakmile nehet naroste, doporučujeme objednat se na odstranění a nové lakování, aby lak neprasknul a neodlupoval se.' },
+      { q: 'Jaký je rozdíl mezi Gellakem a CND Shellacem?', a: 'Oba jsou gel laky vytvrzované v lampě a nanášejí se na podkladovou bázi. CND Shellac je tenký, lehký a působí přirozeně, přírodní nehet se při aplikaci výrazně nepiluje, odstraní se odmočením a vydrží přibližně od 10 dnů do 3 týdnů. Gellak je tvrdší a má vyšší přilnavost, takže obvykle vydrží déle, k odstranění ale často potřebuje elektrickou brusku. Ceny najdete v <a href="/cenik/">ceníku</a>.' },
+      { q: 'Jak dlouho gel lak vydrží?', a: 'CND Shellac obvykle vydrží přibližně od 10 dnů do 3 týdnů, Gellak je tvrdší a díky vyšší přilnavosti obvykle vydrží déle. Skutečná výdrž závisí na kvalitě přírodních nehtů i na každodenních návycích – u klientek, které jsou často v kontaktu s vodou nebo čisticími prostředky nebo vykonávají manuální práci, se může lak začít odlupovat dříve. Jakmile nehet naroste, doporučujeme objednat se na odstranění a nové lakování.' },
       { q: 'Co je hand spa?', a: 'Hand spa je hýčkací péče o ruce navíc, kterou si můžete přidat k manikúře ve výhodném balíčku. Konkrétní postup vám rádi upřesníme při objednání.' },
       { q: 'Můžu si nechat odstranit gel lak jinde nalakovaný?', a: 'Ano, odstranění Shellac / Gellak nehtů nabízíme samostatně: Shellac za 200 Kč, Gellak za 150 Kč. Neodlupujte ho prosím sami, poškodíte tím nehet.' },
     ],
@@ -108,6 +123,29 @@ export const servicePagesBase = [
         { title: 'Gel X nehty', ids: ['mod-gelx'], text: 'Moderní technika, při které se nehet prodlužuje předtvarovanými gelovými tipy. Výsledek bývá lehký a přirozeně působící. Cena je stejná jako u nových gelových nebo akrylových nehtů s barvou.' },
       ],
     },
+    notes: {
+      h2: 'Gel, akryl a Gel X: srovnání materiálů',
+      items: [
+        { h: 'Gel', paras: [
+          'Gel má tekutější nebo hustší konzistenci, je bez výrazného zápachu, má střední tvrdost a vytvrzuje se v UV/LED lampě. Má dobrou přilnavost, hladký a lesklý povrch a na nehtech působí lehce a přirozeně.',
+          'Je vhodný především pro nehty bez výraznějších nedokonalostí a pro klientky, které nevykonávají příliš náročnou manuální práci. Gel je pružnější a měkčí, proto bývá jeho odstranění obvykle rychlejší.',
+        ] },
+        { h: 'Akryl', paras: [
+          'Akryl vzniká kombinací akrylového prášku a liquidu. Má charakteristický zápach, je tvrdší a odolnější než gel a vytvrzuje přirozeně na vzduchu bez použití UV/LED lampy.',
+          'Je vhodný pro prodlužování nehtů, modelování tvaru, korekci nehtů s různými nedokonalostmi a také pro klientky, které často pracují rukama.',
+          'Neexistuje však žádné pravidlo, že na krátké nehty musí být vždy použit gel. Na krátké nehty lze bez problémů aplikovat také tenkou vrstvu akrylu, která nehty zpevní a zároveň zachová přirozený vzhled. To, zda je pro vás vhodnější gel nebo akryl, závisí také na individuálních vlastnostech a kvalitě vašich přírodních nehtů.',
+        ] },
+        { h: 'Gel X nehty', paras: [
+          'Moderní metoda prodlužování nehtů pomocí měkkých celogelových tipů (Soft Gel Tips), která poskytuje přirozený vzhled a velmi lehký pocit na nehtech.',
+        ] },
+        { h: 'Teplo při vytvrzování gelu v lampě', paras: [
+          'Mírný pocit tepla nebo pálení při vytvrzování gelu v lampě je běžnou reakcí. Intenzita tepla se může při jednotlivých návštěvách lišit. Pokud například při aktuální aplikaci cítíte větší teplo než minule, může to být způsobeno tím, že je přírodní nehet po odstranění předchozího materiálu momentálně tenčí, nebo tím, že byla nanesena silnější vrstva gelu.',
+          'Pokud je pocit tepla příliš intenzivní, stačí ruku na několik sekund z lampy vytáhnout a poté ji opět vložit zpět.',
+        ] },
+        { h: 'CND Shellac a gel lak (Gellak)', paras: [
+          'Váháte mezi gelem, akrylem a lakováním? CND Shellac je tenký a dá se odmočit, vydrží přibližně od 10 dnů do 3 týdnů. Gel lak (Gellak) je tvrdší, má vyšší přilnavost a obvykle vydrží déle, k odstranění ale často potřebuje brusku. Podrobnosti najdete na stránce <a href="/manikura-praha-2/">Manikúra</a>.',
+        ] },
+      ] },
     guide: {
       h2: 'Gel, akryl nebo Gel X: co si vybrat?',
       paras: [
@@ -174,6 +212,19 @@ export const servicePagesBase = [
         { title: 'Medicínální pedikúra Footlogix', ids: ['ped-med-gellak', 'ped-med-cnd', 'ped-pk-fl-gellak', 'ped-pk-fl-cnd'], text: 'Pedikúra s profesionální kosmetikou Footlogix, zaměřená na péči o suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Nejde o lékařské ošetření. Lze ji kombinovat s lakováním Gellak nebo CND Shellac.' },
       ],
     },
+    notes: {
+      h2: 'Footlogix Pedicure: profesionální péče o chodidla',
+      items: [
+        { h: 'Co je Footlogix Pedicure', paras: [
+          'Footlogix Pedicure je profesionální péče zaměřená na intenzivní ošetření chodidel a pat s použitím produktů kanadské značky Footlogix.',
+          'Footlogix je renomovaná značka, která patří mezi průkopníky konceptu kombinujícího kosmetickou péči s profesionálním přístupem k problémům pokožky chodidel – tzv. Pediceutical.',
+          'Na rozdíl od klasického ošetření pat, při kterém se často používá pouze pilník, bruska nebo dlouhé namáčení ve vodě, se Footlogix zaměřuje na bezpečné a cílené řešení problémů pokožky chodidel.',
+        ] },
+        { h: 'Pro koho je vhodná', paras: [
+          'Ošetření je šetrné, profesionální a může přinášet velmi dobré výsledky.',
+          'Je vhodné také pro osoby s citlivou pokožkou a při správném profesionálním použití může být vhodnou volbou také pro klienty s diabetem nebo těhotenskou cukrovkou. V těchto případech doporučujeme vždy předem informovat personál o svém zdravotním stavu.',
+        ] },
+      ] },
     guide: {
       h2: 'Kterou pedikúru zvolit?',
       paras: [
@@ -207,7 +258,8 @@ export const servicePagesBase = [
       { q: 'Co je Footlogix?', a: 'Footlogix je řada profesionální kosmetiky pro péči o nohy, určená zejména pro suchou a namáhanou pokožku. V našem ceníku je medicínální pedikúra Footlogix k dispozici s lakováním Gellak nebo CND Shellac.' },
       { q: 'Jak často chodit na pedikúru?', a: 'Obvykle jednou za čtyři až šest týdnů, podle růstu nehtů a toho, jak nohy zatěžujete. Pokud máte lakované nehty, počítejte s udržováním podle toho, jak dlouho vám lak drží.' },
       { q: 'Mohu přijít na pedikúru s cukrovkou nebo plísní nehtů?', a: 'Nejdřív se prosím poraďte s lékařem. Pedikúra ve studiu je kosmetická péče a nenahrazuje lékařské ošetření. Před návštěvou nám případné zdravotní potíže napište.' },
-      { q: 'Jak dlouho lak na nohou vydrží?', a: 'Gel lak obvykle vydrží několik týdnů. Záleží na rychlosti růstu nehtů a na obuvi, kterou nosíte.' },
+      { q: 'Jak dlouho lak na nohou vydrží?', a: 'Záleží na rychlosti růstu nehtů, na obuvi, kterou nosíte, a na zvoleném laku – CND Shellac je tenčí a snáz se odmočí, Gellak je tvrdší a obvykle vydrží déle.' },
+      { q: 'Je pedikúra Footlogix vhodná pro diabetiky?', a: 'Při správném profesionálním použití může být vhodnou volbou také pro klienty s diabetem nebo těhotenskou cukrovkou. V těchto případech doporučujeme vždy předem informovat personál o svém zdravotním stavu.' },
     ],
     related: ['manikura-praha-2', 'head-spa-praha-2', 'gelove-akrylove-nehty-praha-2'],
   },
@@ -239,6 +291,25 @@ export const servicePagesBase = [
         { title: 'Designový efekt a odstranění', ids: ['ras-design', 'ras-odstr'], text: 'Prodloužení řas se speciálním efektem, který domluvíme při objednání. Pokud chcete řasy sundat, nechte odstranění na nás – doma by hrozilo poškození přirozených řas.' },
       ],
     },
+    notes: {
+      h2: 'Designové řasy a zdraví vašich řas',
+      items: [
+        { h: 'Designové prodlužování řas', paras: [
+          'Designové řasy mají specifické vrstvení a výraznější tvar, proto vypadají nejlépe při pravidelném pročesávání a úpravě. Tento typ řas vyžaduje ze strany klientky o něco pečlivější každodenní péči.',
+          'Pokud si přejete, aby řasy vydržely krásné přibližně 3–4 týdny a zároveň jste nemuseli každý den věnovat mnoho času jejich úpravě, rádi vám doporučíme jednodušší styly, například Classic nebo Volume, které mohou lépe odpovídat vašim potřebám.',
+        ] },
+        { h: 'Zdraví přírodních řas je na prvním místě', paras: [
+          'Zdraví vašich přírodních řas je pro nás vždy na prvním místě.',
+          'Pokud jsou vaše přírodní řasy jemné, slabé nebo řídké, příliš husté nebo dlouhé prodloužení může vytvářet nadměrnou zátěž. Přírodní řasy se pak mohou snadněji lámat, vypadávat a jejich regenerace může trvat déle.',
+          'V takovém případě vám doporučíme lehčí a přirozenější styl řas, který zvýrazní tvar vašich očí a zároveň pomůže chránit vaše přírodní řasy.',
+          'Pokud jsou přírodní řasy příliš oslabené, doporučujeme prodloužené řasy dočasně odstranit a určitou dobu používat sérum nebo jinou péči na posílení řas. Po jejich regeneraci lze řasy opět bezpečně prodloužit.',
+        ] },
+        { h: 'Velmi husté prodloužení na přání', paras: [
+          'Pokud má klientka slabé nebo jemné přírodní řasy, ale přesto si přeje velmi husté prodloužení, službu můžeme provést podle jejího přání po předchozí konzultaci a vysvětlení možných rizik.',
+          'Před aplikací bude klientka požádána o podpis potvrzení o provedené konzultaci.',
+          'Na případy lámání nebo vypadávání přírodních řas, které vzniknou v důsledku nadměrného zatížení na základě individuálního přání klientky, se nevztahuje naše záruka ani nárok na kompenzaci.',
+        ] },
+      ] },
     guide: {
       h2: 'Jak si vybrat typ řas',
       paras: [

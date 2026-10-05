@@ -27,11 +27,26 @@ export const contentDe = {
         { title: `Maniküre mit CND Shellac`, text: `Dieselbe Lackierung, aber mit dem Markenprodukt CND Shellac. Sie kostet 100 CZK mehr als die Variante mit Gellak. Auch hier können Sie ein Paket mit Hand-Spa wählen, das 50 CZK mehr kostet als die Maniküre allein.` },
       ],
     },
+    notes: {
+      h2: `CND Shellac, Gellak und P.Shine: Was ist was`,
+      items: [
+        { h: `CND Shellac`, paras: [
+          `CND Shellac ist ein Hybridlack, der die Vorteile von klassischem Nagellack und Gel vereint. Er ist dünn, leicht und wirkt natürlich. Beim Auftragen muss der Naturnagel kaum angefeilt werden, das Entfernen ist durch Einweichen sehr einfach, und die Haltbarkeit liegt ungefähr zwischen 10 Tagen und 3 Wochen.`,
+          `Die tatsächliche Haltbarkeit hängt von der Beschaffenheit Ihrer Naturnägel und Ihren Alltagsgewohnheiten ab. Wenn Sie häufig mit Wasser oder Reinigungsmitteln in Kontakt kommen oder körperlich arbeiten, kann sich Shellac früher ablösen.`,
+        ] },
+        { h: `Gel-Lack (Gellak)`, paras: [
+          `Gel-Lack wird ebenfalls auf eine Unterlack-Basis aufgetragen, und der Ablauf ist ähnlich wie bei CND Shellac. Der Hauptunterschied: Gel-Lack ist härter und haftet stärker, sodass er in der Regel länger hält als Shellac. Beim Entfernen ist dafür oft eine elektrische Feile nötig, weil Einweichen allein nicht immer ausreicht.`,
+        ] },
+        { h: `P.Shine`, paras: [
+          `P.Shine ist eine japanische Methode der natürlichen Nagelpflege, die auf Pflege, Stärkung und einen hohen natürlichen Glanz der eigenen Nägel ausgerichtet ist.`,
+          `Bei dieser Methode wird kein farbiger Lack verwendet. Das Ergebnis sind gepflegte, glatte und natürlich glänzende Nägel.`,
+        ] },
+      ] },
     guide: {
       h2: `Welche Maniküre ist die richtige?`,
       paras: [
         `Wenn Sie einfach gepflegte Hände ohne Farbe möchten, genügt die <strong>klassische Maniküre</strong>. Sie ist am schnellsten und am günstigsten und eignet sich auch als regelmäßige Pflege zwischen den Lackierungen.`,
-        `Wenn Sie Farbe möchten, die hält, wählen Sie <strong>Gellak</strong> oder <strong>CND Shellac</strong>. Beide sind Gel-Lacke, die in der Lampe aushärten – die Nägel sind sofort trocken, nichts verschmiert, und der Lack hält in der Regel mehrere Wochen ohne Abplatzen. Der Unterschied liegt vor allem in Marke und Preis.`,
+        `Wenn Sie Farbe möchten, die hält, wählen Sie <strong>Gellak</strong> oder <strong>CND Shellac</strong>. Beide sind Gel-Lacke, die in der Lampe aushärten – die Nägel sind sofort trocken und nichts verschmiert. <strong>CND Shellac</strong> ist dünn und leicht, lässt sich einweichen und hält ungefähr 10 Tage bis 3 Wochen. <strong>Gellak</strong> ist härter und haftet stärker, hält deshalb in der Regel länger, zum Entfernen ist aber oft eine elektrische Feile nötig.`,
         `Wenn Sie sich entspannen möchten, wählen Sie ein <strong>Paket mit Hand-Spa</strong>. Bei den Varianten mit Gel-Lack kostet das Paket nur 50 CZK mehr als die Maniküre allein – das lohnt sich immer, wenn Sie sich etwas extra gönnen möchten.`,
         `Und wenn Sie Ihre Nägel verzieren möchten, buchen Sie Nail Art dazu – von einfachen Farbakzenten über French und Ombré bis zu Strasssteinen oder Handmalerei. Die Preise für Nail Art finden Sie in der Tabelle unten.`,
       ],
@@ -57,8 +72,8 @@ export const contentDe = {
     },
     faq: [
       { q: `Was kostet eine Maniküre in Prag 2?`, a: `Die klassische Maniküre kostet 350 CZK, die Maniküre mit Gellak 550 CZK und die Maniküre mit CND Shellac 650 CZK. Vorteilspakete mit Hand-Spa beginnen bei 490 CZK. Die aktuellen Preise finden Sie in der <a href="/cenik/">Preisliste</a>.` },
-      { q: `Was ist der Unterschied zwischen Gellak und CND Shellac?`, a: `Beides sind Gel-Lacke, die in der Lampe aushärten und länger halten als normaler Nagellack. CND Shellac ist ein Markenprodukt, Gellak ist die zweite Gel-Lack-Variante in unserem Angebot. Der Unterschied liegt vor allem im Preis – die Maniküre mit Gellak ist 100 CZK günstiger.` },
-      { q: `Wie lange hält Gel-Lack?`, a: `In der Regel mehrere Wochen. Das hängt davon ab, wie schnell Ihre Nägel wachsen, wie stark Sie Ihre Hände beanspruchen und wie Sie sie pflegen. Sobald der Nagel herausgewachsen ist, empfehlen wir, einen Termin für das Entfernen und eine neue Lackierung zu vereinbaren, damit der Lack nicht reißt oder abblättert.` },
+      { q: `Was ist der Unterschied zwischen Gellak und CND Shellac?`, a: `Beides sind Gel-Lacke, die in der Lampe aushärten und auf eine Unterlack-Basis aufgetragen werden. CND Shellac wirkt dünn, leicht und natürlich, der Naturnagel muss kaum angefeilt werden, er lässt sich durch Einweichen entfernen und hält ungefähr 10 Tage bis 3 Wochen. Gellak ist härter und haftet stärker, hält deshalb in der Regel länger – zum Entfernen ist dafür oft eine elektrische Feile nötig, Einweichen allein reicht nicht immer. Die Preise finden Sie in der <a href="/cenik/">Preisliste</a>.` },
+      { q: `Wie lange hält Gel-Lack?`, a: `CND Shellac hält ungefähr 10 Tage bis 3 Wochen, Gellak ist härter und haftet stärker und hält deshalb in der Regel länger. Die tatsächliche Haltbarkeit hängt von der Beschaffenheit Ihrer Naturnägel und Ihren Alltagsgewohnheiten ab – wer oft mit Wasser oder Reinigungsmitteln zu tun hat oder körperlich arbeitet, bei dem kann sich der Lack früher lösen. Sobald der Nagel herausgewachsen ist, empfehlen wir einen Termin für das Entfernen und eine neue Lackierung.` },
       { q: `Was ist ein Hand-Spa?`, a: `Ein Hand-Spa ist eine verwöhnende zusätzliche Handpflege, die Sie in einem Vorteilspaket zur Maniküre buchen können. Den genauen Ablauf erläutern wir Ihnen gern bei der Terminvereinbarung.` },
       { q: `Kann ich Gel-Lack entfernen lassen, der anderswo aufgetragen wurde?`, a: `Ja, das Entfernen von Shellac / Gellak bieten wir separat an: Shellac für 200 CZK, Gellak für 150 CZK. Bitte ziehen Sie ihn nicht selbst ab, sonst schädigen Sie den Nagel.` },
     ],
@@ -88,6 +103,29 @@ export const contentDe = {
         { title: `Gel-X-Nägel`, text: `Eine moderne Technik, bei der der Nagel mit vorgeformten Gel-Tips verlängert wird. Das Ergebnis wirkt in der Regel leicht und natürlich. Der Preis ist derselbe wie bei neuen Gel- oder Acrylnägeln mit Farbe.` },
       ],
     },
+    notes: {
+      h2: `Gel, Acryl und Gel X: die Materialien im Vergleich`,
+      items: [
+        { h: `Gel`, paras: [
+          `Gel hat eine flüssigere oder dickere Konsistenz, riecht kaum, hat eine mittlere Härte und wird unter einer UV/LED-Lampe ausgehärtet. Es haftet gut, hat eine glatte, glänzende Oberfläche und wirkt auf den Nägeln leicht und natürlich.`,
+          `Es eignet sich vor allem für Nägel ohne größere Unebenheiten und für Kundinnen, die keine besonders anspruchsvolle körperliche Arbeit verrichten. Gel ist flexibler und weicher, daher lässt es sich in der Regel schneller entfernen.`,
+        ] },
+        { h: `Acryl`, paras: [
+          `Acryl entsteht aus der Kombination von Acrylpulver und Liquid. Es hat einen charakteristischen Geruch, ist härter und widerstandsfähiger als Gel und härtet an der Luft aus, ohne UV/LED-Lampe.`,
+          `Es eignet sich besonders für Nagelverlängerungen, zum Modellieren der Form, zur Korrektur von Nägeln mit Unebenheiten und für Kundinnen, die viel mit den Händen arbeiten.`,
+          `Es gibt jedoch keine Regel, dass auf kurzen Nägeln immer Gel verwendet werden muss. Auch auf kurzen Nägeln lässt sich problemlos eine dünne Schicht Acryl auftragen, die die Nägel stärkt und dabei natürlich aussieht. Ob Gel oder Acryl besser zu Ihnen passt, hängt auch von der Beschaffenheit Ihrer Naturnägel ab.`,
+        ] },
+        { h: `Gel-X-Nägel`, paras: [
+          `Eine moderne Methode der Nagelverlängerung mit weichen Vollgel-Tips (Soft Gel Tips), die natürlich aussieht und sich auf den Nägeln sehr leicht anfühlt.`,
+        ] },
+        { h: `Wärme beim Aushärten in der Lampe`, paras: [
+          `Ein leichtes Wärme- oder Brennen-Gefühl beim Aushärten des Gels in der Lampe ist völlig normal. Die Intensität der Wärme kann sich von Termin zu Termin unterscheiden. Wenn Sie bei der aktuellen Anwendung mehr Wärme spüren als beim letzten Mal, kann das daran liegen, dass der Naturnagel nach dem Entfernen des alten Materials vorübergehend dünner ist oder dass eine dickere Gelschicht aufgetragen wurde.`,
+          `Wird die Wärme zu intensiv, ziehen Sie die Hand einfach für einige Sekunden aus der Lampe und legen Sie sie dann wieder hinein.`,
+        ] },
+        { h: `CND Shellac und Gel-Lack (Gellak)`, paras: [
+          `Unsicher, ob Gel, Acryl oder Lack das Richtige ist? CND Shellac ist dünn, lässt sich einweichen und hält ungefähr 10 Tage bis 3 Wochen. Gel-Lack (Gellak) ist härter, haftet stärker und hält in der Regel länger, zum Entfernen ist aber oft eine elektrische Feile nötig. Mehr dazu auf der Seite <a href="/manikura-praha-2/">Maniküre</a>.`,
+        ] },
+      ] },
     guide: {
       h2: `Gel, Acryl oder Gel X: Was passt zu Ihnen?`,
       paras: [
@@ -151,6 +189,19 @@ export const contentDe = {
         { title: `Medical-Pediküre mit Footlogix`, text: `Pediküre mit der professionellen Kosmetik Footlogix, ausgerichtet auf die Pflege trockener und strapazierter Fußhaut, Hornhautstellen und rissiger Fersen. Es handelt sich nicht um eine ärztliche Behandlung. Sie lässt sich mit der Lackierung Gellak oder CND Shellac kombinieren.` },
       ],
     },
+    notes: {
+      h2: `Footlogix Pedicure: professionelle Fußpflege`,
+      items: [
+        { h: `Was Footlogix Pedicure ist`, paras: [
+          `Footlogix Pedicure ist eine professionelle Pflege für die intensive Behandlung von Füßen und Fersen mit Produkten der kanadischen Marke Footlogix.`,
+          `Footlogix ist eine renommierte Marke und gehört zu den Pionieren des Konzepts, das Kosmetikpflege mit einem professionellen Umgang mit Problemen der Fußhaut verbindet – dem sogenannten „Pediceutical“.`,
+          `Anders als die klassische Fersenbehandlung, bei der oft nur Feile, Schleifer oder langes Einweichen im Wasser zum Einsatz kommen, setzt Footlogix auf eine sichere und gezielte Lösung von Problemen der Fußhaut.`,
+        ] },
+        { h: `Für wen sie geeignet ist`, paras: [
+          `Die Behandlung ist schonend, professionell und kann sehr gute Ergebnisse bringen.`,
+          `Sie eignet sich auch für Personen mit empfindlicher Haut und kann bei fachgerechter Anwendung auch für Kundinnen und Kunden mit Diabetes oder Schwangerschaftsdiabetes eine geeignete Wahl sein. In diesen Fällen bitten wir Sie, das Team vorab immer über Ihren Gesundheitszustand zu informieren.`,
+        ] },
+      ] },
     guide: {
       h2: `Welche Pediküre ist die richtige?`,
       paras: [
@@ -184,7 +235,8 @@ export const contentDe = {
       { q: `Was ist Footlogix?`, a: `Footlogix ist eine Linie professioneller Fußkosmetik, vor allem für trockene und strapazierte Haut. In unserer Preisliste ist die Medical-Pediküre mit Footlogix mit Gellak oder CND Shellac erhältlich.` },
       { q: `Wie oft sollte ich zur Pediküre gehen?`, a: `In der Regel alle vier bis sechs Wochen, je nach Nagelwachstum und Beanspruchung der Füße. Bei lackierten Nägeln richten Sie sich nach der Haltbarkeit Ihres Lacks.` },
       { q: `Kann ich mit Diabetes oder Nagelpilz zur Pediküre kommen?`, a: `Bitte sprechen Sie zuerst mit Ihrem Arzt. Die Pediküre im Studio ist Kosmetik und ersetzt keine ärztliche Behandlung. Teilen Sie uns eventuelle gesundheitliche Probleme vor dem Termin mit.` },
-      { q: `Wie lange hält Lack an den Zehennägeln?`, a: `Gel-Lack hält in der Regel mehrere Wochen. Das hängt vom Nagelwachstum und vom getragenen Schuhwerk ab.` },
+      { q: `Wie lange hält Lack an den Zehennägeln?`, a: `Das hängt vom Nagelwachstum, vom getragenen Schuhwerk und vom gewählten Lack ab – CND Shellac ist dünner und lässt sich leichter einweichen, Gellak ist härter und hält in der Regel länger.` },
+      { q: `Ist die Footlogix-Pediküre für Menschen mit Diabetes geeignet?`, a: `Bei fachgerechter Anwendung kann sie auch für Kundinnen und Kunden mit Diabetes oder Schwangerschaftsdiabetes eine geeignete Wahl sein. In diesen Fällen bitten wir Sie, das Team vorab immer über Ihren Gesundheitszustand zu informieren.` },
     ],
   },
 
@@ -213,6 +265,25 @@ export const contentDe = {
         { title: `Design-Effekt und Entfernen`, text: `Wimpernverlängerung mit einem besonderen Effekt, den wir bei der Terminvereinbarung besprechen. Wenn Sie die Wimpern entfernen lassen möchten, überlassen Sie das uns – zu Hause drohen Schäden an den Naturwimpern.` },
       ],
     },
+    notes: {
+      h2: `Design-Wimpern und die Gesundheit Ihrer Naturwimpern`,
+      items: [
+        { h: `Design-Wimpernverlängerung`, paras: [
+          `Design-Wimpern haben eine besondere Schichtung und eine ausgeprägtere Form, deshalb sehen sie am besten aus, wenn sie regelmäßig durchgekämmt und in Form gebracht werden. Diese Art der Wimpernverlängerung erfordert von der Kundin im Alltag etwas mehr Pflege.`,
+          `Wenn Sie möchten, dass die Wimpern etwa 3–4 Wochen schön bleiben, ohne dass Sie sich täglich viel Zeit für das Stylen nehmen müssen, empfehlen wir Ihnen gern schlichtere Styles wie Classic oder Volume, die Ihren Bedürfnissen besser entsprechen können.`,
+        ] },
+        { h: `Die Gesundheit Ihrer Naturwimpern steht an erster Stelle`, paras: [
+          `Die Gesundheit Ihrer Naturwimpern steht für uns immer an erster Stelle.`,
+          `Sind Ihre Naturwimpern fein, schwach oder spärlich, kann eine zu dichte oder zu lange Verlängerung eine übermäßige Belastung darstellen. Die Naturwimpern brechen dann leichter, fallen eher aus, und ihre Regeneration kann länger dauern.`,
+          `In diesem Fall empfehlen wir Ihnen einen leichteren, natürlicheren Wimpernstil, der die Form Ihrer Augen betont und Ihre Naturwimpern zugleich schützt.`,
+          `Sind die Naturwimpern zu stark geschwächt, empfehlen wir, die Verlängerung vorübergehend zu entfernen und eine Zeit lang ein Wimpernserum oder eine andere kräftigende Pflege zu verwenden. Nach der Regeneration lassen sich die Wimpern wieder sicher verlängern.`,
+        ] },
+        { h: `Sehr dichte Verlängerung auf Wunsch`, paras: [
+          `Hat eine Kundin schwache oder feine Naturwimpern und wünscht sich trotzdem eine sehr dichte Verlängerung, können wir die Behandlung nach vorheriger Beratung und Aufklärung über die möglichen Risiken auf Wunsch durchführen.`,
+          `Vor der Anwendung wird die Kundin gebeten, die durchgeführte Beratung schriftlich zu bestätigen.`,
+          `Für Wimpernbruch oder Wimpernverlust infolge übermäßiger Belastung, der auf den individuellen Wunsch der Kundin zurückgeht, gelten unsere Garantie und ein Anspruch auf Kompensation nicht.`,
+        ] },
+      ] },
     guide: {
       h2: `So wählen Sie die Wimpernart`,
       paras: [

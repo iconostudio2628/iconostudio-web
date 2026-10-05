@@ -103,7 +103,7 @@ Co je na všech stránkách služeb:
 - Odkazy „Na této stránce“ (kotvy) pod hlavičkou.
 
 ### Barvy: jen dvě pozadí
-Celý web má přesně dvě barvy pozadí: **černou** (`--black`) a **krémovou** (`--cream`). `--paper` a `--cream-deep` jsou jen aliasy na krémovou.
+Celý web má přesně dvě barvy pozadí: **černou** (`--black`) a **béžovou** (`--cream`, `#e3d1b3` – přání klienta, dříve krémová `#f1e9d9`). `--paper` a `--cream-deep` jsou jen aliasy na krémovou.
 Pravidlo: černá = hlavička, hero, CTA pásy, závěrečné CTA a patička (na úvodní stránce i „Proč ICONO“); veškerý obsah je krémový.
 Dvě krémové sekce za sebou se oddělují tenkou linkou, karty a tabulky jsou jen obrysové (bez další výplně). Ilustrace v `images/art`
 (`npm run art`) jsou vykreslené na stejné černé a krémové.

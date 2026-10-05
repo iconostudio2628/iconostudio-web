@@ -417,7 +417,7 @@ export function layout({ title, description, path, body, robots, schema = [], bo
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  ${preload ? `<link rel="preload" as="image" href="${preload.href}" imagesrcset="${preload.srcset}" imagesizes="100vw" fetchpriority="high">` : ''}
+  ${preload ? `<link rel="preload" as="image" href="${preload.href}"${preload.srcset ? ` imagesrcset="${preload.srcset}" imagesizes="100vw"` : ''} fetchpriority="high">` : ''}
   ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n  ')}
 </head>
 <body class="${bodyClass}" data-route="${key || ''}" data-lang="${l}">

@@ -222,7 +222,7 @@ export const priceGroups = [
         { id: 'pece-myti-od', name: 'Mytí hlavy', price: 250, from: true, includes: ['Klasické', 'S masáží', 'Styling'] },
         { id: 'pece-kosmetika', name: 'Pánská kosmetika / Mytí obličeje VIP', price: 850, includes: ['Mytí obličeje / masáž obličeje', 'Vyčištění pleti', 'Kosmetika s hydratací (Pára a maska)', 'Krém s hydratací'] },
         { id: 'pece-masaz', name: 'Masáž hlavy', price: 150 },
-        { id: 'pece-myti', name: 'Mytí hlavy', price: 100 },
+        { id: 'pece-myti', name: 'Mytí hlavy navíc', price: 100 },
       ] },
     ],
   },

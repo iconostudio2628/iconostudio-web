@@ -139,11 +139,10 @@ const svcHero = ({ trail, eyebrow, h1, text, image, extra = '' }) => `
 export function home() {
   const barber = byArea('barber');
   const nails = byArea('nails', 'beauty');
-  const h = site.photos.hero;
+  const pb = site.photos.barber; const pn = site.photos.nails;
   const why = tList('home.why.items');
   const body = `
-  <section class="hero${h ? ' hero--photo' : ''}" id="hero">
-    ${h ? `<div class="hero-bg" aria-hidden="false"><img src="${h.src}" srcset="${h.srcset}" sizes="100vw" alt="${esc(t('photos.hero'))}" width="${h.width}" height="${h.height}" fetchpriority="high" decoding="async"></div>` : ''}
+  <section class="hero hero--photo hero--blobs" id="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow" data-hero>${t('home.hero.eyebrow')}</p>
@@ -160,6 +159,11 @@ export function home() {
         </div>
         <p class="hero-addr" data-hero>${icon('pin')}<span>${site.street} · ${t('city')} – ${site.district}</span></p>
       </div>
+      <div class="hero-side">
+      <div class="hero-photos">
+        <figure class="blob-photo blob-photo--a"><img src="${pb.src}" alt="${esc(t('photos.barber'))}" width="${pb.width}" height="${pb.height}" fetchpriority="high" decoding="async"></figure>
+        <figure class="blob-photo blob-photo--b"><img src="${pn.src}" alt="${esc(t('photos.nails'))}" width="${pn.width}" height="${pn.height}" decoding="async"></figure>
+      </div>
       <aside class="hero-card" data-hero aria-label="${esc(t('home.hero.cardAria'))}">
         <div class="hero-card-body">
           <p class="hero-card-label">${t('location.eyebrow')}</p>
@@ -171,6 +175,7 @@ export function home() {
           <a class="text-link" href="${links.directions}" target="_blank" rel="noopener" data-track="click_directions">${t('btn.directions')}</a>
         </div>
       </aside>
+      </div>
     </div>
   </section>
 
@@ -260,7 +265,7 @@ export function home() {
   return layout({
     title: t('home.title'), description: t('home.description'),
     path: '/', body, bodyClass: 'page-home', home: true,
-    preload: h ? { href: h.src, srcset: h.srcset } : null,
+    preload: { href: pb.src },
   });
 }
 
@@ -375,7 +380,7 @@ export function barbershop() {
 // Every service page = shared building blocks + its own signature block, section order and CTA copy
 // (src/service-extras.mjs). While the page renders, setOrderMessage() makes every WhatsApp / SMS button on it
 // (header, hero, bands, footer, sticky bar) carry a message that names the service.
-const CHIP_SECTIONS = { options: 'varianty', price: 'cenik', guide: 'jak-vybrat', steps: 'postup', care: 'pece', combos: 'kombinace', faq: 'faq', location: 'lokalita' };
+const CHIP_SECTIONS = { options: 'varianty', price: 'cenik', guide: 'jak-vybrat', notes: 'dobre-vedet', steps: 'postup', care: 'pece', combos: 'kombinace', faq: 'faq', location: 'lokalita' };
 // Two backgrounds only: every content section is cream; black is reserved for the hero, the CTA bands, the final CTA and the footer.
 
 const evidenceSection = (slug, tone) => {
@@ -431,6 +436,13 @@ function renderServicePage(slug) {
       <div class="guide-body">${para(p.guide.paras)}</div>
     </div>
   </section>`,
+    notes: (tn) => `
+  <section class="section section--${tn} notes" id="dobre-vedet">
+    <div class="wrap prose-2" data-reveal>
+      <div><p class="eyebrow">${c.chips.notes}</p><h2>${p.notes.h2}</h2></div>
+      <div class="notes-body">${p.notes.items.map((n) => `<div class="note"><h3>${n.h}</h3>${para(n.paras)}</div>`).join('')}</div>
+    </div>
+  </section>`,
     steps: (tn) => steps(p.steps, tn, 'postup'),
     care: (tn) => `
   <section class="section section--${tn}" id="pece">
@@ -454,7 +466,7 @@ function renderServicePage(slug) {
   };
 
   // order from the config; real photos / reviews (if the owner has added any) slot in before the FAQ
-  const order = cfg.order.filter((tok) => tok !== 'steps' || p.steps).flatMap((tok) => (tok === 'faq' ? ['evidence', 'faq'] : [tok]));
+  const order = cfg.order.filter((tok) => (tok !== 'steps' || p.steps) && (tok !== 'notes' || p.notes)).flatMap((tok) => (tok === 'faq' ? ['evidence', 'faq'] : [tok]));
   const chips = [];
   const html = order.map((tok) => {
     const sig = /^sig(\d+)$/.exec(tok);
