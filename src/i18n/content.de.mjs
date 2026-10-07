@@ -169,7 +169,7 @@ export const contentDe = {
     name: `Pediküre`,
     cardText: `Klassisch, mit Gel-Lack sowie Medical-Pediküre mit Footlogix.`,
     title: `Pediküre Prag 2 | Klassisch & Footlogix | ICONO STUDIO`,
-    description: `Pediküre in der Bělehradská 77 in Prag 2: klassisch ab 490 CZK, mit Gel-Lack ab 590 CZK, Medical-Pediküre mit Footlogix ab 750 CZK. Vorteilspakete mit Fuß-Spa.`,
+    description: `Pediküre in der Bělehradská 77 in Prag 2: klassisch ab 490 CZK, mit Gel-Lack ab 590 CZK, Medical-Pediküre mit Footlogix ab 590 CZK. Vorteilspakete mit Fuß-Spa.`,
     h1: `Pediküre Prag 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Klassische und lackierte Pediküre sowie Medical-Pediküre mit Footlogix in der Bělehradská 77. Wählen Sie die reine Fußpflege oder ein Vorteilspaket mit Fuß-Spa.`,
     imageAlt: `Fuß mit lackierten Fußnägeln – Pediküre im ICONO STUDIO`,
@@ -186,7 +186,7 @@ export const contentDe = {
       items: [
         { title: `Klassische Pediküre`, text: `Die Grundlage der Fußpflege: Pflege von Nägeln und Nagelhaut, Entfernen von Hornhaut und Hautpflege. Geeignet für regelmäßige Pflege. Im Paket ist zusätzlich ein Fuß-Spa enthalten.` },
         { title: `Pediküre mit Lackierung`, text: `Pediküre kombiniert mit der Lackierung mit Gellak oder CND Shellac. Wenn Sie Ihre Zehennägel nur färben möchten, wählen Sie die reine Lackierung. Die Farbe hält mehrere Wochen, und die Nägel sind nach dem Auftragen sofort trocken – bequem in Sandalen und in Schuhen.` },
-        { title: `Medical-Pediküre mit Footlogix`, text: `Pediküre mit der professionellen Kosmetik Footlogix, ausgerichtet auf die Pflege trockener und strapazierter Fußhaut, Hornhautstellen und rissiger Fersen. Es handelt sich nicht um eine ärztliche Behandlung. Sie lässt sich mit der Lackierung Gellak oder CND Shellac kombinieren.` },
+        { title: `Medical-Pediküre mit Footlogix`, text: `Pediküre mit der professionellen Kosmetik Footlogix, ausgerichtet auf die Pflege trockener und strapazierter Fußhaut, Hornhautstellen und rissiger Fersen. Es handelt sich nicht um eine ärztliche Behandlung. Sie ist als Classic-Variante ohne Farbe oder mit Gellak- bzw. CND-Shellac-Lackierung erhältlich.` },
       ],
     },
     notes: {
@@ -231,7 +231,7 @@ export const contentDe = {
       ],
     },
     faq: [
-      { q: `Was kostet eine Pediküre in Prag 2?`, a: `Die klassische Pediküre kostet 490 CZK, die Pediküre mit Gellak 590 CZK und die Pediküre mit CND Shellac 650 CZK. Die Medical-Pediküre mit Footlogix beginnt bei 750 CZK. Vorteilspakete mit Fuß-Spa gibt es ab 590 CZK. Die vollständigen Preise stehen in der <a href="/cenik/">Preisliste</a>.` },
+      { q: `Was kostet eine Pediküre in Prag 2?`, a: `Die klassische Pediküre kostet 490 CZK, die Pediküre mit Gellak 590 CZK und die Pediküre mit CND Shellac 650 CZK. Die Medical-Pediküre mit Footlogix beginnt bei 590 CZK. Vorteilspakete mit Fuß-Spa gibt es ab 590 CZK. Die vollständigen Preise stehen in der <a href="/cenik/">Preisliste</a>.` },
       { q: `Was ist Footlogix?`, a: `Footlogix ist eine Linie professioneller Fußkosmetik, vor allem für trockene und strapazierte Haut. In unserer Preisliste ist die Medical-Pediküre mit Footlogix mit Gellak oder CND Shellac erhältlich.` },
       { q: `Wie oft sollte ich zur Pediküre gehen?`, a: `In der Regel alle vier bis sechs Wochen, je nach Nagelwachstum und Beanspruchung der Füße. Bei lackierten Nägeln richten Sie sich nach der Haltbarkeit Ihres Lacks.` },
       { q: `Kann ich mit Diabetes oder Nagelpilz zur Pediküre kommen?`, a: `Bitte sprechen Sie zuerst mit Ihrem Arzt. Die Pediküre im Studio ist Kosmetik und ersetzt keine ärztliche Behandlung. Teilen Sie uns eventuelle gesundheitliche Probleme vor dem Termin mit.` },

@@ -191,7 +191,7 @@ export const servicePagesBase = [
     slug: 'pedikura-praha-2', area: 'nails', name: 'Pedikúra', art: 'pedikura', photo: null,
     cardText: 'Classic, s gel lakem i medicínální pedikúra Footlogix.',
     title: 'Pedikúra Praha 2 – Classic, Gellak, Footlogix | ICONO STUDIO',
-    description: 'Pedikúra na Bělehradské 77 v Praze 2: klasická od 490 Kč, s gel lakem od 590 Kč, medicínální s Footlogix od 750 Kč. Výhodné balíčky s foot spa.',
+    description: 'Pedikúra na Bělehradské 77 v Praze 2: klasická od 490 Kč, s gel lakem od 590 Kč, medicínální s Footlogix od 590 Kč. Výhodné balíčky s foot spa.',
     h1: 'Pedikúra Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Klasická i lakovaná pedikúra a medicínální pedikúra Footlogix na Bělehradské 77. Vyberte si samotnou péči o chodidla, nebo výhodný balíček s foot spa.',
     imageAlt: 'Chodidlo s lakovanými nehty na nohou – pedikúra v ICONO STUDIO',
@@ -209,7 +209,7 @@ export const servicePagesBase = [
       items: [
         { title: 'Klasická pedikúra', ids: ['ped-classic', 'ped-pk-classic'], text: 'Základ péče o chodidla: úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky. Hodí se pro pravidelnou údržbu. V balíčku je navíc foot spa.' },
         { title: 'Pedikúra s lakováním', ids: ['ped-gellak', 'ped-cnd', 'ped-pk-gellak', 'ped-pk-cnd', 'ped-lak'], text: 'Pedikúra spojená s lakováním gel lakem Gellak nebo CND Shellac. Pokud potřebujete nohy jen nabarvit, vyberte samotné lakování. Barva drží několik týdnů a nehty jsou po aplikaci hned suché, takže jsou pohodlné do sandálů i do bot.' },
-        { title: 'Medicínální pedikúra Footlogix', ids: ['ped-med-gellak', 'ped-med-cnd', 'ped-pk-fl-gellak', 'ped-pk-fl-cnd'], text: 'Pedikúra s profesionální kosmetikou Footlogix, zaměřená na péči o suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Nejde o lékařské ošetření. Lze ji kombinovat s lakováním Gellak nebo CND Shellac.' },
+        { title: 'Medicínální pedikúra Footlogix', ids: ['ped-med-classic', 'ped-med-gellak', 'ped-med-cnd', 'ped-pk-fl-gellak', 'ped-pk-fl-cnd'], text: 'Pedikúra s profesionální kosmetikou Footlogix, zaměřená na péči o suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Nejde o lékařské ošetření. Je k dispozici v provedení Classic bez barvy nebo s lakováním Gellak či CND Shellac.' },
       ],
     },
     notes: {
@@ -254,7 +254,7 @@ export const servicePagesBase = [
       ],
     },
     faq: [
-      { q: 'Kolik stojí pedikúra v Praze 2?', a: 'Klasická pedikúra stojí 490 Kč, pedikúra s Gellakem 590 Kč a pedikúra s CND Shellac 650 Kč. Medicínální pedikúra Footlogix začíná na 750 Kč. Výhodné balíčky s foot spa jsou od 590 Kč. Kompletní ceny jsou v <a href="/cenik/">ceníku</a>.' },
+      { q: 'Kolik stojí pedikúra v Praze 2?', a: 'Klasická pedikúra stojí 490 Kč, pedikúra s Gellakem 590 Kč a pedikúra s CND Shellac 650 Kč. Medicínální pedikúra Footlogix začíná na 590 Kč. Výhodné balíčky s foot spa jsou od 590 Kč. Kompletní ceny jsou v <a href="/cenik/">ceníku</a>.' },
       { q: 'Co je Footlogix?', a: 'Footlogix je řada profesionální kosmetiky pro péči o nohy, určená zejména pro suchou a namáhanou pokožku. V našem ceníku je medicínální pedikúra Footlogix k dispozici s lakováním Gellak nebo CND Shellac.' },
       { q: 'Jak často chodit na pedikúru?', a: 'Obvykle jednou za čtyři až šest týdnů, podle růstu nehtů a toho, jak nohy zatěžujete. Pokud máte lakované nehty, počítejte s udržováním podle toho, jak dlouho vám lak drží.' },
       { q: 'Mohu přijít na pedikúru s cukrovkou nebo plísní nehtů?', a: 'Nejdřív se prosím poraďte s lékařem. Pedikúra ve studiu je kosmetická péče a nenahrazuje lékařské ošetření. Před návštěvou nám případné zdravotní potíže napište.' },

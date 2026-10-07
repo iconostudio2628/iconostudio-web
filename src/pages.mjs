@@ -6,7 +6,7 @@ import {
 import { getServicePages, pageBySlug, photos, areaMeta } from './content.mjs';
 import {
   esc, icon, btnWhatsapp, btnCall, linkSms, breadcrumbs, breadcrumbSchema, serviceSchema,
-  hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, faqSection, finalCta, galleryGrid,
+  hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, faqSection, finalCta, galleryGrid,
   reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed,
 } from './layout.mjs';
 import { t, tList, getLang, pathFor, lp } from './i18n/index.mjs';
@@ -40,7 +40,7 @@ const faqWhere = () => ({
 const faqHours = () => ({ q: t('faqs.hours.q'), a: t('faqs.hours.a', { hours: hoursSummary() }) });
 const faqPrices = () => ({ q: t('faqs.prices.q'), a: t('faqs.prices.a') });
 
-const photo = (p, alt, cls = '') => (p ? `<img class="${cls}" src="${p.src}" alt="${esc(alt)}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async">` : '');
+const photo = (p, alt, cls = '', sizes = '(min-width: 900px) 50vw, 100vw') => (p ? `<img class="${cls}" src="${p.src}"${p.srcset ? ` srcset="${p.srcset}" sizes="${sizes}"` : ''} alt="${esc(alt)}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async">` : '');
 const para = (arr) => arr.map((x) => `<p>${x}</p>`).join('');
 const lc = (s) => (getLang() === 'cs' ? s.toLowerCase() : s); // German nouns stay capitalised
 
@@ -100,13 +100,11 @@ const priceTeaser = (areas = ['nails', 'beauty', 'barber'], { tone = 'white', he
   </section>`;
 
 const mapSection = () => {
-  const e = site.photos.entrance;
   return `
   <section class="section section--white" id="mapa">
     <div class="wrap">
       <div class="section-head" data-reveal><div><p class="eyebrow">${t('map.eyebrow')}</p><h2>${t('map.heading')}</h2><p class="lead">${t('map.lead')}</p></div><a class="text-link" href="${links.directions}" target="_blank" rel="noopener" data-track="click_directions">${t('btn.directions')}</a></div>
-      <div class="map-split" data-reveal>
-        ${e ? `<figure class="loc-photo"><img src="${e.src}" alt="${esc(t('photos.entrance'))}" width="${e.width}" height="${e.height}" loading="lazy" decoding="async"></figure>` : ''}
+      <div class="map-split map-split--solo" data-reveal>
         ${mapEmbed()}
       </div>
     </div>
@@ -161,8 +159,8 @@ export function home() {
       </div>
       <div class="hero-side">
       <div class="hero-photos">
-        <figure class="blob-photo blob-photo--a"><img src="${pb.src}" alt="${esc(t('photos.barber'))}" width="${pb.width}" height="${pb.height}" fetchpriority="high" decoding="async"></figure>
-        <figure class="blob-photo blob-photo--b"><img src="${pn.src}" alt="${esc(t('photos.nails'))}" width="${pn.width}" height="${pn.height}" decoding="async"></figure>
+        <figure class="blob-photo blob-photo--a"><img src="${pb.src}" srcset="${pb.srcset}" sizes="(min-width: 960px) 420px, 62vw" alt="${esc(t('photos.barber'))}" width="${pb.width}" height="${pb.height}" fetchpriority="high" decoding="async"></figure>
+        <figure class="blob-photo blob-photo--b"><img src="${pn.src}" srcset="${pn.srcset}" sizes="(min-width: 960px) 260px, 40vw" alt="${esc(t('photos.nails'))}" width="${pn.width}" height="${pn.height}" decoding="async"></figure>
       </div>
       <aside class="hero-card" data-hero aria-label="${esc(t('home.hero.cardAria'))}">
         <div class="hero-card-body">
@@ -256,16 +254,17 @@ export function home() {
     </div>
   </section>` : ''}
 
+  ${studioSection('light')}
   ${reviewsSection()}
   ${teamSection()}
-  ${locationSection({ tone: 'light' })}
+  ${locationSection({ tone: 'light', photo: false })}
   ${faqSection([faqOrder(), faqHours(), faqWhere(), faqPrices()], { tone: 'white' })}
   ${finalCta()}`;
 
   return layout({
     title: t('home.title'), description: t('home.description'),
     path: '/', body, bodyClass: 'page-home', home: true,
-    preload: { href: pb.src },
+    preload: { href: pb.src, srcset: pb.srcset, sizes: '(min-width: 960px) 420px, 62vw' },
   });
 }
 
@@ -571,6 +570,7 @@ export function kontakt() {
     </div>
   </section>
 
+  ${studioSection('light')}
   ${mapSection()}
   ${orderSteps('light')}
 

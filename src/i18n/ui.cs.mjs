@@ -8,7 +8,7 @@ export default {
   skip: 'Přeskočit na obsah',
   brandLabel: 'ICONO STUDIO – Nails & Barber, úvodní stránka',
   logoAlt: 'ICONO STUDIO Nails & Barber',
-  ogAlt: 'ICONO STUDIO – Nails & Barber, Praha 2',
+  ogAlt: 'ICONO STUDIO – Nails & Barber, Bělehradská 77, Praha 2: výloha a vchod studia',
   legal: { ico: 'IČO' },
 
   nav: {
@@ -49,11 +49,15 @@ export default {
     eyebrow: 'Kde nás najdete',
     lead: 'Najdete nás na Bělehradské ve Vinohradech, v okolí I. P. Pavlova a náměstí Míru.',
   },
+  studio: { eyebrow: 'Studio', heading: 'Takhle nás najdete na Bělehradské', lead: 'Poznáte nás podle černé cedule s bílým nápisem ICONO STUDIO Nails & Barber a kadeřnického sloupku ve výloze.' },
   photos: {
     hero: 'Barber stříhá vlasy nůžkami a hřebenem v ICONO STUDIO',
     barber: 'Pánský střih a fade strojkem v ICONO STUDIO na Bělehradské v Praze 2',
     nails: 'Manikúra a lakování nehtů v ICONO STUDIO v Praze 2',
     entrance: 'Vstup do ICONO STUDIO na Bělehradské 77 v Praze 2',
+    studioA: 'Výloha a černá cedule ICONO STUDIO Nails & Barber na Bělehradské 77 v Praze 2',
+    studioB: 'Vchod a výloha ICONO STUDIO s kadeřnickým sloupkem, pohled zepředu',
+    studioC: 'ICONO STUDIO v ulici Bělehradská v Praze 2 – cedule, výloha a vchod',
   },
   faq: { heading: 'Časté dotazy', eyebrow: 'FAQ' },
   cta: { heading: 'Chcete termín? Napište nám.', text: 'Vyberte způsob, který vám vyhovuje.' },

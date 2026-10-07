@@ -70,7 +70,7 @@ const CFG = {
       items: [
         { ids: [P('ped-classic')] },
         { ids: [P('ped-gellak'), P('ped-cnd')] },
-        { ids: [P('ped-med-gellak'), P('ped-med-cnd')] },
+        { ids: [P('ped-med-classic'), P('ped-med-gellak'), P('ped-med-cnd')] },
         { ids: [P('ped-pk-classic'), P('ped-pk-gellak'), P('ped-pk-cnd')] },
       ],
     }],

@@ -169,7 +169,7 @@ export const contentEn = {
     name: `Pedicure`,
     cardText: `Classic, with gel polish and medical pedicure with Footlogix.`,
     title: `Pedicure Prague 2 | Classic & Footlogix | ICONO STUDIO`,
-    description: `Pedicure at Bělehradská 77 in Prague 2: classic from 490 CZK, with gel polish from 590 CZK, medical pedicure with Footlogix from 750 CZK. Foot spa packages.`,
+    description: `Pedicure at Bělehradská 77 in Prague 2: classic from 490 CZK, with gel polish from 590 CZK, medical pedicure with Footlogix from 590 CZK. Foot spa packages.`,
     h1: `Pedicure Prague 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Classic and polished pedicure plus medical pedicure with Footlogix at Bělehradská 77. Choose simple foot care or a value package with foot spa.`,
     imageAlt: `Foot with polished toenails – pedicure at ICONO STUDIO`,
@@ -186,7 +186,7 @@ export const contentEn = {
       items: [
         { title: `Classic pedicure`, text: `The foundation of foot care: nail and cuticle care, removal of hardened skin and skin treatment. Suitable for regular maintenance. The package adds a foot spa.` },
         { title: `Pedicure with polish`, text: `A pedicure combined with Gellak or CND Shellac gel polish. If you only need your toes coloured, choose polish only. The colour lasts several weeks and the nails are dry right after application, so they are comfortable in sandals and in shoes.` },
-        { title: `Medical pedicure with Footlogix`, text: `A pedicure using Footlogix professional skincare, focused on dry and stressed skin, hardened areas and cracked heels. This is not a medical treatment. It can be combined with Gellak or CND Shellac polish.` },
+        { title: `Medical pedicure with Footlogix`, text: `A pedicure using Footlogix professional skincare, focused on dry and stressed skin, hardened areas and cracked heels. This is not a medical treatment. It is available as a Classic version without colour or with Gellak or CND Shellac polish.` },
       ],
     },
     notes: {
@@ -231,7 +231,7 @@ export const contentEn = {
       ],
     },
     faq: [
-      { q: `How much does a pedicure cost in Prague 2?`, a: `A classic pedicure costs 490 CZK, a pedicure with Gellak 590 CZK and a pedicure with CND Shellac 650 CZK. A medical pedicure with Footlogix starts at 750 CZK. Value packages with foot spa start at 590 CZK. The full prices are in the <a href="/cenik/">price list</a>.` },
+      { q: `How much does a pedicure cost in Prague 2?`, a: `A classic pedicure costs 490 CZK, a pedicure with Gellak 590 CZK and a pedicure with CND Shellac 650 CZK. A medical pedicure with Footlogix starts at 590 CZK. Value packages with foot spa start at 590 CZK. The full prices are in the <a href="/cenik/">price list</a>.` },
       { q: `What is Footlogix?`, a: `Footlogix is a range of professional foot skincare, designed above all for dry and stressed skin. In our price list, the medical pedicure with Footlogix is available with Gellak or CND Shellac polish.` },
       { q: `How often should I get a pedicure?`, a: `Usually once every four to six weeks, depending on how fast your nails grow and how hard you are on your feet. If your nails are polished, plan maintenance according to how long your polish lasts.` },
       { q: `Can I get a pedicure if I have diabetes or a fungal nail infection?`, a: `Please consult a doctor first. A pedicure at the studio is cosmetic care and does not replace medical treatment. Before your visit, please tell us about any health problems.` },

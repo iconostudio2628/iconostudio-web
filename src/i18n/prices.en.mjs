@@ -42,6 +42,7 @@ export const pricesEn = {
   'Výhodný balíček s lakováním gellak + foot spa': 'Value package: with Gellak polish + foot spa',
   'Medicínální pedikúra Footlogix CND Shellac': 'Medical pedicure Footlogix CND Shellac',
   'Medicínální pedikúra Footlogix Gellak': 'Medical pedicure Footlogix Gellak',
+  'Medicínální pedikúra Footlogix Classic': 'Medical pedicure Footlogix Classic',
   'Pedikúra Classic': 'Classic pedicure',
   'Pedikúra – Gellak': 'Pedicure – Gellak',
   'Pedikúra – CND Shellac': 'Pedicure – CND Shellac',

@@ -135,7 +135,8 @@
   const heroLines = $$('.hero-title .line > span');
   if (heroLines.length) intro.from(heroLines, { yPercent: 110, duration: 1.1, stagger: 0.12 });
   const heroItems = $$('[data-hero]');
-  if (heroItems.length) intro.from(heroItems, { y: 32, opacity: 0, duration: 0.9, stagger: 0.1, ...clean }, heroLines.length ? '-=0.7' : 0);
+  // slide only (no opacity): content that is hidden until the script runs delays the largest contentful paint
+  if (heroItems.length) intro.from(heroItems, { y: 24, duration: 0.9, stagger: 0.1, ...clean }, heroLines.length ? '-=0.7' : 0);
 
   // Fade-up reveals
   const reveal = (targets, trigger, vars = {}) => gsap.from(targets, {
@@ -148,8 +149,12 @@
   // Statement: words light up while scrolling
   $$('[data-words]').forEach((el) => {
     const words = el.textContent.trim().split(/\s+/);
-    el.setAttribute('aria-label', el.textContent.trim());
+    const full = el.textContent.trim();
     el.textContent = '';
+    const sr = document.createElement('span');
+    sr.className = 'sr-only';
+    sr.textContent = full;
+    el.appendChild(sr);
     const spans = words.map((w, i) => {
       const s = document.createElement('span');
       s.className = 'word';
@@ -159,7 +164,7 @@
       if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
       return s;
     });
-    gsap.fromTo(spans, { opacity: 0.16 }, {
+    gsap.fromTo(spans, { opacity: 0.4 }, {
       opacity: 1, ease: 'none', stagger: 0.12,
       scrollTrigger: { trigger: el, start: 'top 82%', end: 'bottom 45%', scrub: true },
     });
@@ -168,7 +173,7 @@
   // Hero photo blobs: settle in on load, then drift at different speeds
   const blobPhotos = $$('.blob-photo');
   if (blobPhotos.length) {
-    intro.from(blobPhotos, { scale: 0.85, opacity: 0, duration: 1.4, stagger: 0.18, ease: 'power3.out', ...clean }, 0.2);
+    intro.from(blobPhotos, { scale: 0.9, duration: 1.4, stagger: 0.18, ease: 'power3.out', ...clean }, 0.2);
     blobPhotos.forEach((el, i) => gsap.to(el, { yPercent: i ? -10 : 6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } }));
   }
 

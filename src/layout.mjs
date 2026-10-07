@@ -107,8 +107,8 @@ export const mapEmbed = () => `
 export const idLine = () => `<p class="ico-line">${esc(site.legalName)} · ${t('legal.ico')} ${site.ico}</p>`;
 export const addressLine = () => `${site.postalCode} ${t('city')} – ${site.district}`;
 
-export const locationSection = ({ heading = t('location.heading'), tone = 'light' } = {}) => {
-  const e = site.photos.entrance;
+export const locationSection = ({ heading = t('location.heading'), tone = 'light', photo = true } = {}) => {
+  const e = photo ? site.photos.entrance : null;
   const text = `
       <div data-reveal>
         <p class="eyebrow">${t('location.eyebrow')}</p>
@@ -137,7 +137,7 @@ export const locationSection = ({ heading = t('location.heading'), tone = 'light
     <div class="wrap">
       <div class="${e ? 'loc-top' : 'split-2'}">
         ${text}
-        ${e ? `<figure class="loc-photo" data-reveal><img src="${e.src}" alt="${esc(t('photos.entrance'))}" width="${e.width}" height="${e.height}" loading="lazy" decoding="async"></figure>` : `<div data-reveal>${mapEmbed()}</div>`}
+        ${e ? `<figure class="loc-photo" data-reveal><img src="${e.src}" srcset="${e.srcset}" sizes="(min-width: 900px) 50vw, 100vw" alt="${esc(t('photos.entrance'))}" width="${e.width}" height="${e.height}" loading="lazy" decoding="async"></figure>` : `<div data-reveal>${mapEmbed()}</div>`}
       </div>
       ${e ? `<div class="loc-map" data-reveal>${mapEmbed()}</div>` : ''}
     </div>
@@ -231,6 +231,21 @@ export const serviceCard = (page, { eager = false } = {}) => `
   </a>`;
 
 export const serviceGrid = (pages, opts = {}) => `<div class="svc-grid" data-stagger>${pages.map((p) => serviceCard(p, opts)).join('')}</div>`;
+
+/* ---------- the shop front: real photographs supplied by the owner ---------- */
+export const studioSection = (tone = 'light') => {
+  const shots = site.photos.studio || [];
+  if (!shots.length) return '';
+  return `
+  <section class="section section--${tone}" id="studio">
+    <div class="wrap">
+      <div class="section-head" data-reveal><div><p class="eyebrow">${t('studio.eyebrow')}</p><h2>${t('studio.heading')}</h2><p class="lead">${t('studio.lead')}</p></div></div>
+      <div class="studio-grid" data-stagger>
+        ${shots.map((p, i) => `<figure class="studio-shot studio-shot--${i}"><img src="${p.src}" srcset="${p.srcset}" sizes="${i === 0 ? '(min-width: 900px) 58vw, 100vw' : '(min-width: 900px) 40vw, 100vw'}" alt="${esc(t(`photos.${p.key}`))}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async"></figure>`).join('')}
+      </div>
+    </div>
+  </section>`;
+};
 
 /* ---------- reviews / team / gallery (rendered only when real content exists) ---------- */
 export const galleryGrid = (items) => `
@@ -415,9 +430,10 @@ export function layout({ title, description, path, body, robots, schema = [], bo
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
-  ${preload ? `<link rel="preload" as="image" href="${preload.href}"${preload.srcset ? ` imagesrcset="${preload.srcset}" imagesizes="100vw"` : ''} fetchpriority="high">` : ''}
+  ${preload ? `<link rel="preload" as="image" href="${preload.href}"${preload.srcset ? ` imagesrcset="${preload.srcset}" imagesizes="${preload.sizes || '100vw'}"` : ''} fetchpriority="high">` : ''}
   ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n  ')}
 </head>
 <body class="${bodyClass}" data-route="${key || ''}" data-lang="${l}">
@@ -426,7 +442,7 @@ export function layout({ title, description, path, body, robots, schema = [], bo
   <header class="site-header" data-header>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="${esc(t('brandLabel'))}">
-        <img src="/images/logo-white.png" width="1371" height="360" alt="${esc(t('logoAlt'))}">
+        <img src="/images/logo-white-460.png" width="460" height="121" alt="${esc(t('logoAlt'))}">
       </a>
       <nav class="nav-desktop" aria-label="${esc(t('nav.aria'))}">
         <div class="nav-item" data-menu>
@@ -481,7 +497,7 @@ ${body}
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <img src="/images/logo-white.png" width="1371" height="360" alt="${esc(t('logoAlt'))}" loading="lazy">
+        <img src="/images/logo-white-460.png" width="460" height="121" alt="${esc(t('logoAlt'))}" loading="lazy">
         <address>
           <strong>${site.name}</strong><br>
           ${site.street}, ${site.postalCode} ${t('city')}<br>

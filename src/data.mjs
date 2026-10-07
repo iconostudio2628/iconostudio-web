@@ -51,14 +51,15 @@ export const site = {
   reviews: [],
   team: [],
   photos: {
-    hero: {
-      src: '/images/hero-icono-studio-praha-2-1600.webp',
-      srcset: '/images/hero-icono-studio-praha-2-900.webp 900w, /images/hero-icono-studio-praha-2-1600.webp 1600w',
-      width: 1600, height: 900,
-    },
-    barber: { src: '/images/pansky-strih-icono-studio-praha-2.webp', width: 1000, height: 1249 },
-    nails: { src: '/images/manikura-icono-studio-praha-2.webp', width: 1000, height: 1249 },
-    entrance: { src: '/images/vstup-icono-studio-belehradska.webp', width: 503, height: 644 },
+    barber: { src: '/images/pansky-strih-icono-studio-praha-2.webp', srcset: '/images/pansky-strih-icono-studio-praha-2-640.webp 640w, /images/pansky-strih-icono-studio-praha-2.webp 1000w', width: 1000, height: 1249 },
+    nails: { src: '/images/manikura-icono-studio-praha-2.webp', srcset: '/images/manikura-icono-studio-praha-2-640.webp 640w, /images/manikura-icono-studio-praha-2.webp 1000w', width: 1000, height: 1249 },
+    // real photographs of the shop front (supplied by the owner, 2026-10-07)
+    entrance: { src: '/images/studio-vchod-icono-studio-praha-2-1400.webp', srcset: '/images/studio-vchod-icono-studio-praha-2-800.webp 800w, /images/studio-vchod-icono-studio-praha-2-1400.webp 1400w', width: 1400, height: 1050 },
+    studio: [
+      { key: 'studioC', src: '/images/studio-ulice-belehradska-icono-studio-1400.webp', srcset: '/images/studio-ulice-belehradska-icono-studio-800.webp 800w, /images/studio-ulice-belehradska-icono-studio-1400.webp 1400w', width: 1400, height: 1050 },
+      { key: 'studioA', src: '/images/studio-vyloha-icono-studio-praha-2-1400.webp', srcset: '/images/studio-vyloha-icono-studio-praha-2-800.webp 800w, /images/studio-vyloha-icono-studio-praha-2-1400.webp 1400w', width: 1400, height: 1050 },
+      { key: 'studioB', src: '/images/studio-vchod-icono-studio-praha-2-1400.webp', srcset: '/images/studio-vchod-icono-studio-praha-2-800.webp 800w, /images/studio-vchod-icono-studio-praha-2-1400.webp 1400w', width: 1400, height: 1050 },
+    ],
   },
 };
 
@@ -114,6 +115,7 @@ export const priceGroups = [
       { label: 'Jednotlivé služby', items: [
         { id: 'ped-med-cnd', name: 'Medicínální pedikúra Footlogix CND Shellac', price: 850 },
         { id: 'ped-med-gellak', name: 'Medicínální pedikúra Footlogix Gellak', price: 750 },
+        { id: 'ped-med-classic', name: 'Medicínální pedikúra Footlogix Classic', price: 590 },
         { id: 'ped-classic', name: 'Pedikúra Classic', price: 490 },
         { id: 'ped-gellak', name: 'Pedikúra – Gellak', price: 590 },
         { id: 'ped-cnd', name: 'Pedikúra – CND Shellac', price: 650 },
