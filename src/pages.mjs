@@ -133,6 +133,7 @@ const svcHero = ({ trail, eyebrow, h1, text, image, extra = '' }) => `
   </section>`;
 
 /* =============================== HOME =============================== */
+const HERO_M = { srcset: '/images/hero-mobile-640.webp 640w, /images/hero-mobile-1000.webp 1000w', width: 1000, height: 1830 };
 export function home() {
   const barber = byArea('barber');
   const nails = byArea('nails', 'beauty');
@@ -140,6 +141,10 @@ export function home() {
   const why = tList('home.why.items');
   const body = `
   <section class="hero hero--photo hero--blobs" id="hero">
+    <picture class="hero-mobile-bg">
+      <source media="(max-width: 959px)" srcset="${HERO_M.srcset}" sizes="100vw">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="${esc(t('photos.heroMobile'))}" width="${HERO_M.width}" height="${HERO_M.height}" decoding="async">
+    </picture>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow" data-hero>${t('home.hero.eyebrow')}</p>
@@ -264,7 +269,10 @@ export function home() {
   return layout({
     title: t('home.title'), description: t('home.description'),
     path: '/', body, bodyClass: 'page-home', home: true,
-    preload: { href: pb.src, srcset: pb.srcset, sizes: '(min-width: 960px) 420px, 62vw' },
+    preload: [
+      { href: '/images/hero-mobile-640.webp', srcset: HERO_M.srcset, sizes: '100vw', media: '(max-width: 959px)' },
+      { href: pb.src, srcset: pb.srcset, sizes: '420px', media: '(min-width: 960px)' },
+    ],
   });
 }
 

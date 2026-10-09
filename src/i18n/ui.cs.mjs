@@ -54,6 +54,7 @@ export default {
     hero: 'Barber stříhá vlasy nůžkami a hřebenem v ICONO STUDIO',
     barber: 'Pánský střih a fade strojkem v ICONO STUDIO na Bělehradské v Praze 2',
     nails: 'Manikúra a lakování nehtů v ICONO STUDIO v Praze 2',
+    heroMobile: 'Barber stříhá strojkem a manikérka pečuje o nehty v ICONO STUDIO v Praze 2',
     entrance: 'Vstup do ICONO STUDIO na Bělehradské 77 v Praze 2',
     studioA: 'Výloha a černá cedule ICONO STUDIO Nails & Barber na Bělehradské 77 v Praze 2',
     studioB: 'Vchod a výloha ICONO STUDIO s kadeřnickým sloupkem, pohled zepředu',
@@ -114,8 +115,8 @@ export default {
     description: 'Barber Praha 2 a nail salon u I. P. Pavlova, Bělehradská 643/77: pánské střihy, vousy, manikúra, gelové nehty, řasy. Ceník a online rezervace.',
     hero: {
       eyebrow: 'ICONO STUDIO · BĚLEHRADSKÁ 77',
-      aria: 'Nehtové studio & Barbershop v Praze 2',
-      l1: 'Nails &amp; Barber', l2: 'v centru', l3: 'Prahy 2',
+      aria: 'Barber & Nail Salon Praha 2 u I. P. Pavlova',
+      l1: 'Barber &amp; Nail Salon', l2: 'Praha 2,', l3: 'u I. P. Pavlova',
       lead: 'Nehtové studio a barbershop na jednom místě: manikúra, gelové nehty, pedikúra, řasy, obočí, pánské střihy a úprava vousů.',
       pricelist: 'Ceník služeb',
       cardAria: 'Kontakt a otevírací doba',

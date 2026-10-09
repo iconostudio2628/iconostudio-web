@@ -455,10 +455,10 @@ export function layout({ title, description, path, body, robots, schema = [], bo
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Russo+One&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Russo+One&amp;display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css">
-  ${preload ? `<link rel="preload" as="image" href="${preload.href}"${preload.srcset ? ` imagesrcset="${preload.srcset}" imagesizes="${preload.sizes || '100vw'}"` : ''} fetchpriority="high">` : ''}
+  ${[].concat(preload || []).map((p) => `<link rel="preload" as="image" href="${p.href}"${p.srcset ? ` imagesrcset="${p.srcset}" imagesizes="${p.sizes || '100vw'}"` : ''}${p.media ? ` media="${p.media}"` : ''} fetchpriority="high">`).join('\n  ')}
   ${schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n  ')}
 </head>
 <body class="${bodyClass}" data-route="${key || ''}" data-lang="${l}">

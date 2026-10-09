@@ -56,6 +56,7 @@ export default {
     hero: `Barber schneidet Haare mit Schere und Kamm im ICONO STUDIO`,
     barber: `Herrenhaarschnitt und Fade mit dem Haarschneider im ICONO STUDIO in der Bělehradská in Prag 2`,
     nails: `Maniküre und Nagellackierung im ICONO STUDIO in Prag 2`,
+    heroMobile: `Ein Barber mit Haarschneider und eine Nageldesignerin bei der Arbeit im ICONO STUDIO in Prag 2`,
     entrance: `Eingang zum ICONO STUDIO in der Bělehradská 77 in Prag 2`,
     studioA: `Schaufenster und schwarzes ICONO STUDIO Nails & Barber Schild in der Bělehradská 77 in Prag 2`,
     studioB: `Eingang und Schaufenster des ICONO STUDIO mit Barber-Stange, Ansicht von vorn`,
@@ -116,8 +117,8 @@ export default {
     description: `Barber und Nail Salon bei I. P. Pavlova, Bělehradská 643/77, Prag 2: Herrenschnitt, Bart, Maniküre, Gelnägel, Wimpern. Preisliste und Online-Termin.`,
     hero: {
       eyebrow: `ICONO STUDIO · BĚLEHRADSKÁ 77`,
-      aria: `Nagelstudio & Barbershop in Prag 2`,
-      l1: `Nails &amp; Barber`, l2: `im Zentrum`, l3: `von Prag 2`,
+      aria: `Barber & Nail Salon Prag 2 bei I. P. Pavlova`,
+      l1: `Barber &amp; Nail Salon`, l2: `Prag 2,`, l3: `bei I. P. Pavlova`,
       lead: `Nagelstudio und Barbershop an einem Ort: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen, Herrenschnitte und Bartpflege.`,
       pricelist: `Preisliste`,
       cardAria: `Kontakt und Öffnungszeiten`,
