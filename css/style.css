@@ -822,3 +822,9 @@ h1, h2, h3, .svc-name, .opt h3 { overflow-wrap: break-word; }
 .sticky-cta { transition: transform .28s var(--ease), visibility 0s linear 0s; }
 .sticky-cta.is-away { transform: translateY(105%); visibility: hidden; transition: transform .28s var(--ease), visibility 0s linear .28s; }
 @media (prefers-reduced-motion: reduce) { .sticky-cta, .sticky-cta.is-away { transition: none; } }
+
+/* ---------- phones/tablets: no visible scrollbars (menu overlay and page still scroll) ---------- */
+@media (max-width: 959px) {
+  html, body, .mobile-nav, .mobile-nav * { scrollbar-width: none; -ms-overflow-style: none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar, .mobile-nav::-webkit-scrollbar, .mobile-nav *::-webkit-scrollbar { display: none; width: 0; height: 0; }
+}
