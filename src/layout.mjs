@@ -12,8 +12,7 @@ const stripTags = (s) => String(s).replace(/<[^>]*>/g, '');
 /* ---------- icons (Lucide-style, stroke) ---------- */
 const ICON_PATHS = {
   phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
-  sms: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
-  chat: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+  calendar: '<path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
   pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
   arrow: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
   plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
@@ -49,14 +48,11 @@ const langSwitch = (key, variant) => {
 // data-track feeds the GA4 / GTM dataLayer events (see js/main.js)
 // `place` (optional) names the spot on the page – js/cta.js reports it as cta_placement (hero, band, final …)
 const placeAttr = (place) => (place ? ` data-cta="${place}"` : '');
-export const btnWhatsapp = (label = t('btn.whatsapp'), cls = '', place = '') =>
-  `<a class="btn btn--wa ${cls}" href="${links.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp"${placeAttr(place)}>${icon('chat')}<span>${label}</span></a>`;
+// Two CTAs everywhere: “Rezervovat termín” (primary, opens Setmore – the service on service pages) and “Zavolat”.
+export const btnBook = (label = t('btn.book'), cls = '', place = '') =>
+  `<a class="btn btn--book ${cls}" href="${links.book}" target="_blank" rel="noopener" data-track="click_book"${placeAttr(place)}>${icon('calendar')}<span>${label}</span></a>`;
 export const btnCall = (label = t('btn.call'), cls = '', place = '') =>
   `<a class="btn btn--ghost ${cls}" href="${links.call}" data-track="click_call"${placeAttr(place)}>${icon('phone')}<span>${label}</span></a>`;
-export const btnSms = (label = t('btn.sms'), cls = '', place = '') =>
-  `<a class="btn btn--ghost ${cls}" href="${links.sms}" data-track="click_sms"${placeAttr(place)}>${icon('sms')}<span>${label}</span></a>`;
-export const linkSms = (label = t('btn.sms'), place = '') =>
-  `<a class="text-link" href="${links.sms}" data-track="click_sms"${placeAttr(place)}>${label}</a>`;
 
 /* ---------- breadcrumbs ---------- */
 export const breadcrumbs = (trail) => {
@@ -128,8 +124,8 @@ export const locationSection = ({ heading = t('location.heading'), tone = 'light
         <p class="lead">${t('location.lead')}</p>
         <div class="btn-row">
           <a class="btn ${tone === 'dark' ? 'btn--light' : 'btn--dark'}" href="${links.directions}" target="_blank" rel="noopener" data-track="click_directions">${icon('pin')}<span>${t('btn.directions')}</span></a>
+          ${btnBook(t('btn.book'))}
           ${btnCall(t('btn.call'))}
-          ${btnWhatsapp(t('btn.whatsappShort'))}
         </div>
       </div>`;
   return `
@@ -167,9 +163,8 @@ export const finalCta = ({ heading = t('cta.heading'), text = t('cta.text') } = 
         <p class="lead">${text}</p>
       </div>
       <div class="final-cta-actions" data-stagger>
-        ${btnWhatsapp(t('btn.whatsappShort'), 'btn--xl', 'final')}
+        ${btnBook(t('btn.book'), 'btn--xl', 'final')}
         ${btnCall(t('btn.call'), 'btn--xl', 'final')}
-        ${btnSms(t('btn.smsShort'), 'btn--xl', 'final')}
       </div>
     </div>
   </section>`;
@@ -215,13 +210,14 @@ export const optionCards = (items, cta = null) => `
 
 /* ---------- service cards ---------- */
 export const fromPrice = (page) => kc(groupMin(page.groups.filter((id) => !['zdobeni', 'ostatni'].includes(id))));
-const artSrc = (page) => `/images/art/${page.art}.svg`;
+// service photos (generated, colour-matched to the site): images/service/<art>-{160,640,1120}.webp, 4:5
+export const svcPhoto = (art) => ({ src: `/images/service/${art}-1120.webp`, srcset: `/images/service/${art}-640.webp 640w, /images/service/${art}-1120.webp 1120w`, thumb: `/images/service/${art}-160.webp`, width: 1120, height: 1400 });
 const DARK_ART = new Set(['gelove-nehty', 'prodluzovani-ras', 'head-spa', 'pansky-strih', 'panska-kosmetika']);
 export const artTone = (page) => (DARK_ART.has(page.art) ? 'dark' : 'light');
 
 export const serviceCard = (page, { eager = false } = {}) => `
   <a class="svc svc--${artTone(page)}" href="/${page.slug}/">
-    <span class="svc-img"><img src="${artSrc(page)}" alt="" width="800" height="1000" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
+    <span class="svc-img"><img src="${svcPhoto(page.art).src}" srcset="${svcPhoto(page.art).srcset}" sizes="(min-width: 960px) 30vw, (min-width: 600px) 45vw, 92vw" alt="" width="1120" height="1400" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
     <span class="svc-body">
       <span class="svc-area">${t(`areas.${page.area}.label`)}</span>
       <h3 class="svc-name">${esc(page.name)}</h3>
@@ -243,6 +239,21 @@ export const studioSection = (tone = 'light') => {
       <div class="studio-grid" data-stagger>
         ${shots.map((p, i) => `<figure class="studio-shot studio-shot--${i}"><img src="${p.src}" srcset="${p.srcset}" sizes="${i === 0 ? '(min-width: 900px) 58vw, 100vw' : '(min-width: 900px) 40vw, 100vw'}" alt="${esc(t(`photos.${p.key}`))}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async"></figure>`).join('')}
       </div>
+    </div>
+  </section>`;
+};
+
+/* ---------- real work: three tall photos, staggered rise (js/main.js animates [data-work]) ---------- */
+export const workSection = (tone = 'light') => {
+  const shots = site.photos.work || [];
+  if (!shots.length) return '';
+  return `
+  <section class="section section--${tone} work" id="prace">
+    <div class="wrap">
+      <div class="section-head" data-reveal><div><p class="eyebrow">${t('work.eyebrow')}</p><h2>${t('work.heading')}</h2><p class="lead">${t('work.lead')}</p></div></div>
+      <ul class="work-grid" data-work>
+        ${shots.map((p, i) => `<li class="work-card work-card--${i}"><figure><img src="${p.src}" srcset="${p.srcset}" sizes="(min-width: 900px) 30vw, 78vw" alt="${esc(t(`photos.${p.key}`))}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async"><figcaption class="work-n" aria-hidden="true">${String(i + 1).padStart(2, '0')}</figcaption></figure></li>`).join('')}
+      </ul>
     </div>
   </section>`;
 };
@@ -311,13 +322,28 @@ export function localBusinessSchema(absolute) {
       addressCountry: 'CZ',
     },
     geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
-    areaServed: { '@type': 'City', name: 'Praha' },
+    areaServed: [{ '@type': 'City', name: 'Praha' }, { '@type': 'AdministrativeArea', name: 'Praha 2' }, { '@type': 'AdministrativeArea', name: 'Vinohrady' }, { '@type': 'AdministrativeArea', name: 'Nové Město' }],
     hasMap: links.mapPlace,
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: { '@type': 'EntryPoint', urlTemplate: site.booking.page, actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'] },
+      result: { '@type': 'Reservation', name: t('btn.book') },
+    },
     openingHoursSpecification: site.hours.map((h) => ({
       '@type': 'OpeningHoursSpecification', dayOfWeek: h.schemaDays, opens: h.opens, closes: h.closes,
     })),
     currenciesAccepted: 'CZK',
     knowsLanguage: ['cs', 'en', 'de'],
+    slogan: site.tagline,
+    knowsAbout: ['barbershop', 'pánský střih', 'úprava vousů', 'nail salon', 'manikúra', 'gelové nehty', 'akrylové nehty', 'pedikúra', 'Footlogix', 'prodlužování řas', 'Head Spa'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: t('schema.catalog'),
+      itemListElement: getServicePages().map((p) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: p.name, url: absolute(pathFor(p.slug)) },
+      })),
+    },
   };
   if (site.url) {
     obj.url = absolute('/');
@@ -368,31 +394,30 @@ const menuLinks = (path, area) => getServicePages().filter((p) => p.area === are
   .map((p) => `<a href="/${p.slug}/"${path === `/${p.slug}/` ? ' aria-current="page"' : ''}>${esc(p.name)}</a>`).join('');
 
 /* ---------- sticky order bar ---------- */
-// Fixed to the bottom on phones and tablets (call · SMS · WhatsApp); hidden on desktop, where the header has the
-// order menu. Service pages pass `cta` = { label, sub }: the WhatsApp button then reads “Order · from 350 CZK”, and its
-// WhatsApp / SMS links already carry the service-specific message (see data.mjs).
+// Fixed to the bottom on phones and tablets (call · book); hidden on desktop, where the header has both buttons.
+// Service pages pass `cta` = { label, sub }: the book button then reads “Rezervovat · od 350 Kč” and opens that
+// service in Setmore (see data.mjs setBookingSlug).
 const stickyBar = (cta) => `
   <nav class="sticky-cta" data-sticky-cta aria-label="${esc(t('bar.aria'))}">
     <div class="sticky-cta-actions">
       <a class="sc-call" href="${links.call}" data-track="click_call" data-cta="sticky">${icon('phone')}<span>${t('bar.call')}</span></a>
-      <a class="sc-sms" href="${links.sms}" data-track="click_sms" data-cta="sticky">${icon('sms')}<span>${t('btn.smsShort')}</span></a>
-      <a class="sc-wa is-wa" href="${links.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp" data-cta="sticky">${icon('chat')}<span class="sc-text"><span class="sc-label">${esc(cta && cta.label ? cta.label : t('btn.whatsappShort'))}</span>${cta && cta.sub ? `<span class="sc-sub">${esc(cta.sub)}</span>` : ''}</span></a>
+      <a class="sc-book" href="${links.book}" target="_blank" rel="noopener" data-track="click_book" data-cta="sticky">${icon('calendar')}<span class="sc-text"><span class="sc-label">${esc(cta && cta.label ? cta.label : t('btn.bookShort'))}</span>${cta && cta.sub ? `<span class="sc-sub">${esc(cta.sub)}</span>` : ''}</span></a>
     </div>
   </nav>`;
 
 /* ---------- page shell ---------- */
 // `path` is the Czech path of the page (the route key); the language-specific URL is derived from it.
-export function layout({ title, description, path, body, robots, schema = [], bodyClass = '', preload = null, home = false, cta = null }) {
+export function layout({ title, description, path, body, robots, schema = [], bodyClass = '', preload = null, home = false, cta = null, selfCanonical = false, ogType = 'website' }) {
   const l = getLang();
   const meta = LANG_META[l];
   const key = keyForCsPath(path);
   const own = key ? pathFor(key) : path;
   const absolute = (p) => `${site.url}${p}`;
-  const canonical = site.url && key ? `<link rel="canonical" href="${absolute(own)}">` : '';
+  const canonical = site.url && (key || selfCanonical) ? `<link rel="canonical" href="${absolute(own)}">` : '';
   const alternates = site.url && key
     ? `${LANGS.map((x) => `<link rel="alternate" hreflang="${LANG_META[x].htmlLang}" href="${absolute(pathFor(key, x))}">`).join('\n  ')}\n  <link rel="alternate" hreflang="x-default" href="${absolute(pathFor(key, 'cs'))}">`
     : '';
-  const ogUrl = site.url && key ? `<meta property="og:url" content="${absolute(own)}">` : '';
+  const ogUrl = site.url && (key || selfCanonical) ? `<meta property="og:url" content="${absolute(own)}">` : '';
   const ogAlt = LANGS.filter((x) => x !== l).map((x) => `<meta property="og:locale:alternate" content="${LANG_META[x].locale}">`).join('\n  ');
   const ogImage = site.url ? absolute('/images/og-image.png') : '/images/og-image.png';
   const schemas = [localBusinessSchema(absolute), ...(home && site.url ? [websiteSchema(absolute)] : []), ...schema.map((s) => (typeof s === 'function' ? s(absolute) : s))];
@@ -412,7 +437,7 @@ export function layout({ title, description, path, body, robots, schema = [], bo
   ${canonical}
   ${alternates}
   <meta name="theme-color" content="#000000">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="${ogType}">
   <meta property="og:locale" content="${meta.locale}">
   ${ogAlt}
   <meta property="og:site_name" content="${site.name}">
@@ -462,16 +487,8 @@ export function layout({ title, description, path, body, robots, schema = [], bo
       </nav>
       <div class="header-actions">
         @@LANG_DESKTOP@@
-        <div class="order" data-order>
-          <button type="button" class="btn btn--light btn--sm" data-order-toggle aria-expanded="false" aria-controls="order-panel">${t('order.toggle')}</button>
-          <div class="order-panel" id="order-panel" hidden>
-            <p class="order-panel-title">${t('order.title')}</p>
-            <a href="${links.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp">${icon('chat')}<span>${t('btn.whatsappShort')}</span></a>
-            <a href="${links.call}" data-track="click_call">${icon('phone')}<span>${t('btn.call')}</span></a>
-            <a href="${links.sms}" data-track="click_sms">${icon('sms')}<span>${t('btn.smsShort')}</span></a>
-            <p class="order-panel-num">${site.phoneDisplay}</p>
-          </div>
-        </div>
+        <a class="btn btn--ghost btn--sm header-call" href="${links.call}" data-track="click_call" aria-label="${esc(t('btn.call'))}">${icon('phone')}<span>${t('btn.call')}</span></a>
+        <a class="btn btn--light btn--sm header-book" href="${links.book}" target="_blank" rel="noopener" data-track="click_book" data-cta="header">${icon('calendar')}<span>${t('btn.bookShort')}</span></a>
         <button type="button" class="burger" data-burger aria-label="${esc(t('burger.open'))}" data-label-open="${esc(t('burger.open'))}" data-label-close="${esc(t('burger.close'))}" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
       </div>
     </div>
@@ -516,11 +533,12 @@ ${body}
         <a href="/nail-studio-praha-2/">${t('hubs.nails.crumb')}</a>
         <a href="/barbershop-praha-2/">${t('hubs.barber.crumb')}</a>
         ${nav.map((n) => `<a href="${n.href}">${t(n.key)}</a>`).join('')}
+        <a href="/blog/"${l === 'cs' ? '' : ' hreflang="cs" lang="cs"'}>${t('footer.blog')}</a>
         <p class="footer-title footer-title--gap">${t('footer.order')}</p>
-        <a href="${links.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp">${t('btn.whatsappShort')}</a>
+        <a href="${links.book}" target="_blank" rel="noopener" data-track="click_book">${t('btn.book')}</a>
         <a href="${links.call}" data-track="click_call">${t('btn.call')}</a>
-        <a href="${links.sms}" data-track="click_sms">${t('btn.smsShort')}</a>
         <a href="${links.directions}" target="_blank" rel="noopener" data-track="click_directions">${t('btn.directions')}</a>
+        ${site.googleReviewsUrl ? `<a href="${site.googleReviewsUrl}" target="_blank" rel="noopener" data-track="click_review">${t('footer.review')}</a>` : ''}
         ${site.instagram ? `<a href="${site.instagram}" target="_blank" rel="noopener me" data-track="click_instagram">Instagram</a>` : ''}
         ${site.facebook ? `<a href="${site.facebook}" target="_blank" rel="noopener me">Facebook</a>` : ''}
       </nav>

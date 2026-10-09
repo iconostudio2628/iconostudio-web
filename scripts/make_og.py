@@ -59,6 +59,6 @@ def font(size, index=0):
 
 d = ImageDraw.Draw(img)
 d.text((68, 372), 'Bělehradská 77, Praha 2', font=font(30), fill=INK)
-d.text((68, 422), '+420 773 867 999', font=font(27), fill=(85, 76, 61))
+d.text((68, 422), '+420 721 376 737', font=font(27), fill=(85, 76, 61))
 img.save(os.path.join(ROOT, 'images', 'og-image.png'), optimize=True)
 print('Wrote images/og-image.png')

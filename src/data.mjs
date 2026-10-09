@@ -16,14 +16,14 @@ export const site = {
 
   // Absolute production URL, e.g. 'https://www.example.cz'. Needed for canonical, og:url,
   // sitemap.xml and JSON-LD. Set it here or run:  SITE_URL=https://... npm run build
-  url: (process.env.SITE_URL || '').replace(/\/$/, ''),
+  url: (process.env.SITE_URL ?? 'https://icono-studio.cz').replace(/\/$/, ''),
 
-  phone: '+420773867999',
-  phoneDisplay: '+420 773 867 999',
-  street: 'Bělehradská 77',
+  phone: '+420721376737',
+  phoneDisplay: '+420 721 376 737',
+  street: 'Bělehradská 643/77', // as on the Google Business Profile (NAP must match exactly)
   postalCode: '120 00',
   city: 'Praha 2',
-  district: 'Vinohrady',
+  district: 'Nové Město', // as on the Google Business Profile
   // Taken from OpenStreetMap (house node Bělehradská 77) – verify against the Google Business Profile pin.
   geo: { lat: 50.07356, lng: 14.43288 },
 
@@ -35,11 +35,28 @@ export const site = {
   // Sunday has no regular hours (closed, or by reservation) – the wording lives in the UI strings (hours.sunday).
   hoursSunday: { dayKey: 'sun' },
 
+  // Online booking (Setmore). `page` = the whole booking page, `services` = direct link per service page (route slug).
+  // Service pages always send the visitor straight to “their” service; every other page uses `page`.
+  booking: {
+    page: 'https://iconostudio.setmore.com',
+    services: {
+      'manikura-praha-2': 'https://iconostudio.setmore.com/services/29c0ab4e-13ae-45b5-bfec-62654ee7b636',
+      'gelove-akrylove-nehty-praha-2': 'https://iconostudio.setmore.com/services/7d7ede64-7cad-45c1-977b-7d749a67588d',
+      'pedikura-praha-2': 'https://iconostudio.setmore.com/services/10b1a4e1-39e2-4244-b6a7-f84ee6c5a9d1',
+      'prodluzovani-ras-praha-2': 'https://iconostudio.setmore.com/services/811a8397-9b73-4e64-a775-21b92c876048',
+      'oboci-kosmetika-praha-2': 'https://iconostudio.setmore.com/services/3dec34dc-6945-4fbf-b765-2e0dd2ed41ba',
+      'head-spa-praha-2': 'https://iconostudio.setmore.com/services/76bfc9c7-b6b8-463c-81ab-ffd677d27852',
+      'panske-strihy-praha-2': 'https://iconostudio.setmore.com/services/0bebd399-0ae6-40c3-aded-c44d8c338f78',
+      'uprava-vousu-praha-2': 'https://iconostudio.setmore.com/services/9b550f16-bedd-4ce9-9a0c-94f25449f1bf',
+      'panska-kosmetika-praha-2': 'https://iconostudio.setmore.com/services/b431679f-f310-44b8-8060-be258b20f163',
+    },
+  },
+
   // Profiles / links (leave null until confirmed)
   instagram: null,
   facebook: null,
-  googleBusinessUrl: null,
-  googleReviewsUrl: null,
+  googleBusinessUrl: 'https://share.google/QKUBG4xTRUuR7ceYm', // GBP short link supplied by the owner (2026-10-09)
+  googleReviewsUrl: 'https://g.page/r/Cae_LaYY8jcBEBM/review', // “Napsat recenzi” link from the Google Business Profile
 
   // Photo alt texts are UI strings (photos.*). Real content only below – each entry renders automatically when present.
   //   gallery: [{ src: '/images/x.webp', width: 1200, height: 1500, alt: '…', services: ['manikura-praha-2'] }]
@@ -55,6 +72,12 @@ export const site = {
     nails: { src: '/images/manikura-icono-studio-praha-2.webp', srcset: '/images/manikura-icono-studio-praha-2-640.webp 640w, /images/manikura-icono-studio-praha-2.webp 1000w', width: 1000, height: 1249 },
     // real photographs of the shop front (supplied by the owner, 2026-10-07)
     entrance: { src: '/images/studio-vchod-icono-studio-praha-2-1400.webp', srcset: '/images/studio-vchod-icono-studio-praha-2-800.webp 800w, /images/studio-vchod-icono-studio-praha-2-1400.webp 1400w', width: 1400, height: 1050 },
+    // real work (supplied by the owner, 2026-10-07)
+    work: [
+      { key: 'workA', src: '/images/prace-platinova-blond-strih-1-1000.webp', srcset: '/images/prace-platinova-blond-strih-1-640.webp 640w, /images/prace-platinova-blond-strih-1-1000.webp 1000w', width: 1000, height: 980 },
+      { key: 'workB', src: '/images/prace-platinova-blond-strih-2-1000.webp', srcset: '/images/prace-platinova-blond-strih-2-640.webp 640w, /images/prace-platinova-blond-strih-2-1000.webp 1000w', width: 1000, height: 1268 },
+      { key: 'workC', src: '/images/prace-platinova-blond-strih-3-1000.webp', srcset: '/images/prace-platinova-blond-strih-3-640.webp 640w, /images/prace-platinova-blond-strih-3-1000.webp 1000w', width: 1000, height: 1590 },
+    ],
     studio: [
       { key: 'studioC', src: '/images/studio-ulice-belehradska-icono-studio-1400.webp', srcset: '/images/studio-ulice-belehradska-icono-studio-800.webp 800w, /images/studio-ulice-belehradska-icono-studio-1400.webp 1400w', width: 1400, height: 1050 },
       { key: 'studioA', src: '/images/studio-vyloha-icono-studio-praha-2-1400.webp', srcset: '/images/studio-vyloha-icono-studio-praha-2-800.webp 800w, /images/studio-vyloha-icono-studio-praha-2-1400.webp 1400w', width: 1400, height: 1050 },
@@ -286,21 +309,17 @@ export const priceRange = (() => {
   return { min: Math.min(...mins.filter((n) => n >= 50)), max: Math.max(...maxes) };
 })();
 
-// Pre-filled order message. Service pages set a service-specific text (setOrderMessage) while they render,
-// so every WhatsApp / SMS button on that page (header, hero, footer, sticky bar) already names the service.
-let orderMessage = null;
-export const setOrderMessage = (msg) => { orderMessage = msg; };
-export const waLink = (msg) => `https://wa.me/${site.phone.replace('+', '')}?text=${encodeURIComponent(msg)}`;
-export const smsLink = (msg) => `sms:${site.phone}?&body=${encodeURIComponent(msg)}`;
-const msg = () => orderMessage ?? t('orderMessage');
+// Service pages call setBookingSlug(slug) while they render, so every “Rezervovat” button on that page (header, hero,
+// bands, tables, footer, sticky bar) opens that service in Setmore. Everywhere else it opens the whole booking page.
+let bookingSlug = null;
+export const setBookingSlug = (slug) => { bookingSlug = slug; };
 const address = `${site.street}, ${site.postalCode} ${site.city}`;
 export const links = {
   call: `tel:${site.phone}`,
-  get whatsapp() { return waLink(msg()); },
-  get sms() { return smsLink(msg()); },
+  get book() { return site.booking.services[bookingSlug] ?? site.booking.page; },
   directions: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`,
   get mapEmbed() { return `https://www.google.com/maps?q=${encodeURIComponent(address)}&hl=${getLang()}&output=embed`; },
-  mapPlace: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`ICONO STUDIO ${site.street}, ${site.city}`)}`,
+  mapPlace: site.googleBusinessUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`ICONO STUDIO ${site.street}, ${site.city}`)}`,
 };
 
 /* ---------- navigation ---------- */

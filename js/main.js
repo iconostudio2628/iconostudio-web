@@ -14,15 +14,6 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ---------- Order panel (WhatsApp / Zavolat / SMS) ---------- */
-  const orderToggle = $('[data-order-toggle]');
-  const orderPanel = $('#order-panel');
-  const setOrder = (open) => {
-    orderPanel.hidden = !open;
-    orderToggle.setAttribute('aria-expanded', String(open));
-  };
-  orderToggle.addEventListener('click', (e) => { e.stopPropagation(); setMenu(false); setOrder(orderPanel.hidden); });
-
   /* ---------- Services mega menu (desktop) ---------- */
   const menuToggle = $('[data-menu-toggle]');
   const menuPanel = $('#menu-sluzby');
@@ -31,7 +22,7 @@
     menuPanel.hidden = !open;
     menuToggle.setAttribute('aria-expanded', String(open));
   };
-  if (menuToggle) menuToggle.addEventListener('click', (e) => { e.stopPropagation(); setOrder(false); setMenu(menuPanel.hidden); });
+  if (menuToggle) menuToggle.addEventListener('click', (e) => { e.stopPropagation(); setMenu(menuPanel.hidden); });
   if (menuPanel) menuPanel.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 
   /* ---------- Mobile menu ---------- */
@@ -42,18 +33,16 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? burger.dataset.labelClose : burger.dataset.labelOpen);
   };
-  burger.addEventListener('click', (e) => { e.stopPropagation(); setOrder(false); setMenu(false); setNav(mobileNav.hidden); });
+  burger.addEventListener('click', (e) => { e.stopPropagation(); setMenu(false); setNav(mobileNav.hidden); });
   mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setNav(false); });
 
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('[data-order]')) setOrder(false);
     if (!e.target.closest('[data-menu]')) setMenu(false);
     if (!e.target.closest('.site-header')) setNav(false);
   });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     if (menuPanel && !menuPanel.hidden) { setMenu(false); menuToggle.focus(); }
-    if (!orderPanel.hidden) { setOrder(false); orderToggle.focus(); }
     if (!mobileNav.hidden) { setNav(false); burger.focus(); }
   });
 
@@ -145,6 +134,16 @@
   });
   $$('[data-reveal]').forEach((el) => reveal(el, el));
   $$('[data-stagger]').forEach((el) => reveal(el.children, el, { y: 48, stagger: 0.12 }));
+
+  // Real work: cards rise one after another, photos settle in and drift slightly while scrolling
+  $$('[data-work]').forEach((grid) => {
+    const cards = [...grid.children];
+    gsap.from(cards, { y: 70, opacity: 0, duration: 1.1, ease, stagger: 0.16, clearProps: 'opacity', scrollTrigger: { trigger: grid, start: 'top 85%', once: true } });
+    cards.forEach((card) => {
+      const img = card.querySelector('img');
+      gsap.fromTo(img, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+  });
 
   // Statement: words light up while scrolling
   $$('[data-words]').forEach((el) => {

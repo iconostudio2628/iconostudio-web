@@ -1,17 +1,17 @@
 // Page templates. All visible copy comes from the UI dictionaries (src/i18n/ui.<lang>.mjs) or from
 // the service-page content; internal links are written as Czech paths and localized by layout().
 import {
-  site, links, itemById, kc, kcList, groupMin, priceAreas, getPriceGroups, setOrderMessage,
+  site, links, itemById, kc, kcList, groupMin, priceAreas, getPriceGroups, setBookingSlug,
 } from './data.mjs';
 import { getServicePages, pageBySlug, photos, areaMeta } from './content.mjs';
 import {
-  esc, icon, btnWhatsapp, btnCall, linkSms, breadcrumbs, breadcrumbSchema, serviceSchema,
-  hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, faqSection, finalCta, galleryGrid,
-  reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed,
+  esc, icon, btnBook, btnCall, breadcrumbs, breadcrumbSchema, serviceSchema,
+  hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, workSection, faqSection, finalCta, galleryGrid,
+  reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed, svcPhoto,
 } from './layout.mjs';
 import { t, tList, getLang, pathFor, lp } from './i18n/index.mjs';
 import {
-  extrasFor, orderMessageFor, renderSig, renderBand, renderCombos, chipsNav, serviceHero, optionCta, stickyFor,
+  extrasFor, renderSig, renderBand, renderCombos, chipsNav, serviceHero, optionCta, stickyFor,
   workItems, reviewItems,
 } from './service-extras.mjs';
 
@@ -23,11 +23,9 @@ const fromWord = () => t('from');
 const faqOrder = () => ({
   q: t('faqs.order.q'),
   a: t('faqs.order.a', {
-    wa: `<a href="${links.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp">WhatsApp</a>`,
-    sms: `<a href="${links.sms}" data-track="click_sms">SMS</a>`,
+    book: `<a href="${links.book}" target="_blank" rel="noopener" data-track="click_book">${t('faqs.order.bookWord')}</a>`,
     phone: site.phoneDisplay,
     call: `<a href="${links.call}" data-track="click_call">${t('faqs.order.callWord')}</a>`,
-    msg: t('orderMessage'),
   }),
 });
 const faqWhere = () => ({
@@ -70,7 +68,7 @@ const orderSteps = (tone = 'white') => `
     <div class="wrap">
       <div data-reveal><p class="eyebrow">${t('orderSteps.eyebrow')}</p><h2>${t('orderSteps.heading')}</h2></div>
       <ol class="steps" data-stagger>
-        <li><span class="step-n">01</span><h3>${t('orderSteps.s1.h')}</h3><p>${t('orderSteps.s1.t', { msg: t('orderMessage') })}</p></li>
+        <li><span class="step-n">01</span><h3>${t('orderSteps.s1.h')}</h3><p>${t('orderSteps.s1.t')}</p></li>
         <li><span class="step-n">02</span><h3>${t('orderSteps.s2.h')}</h3><p>${t('orderSteps.s2.t')}</p></li>
         <li><span class="step-n">03</span><h3>${t('orderSteps.s3.h')}</h3><p>${site.street}, ${t('city')} – ${site.district}.</p></li>
       </ol>
@@ -115,7 +113,8 @@ const mapSection = () => {
 const imageFor = (p) => {
   const ph = p.photo ? photos[p.photo] : null;
   if (ph) return { src: ph.src, alt: p.imageAlt, width: ph.width, height: ph.height, kind: 'photo' };
-  return { src: `/images/art/${p.art}.svg`, alt: p.artAlt, width: 800, height: 1000, kind: 'art' };
+  const sp = svcPhoto(p.art);
+  return { src: sp.src, srcset: sp.srcset, alt: p.artAlt, width: sp.width, height: sp.height, kind: 'art' };
 };
 
 const svcHero = ({ trail, eyebrow, h1, text, image, extra = '' }) => `
@@ -127,9 +126,9 @@ const svcHero = ({ trail, eyebrow, h1, text, image, extra = '' }) => `
         <h1 data-hero>${h1}</h1>
         <p class="lead" data-hero>${text}</p>
         ${extra}
-        <div class="btn-row" data-hero>${btnWhatsapp()}${btnCall()}${linkSms()}</div>
+        <div class="btn-row" data-hero>${btnBook()}${btnCall()}</div>
       </div>
-      ${image ? `<figure class="svc-hero-img svc-hero-img--${image.kind}" data-hero><img src="${image.src}" alt="${esc(image.alt)}" width="${image.width}" height="${image.height}" fetchpriority="high" decoding="async"></figure>` : ''}
+      ${image ? `<figure class="svc-hero-img svc-hero-img--${image.kind}" data-hero><img src="${image.src}"${image.srcset ? ` srcset="${image.srcset}" sizes="(min-width: 900px) 520px, 90vw"` : ''} alt="${esc(image.alt)}" width="${image.width}" height="${image.height}" fetchpriority="high" decoding="async"></figure>` : ''}
     </div>
   </section>`;
 
@@ -151,7 +150,7 @@ export function home() {
         </h1>
         <p class="lead" data-hero>${t('home.hero.lead')}</p>
         <div class="btn-row" data-hero>
-          ${btnWhatsapp(t('btn.whatsapp'), 'btn--lg')}
+          ${btnBook(t('btn.book'), 'btn--lg')}
           ${btnCall(t('btn.call'), 'btn--lg')}
           <a class="text-link" href="/cenik/">${t('home.hero.pricelist')}</a>
         </div>
@@ -254,6 +253,7 @@ export function home() {
     </div>
   </section>` : ''}
 
+  ${workSection('light')}
   ${studioSection('light')}
   ${reviewsSection()}
   ${teamSection()}
@@ -360,6 +360,7 @@ export function barbershop() {
     </div>
   </section>
 
+  ${workSection('white')}
   ${priceTeaser(['barber'], { tone: 'light', heading: t('hubs.barber.teaser') })}
   ${faqSection([
     { q: t('hubs.barber.faqServices'), a: `${barber.map((p) => `<a href="/${p.slug}/">${esc(p.name)}</a>`).join(', ')}.` },
@@ -377,8 +378,8 @@ export function barbershop() {
 
 /* ========================= SERVICE DETAIL PAGES ===================== */
 // Every service page = shared building blocks + its own signature block, section order and CTA copy
-// (src/service-extras.mjs). While the page renders, setOrderMessage() makes every WhatsApp / SMS button on it
-// (header, hero, bands, footer, sticky bar) carry a message that names the service.
+// (src/service-extras.mjs). While the page renders, setBookingSlug() makes every “Rezervovat” button on it
+// (header, hero, bands, footer, sticky bar) open that service in the booking system.
 const CHIP_SECTIONS = { options: 'varianty', price: 'cenik', guide: 'jak-vybrat', notes: 'dobre-vedet', steps: 'postup', care: 'pece', combos: 'kombinace', faq: 'faq', location: 'lokalita' };
 // Two backgrounds only: every content section is cream; black is reserved for the hero, the CTA bands, the final CTA and the footer.
 
@@ -494,8 +495,8 @@ ${html}
 }
 
 export function servicePage(slug) {
-  setOrderMessage(orderMessageFor(slug));
-  try { return renderServicePage(slug); } finally { setOrderMessage(null); }
+  setBookingSlug(slug);
+  try { return renderServicePage(slug); } finally { setBookingSlug(null); }
 }
 
 /* ============================== CENÍK =============================== */
@@ -521,7 +522,7 @@ export function cenik() {
       <p class="eyebrow" data-hero>${t('teaser.eyebrow')}</p>
       <h1 data-hero>${t('cenik.h1')}</h1>
       <p class="lead" data-hero>${t('cenik.lead')}</p>
-      <div class="btn-row" data-hero>${btnWhatsapp()}${btnCall()}${linkSms()}</div>
+      <div class="btn-row" data-hero>${btnBook()}${btnCall()}</div>
     </div>
   </section>
   <nav class="chips" aria-label="${esc(t('cenik.chipsAria'))}"><div class="wrap chips-in">${chips}</div></nav>
@@ -547,7 +548,7 @@ export function kontakt() {
       <p class="eyebrow" data-hero>${t('nav.kontakt')}</p>
       <h1 data-hero>${t('kontakt.h1')}</h1>
       <p class="lead" data-hero>${t('kontakt.lead', { address: `${site.street}, ${site.postalCode} ${t('city')} – ${site.district}`, phone: site.phoneDisplay })}</p>
-      <div class="btn-row" data-hero>${btnWhatsapp()}${btnCall()}${linkSms()}</div>
+      <div class="btn-row" data-hero>${btnBook()}${btnCall()}</div>
     </div>
   </section>
 
@@ -561,6 +562,7 @@ export function kontakt() {
       <div class="contact-card" data-reveal>
         <p class="eyebrow">${t('kontakt.premises')}</p>
         <address class="address"><strong>${site.name}</strong><br>${site.street}<br>${addressLine()}<br>${phoneLink()}</address>
+        ${site.googleReviewsUrl ? `<p><a class="text-link" href="${site.googleReviewsUrl}" target="_blank" rel="noopener" data-track="click_review">${t('footer.review')}</a></p>` : ''}
       </div>
       <div class="contact-card" data-reveal>
         <p class="eyebrow">${t('kontakt.legal')}</p>
@@ -598,7 +600,7 @@ export function notFound() {
       <p class="eyebrow">404</p>
       <h1>${t('notFound.h1')}</h1>
       <p class="lead">${t('notFound.lead')}</p>
-      <div class="btn-row"><a class="btn btn--light" href="/">${t('notFound.home')}</a><a class="btn btn--ghost" href="/cenik/">${t('nav.cenik')}</a>${btnWhatsapp()}</div>
+      <div class="btn-row"><a class="btn btn--light" href="/">${t('notFound.home')}</a><a class="btn btn--ghost" href="/cenik/">${t('nav.cenik')}</a>${btnBook()}</div>
     </div>
   </section>`;
   return layout({ title: t('notFound.title'), description: t('notFound.description'), path: '/404.html', body, robots: 'noindex' });

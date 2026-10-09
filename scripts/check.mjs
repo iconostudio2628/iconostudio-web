@@ -8,8 +8,9 @@ import { readFile, access } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { servicePagesBase } from '../src/content.mjs';
-import { allItems } from '../src/data.mjs';
-import { LANGS, LANG_META, pathFor, fileFor, routeKeys, uiDict } from '../src/i18n/index.mjs';
+import { posts } from '../src/blog.mjs';
+import { allItems, site } from '../src/data.mjs';
+import { LANGS, LANG_META, pathFor, fileFor, routeKeys } from '../src/i18n/index.mjs';
 import { translationGaps } from '../src/i18n/coverage.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,7 +28,7 @@ const priceNumbers = new Set(allItems.flatMap((it) => (it.variants ? it.variants
 // Only literal price-list amounts may appear in the text – no sums, differences or computed discounts.
 const derived = new Set();
 const CZECH_ONLY = /[ěščřžůďťňĚŠČŘŽŮĎŤŇ]/g;
-const CZECH_OK = /Bělehradsk\w*|BĚLEHRADSK\w*|Náměstí|IČO|Míru/g;
+const CZECH_OK = /Bělehradsk\w*|BĚLEHRADSK\w*|Náměstí|IČO|Míru|Město/g;
 
 for (const gap of translationGaps()) warn('translations', gap);
 
@@ -74,7 +75,7 @@ for (const lang of LANGS) {
         if (!dest.includes(`id="${hash}"`)) warn(f, `missing anchor ${path}#${hash}`);
       }
       // internal links must stay inside the page's language (404 and assets excepted)
-      if (path.endsWith('/') && lang !== 'cs' && !path.startsWith(`/${lang}/`) && !isSwitch) warn(f, `link leaves the ${lang} site: ${path}`);
+      if (path.endsWith('/') && lang !== 'cs' && !path.startsWith(`/${lang}/`) && !path.startsWith('/blog/') && !isSwitch) warn(f, `link leaves the ${lang} site: ${path}`);
       if (path.endsWith('/') && lang === 'cs' && /^\/(en|de)\//.test(path) && !isSwitch) warn(f, `link leaves the cs site: ${path}`);
     }
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
@@ -105,16 +106,19 @@ for (const lang of LANGS) {
     }
     // ---- conversion layer: every page has a sticky bar; service pages have art hero, signature block, CTAs ----
     if (!html.includes('data-sticky-cta')) warn(f, 'no sticky CTA bar');
+    // booking: service pages open their own service, every other page opens the booking page; no WhatsApp / SMS CTAs left
+    const bookUrls = [...html.matchAll(/href="(https:\/\/iconostudio\.setmore\.com[^"]*)"/g)].map((m) => m[1]);
+    const ownBooking = site.booking.services[key] || site.booking.page;
+    if (!bookUrls.length) warn(f, 'no booking link');
+    if (bookUrls.some((u) => u !== ownBooking)) warn(f, `booking link that does not open ${ownBooking}`);
+    if (/wa\.me\/|href="sms:/.test(html)) warn(f, 'WhatsApp / SMS link left on the page');
     if (serviceKeys.has(key)) {
-      const generic = encodeURIComponent(uiDict(lang).orderMessage);
-      const wa = [...html.matchAll(/href="https:\/\/wa\.me\/\d+\?text=([^"]*)"/g)].map((m) => m[1]);
       const ctas = (html.match(/data-cta="/g) || []).length;
       const places = new Set([...html.matchAll(/data-cta="([^"]+)"/g)].map((m) => m[1]));
-      if (!/svc-hero-img--art"[^>]*><img src="\/images\/art\/[\w-]+\.svg"/.test(html)) warn(f, 'hero does not use the service illustration');
+      if (!/svc-hero-img--art"[^>]*><img src="\/images\/service\/[\w-]+-1120\.webp"/.test(html)) warn(f, 'hero does not use the service photo');
       if (!/class="section section--\w+ sig sig--\w+"/.test(main)) warn(f, 'no signature block');
       if ((main.match(/class="band"/g) || []).length < 2) warn(f, 'fewer than 2 CTA bands');
-      if (wa.filter((x) => x === generic).length) warn(f, 'WhatsApp link with the generic message (should name the service)');
-      if (new Set(wa).size < 3) warn(f, `only ${new Set(wa).size} distinct pre-filled WhatsApp messages (expected the service plus its options / combinations)`);
+      if (!html.includes(`href="${site.booking.services[key]}"`)) warn(f, 'no booking link to this service');
       if (ctas < 12) warn(f, `only ${ctas} tracked CTAs`);
       for (const need of ['hero', 'band', 'combo', 'final', 'sticky']) if (!places.has(need)) warn(f, `no “${need}” CTA`);
       if (!['option', 'table', 'sig'].some((x) => places.has(x))) warn(f, 'no CTA next to the options / comparison / signature block');
@@ -139,6 +143,66 @@ for (const lang of LANGS) {
     if (pct > 0.5) warn(fileFor(pathFor(a, lang)), `${Math.round(pct * 100)}% of the text also appears on other service pages`);
   }
   console.log(`  shared-text share (max over service pages): ${Math.round(worst.pct * 100)}% (${worst.key})`);
+}
+
+const text100 = (m) => decode(m.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ')).split(/\s+/).filter(Boolean).slice(0, 220).join(' ');
+// ---- blog (Czech only): same hygiene as the pages, plus amounts-in-prose against the price list ----
+console.log('\n── blog ──');
+for (const f of ['blog/index.html', ...posts.map((p) => `blog/${p.slug}/index.html`)]) {
+  const html = await readFile(join(root, f), 'utf8');
+  const title = decode((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '');
+  const desc = decode((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
+  const main = (html.match(/<main[\s\S]*?<\/main>/) || [''])[0];
+  const spaced = decode(main.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, '¦')).replace(/\s+/g, ' ');
+  const words = decode(main.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ')).split(/\s+/).filter(Boolean).length;
+  if (title.length < 30 || title.length > 55) warn(f, `title length ${title.length} (blog target ≤55): “${title}”`);
+  if (desc.length < 120 || desc.length > 160) warn(f, `description length ${desc.length}`);
+  const post = posts.find((p) => f === `blog/${p.slug}/index.html`);
+  if (post) {
+    // docs/blog-checklist.md – automated part
+    const norm = (x) => x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const h1 = decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || '').replace(/<[^>]+>/g, '');
+    const first100 = text100(main);
+    for (const kw of post.keyword) {
+      const k = norm(kw);
+      if (!norm(title).includes(k.split(' ')[0])) warn(f, `keyword “${kw}” not in title`);
+      if (!norm(h1).includes(k)) warn(f, `keyword “${kw}” not in H1`);
+      if (!norm(first100).includes(k) && !norm(post.keyword.join(' ')).includes(k)) warn(f, `keyword “${kw}” not in first 100 words`);
+      if (!norm(first100).includes(k)) warn(f, `keyword “${kw}” not in first 100 words`);
+      if (!norm(desc).includes(k.split(' ')[0])) warn(f, `keyword “${kw}” not in meta description`);
+    }
+    if (norm(title).indexOf(norm(post.keyword[0]).split(' ')[0]) > 25) warn(f, 'primary keyword is not near the start of the title');
+    if ((html.match(/<h2[\s>]/g) || []).length < 7) warn(f, 'fewer than 7 <h2> sections (incl. FAQ)');
+    if (!html.includes('post-tldr')) warn(f, 'no TL;DR box');
+    if (!html.includes('class="post-author"')) warn(f, 'no author box');
+    if (!/<time datetime=/.test(html)) warn(f, 'no visible publish/update date');
+    if (!/<table/.test(html)) warn(f, 'no comparison table');
+    if (!/<img /.test(main)) warn(f, 'no image');
+    if (!html.includes('"@type":"BlogPosting"')) warn(f, 'no BlogPosting JSON-LD');
+    const internal = [...main.matchAll(/href="(\/[^"]*)"/g)].filter((m) => !m[1].startsWith('/blog/')).length;
+    if (internal < 4) warn(f, `only ${internal} internal links to service pages`);
+    for (const m of main.matchAll(/<a [^>]*href="https?:\/\/[^"]*"[^>]*>/g)) if (!/rel="[^"]*noopener/.test(m[0]) && !m[0].includes('setmore.com')) warn(f, `external link without rel=noopener: ${m[0].slice(0, 70)}`);
+    for (const m of main.matchAll(/<p>([\s\S]*?)<\/p>/g)) { const n = decode(m[1].replace(/<[^>]+>/g, ' ')).split(/\s+/).filter(Boolean).length; if (n > 75) warn(f, `paragraph with ${n} words (keep paragraphs short)`); }
+  }
+  if ((html.match(/<h1[\s>]/g) || []).length !== 1) warn(f, 'not exactly one <h1>');
+  if (!f.endsWith('blog/index.html') && words < 800) warn(f, `only ${words} words`);
+  if (!html.includes(`<link rel="canonical" href="${site.url}/${f.replace('index.html', '')}"`)) warn(f, 'missing/wrong canonical');
+  if (html.includes('hreflang="en"') && !f.includes('/')) warn(f, 'unexpected hreflang');
+  for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { JSON.parse(m[1]); } catch { warn(f, 'invalid JSON-LD'); } }
+  for (const m of spaced.matchAll(/(\d[\d.,  ]*\d|\d)\s?(Kč|CZK)/g)) { const n = Number(m[1].replace(/\D/g, '')); if (!priceNumbers.has(n)) warn(f, `amount ${m[0]} is not in the price list`); }
+  for (const tag of html.matchAll(/<a\b[^>]*>/g)) {
+    const m = tag[0].match(/\bhref="(\/[^"#?]*)/); if (!m) continue;
+    const target = m[1].endsWith('/') ? join(root, m[1], 'index.html') : join(root, m[1]);
+    if (!(await exists(target))) warn(f, `broken link ${m[1]}`);
+  }
+  console.log(`${f.padEnd(52)} words ${String(words).padStart(5)}  title ${title.length}  desc ${desc.length}`);
+}
+// blog is linked from the footer only: no other page may link to /blog/ except the blog itself and the footers
+for (const lang of LANGS) for (const key of keys) {
+  const html = await readFile(join(root, fileFor(pathFor(key, lang))), 'utf8');
+  const nav = (html.match(/<header[\s\S]*?<\/header>/) || [''])[0] + (html.match(/<main[\s\S]*?<\/main>/) || [''])[0];
+  if (nav.includes('href="/blog/')) warn(fileFor(pathFor(key, lang)), 'links to the blog outside the footer');
+  if (!html.match(/<footer[\s\S]*href="\/blog\/"/)) warn(fileFor(pathFor(key, lang)), 'footer has no blog link');
 }
 console.log(problems ? `\n${problems} problem(s).` : '\nAll checks passed.');
 process.exitCode = problems ? 1 : 0;

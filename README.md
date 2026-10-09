@@ -7,7 +7,6 @@ do kořene projektu (`index.html`, `cenik/`, `en/…`, `de/…`), takže stačí
 npm run build     # vygeneruje HTML ve všech jazycích, sitemap.xml a robots.txt
 npm run dev       # build + lokální server na http://localhost:5173
 npm run check     # SEO a integrita: title/description, H1, odkazy, alt, JSON-LD, počet slov, ceny v textech, překlady
-npm run art       # znovu vykreslí ilustrace služeb do images/art/
 ```
 
 ## Jazyky
@@ -39,7 +38,7 @@ npm run art       # znovu vykreslí ilustrace služeb do images/art/
 Canonical, `hreflang`, `og:url`, absolutní URL ve schema a `sitemap.xml` se vytvoří až ve chvíli, kdy je známá doména:
 
 ```bash
-SITE_URL=https://www.vase-domena.cz npm run build
+SITE_URL=https://icono-studio.cz npm run build   # (výchozí hodnota je už v src/data.mjs)
 ```
 
 nebo vyplňte `url` v `src/data.mjs`. Bez domény se tyto věci záměrně přeskakují (a stará `sitemap.xml` se maže).
@@ -71,11 +70,11 @@ Upravte `priceGroups` v `src/data.mjs`, pak `npm run build && npm run check`. Po
 Zkopírujte `ui.en.mjs`, `prices.en.mjs`, `content.en.mjs`, přeložte, zaregistrujte jazyk v `src/i18n/index.mjs`
 (`LANGS`, `LANG_META`, `SLUGS`, slovníky) a přidejte vlajku do `FLAGS` v `src/layout.mjs`.
 
-### Fotky místo ilustrací
-Ilustrace služeb jsou v `images/art/*.svg`. Až budou skutečné fotky, nahraďte je takto: nahrajte `.webp` do `images/`,
-v `src/content.mjs` přidejte fotku do `photos` a u dané služby nastavte `photo: 'klíč'` (viz `manikura`, `panske-strihy`).
-Karty ve výpisech dál používají ilustrace; hero a úvod stránky služby použije fotku.
-Galerie (`/galerie/`) se zapne sama, jakmile naplníte `site.gallery`.
+### Fotky služeb
+Karty služeb, hero na stránkách služeb i miniatury v kombinacích používají fotky v `images/service/<klíč>-{160,640,1120}.webp`
+(poměr 4:5, klíč = pole `art` v `src/content.mjs`). Jsou to vygenerované ilustrační fotky v barvách webu – nejsou to fotky práce studia.
+Skutečnou práci ukazuje sekce „Naše práce“ (`site.photos.work`) a sekce „Studio“ (`site.photos.studio`).
+Galerie se zapne sama, jakmile naplníte `site.gallery`.
 
 ## Stránky služeb: SEO + CRO vrstva (`src/service-extras.mjs`)
 
@@ -94,19 +93,18 @@ Každá ze 9 služeb má vlastní strukturu, ne jen jiné klíčové slovo na st
 | Pánská kosmetika | tipy počítané z ceníku (rozdíly cen) | vlastní |
 
 Co je na všech stránkách služeb:
-- **Ilustrace služby v hero** (`images/art/*.svg`) a miniatury v kombinacích.
+- **Fotka služby v hero** (`images/service/*`) a miniatury v kombinacích.
 - **CTA všude**: hero, každá varianta, sloupce porovnání, 2× CTA pás (jiný text na každé stránce), kombinace, FAQ, lokalita, závěrečné CTA, hlavička a patička.
-- **Zpráva ve WhatsApp/SMS se předvyplní podle služby i varianty** (`setOrderMessage()` v `data.mjs`, texty v `i18n/extras.<jazyk>.mjs`).
-- **Sticky CTA** jen na mobilu a tabletu: pevná spodní lišta (Volat · SMS · Objednat + „od … Kč“). Na desktopu žádná plovoucí lišta není – tam je objednávací menu v hlavičce.
-- **Měření**: každé kliknutí na WhatsApp / telefon / SMS pošle do `dataLayer` událost `cta_click` s `cta_placement` (hero, option, table, band, combo, sticky, final …; `js/cta.js`), `cta_channel`, `page_route`, `lang`.
+- **Dvě CTA: Rezervovat termín (hlavní) + Zavolat.** „Rezervovat“ otevírá Setmore: na stránce služby přímo tu službu, jinde celou rezervační stránku. Odkazy jsou na jednom místě – `site.booking` v `src/data.mjs` (`page` + `services[slug]`); stránka služby si je vybere přes `setBookingSlug()`. WhatsApp ani SMS na webu nejsou.
+- **Sticky CTA** jen na mobilu a tabletu: pevná spodní lišta (Volat · Rezervovat + „od … Kč“). Na desktopu žádná plovoucí lišta není – tam jsou obě tlačítka v hlavičce.
+- **Měření**: každé kliknutí na rezervaci / telefon pošle do `dataLayer` událost `cta_click` s `cta_placement` (hero, option, table, band, combo, sticky, final …; `js/cta.js`), `cta_channel` (`book` / `call`), `page_route`, `lang`.
 - **Kombinace** („střih + vousy“, „manikúra + pedikúra“ …) s cenou každé služby z ceníku – bez součtů a bez vymyšlených slev.
 - Odkazy „Na této stránce“ (kotvy) pod hlavičkou.
 
 ### Barvy: jen dvě pozadí
 Celý web má přesně dvě barvy pozadí: **černou** (`--black`) a **béžovou** (`--cream`, `#e3d1b3` – přání klienta, dříve krémová `#f1e9d9`). `--paper` a `--cream-deep` jsou jen aliasy na krémovou.
 Pravidlo: černá = hlavička, hero, CTA pásy, závěrečné CTA a patička (na úvodní stránce i „Proč ICONO“); veškerý obsah je krémový.
-Dvě krémové sekce za sebou se oddělují tenkou linkou, karty a tabulky jsou jen obrysové (bez další výplně). Ilustrace v `images/art`
-(`npm run art`) jsou vykreslené na stejné černé a krémové.
+Dvě béžové sekce za sebou se oddělují tenkou linkou, karty a tabulky jsou jen obrysové (bez další výplně).
 
 ### Ceny na stránkách služeb
 Na webu se tiskne jen doslovná položka ceníku (nebo „od …“ tak, jak je v ceníku). Žádné součty, rozdíly ani dopočítané slevy –
@@ -128,8 +126,7 @@ dotazy, které zákazníci opravdu kladou.
 
 ## Nasazení na Vercel
 Web je statický, na Vercel se nahrává jen hotový výstup (bez `src/`, `scripts/`, `images/source/` a `_legacy-webild-bundle/`).
-Konfigurace je ve `vercel.json` (adresáře končí lomítkem, bezpečnostní hlavičky, **`X-Robots-Tag: noindex`** – dokud web běží jen na
-adrese `*.vercel.app`, aby se neindexovala duplicita; až bude vlastní doména, hlavičku odstraňte a postavte web s `SITE_URL`).
+Konfigurace je ve `vercel.json` (adresáře končí lomítkem, bezpečnostní hlavičky). Web je připravený pro indexaci: doména `https://icono-studio.cz` je výchozí `site.url`, build generuje canonical, hreflang, `sitemap.xml`, `robots.txt` a `llms.txt`.
 
 ```bash
 npm run build
@@ -148,3 +145,7 @@ vynechají. Jakmile je doplníte, objeví se na webu i ve schema.org.
 - `LocalBusiness` schema s IČO, souřadnicemi, otevírací dobou a cenovým rozpětím; `Service` + `OfferCatalog` na stránkách služeb; `BreadcrumbList`.
 - `FAQPage` schema se záměrně nepřidává (Google FAQ rich results od 7. 5. 2026 nezobrazuje).
 - Po nasazení: založit/ověřit Google Business Profile se stejným NAP (název, adresa, telefon), poslat `sitemap.xml` do Search Console a Bing Webmaster.
+
+
+## Blog
+3 české články v `src/blog.mjs` (`/blog/…`), odkaz **jen v patičce** (hlídá `npm run check`). Čísla cen se berou z ceníku (`itemById`), externí zdroje jsou ověřené a uvedené pod článkem. Pravidla psaní a kontrolní seznam: `docs/blog-checklist.md`.

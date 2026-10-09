@@ -11,7 +11,7 @@ export const contentDe = {
     h1: `Maniküre Prag 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Klassische Maniküre, Gellak oder CND Shellac in der Bělehradská 77 in Vinohrady. Wählen Sie die reine Nagelpflege oder ein Vorteilspaket mit Hand-Spa.`,
     imageAlt: `Hände bei der Maniküre mit lackierten Nägeln im ICONO STUDIO in Prag 2`,
-    artAlt: `Illustration einer Nagellackflasche, einer Nagelfeile und eines Lacktropfens – Maniküre im ICONO STUDIO`,
+    artAlt: `Gepflegte Hände mit lackierten Nägeln, Nagellackflasche und Feile auf Leinen – Maniküre im ICONO STUDIO`,
     intro: {
       h2: `Gepflegte Hände im Zentrum von Prag 2`,
       paras: [
@@ -87,7 +87,7 @@ export const contentDe = {
     h1: `Gel- und Acrylnägel Prag 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Modellage von Gel-, Acryl- und Gel-X-Nägeln mit Farbe. Neue Nägel ab 650 CZK, Auffüllen ab 590 CZK, dazu ein Vorteilspaket mit Hand-Spa.`,
     imageAlt: `Gelnägel in verschiedenen Formen – eckig, rund, oval, Mandel und Coffin`,
-    artAlt: `Illustration von fünf Nagelformen: eckig, rund, oval, Mandel und Coffin`,
+    artAlt: `Hand mit langen Mandel-Gelnägeln in Beige mit einem schwarzen Akzentnagel`,
     intro: {
       h2: `Nagelmodellage nach Maß`,
       paras: [
@@ -132,7 +132,7 @@ export const contentDe = {
         `<strong>Gel</strong> ist ein flexibles Material, das in der Lampe aushärtet. Gelnägel wirken leicht und natürlich und eignen sich daher für den Alltag und für alle, die künstliche Nägel zum ersten Mal ausprobieren.`,
         `<strong>Acryl</strong> entsteht durch das Mischen von Flüssigkeit und Pulver und härtet an der Luft aus. Es ist stabil und eignet sich für längere oder auffälligere Formen. Beim Auftragen ist ein typischer Geruch wahrnehmbar.`,
         `<strong>Gel X</strong> verwendet vorgeformte Gel-Tips. Es ist eine moderne Alternative für alle, die eine Verlängerung mit leichtem Ergebnis möchten.`,
-        `<strong>Nagelform:</strong> Am häufigsten sind eckig, rund, oval, Mandel und Coffin. Eckig und rund sind praktisch, oval und Mandel strecken die Finger optisch, und Coffin ist auffällig und modisch. Die Form wählen wir gemeinsam aus, oder senden Sie uns Inspiration per WhatsApp.`,
+        `<strong>Nagelform:</strong> Am häufigsten sind eckig, rund, oval, Mandel und Coffin. Eckig und rund sind praktisch, oval und Mandel strecken die Finger optisch, und Coffin ist auffällig und modisch. Die Form wählen wir gemeinsam aus – gern können Sie Inspiration mitbringen.`,
         `Wenn Sie <strong>extra lange Nägel</strong> möchten, rechnen Sie mit einem Zuschlag – die Preisliste nennt 50, 150 und 200 CZK. Unsicher? Schreiben Sie uns, wie Sie Ihre Hände nutzen und wie lang Ihre Nägel sein sollen, und wir empfehlen Material und Form.`,
       ],
     },
@@ -173,7 +173,7 @@ export const contentDe = {
     h1: `Pediküre Prag 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Klassische und lackierte Pediküre sowie Medical-Pediküre mit Footlogix in der Bělehradská 77. Wählen Sie die reine Fußpflege oder ein Vorteilspaket mit Fuß-Spa.`,
     imageAlt: `Fuß mit lackierten Fußnägeln – Pediküre im ICONO STUDIO`,
-    artAlt: `Illustration eines Fußes mit lackierten Fußnägeln und Tropfen`,
+    artAlt: `Gepflegte Füße mit lackierten Zehennägeln auf einem cremefarbenen Handtuch neben Kieselsteinen und einer Schale`,
     intro: {
       h2: `Fußpflege im Zentrum von Prag 2`,
       paras: [
@@ -248,7 +248,7 @@ export const contentDe = {
     h1: `Wimpernverlängerung Prag 2`, eyebrow: `Beauty · Bělehradská 77`,
     lead: `Klassische Wimpern 1:1, Volumen 2D–5D, Mega Volumen und Design-Effekte. Neuset ab 990 CZK, Auffüllen ab 790 CZK.`,
     imageAlt: `Auge mit langen verlängerten Wimpern und Augenbraue`,
-    artAlt: `Illustration eines Auges mit langen Wimpern und einer Augenbraue`,
+    artAlt: `Nahaufnahme eines geschlossenen Auges mit Wimpernverlängerung`,
     intro: {
       h2: `Ein ausdrucksvollerer Blick ohne Wimperntusche`,
       paras: [
@@ -325,11 +325,11 @@ export const contentDe = {
     name: `Augenbrauen & Kosmetik`,
     cardText: `Augenbrauen formen und färben, Gesichtspflege und Massage.`,
     title: `Augenbrauen formen & färben Prag 2 | ICONO STUDIO`,
-    description: `Augenbrauen formen und färben ab 100 CZK sowie Gesichtspflege mit Massage für 750 CZK in der Bělehradská 77 in Prag 2. Termin per WhatsApp, SMS oder Telefon.`,
+    description: `Augenbrauen formen und färben ab 100 CZK sowie Gesichtspflege mit Massage für 750 CZK in der Bělehradská 77 in Prag 2. Termin online oder per Telefon.`,
     h1: `Augenbrauen & Kosmetik Prag 2`, eyebrow: `Beauty · Bělehradská 77`,
     lead: `Augenbrauen formen und färben sowie kosmetische Gesichtspflege mit Massage. Augenbrauen ab 100 CZK, Gesichtspflege 750 CZK.`,
     imageAlt: `Gepflegte Augenbrauen, Pinzette und Kosmetikcreme`,
-    artAlt: `Illustration gepflegter Augenbrauen, einer Pinzette und eines Cremetiegels`,
+    artAlt: `Augenbraue wird mit einem Bürstchen in Form gebracht, Nahaufnahme von Braue und Auge`,
     intro: {
       h2: `Augenbrauen, die zu Ihrem Gesicht passen`,
       paras: [
@@ -392,7 +392,7 @@ export const contentDe = {
     h1: `Head Spa Prag 2`, eyebrow: `Beauty · Bělehradská 77`,
     lead: `Entspannende Pflege für Kopfhaut und Haare für 890 CZK: Weißes-Rauschen-Therapie, Massage, Peeling, asiatische Haarwäsche und regenerierendes Öl.`,
     imageAlt: `Illustration einer Kopfhaut mit Massagepunkten und Tropfen`,
-    artAlt: `Illustration einer Kopfhaut mit Akupunkturpunkten, Schallwellen und Wassertropfen`,
+    artAlt: `Kopfhautmassage bei einer Head-Spa-Behandlung mit Dampf und fließendem Wasser`,
     intro: {
       h2: `Ein Moment nur für Ihren Kopf`,
       paras: [
@@ -447,7 +447,7 @@ export const contentDe = {
     h1: `Herrenhaarschnitt Prag 2`, eyebrow: `Barber · Bělehradská 77`,
     lead: `Barber Cuts vom klassischen Haarschnitt bis zu VIP All Inclusive. Styling und Balsam oder Eau de Cologne sind inklusive – und alle zwei Wochen sparen Sie 100 CZK.`,
     imageAlt: `Barber arbeitet beim Herrenhaarschnitt mit dem Haarschneider an den Seiten und im Nacken`,
-    artAlt: `Illustration von Schere und Kamm – Herrenhaarschnitt im Barbershop`,
+    artAlt: `Barber zieht mit der Maschine einen Fade am Hinterkopf und an den Seiten`,
     intro: {
       h2: `Barbershop im Zentrum von Prag 2`,
       paras: [
@@ -510,7 +510,7 @@ export const contentDe = {
     h1: `Bartpflege Prag 2`, eyebrow: `Barber · Bělehradská 77`,
     lead: `Saubere Form, präzise Konturen und ein gepflegter Bart. Bartpflege 420 CZK, nur Trimmer 200 CZK, Haarschnitt mit Bart im VIP Cut.`,
     imageAlt: `Rasiermesser und Rasierpinsel`,
-    artAlt: `Illustration von Rasiermesser und Rasierpinsel – Bartpflege im Barbershop`,
+    artAlt: `Rasiermesser, Rasierpinsel, eine Schale Rasiercreme und ein gerolltes Handtuch auf beigem Hintergrund`,
     intro: {
       h2: `Ein Bart mit Form`,
       paras: [
@@ -573,7 +573,7 @@ export const contentDe = {
     h1: `Herrenkosmetik & Haarwäsche Prag 2`, eyebrow: `Barber · Bělehradská 77`,
     lead: `VIP-Gesichtsreinigung, Kopfmassage und Haarwäsche im Barbershop. Herrenkosmetik 850 CZK, Kopfmassage 150 CZK, Haarwäsche ab 100 CZK.`,
     imageAlt: `Cremedose, Dampf und Handtuch – Herrenkosmetik im Barbershop`,
-    artAlt: `Illustration einer Cremedose, von Dampf und gefalteten Handtüchern`,
+    artAlt: `Gerolltes heißes Handtuch mit Dampf, eine Cremedose und eine Wasserschale auf schwarzem Stein`,
     intro: {
       h2: `Pflege nicht nur für die Haare`,
       paras: [

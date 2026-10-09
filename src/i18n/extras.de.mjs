@@ -2,10 +2,8 @@
 // (der Build prüft Schlüssel, Platzhalter und Links). Beträge sind `{Platzhalter}` und kommen aus der Preisliste (CZK).
 export const extrasDe = {
   common: {
-    msg: `Guten Tag, ich möchte einen Termin buchen: {subject}`,
-    msgCombo: `Guten Tag, ich möchte einen Termin für mehrere Leistungen buchen: {subject}`,
     order: `Buchen`,
-    micro: `Die Nachricht ist vorausgefüllt – Sie müssen sie nur absenden.`,
+    micro: `Wählen Sie online einen freien Termin.`,
     yes: `ja`,
     no: `nein`,
     scrollHint: `Die Tabelle lässt sich seitlich verschieben.`,
@@ -15,7 +13,7 @@ export const extrasDe = {
       options: `Varianten`, price: `Preise`, guide: `Auswahlhilfe`, steps: `Ablauf`, care: `Pflege`,
       combos: `Kombinationen`, faq: `Häufige Fragen`, location: `So finden Sie uns`,
     },
-    combos: { eyebrow: `Kombinationen`, cta: `Beide Leistungen buchen`, more: `Details` },
+    combos: { eyebrow: `Kombinationen`, cta: `Anrufen und beide Leistungen vereinbaren`, more: `Details` },
     problem: { priceLabel: `Preis` },
     ritual: { includes: `Inklusive` },
   },
@@ -23,12 +21,11 @@ export const extrasDe = {
   pages: {
     /* ============================================================ MANIKÜRE */
     'manikura-praha-2': {
-      subject: `Maniküre`,
       heroCta: `Maniküre buchen`,
-      final: { h: `Maniküre in der Bělehradská? Schreiben Sie uns.`, t: `Wählen Sie eine Variante und senden Sie die Nachricht – sie ist vorausgefüllt. Bělehradská 77, Prag 2, nahe I. P. Pavlova.` },
+      final: { h: `Maniküre in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – die Variante klären wir vor Ort. Bělehradská 77, Prag 2, nahe I. P. Pavlova.` },
       bands: [
-        { h: `Sie wissen, welche Variante Sie möchten?`, t: `Schreiben Sie uns den Namen – die Nachricht ist vorausgefüllt und wir vereinbaren einen Termin.` },
-        { h: `Gellak oder CND Shellac – Sie sind unsicher?`, t: `Schreiben Sie uns, wie Sie Ihre Hände beanspruchen, oder schicken Sie ein Inspirationsfoto. Wir beraten Sie.` },
+        { h: `Sie wissen, welche Variante Sie möchten?`, t: `Buchen Sie online einen Termin, die Variante klären wir vor Ort.` },
+        { h: `Gellak oder CND Shellac – Sie sind unsicher?`, t: `Wir beraten Sie vor Ort, je nachdem wie Sie Ihre Hände beanspruchen. Buchen Sie online oder rufen Sie uns an.` },
       ],
       sigs: [{
         chip: `Vergleich`, eyebrow: `Die Varianten im Vergleich`, h2: `Klassisch, Gellak oder CND Shellac?`,
@@ -46,7 +43,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Maniküre mit einer weiteren Leistung kombinieren`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Gellak-Maniküre + Gellak-Pediküre`, text: `Gepflegte Hände und Füße in einem Termin.` },
           { title: `Gellak-Maniküre + Augenbrauen färben`, text: `Nägel und Augenbrauen in einem Besuch.` },
@@ -56,17 +53,16 @@ export const extrasDe = {
 
     /* ============================================================ GEL- UND ACRYLNÄGEL */
     'gelove-akrylove-nehty-praha-2': {
-      subject: `Gel- und Acrylnägel`,
       heroCta: `Neue Nägel buchen`,
-      final: { h: `Neue Nägel in der Bělehradská? Schreiben Sie uns.`, t: `Schicken Sie Inspiration und sagen Sie uns die gewünschte Form – die Nachricht ist vorausgefüllt. Bělehradská 77, Prag 2.` },
+      final: { h: `Neue Nägel in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin und bringen Sie ein Inspirationsfoto mit – die Form besprechen wir gemeinsam. Bělehradská 77, Prag 2.` },
       bands: [
-        { h: `Form und Länge stehen fest?`, t: `Schreiben Sie uns und wir vereinbaren einen Termin. Ein Inspirationsfoto sehen wir gern.` },
-        { h: `Müssen die Nägel aufgefüllt werden?`, t: `Das Auffüllen ist günstiger als ein Neuset. Schreiben Sie uns, wann Sie zuletzt da waren, und wir schlagen einen Termin vor.` },
+        { h: `Form und Länge stehen fest?`, t: `Buchen Sie online einen Termin und zeigen Sie uns vor Ort Ihr Inspirationsfoto.` },
+        { h: `Müssen die Nägel aufgefüllt werden?`, t: `Das Auffüllen ist günstiger als ein Neuset. Buchen Sie online oder rufen Sie uns an.` },
       ],
       sigs: [
         {
           chip: `Nagelformen`, eyebrow: `Nagelform`, h2: `Welche Nagelform passt zu Ihnen?`,
-          lead: `Die fünf häufigsten Formen. Wir wählen gemeinsam, oder Sie schicken uns Inspiration.`,
+          lead: `Die fünf häufigsten Formen. Wir wählen gemeinsam – gern können Sie Inspiration mitbringen.`,
           items: [
             { name: `Eckig`, text: `Gerade Spitze, praktisch und stabil.` },
             { name: `Rund`, text: `Weiche Kanten, alltagstauglich.` },
@@ -74,8 +70,8 @@ export const extrasDe = {
             { name: `Mandel`, text: `Zulaufende Spitze, lässt die Finger optisch länger wirken.` },
             { name: `Coffin`, text: `Auffällige, modische Form mit gerader Spitze.` },
           ],
-          cta: `Sie wissen nicht, welche Form zu Ihnen passt? Schicken Sie uns Inspiration per WhatsApp.`,
-          ctaLabel: `Inspiration senden`,
+          cta: `Sie wissen nicht, welche Form zu Ihnen passt? Wir beraten Sie vor Ort.`,
+          ctaLabel: `Termin buchen`,
         },
         {
           chip: `Gel, Acryl, Gel X`, eyebrow: `Materialien im Vergleich`, h2: `Gel, Acryl oder Gel X?`,
@@ -92,7 +88,7 @@ export const extrasDe = {
       ],
       combos: {
         h2: `Nägel und weitere Pflege in einem Termin`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Neue Nägel + Gellak-Pediküre`, text: `Hände und Füße in einem Besuch.` },
           { title: `Nägel auffüllen + Augenbrauen färben`, text: `Nägel und Augenbrauen in einem Rutsch.` },
@@ -102,12 +98,11 @@ export const extrasDe = {
 
     /* ============================================================ PEDIKÜRE */
     'pedikura-praha-2': {
-      subject: `Pediküre`,
       heroCta: `Pediküre buchen`,
-      final: { h: `Pediküre in der Bělehradská? Schreiben Sie uns.`, t: `Sagen Sie uns, welche Variante Sie möchten – die Nachricht ist vorausgefüllt. Bělehradská 77, Prag 2.` },
+      final: { h: `Pediküre in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – die Variante klären wir vor Ort. Bělehradská 77, Prag 2.` },
       bands: [
-        { h: `Variante gewählt?`, t: `Schreiben Sie uns den Namen und wir vereinbaren einen Termin.` },
-        { h: `Plagen Sie Fersen oder Fußnägel?`, t: `Schreiben Sie uns, was Sie stört, damit wir die passende Variante vorschlagen. Bei gesundheitlichen Problemen fragen Sie zuerst Ihren Arzt.` },
+        { h: `Variante gewählt?`, t: `Buchen Sie online einen Termin, die Variante klären wir vor Ort.` },
+        { h: `Plagen Sie Fersen oder Fußnägel?`, t: `Rufen Sie uns an und sagen Sie uns, was Sie stört, damit wir die passende Variante vorschlagen. Bei gesundheitlichen Problemen fragen Sie zuerst Ihren Arzt.` },
       ],
       sigs: [{
         chip: `Die richtige Wahl`, eyebrow: `Je nachdem, was Sie brauchen`, h2: `Was möchten Sie von einer Pediküre?`,
@@ -122,7 +117,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Pediküre und etwas on top`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Gellak-Pediküre + Gellak-Maniküre`, text: `Füße und Hände in einem Termin.` },
           { title: `Pediküre mit Fuß-Spa + Head Spa`, text: `Fuß-Spa und Head Spa in einem Besuch.` },
@@ -132,12 +127,11 @@ export const extrasDe = {
 
     /* ============================================================ WIMPERNVERLÄNGERUNG */
     'prodluzovani-ras-praha-2': {
-      subject: `Wimpernverlängerung`,
       heroCta: `Wimpern buchen`,
-      final: { h: `Wimpern in der Bělehradská? Schreiben Sie uns.`, t: `Nennen Sie uns die Wimpernart und ob es ein Neuset oder ein Auffüllen ist – die Nachricht ist vorausgefüllt.` },
+      final: { h: `Wimpern in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – die Wimpernart und ob Neuset oder Auffüllen klären wir vor Ort.` },
       bands: [
-        { h: `Sie wissen, welchen Effekt Sie möchten?`, t: `Schreiben Sie uns die Wimpernart und ob es ein Neuset oder ein Auffüllen ist. Wir vereinbaren einen Termin.` },
-        { h: `Empfindliche Augen oder Kontaktlinsen?`, t: `Schreiben Sie uns das vorab und wir besprechen, was nötig ist.` },
+        { h: `Sie wissen, welchen Effekt Sie möchten?`, t: `Buchen Sie online einen Termin – Wimpernart und ob Neuset oder Auffüllen klären wir vor Ort.` },
+        { h: `Empfindliche Augen oder Kontaktlinsen?`, t: `Rufen Sie uns vorab an und wir besprechen, was nötig ist.` },
       ],
       sigs: [{
         chip: `Dichte`, eyebrow: `Wimpernarten`, h2: `Vom natürlichen Effekt bis zur maximalen Dichte`,
@@ -151,7 +145,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Wimpern und Augenbrauen zusammen`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Wimpern 1:1 auffüllen + Augenbrauen färben`, text: `Augenbrauen und Wimpern geben dem Blick einen klaren Rahmen.` },
           { title: `Volumen-Wimpern + Augenbrauen zupfen`, text: `Dichtere Wimpern und gepflegte Augenbrauen in einem Besuch.` },
@@ -161,12 +155,11 @@ export const extrasDe = {
 
     /* ============================================================ AUGENBRAUEN & KOSMETIK */
     'oboci-kosmetika-praha-2': {
-      subject: `Augenbrauen und Kosmetik`,
       heroCta: `Augenbrauen buchen`,
-      final: { h: `Augenbrauen in der Bělehradská? Schreiben Sie uns.`, t: `Sagen Sie uns, ob nur Zupfen oder auch Färben – die Nachricht ist vorausgefüllt.` },
+      final: { h: `Augenbrauen in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – ob nur Zupfen oder auch Färben, klären wir vor Ort.` },
       bands: [
-        { h: `Zupfen oder Färben?`, t: `Schreiben Sie uns, welche Variante Sie möchten, und wir vereinbaren einen Termin.` },
-        { h: `Zu den Augenbrauen auch Gesichtspflege?`, t: `Schreiben Sie uns, was Ihre Haut braucht. Kommen Sie am besten ungeschminkt.` },
+        { h: `Zupfen oder Färben?`, t: `Buchen Sie online einen Termin, die Variante klären wir vor Ort.` },
+        { h: `Zu den Augenbrauen auch Gesichtspflege?`, t: `Rufen Sie uns an und sagen Sie uns, was Ihre Haut braucht. Kommen Sie am besten ungeschminkt.` },
       ],
       sigs: [{
         chip: `Vergleich`, eyebrow: `Die Leistungen im Vergleich`, h2: `Zupfen, Färben oder Gesichtspflege?`,
@@ -184,7 +177,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Augenbrauen und weitere Pflege in einem Termin`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Augenbrauen färben + Wimpern 1:1`, text: `Augenbrauen und Wimpern geben dem Blick gemeinsam einen klaren Rahmen.` },
           { title: `Gesichtspflege + Augenbrauen zupfen`, text: `Haut und Augenbrauen in einem Besuch.` },
@@ -194,12 +187,11 @@ export const extrasDe = {
 
     /* ============================================================ HEAD SPA */
     'head-spa-praha-2': {
-      subject: `Head Spa`,
       heroCta: `Head Spa buchen`,
-      final: { h: `Head Spa in der Bělehradská? Schreiben Sie uns.`, t: `Sagen Sie uns, wann es Ihnen passt – die Nachricht ist vorausgefüllt. Bělehradská 77, Prag 2.` },
+      final: { h: `Head Spa in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin, der Ihnen passt. Bělehradská 77, Prag 2.` },
       bands: [
-        { h: `Einen Moment nur für sich?`, t: `Schreiben Sie uns und wir vereinbaren einen Termin. Planen Sie ausreichend Zeit ein.` },
-        { h: `Head Spa für einen nahestehenden Menschen?`, t: `Schreiben Sie uns und wir vereinbaren einen Termin.` },
+        { h: `Einen Moment nur für sich?`, t: `Buchen Sie online einen Termin. Planen Sie ausreichend Zeit ein.` },
+        { h: `Head Spa für einen nahestehenden Menschen?`, t: `Buchen Sie online oder rufen Sie uns an.` },
       ],
       sigs: [{
         chip: `Ablauf`, eyebrow: `Das erwartet Sie`, h2: `Fünf Schritte zu einem Preis`,
@@ -211,7 +203,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Head Spa und etwas on top`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Head Spa + Pediküre mit Fuß-Spa`, text: `Füße und Kopf – die ganze Entspannung an einem Ort.` },
           { title: `Head Spa + Gesichtspflege`, text: `Kopf und Haut in einem Besuch.` },
@@ -221,12 +213,11 @@ export const extrasDe = {
 
     /* ============================================================ HERRENHAARSCHNITT */
     'panske-strihy-praha-2': {
-      subject: `Herrenhaarschnitt`,
       heroCta: `Haarschnitt buchen`,
-      final: { h: `Haarschnitt in der Bělehradská? Schreiben Sie uns.`, t: `Sagen Sie uns, welchen Cut Sie möchten – die Nachricht ist vorausgefüllt. Bělehradská 77, Prag 2, nahe I. P. Pavlova.` },
+      final: { h: `Haarschnitt in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – den Cut klären wir vor Ort. Bělehradská 77, Prag 2, nahe I. P. Pavlova.` },
       bands: [
-        { h: `Sie wissen, welchen Cut Sie möchten?`, t: `Schreiben Sie uns den Namen und wir vereinbaren einen Termin. Kommen Sie alle zwei Wochen? Schreiben Sie das auch.` },
-        { h: `Zum Haarschnitt auch den Bart?`, t: `Der VIP Cut enthält beides. Schreiben Sie uns und wir schlagen eine Zeit vor.` },
+        { h: `Sie wissen, welchen Cut Sie möchten?`, t: `Buchen Sie online einen Termin, den Cut klären wir vor Ort. Kommen Sie alle zwei Wochen? Sagen Sie es uns beim Besuch.` },
+        { h: `Zum Haarschnitt auch den Bart?`, t: `Der VIP Cut enthält beides. Rufen Sie uns an und wir schlagen eine Zeit vor.` },
       ],
       sigs: [{
         chip: `Cut-Vergleich`, eyebrow: `Was inklusive ist`, h2: `Welcher Cut passt zu Ihnen?`,
@@ -236,7 +227,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Haarschnitt und etwas on top`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Klassischer Cut + Bartpflege`, text: `Haarschnitt und Bart einzeln. Der VIP Cut enthält beides für {vip}.` },
           { title: `Premium Cut + Herrenkosmetik`, text: `Haarschnitt mit Massage und Hautpflege in einem Besuch.` },
@@ -246,12 +237,11 @@ export const extrasDe = {
 
     /* ============================================================ BARTPFLEGE */
     'uprava-vousu-praha-2': {
-      subject: `Bartpflege`,
       heroCta: `Bartpflege buchen`,
-      final: { h: `Bart in der Bělehradská? Schreiben Sie uns.`, t: `Sagen Sie uns, ob die komplette Pflege oder nur der Trimmer – die Nachricht ist vorausgefüllt.` },
+      final: { h: `Bart in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – ob komplette Pflege oder nur der Trimmer, klären wir vor Ort.` },
       bands: [
-        { h: `Eine saubere Bartform gewünscht?`, t: `Schreiben Sie uns und wir vereinbaren einen Termin. Kürzen Sie den Bart bitte nicht kurz vor dem Besuch zu Hause.` },
-        { h: `Auch die Haare im Blick?`, t: `Der VIP Cut verbindet Haarschnitt und Bartpflege in einem Besuch. Schreiben Sie uns.` },
+        { h: `Eine saubere Bartform gewünscht?`, t: `Buchen Sie online einen Termin. Kürzen Sie den Bart bitte nicht kurz vor dem Besuch zu Hause.` },
+        { h: `Auch die Haare im Blick?`, t: `Der VIP Cut verbindet Haarschnitt und Bartpflege in einem Besuch. Rufen Sie uns an.` },
       ],
       sigs: [{
         chip: `Gesichtsform`, eyebrow: `Bartform`, h2: `Welche Bartform passt zu Ihnen?`,
@@ -265,7 +255,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Bart und etwas on top`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Bartpflege + Klassischer Cut`, text: `Haare und Bart einzeln – oder gleich der VIP Cut für {vip}.` },
           { title: `Bartpflege + Herrenkosmetik`, text: `Bart und Hautpflege nach der Rasur.` },
@@ -275,12 +265,11 @@ export const extrasDe = {
 
     /* ============================================================ HERRENKOSMETIK & HAARWÄSCHE */
     'panska-kosmetika-praha-2': {
-      subject: `Herrenkosmetik und Haarwäsche`,
       heroCta: `Pflege buchen`,
-      final: { h: `Pflege in der Bělehradská? Schreiben Sie uns.`, t: `Sagen Sie uns, was Sie möchten – VIP-Gesichtsreinigung, Kopfmassage oder Haarwäsche.` },
+      final: { h: `Pflege in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – VIP-Gesichtsreinigung, Kopfmassage oder Haarwäsche klären wir vor Ort.` },
       bands: [
-        { h: `Leistung gewählt?`, t: `Schreiben Sie uns und wir vereinbaren einen Termin. Die Pflege lässt sich auch mit einem Barber-Besuch verbinden.` },
-        { h: `Pflege zum Haarschnitt?`, t: `Schreiben Sie uns, was Sie kombinieren möchten, dann planen wir eine passende Zeit ein.` },
+        { h: `Leistung gewählt?`, t: `Buchen Sie online einen Termin. Die Pflege lässt sich auch mit einem Barber-Besuch verbinden – rufen Sie einfach an.` },
+        { h: `Pflege zum Haarschnitt?`, t: `Rufen Sie uns an und sagen Sie uns, was Sie kombinieren möchten, dann planen wir eine passende Zeit ein.` },
       ],
       sigs: [{
         chip: `Clevere Tipps`, eyebrow: `Aus der Preisliste`, h2: `So holen Sie mehr aus der Pflege heraus`,
@@ -293,7 +282,7 @@ export const extrasDe = {
       }],
       combos: {
         h2: `Pflege und etwas on top`,
-        lead: `Schreiben Sie uns, was Sie kombinieren möchten, und wir schlagen einen Termin vor. Die Preise stammen aus der Preisliste, je Leistung.`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Klassischer Cut + Herrenkosmetik`, text: `Haarschnitt und Hautpflege in einem Besuch.` },
           { title: `Bartpflege + Herrenkosmetik`, text: `Gepflegter Bart und gut durchfeuchtete Haut.` },

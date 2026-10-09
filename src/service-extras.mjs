@@ -5,7 +5,7 @@
 //     nail-shape guide, lash-density guide, problem → solution cards, the Head Spa ritual, face shape → beard shape …
 //   - its own section order (config below), so pages do not read as one skeleton,
 //   - service-specific CTAs everywhere: hero, every bookable option, comparison columns, CTA bands, combinations,
-//     mobile sticky bar – each carrying a pre-filled WhatsApp / SMS message that names the service,
+//     mobile sticky bar – each opening that service in the booking system (or calling),
 //   - combinations (“one visit, two services”) with sums computed from the price list.
 //
 // Nothing here invents evidence: no reviews, durations, discounts or customer numbers. Anything that is not in the
@@ -13,11 +13,11 @@
 // `site.gallery[].services` and `site.reviews[].service` (see workSection / reviewsSection below).
 //
 // Copy lives in i18n/extras.<lang>.mjs; the neutral configuration (ids, ticks, section order) is here.
-import { site, links, itemById, allItems, formatPrice, kc, waLink, smsLink } from './data.mjs';
+import { site, links, itemById, allItems, formatPrice, kc } from './data.mjs';
 import { t, getLang, merge, tx } from './i18n/index.mjs';
 import { getServicePages, servicePagesBase } from './content.mjs';
 import {
-  esc, icon, breadcrumbs, btnWhatsapp, btnCall, linkSms,
+  esc, icon, breadcrumbs, btnBook, btnCall, svcPhoto,
 } from './layout.mjs';
 import { extrasCs } from './i18n/extras.cs.mjs';
 import { extrasEn } from './i18n/extras.en.mjs';
@@ -188,10 +188,8 @@ const fill = (s, vars = {}) => s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? va
 const evalVars = (vars = {}) => Object.fromEntries(Object.entries(vars).map(([k, r]) => [k, kc(refNum(r))]));
 
 /* ================================================================ small html helpers */
-const msgFor = (c, subject) => c.msg.replace('{subject}', subject);
-const channelLinks = (msg, place, { label = t('btn.whatsapp'), cls = 'btn--sm' } = {}) => `
-      <a class="btn btn--wa ${cls}" href="${waLink(msg)}" target="_blank" rel="noopener" data-track="click_whatsapp" data-cta="${place}">${icon('chat')}<span>${esc(label)}</span></a>
-      <a class="text-link" href="${smsLink(msg)}" data-track="click_sms" data-cta="${place}">${esc(t('btn.smsShort'))}</a>`;
+const bookLink = (place, { label = t('btn.bookShort'), cls = 'btn--sm' } = {}) =>
+  `<a class="btn btn--book ${cls}" href="${links.book}" target="_blank" rel="noopener" data-track="click_book" data-cta="${place}">${icon('calendar')}<span>${esc(label)}</span></a>`;
 const head = ({ eyebrow, h2, lead }) => `
       <div class="sig-head" data-reveal>
         <p class="eyebrow">${esc(eyebrow)}</p>
@@ -220,26 +218,26 @@ function cmpTable({ caption, cols, rows, foot, c, text = false }) {
       </div>
       <p class="cmp-hint">${esc(c.scrollHint)}</p>`;
 }
-const colCta = (c, subject, name) => `<a class="btn btn--wa btn--sm" href="${waLink(msgFor(c, `${subject}: ${name}`))}" target="_blank" rel="noopener" data-track="click_whatsapp" data-cta="table">${icon('chat')}<span>${esc(c.order)}</span></a>`;
+const colCta = (c) => bookLink('table', { label: c.order });
 
-function renderCompare(cfg, sig, { c, subject }) {
+function renderCompare(cfg, sig, { c }) {
   const rows = cfg.rows.map((r, i) => {
     const label = sig.rows[i].label;
     if (r.k === 'tick') return { label, cells: r.v.map((v) => (v ? yes(c) : no(c))) };
     if (r.k === 'price') return { label, cells: r.v.map((v) => (v ? priceCell(refText(v)) : na())) };
     return { label, cells: sig.rows[i].cells.map(esc) };
   });
-  return `${head(sig)}${cmpTable({ caption: sig.h2, cols: sig.cols, rows, foot: sig.cols.map((n) => colCta(c, subject, n)), c, text: cfg.rows.some((r) => r.k === 'text') })}
+  return `${head(sig)}${cmpTable({ caption: sig.h2, cols: sig.cols, rows, foot: sig.cols.map((n) => colCta(c)), c, text: cfg.rows.some((r) => r.k === 'text') })}
       ${sig.note ? `<p class="sig-note">${esc(sig.note)}</p>` : ''}`;
 }
 
-function renderMatrix(cfg, sig, { c, subject }) {
+function renderMatrix(cfg, sig, { c }) {
   const items = cfg.ids.map((id) => ({ raw: raw(id), loc: itemById(id) }));
   const rows = [
     { label: sig.priceLabel, cells: items.map((i) => priceCell(formatPrice(i.loc))) },
     ...cfg.features.map((f) => ({ label: tx(f), cells: items.map((i) => ((i.raw.includes || []).includes(f) ? yes(c) : no(c))) })),
   ];
-  return `${head(sig)}${cmpTable({ caption: sig.h2, cols: items.map((i) => i.loc.name), rows, foot: items.map((i) => colCta(c, subject, i.loc.name)), c })}
+  return `${head(sig)}${cmpTable({ caption: sig.h2, cols: items.map((i) => i.loc.name), rows, foot: items.map((i) => colCta(c)), c })}
       <p class="sig-note">${esc(fill(sig.note, { off: kc(cfg.discount) }))}</p>`;
 }
 
@@ -258,14 +256,14 @@ const nailPath = (shape, cx, base, w, h) => {
 const svgWrap = (vb, body, cls) => `<svg class="${cls}" viewBox="${vb}" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
 const shapeSvg = (shape) => svgWrap('0 0 120 180', `<path d="${nailPath(shape, 60, 146, 76, 124)}"/><path d="M40 118 Q40 80 52 54" stroke-opacity=".4"/><path d="M42 160 Q60 172 78 160" stroke-opacity=".5"/>`, 'sig-svg');
 
-function renderShapes(cfg, sig, { c, subject }) {
+function renderShapes(cfg, sig, { c }) {
   return `${head(sig)}
       <ul class="shapes" data-stagger>
         ${sig.items.map((it, i) => `<li class="shape">${shapeSvg(cfg.shapes[i])}<h3>${esc(it.name)}</h3><p>${esc(it.text)}</p></li>`).join('\n        ')}
       </ul>
       <div class="sig-cta" data-reveal>
         <p>${esc(sig.cta)}</p>
-        <a class="btn btn--wa" href="${waLink(msgFor(c, `${subject} – ${sig.ctaLabel}`))}" target="_blank" rel="noopener" data-track="click_whatsapp" data-cta="sig">${icon('chat')}<span>${esc(sig.ctaLabel)}</span></a>
+        ${bookLink('sig', { label: sig.ctaLabel, cls: '' })}
       </div>`;
 }
 
@@ -299,7 +297,7 @@ const lashSvg = (k) => {
   return svgWrap('0 0 220 130', `<path d="M14 112 C66 70 154 70 206 112" stroke-opacity=".55"/>${strands}`, 'sig-svg sig-svg--wide');
 };
 
-function renderDensity(cfg, sig, { c, subject }) {
+function renderDensity(cfg, sig, { c }) {
   return `${head(sig)}
       <div class="density" data-stagger>
         ${sig.items.map((it, i) => {
@@ -310,7 +308,7 @@ function renderDensity(cfg, sig, { c, subject }) {
           <h3>${esc(it.name)}</h3>
           <p>${esc(it.text)}</p>
           <p class="dens-price">${esc(formatPrice(item))}</p>
-          <div class="opt-cta">${channelLinks(msgFor(c, `${subject}: ${it.name}`), 'sig')}</div>
+          <div class="opt-cta">${bookLink('sig', { label: c.order })}</div>
         </article>`;
   }).join('\n        ')}
       </div>
@@ -318,7 +316,7 @@ function renderDensity(cfg, sig, { c, subject }) {
 }
 
 /* ================================================================ problem → solution cards */
-function renderProblem(cfg, sig, { c, subject }) {
+function renderProblem(cfg, sig, { c }) {
   return `${head(sig)}
       <div class="problems" data-stagger>
         ${sig.items.map((it, i) => {
@@ -329,7 +327,7 @@ function renderProblem(cfg, sig, { c, subject }) {
           <p class="problem-pick">${icon('arrow')}<span>${esc(it.pick)}</span></p>
           <p>${esc(it.text)}</p>
           <div class="problem-foot"><span class="problem-price"><small>${esc(c.problem.priceLabel)}</small><strong>${esc(price)}</strong></span>
-            ${channelLinks(msgFor(c, `${subject}: ${it.pick}`), 'sig')}</div>
+            ${bookLink('sig', { label: c.order })}</div>
         </article>`;
   }).join('\n        ')}
       </div>
@@ -344,7 +342,7 @@ const RITUAL_ICONS = [
   '<path d="M12 3c-3.4 4.4-6 7.2-6 11a6 6 0 0 0 12 0c0-3.8-2.6-6.6-6-11Z"/><path d="M9 15a3 3 0 0 0 3 3" stroke-opacity=".6"/>',
   '<path d="M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/>',
 ];
-function renderRitual(cfg, sig, { c, subject, page }) {
+function renderRitual(cfg, sig, { c, page }) {
   const steps = page.options.items;
   const item = itemById(cfg.item.p);
   return `${head(sig)}
@@ -358,7 +356,7 @@ function renderRitual(cfg, sig, { c, subject, page }) {
           <p class="ritual-amount">${esc(kc(item.price))}</p>
           <p class="ritual-note">${esc(sig.priceNote)}</p>
           <div class="ritual-cta">
-            <a class="btn btn--wa btn--lg" href="${waLink(msgFor(c, subject))}" target="_blank" rel="noopener" data-track="click_whatsapp" data-cta="sig">${icon('chat')}<span>${esc(sig.cta)}</span></a>
+            ${bookLink('sig', { label: sig.cta, cls: 'btn--lg' })}
             <a class="btn btn--ghost" href="${links.call}" data-track="click_call" data-cta="sig">${icon('phone')}<span>${esc(t('btn.call'))}</span></a>
           </div>
         </aside>
@@ -403,7 +401,7 @@ export function renderSig(slug, i, { tone, page }) {
   const sc = cfg.sigs[i]; const sig = d.sigs[i];
   return `
   <section class="section section--${tone} sig sig--${sc.type}" id="sig-${i}">
-    <div class="wrap">${SIG_RENDER[sc.type](sc, sig, { c, subject: d.subject, page })}
+    <div class="wrap">${SIG_RENDER[sc.type](sc, sig, { c, page })}
     </div>
   </section>`;
 }
@@ -417,7 +415,7 @@ export function renderBand(slug, n) {
   <section class="band" aria-label="${esc(b.h)}">
     <div class="wrap band-in" data-reveal>
       <div class="band-copy"><p class="band-title">${esc(b.h)}</p><p>${esc(b.t)}</p></div>
-      <div class="band-actions">${btnWhatsapp(t('btn.whatsapp'), '', 'band')}${btnCall(t('btn.call'), '', 'band')}</div>
+      <div class="band-actions">${btnBook(t('btn.book'), '', 'band')}${btnCall(t('btn.call'), '', 'band')}</div>
     </div>
   </section>`;
 }
@@ -439,12 +437,12 @@ export function renderCombos(slug, tone, current) {
     const other = cb.pages.find((s) => s !== current);
     const text = fill(it.text, evalVars(cb.vars));
     return `<article class="combo">
-          <div class="combo-art">${cb.pages.map((s) => `<img src="/images/art/${artOf(s)}.svg" alt="" width="64" height="64" loading="lazy" decoding="async">`).join('<span aria-hidden="true">+</span>')}</div>
+          <div class="combo-art">${cb.pages.map((s) => `<img src="${svcPhoto(artOf(s)).thumb}" alt="" width="64" height="80" loading="lazy" decoding="async">`).join('<span aria-hidden="true">+</span>')}</div>
           <h3>${esc(it.title)}</h3>
           <p>${esc(text)}</p>
           <ul class="combo-lines">${cb.items.map(line).join('')}</ul>
           <div class="combo-cta">
-            <a class="btn btn--wa btn--sm" href="${waLink(fill(c.msgCombo, { subject: it.title }))}" target="_blank" rel="noopener" data-track="click_whatsapp" data-cta="combo">${icon('chat')}<span>${esc(c.combos.cta)}</span></a>
+            <a class="btn btn--ghost btn--sm" href="${links.call}" data-track="click_call" data-cta="combo">${icon('phone')}<span>${esc(c.combos.cta)}</span></a>
             ${other ? `<a class="text-link" href="/${other}/">${esc(pageOf(other).name)}</a>` : ''}
           </div>
         </article>`;
@@ -469,20 +467,18 @@ export function serviceHero({ p, trail, d, c }) {
         <p class="eyebrow" data-hero>${p.eyebrow}</p>
         <h1 data-hero>${p.h1}</h1>
         <p class="lead" data-hero>${p.lead}</p>
-        <div class="btn-row" data-hero>${btnWhatsapp(d.heroCta, 'btn--lg', 'hero')}${btnCall(t('btn.call'), 'btn--lg', 'hero')}${linkSms(t('btn.sms'), 'hero')}</div>
+        <div class="btn-row" data-hero>${btnBook(d.heroCta, 'btn--lg', 'hero')}${btnCall(t('btn.call'), 'btn--lg', 'hero')}</div>
         <p class="hero-micro" data-hero>${icon('check')}<span>${esc(c.micro)}</span></p>
       </div>
-      <figure class="svc-hero-img svc-hero-img--art" data-hero><img src="/images/art/${p.art}.svg" alt="${esc(p.artAlt)}" width="800" height="1000" fetchpriority="high" decoding="async"></figure>
+      <figure class="svc-hero-img svc-hero-img--art" data-hero><img src="${svcPhoto(p.art).src}" srcset="${svcPhoto(p.art).srcset}" sizes="(min-width: 900px) 520px, 90vw" alt="${esc(p.artAlt)}" width="1120" height="1400" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>`;
 }
 
-/** Option-card button: “Book via WhatsApp” with a message that names the service and the variant. */
+/** Option-card button: opens this service in the booking system (the exact variant is agreed on the spot). */
 export const optionCta = (slug) => {
-  const { d, c } = extrasFor(slug);
-  return (o) => (o.ids && o.ids.length
-    ? `<div class="opt-cta">${channelLinks(msgFor(c, `${d.subject}: ${o.title}`), 'option')}</div>`
-    : '');
+  const { c } = extrasFor(slug);
+  return (o) => (o.ids && o.ids.length ? `<div class="opt-cta">${bookLink('option', { label: c.order })}</div>` : '');
 };
 
 /** Data for the mobile sticky bar (see layout.mjs stickyBar): button label + “from” price. */
@@ -490,7 +486,6 @@ export const stickyFor = (slug, priceText) => {
   const { c } = extrasFor(slug);
   return { label: c.order, sub: `${t('from')} ${priceText}` };
 };
-export const orderMessageFor = (slug) => { const { d, c } = extrasFor(slug); return msgFor(c, d.subject); };
 export const chipLabels = (slug) => extrasFor(slug).c.chips;
 
 /* ---------- real evidence, rendered only when it exists (never invented) ---------- */

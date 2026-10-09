@@ -5,7 +5,6 @@
   "type": "module",
   "description": "ICONO STUDIO – Nails & Barber, Praha 2",
   "scripts": {
-    "art": "node scripts/make-art.mjs",
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
     "dev": "node scripts/build.mjs && python3 -m http.server 5173",

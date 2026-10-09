@@ -2,10 +2,8 @@
 // placeholders and links). Amounts are `{placeholders}` filled from the price list (formatted as CZK).
 export const extrasEn = {
   common: {
-    msg: `Hello, I'd like to book: {subject}`,
-    msgCombo: `Hello, I'd like to book one visit with: {subject}`,
     order: `Book`,
-    micro: `The message is pre-filled – just hit send.`,
+    micro: `Pick a time online from the available slots.`,
     yes: `yes`,
     no: `no`,
     scrollHint: `You can scroll the table sideways.`,
@@ -15,7 +13,7 @@ export const extrasEn = {
       options: `Options`, price: `Prices`, guide: `How to choose`, steps: `Process`, care: `Aftercare`,
       combos: `Combinations`, faq: `FAQ`, location: `Find us`,
     },
-    combos: { eyebrow: `Combinations`, cta: `Book both services`, more: `Details` },
+    combos: { eyebrow: `Combinations`, cta: `Call to arrange both services`, more: `Details` },
     problem: { priceLabel: `Price` },
     ritual: { includes: `Included` },
   },
@@ -23,12 +21,11 @@ export const extrasEn = {
   pages: {
     /* ============================================================ MANICURE */
     'manikura-praha-2': {
-      subject: `Manicure`,
       heroCta: `Book a manicure`,
-      final: { h: `Manicure at Bělehradská? Message us.`, t: `Choose an option and send the message – it is pre-filled. Bělehradská 77, Prague 2, close to I. P. Pavlova.` },
+      final: { h: `Manicure at Bělehradská? Book online.`, t: `Pick a time online and we will confirm the option on the spot. Bělehradská 77, Prague 2, close to I. P. Pavlova.` },
       bands: [
-        { h: `Know which option you want?`, t: `Send us its name – the message is pre-filled and we will arrange a time.` },
-        { h: `Torn between Gellak and CND Shellac?`, t: `Tell us how you use your hands, or send an inspiration photo. We will advise.` },
+        { h: `Know which option you want?`, t: `Book a time online and we will confirm the option on the spot.` },
+        { h: `Torn between Gellak and CND Shellac?`, t: `We will advise on the spot based on how you use your hands. Book online or give us a call.` },
       ],
       sigs: [{
         chip: `Comparison`, eyebrow: `Comparing the options`, h2: `Classic, Gellak or CND Shellac?`,
@@ -46,7 +43,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `Combine your manicure with another service`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Gellak manicure + Gellak pedicure`, text: `Hands and feet looked after in one visit.` },
           { title: `Gellak manicure + brow tint`, text: `Nails and brows in a single visit.` },
@@ -56,17 +53,16 @@ export const extrasEn = {
 
     /* ============================================================ GEL & ACRYLIC NAILS */
     'gelove-akrylove-nehty-praha-2': {
-      subject: `Gel and acrylic nails`,
       heroCta: `Book new nails`,
-      final: { h: `New nails at Bělehradská? Message us.`, t: `Send an inspiration photo and tell us the shape you want – the message is pre-filled. Bělehradská 77, Prague 2.` },
+      final: { h: `New nails at Bělehradská? Book online.`, t: `Pick a time online and bring an inspiration photo – we will go through the shape together. Bělehradská 77, Prague 2.` },
       bands: [
-        { h: `Sure about shape and length?`, t: `Message us and we will arrange a time. We are happy to see an inspiration photo.` },
-        { h: `Need a refill?`, t: `A refill costs less than a new set. Tell us when you were last here and we will suggest a time.` },
+        { h: `Sure about shape and length?`, t: `Book a time online and show us your inspiration photo on the spot.` },
+        { h: `Need a refill?`, t: `A refill costs less than a new set. Book online or give us a call.` },
       ],
       sigs: [
         {
           chip: `Nail shapes`, eyebrow: `Nail shape`, h2: `Which nail shape should you choose?`,
-          lead: `The five most common shapes. We choose together, or you send us some inspiration.`,
+          lead: `The five most common shapes. We choose together – feel free to bring some inspiration.`,
           items: [
             { name: `Square`, text: `Straight tip, practical and sturdy.` },
             { name: `Round`, text: `Soft edges, practical for every day.` },
@@ -74,8 +70,8 @@ export const extrasEn = {
             { name: `Almond`, text: `Tapered tip, makes fingers look longer.` },
             { name: `Coffin`, text: `A bold, fashionable shape with a straight tip.` },
           ],
-          cta: `Not sure which shape suits you? Send us inspiration on WhatsApp.`,
-          ctaLabel: `Send inspiration`,
+          cta: `Not sure which shape suits you? We will advise on the spot.`,
+          ctaLabel: `Book a time`,
         },
         {
           chip: `Gel, acrylic, Gel X`, eyebrow: `Comparing materials`, h2: `Gel, acrylic or Gel X?`,
@@ -92,7 +88,7 @@ export const extrasEn = {
       ],
       combos: {
         h2: `Nails and more care in one visit`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `New nails + Gellak pedicure`, text: `Hands and feet in one visit.` },
           { title: `Nail refill + brow tint`, text: `Nail and brow upkeep in one go.` },
@@ -102,12 +98,11 @@ export const extrasEn = {
 
     /* ============================================================ PEDICURE */
     'pedikura-praha-2': {
-      subject: `Pedicure`,
       heroCta: `Book a pedicure`,
-      final: { h: `Pedicure at Bělehradská? Message us.`, t: `Tell us which option you want – the message is pre-filled. Bělehradská 77, Prague 2.` },
+      final: { h: `Pedicure at Bělehradská? Book online.`, t: `Pick a time online and we will confirm the option on the spot. Bělehradská 77, Prague 2.` },
       bands: [
-        { h: `Picked your option?`, t: `Send us its name and we will arrange a time.` },
-        { h: `Troubled by heels or toenails?`, t: `Tell us what bothers you so we can suggest the right option. With any health problem, see a doctor first.` },
+        { h: `Picked your option?`, t: `Book a time online and we will confirm the option on the spot.` },
+        { h: `Troubled by heels or toenails?`, t: `Call us and tell us what bothers you so we can suggest the right option. With any health problem, see a doctor first.` },
       ],
       sigs: [{
         chip: `What to choose`, eyebrow: `Depending on what you need`, h2: `What do you want from a pedicure?`,
@@ -122,7 +117,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `A pedicure and a little extra`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Gellak pedicure + Gellak manicure`, text: `Feet and hands in one visit.` },
           { title: `Pedicure with foot spa + Head Spa`, text: `Foot spa and Head Spa in one visit.` },
@@ -132,12 +127,11 @@ export const extrasEn = {
 
     /* ============================================================ EYELASH EXTENSIONS */
     'prodluzovani-ras-praha-2': {
-      subject: `Eyelash extensions`,
       heroCta: `Book lashes`,
-      final: { h: `Lashes at Bělehradská? Message us.`, t: `Tell us the lash type and whether it is a new set or a refill – the message is pre-filled.` },
+      final: { h: `Lashes at Bělehradská? Book online.`, t: `Pick a time online – we confirm the lash type and whether it is a new set or a refill on the spot.` },
       bands: [
-        { h: `Know the effect you want?`, t: `Tell us the lash type and whether it is a new set or a refill. We will arrange a time.` },
-        { h: `Sensitive eyes or contact lenses?`, t: `Tell us in advance and we will go through what is needed.` },
+        { h: `Know the effect you want?`, t: `Book a time online – we confirm the lash type and whether it is a new set or a refill on the spot.` },
+        { h: `Sensitive eyes or contact lenses?`, t: `Give us a call in advance and we will go through what is needed.` },
       ],
       sigs: [{
         chip: `Density`, eyebrow: `Lash types`, h2: `From a natural effect to maximum density`,
@@ -151,7 +145,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `Lashes and brows together`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Classic 1:1 refill + brow tint`, text: `Brows and lashes give your eyes a clear frame.` },
           { title: `Volume lashes + brow shaping`, text: `Denser lashes and tidy brows in one visit.` },
@@ -161,12 +155,11 @@ export const extrasEn = {
 
     /* ============================================================ BROWS & FACIALS */
     'oboci-kosmetika-praha-2': {
-      subject: `Brows and facials`,
       heroCta: `Book brows`,
-      final: { h: `Brows at Bělehradská? Message us.`, t: `Tell us whether you want shaping only or a tint as well – the message is pre-filled.` },
+      final: { h: `Brows at Bělehradská? Book online.`, t: `Pick a time online – we confirm whether you want shaping only or a tint as well on the spot.` },
       bands: [
-        { h: `Shaping or tinting?`, t: `Tell us which option you want and we will arrange a time.` },
-        { h: `Want facial care with your brows?`, t: `Tell us what your skin needs. Please come without make-up if you can.` },
+        { h: `Shaping or tinting?`, t: `Book a time online and we will confirm the option on the spot.` },
+        { h: `Want facial care with your brows?`, t: `Call us and tell us what your skin needs. Please come without make-up if you can.` },
       ],
       sigs: [{
         chip: `Comparison`, eyebrow: `Comparing the services`, h2: `Shaping, tinting or facial care?`,
@@ -184,7 +177,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `Brows and more care in one visit`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Brow tint + classic 1:1 lashes`, text: `Brows and lashes together give your eyes a clear frame.` },
           { title: `Facial care + brow shaping`, text: `Skin and brows in one visit.` },
@@ -194,12 +187,11 @@ export const extrasEn = {
 
     /* ============================================================ HEAD SPA */
     'head-spa-praha-2': {
-      subject: `Head Spa`,
       heroCta: `Book Head Spa`,
-      final: { h: `Head Spa at Bělehradská? Message us.`, t: `Tell us when suits you – the message is pre-filled. Bělehradská 77, Prague 2.` },
+      final: { h: `Head Spa at Bělehradská? Book online.`, t: `Pick a time that suits you. Bělehradská 77, Prague 2.` },
       bands: [
-        { h: `Want a moment just for yourself?`, t: `Message us and we will arrange a time. Please allow plenty of time.` },
-        { h: `Want Head Spa for someone close to you?`, t: `Message us and we will arrange a time.` },
+        { h: `Want a moment just for yourself?`, t: `Book a time online. Please allow plenty of time.` },
+        { h: `Want Head Spa for someone close to you?`, t: `Book online or give us a call.` },
       ],
       sigs: [{
         chip: `The ritual`, eyebrow: `What you get`, h2: `Five steps for one price`,
@@ -211,7 +203,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `Head Spa and a little extra`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Head Spa + pedicure with foot spa`, text: `Feet and head – a full relaxation session in one place.` },
           { title: `Head Spa + facial care`, text: `Head and skin in one visit.` },
@@ -221,12 +213,11 @@ export const extrasEn = {
 
     /* ============================================================ MEN'S HAIRCUT */
     'panske-strihy-praha-2': {
-      subject: `Men's haircut`,
       heroCta: `Book a haircut`,
-      final: { h: `A haircut at Bělehradská? Message us.`, t: `Tell us which cut you want – the message is pre-filled. Bělehradská 77, Prague 2, close to I. P. Pavlova.` },
+      final: { h: `A haircut at Bělehradská? Book online.`, t: `Pick a time online and we will confirm the cut on the spot. Bělehradská 77, Prague 2, close to I. P. Pavlova.` },
       bands: [
-        { h: `Know which cut you want?`, t: `Send us its name and we will arrange a time. Coming every two weeks? Tell us that too.` },
-        { h: `Want your beard done with the haircut?`, t: `The VIP Cut includes both. Message us and we will suggest a time.` },
+        { h: `Know which cut you want?`, t: `Book a time online and we will confirm the cut on the spot. Coming every two weeks? Tell us during your visit.` },
+        { h: `Want your beard done with the haircut?`, t: `The VIP Cut includes both. Call us and we will suggest a time.` },
       ],
       sigs: [{
         chip: `Cut comparison`, eyebrow: `What is included`, h2: `Which cut suits you?`,
@@ -236,7 +227,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `A haircut and a little extra`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Classic Cut + beard trim`, text: `Haircut and beard separately. The VIP Cut includes both for {vip}.` },
           { title: `Premium Cut + men's skincare`, text: `A haircut with massage and skin care in one visit.` },
@@ -246,12 +237,11 @@ export const extrasEn = {
 
     /* ============================================================ BEARD TRIM */
     'uprava-vousu-praha-2': {
-      subject: `Beard trim`,
       heroCta: `Book a beard trim`,
-      final: { h: `Beard at Bělehradská? Message us.`, t: `Tell us whether you want the full trim or just the trimmer – the message is pre-filled.` },
+      final: { h: `Beard at Bělehradská? Book online.`, t: `Pick a time online – we confirm whether you want the full trim or just the trimmer on the spot.` },
       bands: [
-        { h: `Want a clean beard shape?`, t: `Message us and we will arrange a time. Please do not trim your beard at home right before the visit.` },
-        { h: `Doing your hair too?`, t: `The VIP Cut combines a haircut with a beard trim in one visit. Message us.` },
+        { h: `Want a clean beard shape?`, t: `Book a time online. Please do not trim your beard at home right before the visit.` },
+        { h: `Doing your hair too?`, t: `The VIP Cut combines a haircut with a beard trim in one visit. Give us a call.` },
       ],
       sigs: [{
         chip: `Face shape`, eyebrow: `Beard shape`, h2: `Which beard shape suits you?`,
@@ -265,7 +255,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `Beard and a little extra`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Beard trim + Classic Cut`, text: `Hair and beard separately – or go straight to the VIP Cut for {vip}.` },
           { title: `Beard trim + men's skincare`, text: `Beard and after-shave skin care.` },
@@ -275,12 +265,11 @@ export const extrasEn = {
 
     /* ============================================================ MEN'S SKINCARE & HAIR WASH */
     'panska-kosmetika-praha-2': {
-      subject: `Men's skincare and hair wash`,
       heroCta: `Book a treatment`,
-      final: { h: `Care at Bělehradská? Message us.`, t: `Tell us what you want – VIP face wash, head massage or hair wash.` },
+      final: { h: `Care at Bělehradská? Book online.`, t: `Pick a time online – we confirm VIP face wash, head massage or hair wash on the spot.` },
       bands: [
-        { h: `Picked your service?`, t: `Message us and we will arrange a time. You can combine the care with a visit to the barber.` },
-        { h: `Want care with your haircut?`, t: `Tell us what you want to combine and we will prepare a suitable time.` },
+        { h: `Picked your service?`, t: `Book a time online. You can combine the care with a visit to the barber – just call.` },
+        { h: `Want care with your haircut?`, t: `Call us and tell us what you want to combine so we can prepare a suitable time.` },
       ],
       sigs: [{
         chip: `Smart tips`, eyebrow: `From the price list`, h2: `How to get more from the care`,
@@ -293,7 +282,7 @@ export const extrasEn = {
       }],
       combos: {
         h2: `Care and a little extra`,
-        lead: `Tell us what you would like to combine and we will suggest a time. Prices are from the price list, per service.`,
+        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Classic Cut + men's skincare`, text: `A haircut and skin care in one visit.` },
           { title: `Beard trim + men's skincare`, text: `A tidy beard and moisturised skin.` },

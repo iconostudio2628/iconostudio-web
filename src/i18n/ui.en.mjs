@@ -22,15 +22,14 @@ export default {
     barber: { label: `Barber`, title: `Barber`, blurb: `Men's haircuts, beard trims and barber care.` },
   },
   burger: { open: `Open menu`, close: `Close menu` },
-  order: { toggle: `Book now`, title: `Message or call us` },
   bar: { aria: `Quick booking`, call: `Call` },
   btn: {
-    whatsapp: `Book via WhatsApp`, whatsappShort: `WhatsApp`, call: `Call`, sms: `Send an SMS`, smsShort: `SMS`,
+    book: `Book an appointment`, bookShort: `Book`, call: `Call`,
     directions: `Get directions`, openMap: `Open map`,
   },
   crumbs: { home: `Home`, aria: `Breadcrumb` },
   footer: {
-    servicesAria: `Services in the footer`, linksAria: `Footer links`, services: `Services`, web: `Site`, order: `Book`,
+    servicesAria: `Services in the footer`, linksAria: `Footer links`, services: `Services`, web: `Site`, order: `Book`, blog: `Blog (in Czech)`, review: `Write a Google review`,
   },
 
   days: { weekdays: `Mon–Fri`, sat: `Sat`, sun: `Sun` },
@@ -51,6 +50,7 @@ export default {
     eyebrow: `Find us`,
     lead: `You'll find us on Bělehradská street in Vinohrady, near I. P. Pavlova and Náměstí Míru.`,
   },
+  work: { eyebrow: `Our work`, heading: `Clean cuts, light hair`, lead: `Examples from the barber chair: precise fades and platinum blond.` },
   studio: { eyebrow: `Studio`, heading: `This is how to find us on Bělehradská`, lead: `You will recognise us by the black sign with white ICONO STUDIO Nails & Barber lettering and the barber pole in the window.` },
   photos: {
     hero: `Barber cutting hair with scissors and comb at ICONO STUDIO`,
@@ -60,6 +60,9 @@ export default {
     studioA: `Shop window and black ICONO STUDIO Nails & Barber sign at Bělehradská 77 in Prague 2`,
     studioB: `Entrance and shop window of ICONO STUDIO with a barber pole, seen from the front`,
     studioC: `ICONO STUDIO on Bělehradská street in Prague 2 – sign, shop window and entrance`,
+    workA: `Platinum blond hair with a soft fade, seen from above in profile`,
+    workB: `Short platinum blond cut with clean fades at the sides`,
+    workC: `Bright white short hair with a smooth skin fade, seen in profile`,
   },
   faq: { heading: `Frequently asked questions`, eyebrow: `FAQ` },
   cta: { heading: `Want an appointment? Message us.`, text: `Choose whichever way suits you best.` },
@@ -68,19 +71,20 @@ export default {
   team: { eyebrow: `Team`, heading: `The people you will book with`, at: `at ICONO STUDIO` },
   gallery: { eyebrow: `Gallery`, heading: `From ICONO STUDIO` },
   schema: {
-    description: `Barbershop and nail studio at Bělehradská 77 in Prague 2: men's haircuts, beard trims, manicure, gel and acrylic nails, pedicure, eyelash extensions, brows and Head Spa.`,
+    description: `Barber and nail salon in Prague 2 near I. P. Pavlova, Bělehradská 643/77: men's haircuts, beard trims, manicure, gel and acrylic nails, pedicure, eyelash extensions, brows and Head Spa.`,
     catalog: `price list`,
   },
 
   faqs: {
     order: {
       q: `How do I book?`,
-      a: `Message us on {wa} or send an {sms} to {phone}, or just {call}. The message “{msg}” fills in automatically.`,
+      a: `You can {book}, or just {call} on {phone}.`,
+      bookWord: `book a time online`,
       callWord: `give us a call`,
     },
     where: {
-      q: `Where is ICONO STUDIO?`,
-      a: `At {address}, near I. P. Pavlova and Náměstí Míru. {map}.`,
+      q: `Where can I find a barber and nail salon near I. P. Pavlova?`,
+      a: `ICONO STUDIO (barber and nail salon in one) is at {address}, by I. P. Pavlova metro and near Náměstí Míru. {map}.`,
       map: `Get directions on the map`,
     },
     hours: { q: `What are your opening hours?`, a: `{hours}. We are closed on Sundays, or open by reservation – message us and we will arrange it.` },
@@ -91,8 +95,8 @@ export default {
   orderSteps: {
     eyebrow: `Booking`,
     heading: `Three simple steps`,
-    s1: { h: `Message or call`, t: `WhatsApp, SMS or phone – the message “{msg}” is pre-filled.` },
-    s2: { h: `We agree a time`, t: `Tell us which service you are interested in and we will choose a time together.` },
+    s1: { h: `Book online`, t: `Pick a service and a free time in the booking system, or give us a call.` },
+    s2: { h: `We confirm the option`, t: `We go through the exact option and any wishes on the spot.` },
     s3: { h: `Come to Bělehradská` },
   },
   teaser: { default: `Prices at a glance`, eyebrow: `Price list`, link: `Full price list` },
@@ -108,8 +112,8 @@ export default {
   },
 
   home: {
-    title: `ICONO STUDIO | Nails & Barber Prague 2, Bělehradská 77`,
-    description: `Nail studio and barbershop at Bělehradská 77 in Prague 2: manicure, gel nails, pedicure, lashes, men's haircuts and beard trims. Price list and online booking.`,
+    title: `Barber Prague 2 & Nail Salon Prague | ICONO STUDIO`,
+    description: `Barber and nail salon near I. P. Pavlova, Bělehradská 643/77, Prague 2: men's haircuts, beards, manicure, gel nails, lashes. Price list and online booking.`,
     hero: {
       eyebrow: `ICONO STUDIO · BĚLEHRADSKÁ 77`,
       aria: `Nail studio & barbershop in Prague 2`,
@@ -124,7 +128,7 @@ export default {
       eyebrow: `About the studio`,
       heading: `One address, two crafts`,
       p1: `You'll find ICONO STUDIO at Bělehradská 77 in Prague 2, in Vinohrady, close to I. P. Pavlova and Náměstí Míru. Under one roof we combine a nail studio and a barbershop: men's haircuts and beard trims, manicure, gel and acrylic nails, pedicure, eyelash extensions, brows and Head Spa.`,
-      p2: `Every service has its own page, and prices are in the clear <a href="/cenik/">price list</a>. Book by WhatsApp, SMS or phone {phone}. We are open {hours}; on Sundays we are closed, or open by reservation.`,
+      p2: `Every service has its own page, and prices are in the clear <a href="/cenik/">price list</a>. Book a time online or call {phone}. We are open {hours}; on Sundays we are closed, or open by reservation.`,
     },
     duo: {
       barber: { title: `Barbershop`, text: `Haircuts, beards and full barber care.`, cta: `Browse barber services` },
@@ -138,7 +142,7 @@ export default {
         { h: `Nails &amp; barber in one place`, t: `Men's haircuts, beards, manicure and pedicure under one brand at one address.` },
         { h: `Clear prices`, t: `The complete price list for every service is on the website – including value packages.` },
         { h: `Central Prague 2`, t: `Bělehradská 77 in Vinohrady, near I. P. Pavlova and Náměstí Míru.` },
-        { h: `Easy booking`, t: `Message us on WhatsApp, send an SMS or call. Open on Saturdays too.` },
+        { h: `Easy booking`, t: `Book a time online or give us a call. Open on Saturdays too.` },
       ],
     },
   },
@@ -148,17 +152,17 @@ export default {
     choose: `What to choose?`,
     nails: {
       crumb: `Nail studio`,
-      title: `Nail Studio Prague 2 | Manicure & Pedicure | ICONO STUDIO`,
-      description: `Nail studio and beauty at Bělehradská 77 in Prague 2: manicure, gel nails, pedicure, lashes, brows and Head Spa. Price list and booking via WhatsApp.`,
+      title: `Nail Salon Prague 2 | Manicure & Pedicure | ICONO STUDIO`,
+      description: `Nail salon near I. P. Pavlova, Bělehradská 643/77, Prague 2: manicure, gel nails, pedicure, lashes, brows and Head Spa. Online booking.`,
       eyebrow: `Nails & beauty · Bělehradská 77`,
-      h1: `Nail studio & beauty Prague 2`,
+      h1: `Nail salon & nail studio Prague 2`,
       lead: `Manicure, gel and acrylic nails, pedicure, eyelash extensions, brows and Head Spa in one place – at Bělehradská 77 in Vinohrady.`,
       imageAlt: `Manicure at the ICONO STUDIO nail studio in Prague 2`,
       introEyebrow: `Nails &amp; beauty`,
       introHeading: `Nails and beauty in Vinohrady`,
       intro: [
-        `At ICONO STUDIO, Bělehradská 77 in Prague 2, we care for nails, lashes, brows and skin. From a classic manicure through gel and acrylic nails to pedicure with Footlogix products – every service has its own page with a description, options and prices.`,
-        `Not sure which service to choose? Browse the sections below or message us on WhatsApp. Current prices are in the <a href="/cenik/">price list</a>.`,
+        `Looking for a nail salon in Prague? At ICONO STUDIO, Bělehradská 77 in Prague 2 near I. P. Pavlova, we care for nails, lashes, brows and skin. From a classic manicure through gel and acrylic nails to pedicure with Footlogix products – every service has its own page with a description, options and prices.`,
+        `Not sure which service to choose? Browse the sections below or give us a call. Current prices are in the <a href="/cenik/">price list</a>.`,
       ],
       nailsHeading: `Manicure, nails and pedicure`,
       nailsPrices: `Nail prices`,
@@ -174,15 +178,15 @@ export default {
     },
     barber: {
       crumb: `Barbershop`,
-      title: `Barbershop Prague 2 | Haircuts & Beards | ICONO STUDIO`,
-      description: `Barbershop at Bělehradská 77 in Prague 2: men's haircuts, beard trims, hair wash and men's skincare. Prices from 100 CZK, book via WhatsApp, SMS or phone.`,
+      title: `Barber Prague 2 near I. P. Pavlova | ICONO STUDIO`,
+      description: `Barber near I. P. Pavlova, Bělehradská 643/77, Prague 2: men's haircuts, beard trims, hair wash, men's skincare. From 100 CZK, book online.`,
       eyebrow: `Barber · Bělehradská 77`,
-      h1: `Barbershop Prague 2`,
-      lead: `Men's haircuts, beard trims, hair wash and men's skincare at Bělehradská 77 in Prague 2 – Vinohrady. Book via WhatsApp, SMS or phone.`,
+      h1: `Barber Prague 2 near I. P. Pavlova`,
+      lead: `Men's haircuts, beard trims, hair wash and men's skincare at Bělehradská 77 in Prague 2 – Vinohrady. Book online or call.`,
       imageAlt: `Barber fading the sides and neckline with clippers at ICONO STUDIO in Prague 2`,
       introHeading: `A barber in central Prague 2`,
       intro: [
-        `ICONO STUDIO is a modern barbershop on Bělehradská in Vinohrady. A men's haircut, a haircut combined with a beard trim or a beard trim on its own – choose the service according to what you need right now. Every cut comes with styling and a finishing balm or cologne.`,
+        `ICONO STUDIO is a modern barber and barbershop in Prague 2, close to I. P. Pavlova metro on Bělehradská. A men's haircut, a haircut combined with a beard trim or a beard trim on its own – choose the service according to what you need right now. Every cut comes with styling and a finishing balm or cologne.`,
         `The barbershop is part of one studio together with the nail studio, so both halves of the brand meet under one roof. You will find the nail and beauty services on the <a href="/nail-studio-praha-2/">Nail studio</a> page.`,
       ],
       servicesEyebrow: `Barber services`,
@@ -211,9 +215,9 @@ export default {
 
   kontakt: {
     title: `Contact & Opening Hours | ICONO STUDIO Prague 2`,
-    description: `Contact ICONO STUDIO – {address}. Phone {phone}, WhatsApp and SMS. Open {hours}. Company ID {ico}.`,
+    description: `Contact ICONO STUDIO – {address}. Phone {phone}, online booking. Open {hours}. Company ID {ico}.`,
     h1: `Contact and opening hours`,
-    lead: `ICONO STUDIO · {address}. Book via WhatsApp, SMS or phone {phone}.`,
+    lead: `ICONO STUDIO · {address}. Book online or call {phone}.`,
     premises: `Premises`,
     legal: `Company details`,
     servicesHeading: `What we can help you with`,

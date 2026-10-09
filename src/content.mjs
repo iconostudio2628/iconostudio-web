@@ -27,7 +27,7 @@ export const servicePagesBase = [
     h1: 'Manikúra Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Klasická manikúra, Gellak nebo CND Shellac na Bělehradské 77 ve Vinohradech. Vyberte si samotnou úpravu nehtů, nebo výhodný balíček s hand spa.',
     imageAlt: 'Ruce při manikúře s lakovanými nehty v ICONO STUDIO v Praze 2',
-    artAlt: 'Ilustrace lahvičky laku na nehty, pilníku a kapky laku – manikúra v ICONO STUDIO',
+    artAlt: 'Upravené ruce s nalakovanými nehty, lahvička laku a pilník na lněné látce – manikúra v ICONO STUDIO',
     groups: ['manikura', 'zdobeni'],
     intro: {
       h2: 'Upravené ruce v centru Prahy 2',
@@ -106,7 +106,7 @@ export const servicePagesBase = [
     h1: 'Gelové a akrylové nehty Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Modelace gelových, akrylových a Gel X nehtů s barvou. Nové nehty od 650 Kč, doplnění od 590 Kč, k tomu výhodný balíček s hand spa.',
     imageAlt: 'Gelové nehty různých tvarů – čtvercové, kulaté, oválné, mandlové a coffin',
-    artAlt: 'Ilustrace pěti tvarů nehtů: čtvercový, kulatý, oválný, mandlový a coffin',
+    artAlt: 'Ruka s dlouhými mandlovými gelovými nehty v béžové barvě s jedním černým akcentem',
     groups: ['modelace', 'ostatni', 'zdobeni'],
     intro: {
       h2: 'Modelace nehtů na míru',
@@ -152,7 +152,7 @@ export const servicePagesBase = [
         '<strong>Gel</strong> je pružný materiál, který se vytvrzuje v lampě. Nehty z gelu působí lehce a přirozeně, takže se hodí pro každodenní nošení i pro ty, kdo umělé nehty zkoušejí poprvé.',
         '<strong>Akryl</strong> vzniká smícháním tekutiny a prášku a tvrdne na vzduchu. Je pevný a hodí se pro delší nebo výraznější tvary. Při aplikaci je cítit typická vůně.',
         '<strong>Gel X</strong> používá předtvarované gelové tipy. Je to moderní alternativa pro každého, kdo chce prodloužení s lehkým výsledkem.',
-        '<strong>Tvar nehtů:</strong> nejčastější jsou čtvercový, kulatý, oválný, mandlový a coffin. Čtvercový a kulatý tvar jsou praktické, oválný a mandlový opticky prodlužují prsty a coffin je výrazný a módní. Tvar vybereme společně, nebo nám pošlete inspiraci na WhatsApp.',
+        '<strong>Tvar nehtů:</strong> nejčastější jsou čtvercový, kulatý, oválný, mandlový a coffin. Čtvercový a kulatý tvar jsou praktické, oválný a mandlový opticky prodlužují prsty a coffin je výrazný a módní. Tvar vybereme společně, klidně přineste inspiraci.',
         'Pokud chcete <strong>extra dlouhé nehty</strong>, počítejte s příplatkem – v ceníku je uveden jako 50, 150 a 200 Kč. Nejste si jistí? Napište nám, jak ruce používáte a jak dlouhé nehty si představujete, a doporučíme materiál i tvar.',
       ],
     },
@@ -195,7 +195,7 @@ export const servicePagesBase = [
     h1: 'Pedikúra Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Klasická i lakovaná pedikúra a medicínální pedikúra Footlogix na Bělehradské 77. Vyberte si samotnou péči o chodidla, nebo výhodný balíček s foot spa.',
     imageAlt: 'Chodidlo s lakovanými nehty na nohou – pedikúra v ICONO STUDIO',
-    artAlt: 'Ilustrace chodidla s nalakovanými nehty na nohou a kapkami',
+    artAlt: 'Upravená chodidla s nalakovanými nehty na krémovém ručníku vedle říčních kamenů a misky',
     groups: ['pedikura'],
     intro: {
       h2: 'Péče o chodidla v centru Prahy 2',
@@ -273,7 +273,7 @@ export const servicePagesBase = [
     h1: 'Prodlužování řas Praha 2', eyebrow: 'Beauty · Bělehradská 77',
     lead: 'Klasické řasy 1:1, Volume 2D–5D, Mega Volume i designové efekty. Nové nasazení od 990 Kč, doplnění od 790 Kč.',
     imageAlt: 'Oko s dlouhými prodlouženými řasami a obočím',
-    artAlt: 'Ilustrace oka s dlouhými řasami a obočím',
+    artAlt: 'Detail zavřeného oka s prodlouženými řasami',
     groups: ['rasy'],
     intro: {
       h2: 'Výraznější pohled bez řasenky',
@@ -353,11 +353,11 @@ export const servicePagesBase = [
     slug: 'oboci-kosmetika-praha-2', area: 'beauty', name: 'Obočí a kosmetika', art: 'oboci-kosmetika', photo: null,
     cardText: 'Úprava a barvení obočí, péče o obličej a masáž.',
     title: 'Úprava a barvení obočí Praha 2 | ICONO STUDIO',
-    description: 'Úprava a barvení obočí od 100 Kč a péče o obličej s masáží za 750 Kč na Bělehradské 77 v Praze 2. Objednejte se přes WhatsApp, SMS nebo telefon.',
+    description: 'Úprava a barvení obočí od 100 Kč a péče o obličej s masáží za 750 Kč na Bělehradské 77 v Praze 2. Rezervujte si termín online, nebo zavolejte.',
     h1: 'Obočí a kosmetika Praha 2', eyebrow: 'Beauty · Bělehradská 77',
     lead: 'Úprava a barvení obočí a kosmetická péče o obličej s masáží. Obočí od 100 Kč, péče o obličej 750 Kč.',
     imageAlt: 'Upravené obočí, pinzeta a kosmetický krém',
-    artAlt: 'Ilustrace upraveného obočí, pinzety a kelímku s krémem',
+    artAlt: 'Úprava obočí kartáčkem, detail obočí a oka',
     groups: ['oboci', 'kosmetika'],
     intro: {
       h2: 'Obočí, které sedí k obličeji',
@@ -423,7 +423,7 @@ export const servicePagesBase = [
     h1: 'Head Spa Praha 2', eyebrow: 'Beauty · Bělehradská 77',
     lead: 'Relaxační péče o pokožku hlavy a vlasy za 890 Kč: terapie bílým zvukem, masáž, exfoliace, asijské mytí vlasů a regenerační olej.',
     imageAlt: 'Ilustrace pokožky hlavy s body pro masáž a kapkami',
-    artAlt: 'Ilustrace pokožky hlavy s akupunkturními body, vlnami zvuku a kapkami vody',
+    artAlt: 'Masáž pokožky hlavy při Head Spa, pára a stékající voda',
     groups: ['headspa'],
     intro: {
       h2: 'Chvíle jen pro vaši hlavu',
@@ -482,7 +482,7 @@ export const servicePagesBase = [
     h1: 'Pánský střih Praha 2', eyebrow: 'Barber · Bělehradská 77',
     lead: 'Barber cuts od klasického střihu po VIP All Inclusive. Styling a balzám nebo kolínská jsou v ceně, každé dva týdny o 100 Kč levněji.',
     imageAlt: 'Barber upravuje boky a zátylek strojkem při pánském střihu',
-    artAlt: 'Ilustrace nůžek a hřebenu – pánský střih v barbershopu',
+    artAlt: 'Barber strojkem dělá fade na zátylku a po stranách hlavy',
     groups: ['cuts'],
     intro: {
       h2: 'Barbershop v centru Prahy 2',
@@ -548,7 +548,7 @@ export const servicePagesBase = [
     h1: 'Úprava vousů Praha 2', eyebrow: 'Barber · Bělehradská 77',
     lead: 'Čistý tvar, precizní linie a upravené vousy. Úprava vousů 420 Kč, samotný timer 200 Kč, střih s vousy ve VIP cutu.',
     imageAlt: 'Břitva a štětka na holení',
-    artAlt: 'Ilustrace žiletky a štětky na holení – úprava vousů v barbershopu',
+    artAlt: 'Břitva, štětka na holení, miska s krémem a srolovaný ručník na béžovém pozadí',
     groups: ['vousy'],
     intro: {
       h2: 'Vousy, které mají tvar',
@@ -614,7 +614,7 @@ export const servicePagesBase = [
     h1: 'Pánská kosmetika a mytí hlavy Praha 2', eyebrow: 'Barber · Bělehradská 77',
     lead: 'Mytí obličeje VIP, masáž hlavy a mytí hlavy v barbershopu. Pánská kosmetika 850 Kč, masáž hlavy 150 Kč, mytí hlavy od 100 Kč.',
     imageAlt: 'Plechovka s krémem, pára a ručník – pánská kosmetika v barbershopu',
-    artAlt: 'Ilustrace plechovky s krémem, páry a složených ručníků',
+    artAlt: 'Horký srolovaný ručník s párou, kelímek s krémem a miska s vodou na černém kameni',
     groups: ['pece'],
     intro: {
       h2: 'Péče nejen o vlasy',
