@@ -828,3 +828,14 @@ h1, h2, h3, .svc-name, .opt h3 { overflow-wrap: break-word; }
   html, body, .mobile-nav, .mobile-nav * { scrollbar-width: none; -ms-overflow-style: none; }
   html::-webkit-scrollbar, body::-webkit-scrollbar, .mobile-nav::-webkit-scrollbar, .mobile-nav *::-webkit-scrollbar { display: none; width: 0; height: 0; }
 }
+
+/* ---------- headings (h1–h6) use the logo-like face; body text stays Inter ---------- */
+h1, h2, h3, h4, h5, h6, .statement-text, .band-title { font-family: 'Russo One', var(--head); font-weight: 400; letter-spacing: .005em; }
+h1 { font-size: clamp(2.2rem, 1.1rem + 4.6vw, 4.1rem); line-height: 1.06; }
+h2 { font-size: clamp(1.8rem, 1rem + 3vw, 2.9rem); line-height: 1.1; }
+h3 { font-size: 1.25rem; line-height: 1.25; }
+.duo-body h2 { font-size: clamp(2.1rem, 1.1rem + 4vw, 4rem); letter-spacing: .005em; }
+.final-cta h2 { font-size: clamp(2.1rem, 1rem + 5.2vw, 5.2rem); letter-spacing: .005em; }
+.statement-text { line-height: 1.08; }
+.ptable-head h2, .ptable-head h3 { letter-spacing: .005em; }
+.page-hero--svc h1 { font-size: clamp(2rem, 1rem + 3.8vw, 3.4rem); }
