@@ -149,3 +149,6 @@ vynechají. Jakmile je doplníte, objeví se na webu i ve schema.org.
 
 ## Blog
 3 české články v `src/blog.mjs` (`/blog/…`), odkaz **jen v patičce** (hlídá `npm run check`). Čísla cen se berou z ceníku (`itemById`), externí zdroje jsou ověřené a uvedené pod článkem. Pravidla psaní a kontrolní seznam: `docs/blog-checklist.md`.
+
+## Nasazení na Vercel
+`vercel.json` obsahuje `buildCommand` (`npm run build && node scripts/publish.mjs`) a `outputDirectory: public`. Skript `scripts/publish.mjs` zkopíruje do `public/` jen nasaditelný web (stránky, css, js, obrázky bez `images/source`, robots, sitemap, llms.txt). Složka `public/` je v `.gitignore`. Lokálně dál stačí `npm run dev`.

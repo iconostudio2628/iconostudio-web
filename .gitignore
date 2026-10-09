@@ -7,3 +7,4 @@ node_modules/
 # not part of the website (kept locally only)
 facebookposty/*.pdf
 facebookposty/*.mp4
+public/
