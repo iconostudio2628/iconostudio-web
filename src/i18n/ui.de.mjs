@@ -117,8 +117,8 @@ export default {
     description: `Barber und Nail Salon bei I. P. Pavlova, Bělehradská 643/77, Prag 2: Herrenschnitt, Bart, Maniküre, Gelnägel, Wimpern. Preisliste und Online-Termin.`,
     hero: {
       eyebrow: `ICONO STUDIO · BĚLEHRADSKÁ 77`,
-      aria: `Barber & Nail Salon Prag 2 bei I. P. Pavlova`,
-      l1: `Barber &amp; Nail Salon`, l2: `Prag 2,`, l3: `bei I. P. Pavlova`,
+      aria: `Barber & Nail Salon Prag 2`,
+      l1: `Barber &amp; <span class="mbr"></span>Nail Salon`, l2: `Prag 2`,
       lead: `Nagelstudio und Barbershop an einem Ort: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen, Herrenschnitte und Bartpflege.`,
       pricelist: `Preisliste`,
       cardAria: `Kontakt und Öffnungszeiten`,

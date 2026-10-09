@@ -117,8 +117,8 @@ export default {
     description: `Barber and nail salon near I. P. Pavlova, Bělehradská 643/77, Prague 2: men's haircuts, beards, manicure, gel nails, lashes. Price list and online booking.`,
     hero: {
       eyebrow: `ICONO STUDIO · BĚLEHRADSKÁ 77`,
-      aria: `Barber & Nail Salon Prague 2 near I. P. Pavlova`,
-      l1: `Barber &amp; Nail Salon`, l2: `Prague 2,`, l3: `near I. P. Pavlova`,
+      aria: `Barber & Nail Salon Prague 2`,
+      l1: `Barber &amp; <span class="mbr"></span>Nail Salon`, l2: `Prague 2`,
       lead: `Nail studio and barbershop in one place: manicure, gel nails, pedicure, lashes, brows, men's haircuts and beard trims.`,
       pricelist: `Price list`,
       cardAria: `Contact and opening hours`,

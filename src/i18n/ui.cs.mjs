@@ -115,8 +115,8 @@ export default {
     description: 'Barber Praha 2 a nail salon u I. P. Pavlova, Bělehradská 643/77: pánské střihy, vousy, manikúra, gelové nehty, řasy. Ceník a online rezervace.',
     hero: {
       eyebrow: 'ICONO STUDIO · BĚLEHRADSKÁ 77',
-      aria: 'Barber & Nail Salon Praha 2 u I. P. Pavlova',
-      l1: 'Barber &amp; Nail Salon', l2: 'Praha 2,', l3: 'u I. P. Pavlova',
+      aria: 'Barber & Nail Salon Praha 2',
+      l1: 'Barber &amp; <span class="mbr"></span>Nail Salon', l2: 'Praha 2',
       lead: 'Nehtové studio a barbershop na jednom místě: manikúra, gelové nehty, pedikúra, řasy, obočí, pánské střihy a úprava vousů.',
       pricelist: 'Ceník služeb',
       cardAria: 'Kontakt a otevírací doba',

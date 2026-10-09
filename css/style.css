@@ -795,27 +795,30 @@ h1, h2, h3, .svc-name, .opt h3 { overflow-wrap: break-word; }
 /* ---------- home hero: heading face closer to the logo (squared, heavy) – hero only ---------- */
 .hero-title { font-family: 'Russo One', var(--head); font-weight: 400; letter-spacing: .005em; }
 
-/* ---------- home hero on phones/tablets: full-bleed beige-graded photo (barber + nails, no faces) ---------- */
+/* ---------- home hero on phones/tablets: full-bleed beige-graded photo (barber on top, nails below – no faces) ---------- */
 .hero-mobile-bg { display: none; }
 @media (max-width: 959px) {
-  .hero--blobs { --hero-h: calc(100svh - var(--header-h) - var(--bar-h)); padding: 0; background: var(--cream); }
+  .hero--blobs { --hero-h: max(calc(100svh - var(--header-h) - var(--bar-h)), 580px); padding: 0; background: var(--cream); }
   .hero--blobs::before, .hero--blobs::after { display: none; }
-  .hero-mobile-bg { display: block; position: absolute; top: 0; left: 0; right: 0; height: max(var(--hero-h), 560px); z-index: -1; background: #18140f; }
-  .hero-mobile-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
-  .hero-mobile-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21, 19, 15, .10) 0%, rgba(21, 19, 15, 0) 22%, rgba(21, 19, 15, .5) 58%, rgba(21, 19, 15, .92) 100%); }
+  .hero-mobile-bg { display: block; position: absolute; top: 0; left: 0; right: 0; height: var(--hero-h); z-index: -1; background: #18140f; }
+  .hero-mobile-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+  .hero-mobile-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21, 19, 15, .72) 0%, rgba(21, 19, 15, .28) 20%, rgba(21, 19, 15, 0) 34%, rgba(21, 19, 15, 0) 70%, rgba(21, 19, 15, .86) 100%); }
   .hero--blobs .hero-grid { gap: 0; align-items: stretch; }
-  .hero--blobs .hero-copy { min-height: max(var(--hero-h), 560px); display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 28px; color: #f6edda; }
-  .hero--blobs .hero-copy .eyebrow { color: #e3d1b3; margin-bottom: 14px; }
-  .hero--blobs .hero-title { font-size: clamp(2.3rem, 11.6vw, 4.6rem); line-height: 1.04; text-transform: uppercase; color: #fff; }
-  .hero--blobs .hero-title .line:nth-child(n+2) { display: inline; overflow: visible; margin: 0; padding: 0; font-size: .42em; color: #e3d1b3; letter-spacing: .06em; }
-  .hero--blobs .hero-title .line:nth-child(2) > span, .hero--blobs .hero-title .line:nth-child(3) > span { display: inline; }
-  .hero--blobs .hero-title .line:nth-child(2)::after { content: ' '; }
+  .hero--blobs .hero-copy { min-height: var(--hero-h); display: flex; flex-direction: column; padding: 22px 0 22px; color: #f6edda; }
+  .hero--blobs .hero-copy .eyebrow { display: none; }
+  .hero--blobs .hero-title { font-size: clamp(2.2rem, 10.6vw, 4.4rem); line-height: 1.04; text-transform: uppercase; color: #fff; text-shadow: 0 2px 18px rgba(21, 19, 15, .45); }
   .hero--blobs .hero-copy .lead, .hero--blobs .hero-copy .hero-addr, .hero--blobs .hero-copy .text-link { display: none; }
-  .hero--blobs .hero-copy .btn-row { margin-top: 18px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 10px; }
+  .hero--blobs .hero-copy .btn-row { margin-top: auto; display: grid; grid-template-columns: 1.6fr 1fr; gap: 10px; }
   .hero--blobs .hero-copy .btn-row .btn { width: 100%; padding-inline: 12px; }
   .hero--blobs .hero-copy .btn--book { background: #fff; color: #000; }
-  .hero--blobs .hero-copy .btn--ghost { color: #fff; border-color: rgba(255, 255, 255, .65); background: rgba(21, 19, 15, .35); }
+  .hero--blobs .hero-copy .btn--ghost { color: #fff; border-color: rgba(255, 255, 255, .7); background: rgba(21, 19, 15, .45); }
+  .hero--blobs .hero-title .mbr { display: block; }
   .hero--blobs .hero-photos { display: none; }
   .hero--blobs .hero-side { padding-block: 28px 44px; }
   .hero--blobs .hero-side .hero-card { margin: 0; }
 }
+
+/* ---------- sticky order bar slides away while an in-page CTA is on screen (js/cta.js) ---------- */
+.sticky-cta { transition: transform .28s var(--ease), visibility 0s linear 0s; }
+.sticky-cta.is-away { transform: translateY(105%); visibility: hidden; transition: transform .28s var(--ease), visibility 0s linear .28s; }
+@media (prefers-reduced-motion: reduce) { .sticky-cta, .sticky-cta.is-away { transition: none; } }

@@ -151,7 +151,6 @@ export function home() {
         <h1 class="hero-title" aria-label="${esc(t('home.hero.aria'))}">
           <span class="line" aria-hidden="true"><span>${t('home.hero.l1')}</span></span>
           <span class="line" aria-hidden="true"><span>${t('home.hero.l2')}</span></span>
-          <span class="line" aria-hidden="true"><span>${t('home.hero.l3')}</span></span>
         </h1>
         <p class="lead" data-hero>${t('home.hero.lead')}</p>
         <div class="btn-row" data-hero>

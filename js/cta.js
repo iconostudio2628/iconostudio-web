@@ -23,4 +23,19 @@
       lang: document.body.dataset.lang || 'cs',
     });
   });
+
+  // Sticky bar (phones/tablets): hide it while a book/call button from the page itself is visible, show it when none is.
+  // Header, the bar itself and the mobile menu do not count – the header buttons are always on screen.
+  const bar = document.querySelector('[data-sticky-cta]');
+  if (bar && 'IntersectionObserver' in window) {
+    const targets = [...document.querySelectorAll('a[data-track="click_book"], a[data-track="click_call"]')]
+      .filter((a) => !a.closest('.site-header, .sticky-cta, .mobile-nav'));
+    const visible = new Set();
+    const sync = () => bar.classList.toggle('is-away', visible.size > 0);
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => (en.isIntersecting ? visible.add(en.target) : visible.delete(en.target)));
+      sync();
+    }, { rootMargin: '-72px 0px -64px 0px', threshold: 0.6 });
+    targets.forEach((a) => io.observe(a));
+  }
 })();
