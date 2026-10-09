@@ -3,3 +3,7 @@ node_modules/
 .vercel/
 *.log
 .claude/
+
+# not part of the website (kept locally only)
+facebookposty/*.pdf
+facebookposty/*.mp4
