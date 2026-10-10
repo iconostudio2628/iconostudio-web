@@ -204,5 +204,17 @@ for (const lang of LANGS) for (const key of keys) {
   if (nav.includes('href="/blog/')) warn(fileFor(pathFor(key, lang)), 'links to the blog outside the footer');
   if (!html.match(/<footer[\s\S]*href="\/blog\/"/)) warn(fileFor(pathFor(key, lang)), 'footer has no blog link');
 }
+
+// ---- “Naše práce” carousel: 9 real photos on home and the nail hub, each with a descriptive alt ----
+for (const lang of LANGS) for (const key of ['home', 'nails']) {
+  const f = fileFor(pathFor(key, lang));
+  const html = await readFile(join(root, f), 'utf8');
+  const imgs = [...html.matchAll(/<li class="showcase-card"[\s\S]*?<img [^>]*alt="([^"]*)"/g)].map((m) => decode(m[1]));
+  if (imgs.length !== 9) warn(f, `showcase has ${imgs.length} photos, expected 9`);
+  imgs.forEach((a, i) => { if (a.length < 45) warn(f, `showcase photo ${i + 1}: alt too short (“${a}”)`); });
+  if (new Set(imgs).size !== imgs.length) warn(f, 'showcase alts are not unique');
+  if (!html.includes('"@type":"ImageGallery"')) warn(f, 'no ImageGallery JSON-LD');
+  if (!html.includes('/js/showcase.js')) warn(f, 'showcase.js not loaded');
+}
 console.log(problems ? `\n${problems} problem(s).` : '\nAll checks passed.');
 process.exitCode = problems ? 1 : 0;

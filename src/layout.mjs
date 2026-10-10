@@ -16,6 +16,7 @@ const ICON_PATHS = {
   pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
   arrow: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
   plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+  close: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
   chevron: '<path d="m6 9 6 6 6-6"/>',
   clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
@@ -294,6 +295,54 @@ export const teamSection = () => (site.team.length ? `
     </div>
   </section>` : '');
 
+/* ---------- interactive “Naše práce” carousel (js/showcase.js): tilted cards, drag / arrows, lightbox ---------- */
+const chev = (dir) => `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${dir === 'prev' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'}"/></svg>`;
+export const showcaseSection = (tone = 'light') => {
+  const shots = site.photos.showcase || [];
+  if (!shots.length) return '';
+  const texts = tList('showcase.items');
+  const card = (p, i) => `
+        <li class="showcase-card" data-i="${i}">
+          <button type="button" class="showcase-btn" data-open="${i}" data-full="${p.src1200}" data-w="${p.w1200}" data-h="${p.h1200}" data-tag="${esc(texts[i].tag)}">
+            <span class="showcase-inner">
+              <img src="${p.src640}" width="${p.w640}" height="${p.h640}" alt="${esc(texts[i].alt)}" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async" draggable="false" style="--pos:${p.pos}">
+              <span class="showcase-tag">${esc(texts[i].tag)}</span>
+            </span>
+          </button>
+        </li>`;
+  return `
+  <section class="section section--${tone} showcase" id="nase-prace" data-showcase aria-roledescription="carousel" aria-label="${esc(t('showcase.group'))}">
+    <div class="wrap">
+      <div class="section-head" data-reveal><div><p class="eyebrow">${t('showcase.eyebrow')}</p><h2>${t('showcase.heading')}</h2><p class="lead">${t('showcase.lead')}</p></div></div>
+    </div>
+    <ul class="showcase-track" data-track tabindex="0">${shots.map(card).join('')}
+    </ul>
+    <div class="wrap showcase-ui">
+      <div class="showcase-nav">
+        <button type="button" class="showcase-arrow" data-prev aria-label="${esc(t('showcase.prev'))}">${chev('prev')}</button>
+        <p class="showcase-count" aria-live="polite"><span data-now>01</span> ${t('showcase.of')} ${String(shots.length).padStart(2, '0')}</p>
+        <button type="button" class="showcase-arrow" data-next aria-label="${esc(t('showcase.next'))}">${chev('next')}</button>
+      </div>
+      <p class="showcase-hint">${t('showcase.hint')}</p>
+    </div>
+    <dialog class="lightbox" data-lightbox aria-label="${esc(t('showcase.group'))}">
+      <button type="button" class="lightbox-close" data-close aria-label="${esc(t('showcase.close'))}">${icon('close')}</button>
+      <figure class="lightbox-fig"><img data-lb-img src="" alt="" decoding="async"><figcaption><span class="lightbox-tag" data-lb-tag></span><span class="lightbox-n" data-lb-n></span></figcaption></figure>
+      <button type="button" class="lightbox-arrow lightbox-arrow--prev" data-lb-prev aria-label="${esc(t('showcase.prev'))}">${chev('prev')}</button>
+      <button type="button" class="lightbox-arrow lightbox-arrow--next" data-lb-next aria-label="${esc(t('showcase.next'))}">${chev('next')}</button>
+      <div class="lightbox-cta">${btnBook(t('showcase.cta'), '', 'gallery')}</div>
+    </dialog>
+  </section>`;
+};
+export const showcaseSchema = (absolute) => {
+  const texts = tList('showcase.items');
+  return {
+    '@context': 'https://schema.org', '@type': 'ImageGallery', name: t('showcase.heading'), inLanguage: LANG_META[getLang()].locale.replace('_', '-'),
+    about: { '@id': bizId(absolute) },
+    image: (site.photos.showcase || []).map((p, i) => ({ '@type': 'ImageObject', contentUrl: absolute(p.src1200), thumbnailUrl: absolute(p.src640), width: p.w1200, height: p.h1200, name: texts[i].alt, caption: texts[i].alt, creator: { '@id': bizId(absolute) }, copyrightHolder: { '@id': bizId(absolute) } })),
+  };
+};
+
 /* ---------- structured data ---------- */
 const bizId = (absolute) => (site.url ? absolute('/#business') : '#business');
 const PRICE_MIN_MAX = (() => {
@@ -407,7 +456,7 @@ const stickyBar = (cta) => `
 
 /* ---------- page shell ---------- */
 // `path` is the Czech path of the page (the route key); the language-specific URL is derived from it.
-export function layout({ title, description, path, body, robots, schema = [], bodyClass = '', preload = null, home = false, cta = null, selfCanonical = false, ogType = 'website' }) {
+export function layout({ title, description, path, body, robots, schema = [], bodyClass = '', preload = null, home = false, cta = null, selfCanonical = false, ogType = 'website', scripts = [] }) {
   const l = getLang();
   const meta = LANG_META[l];
   const key = keyForCsPath(path);
@@ -555,6 +604,7 @@ ${body}
   <script src="/js/ScrollTrigger.min.js" defer></script>
   <script src="/js/main.js" defer></script>
   <script src="/js/cta.js" defer></script>
+  ${scripts.map((src) => `<script src="${src}" defer></script>`).join('\n  ')}
 </body>
 </html>
 `;

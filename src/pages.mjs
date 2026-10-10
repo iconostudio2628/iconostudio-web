@@ -6,7 +6,7 @@ import {
 import { getServicePages, pageBySlug, photos, areaMeta } from './content.mjs';
 import {
   esc, icon, btnBook, btnCall, breadcrumbs, breadcrumbSchema, serviceSchema,
-  hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, workSection, faqSection, finalCta, galleryGrid,
+  hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, workSection, showcaseSection, showcaseSchema, faqSection, finalCta, galleryGrid,
   reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed, svcPhoto,
 } from './layout.mjs';
 import { t, tList, getLang, pathFor, lp } from './i18n/index.mjs';
@@ -240,6 +240,8 @@ export function home() {
 
   ${priceTeaser(['nails', 'beauty', 'barber'], { tone: 'white' })}
 
+  ${showcaseSection('light')}
+
   <section class="section section--black why" id="proc">
     <div class="wrap">
       <div data-reveal><p class="eyebrow">${t('home.why.eyebrow')}</p><h2>${t('home.why.heading')}</h2></div>
@@ -267,7 +269,7 @@ export function home() {
 
   return layout({
     title: t('home.title'), description: t('home.description'),
-    path: '/', body, bodyClass: 'page-home', home: true,
+    path: '/', body, bodyClass: 'page-home', home: true, scripts: ['/js/showcase.js'], schema: [showcaseSchema],
     preload: [
       { href: '/images/hero-mobile-640.webp', srcset: HERO_M.srcset, sizes: '100vw', media: '(max-width: 959px)' },
       { href: pb.src, srcset: pb.srcset, sizes: '420px', media: '(min-width: 960px)' },
@@ -318,6 +320,8 @@ export function nailStudio() {
     </div>
   </section>
 
+  ${showcaseSection('white')}
+
   ${priceTeaser(['nails', 'beauty'], { tone: 'white', heading: t('hubs.nails.teaser') })}
   ${faqSection([
     { q: t('hubs.nails.faqServices'), a: `${[...nails, ...beauty].map((p) => `<a href="/${p.slug}/">${esc(p.name)}</a>`).join(', ')}.` },
@@ -328,8 +332,8 @@ export function nailStudio() {
 
   return layout({
     title: t('hubs.nails.title'), description: t('hubs.nails.description'),
-    path: '/nail-studio-praha-2/', body,
-    schema: [(abs) => breadcrumbSchema(trail, abs)],
+    path: '/nail-studio-praha-2/', body, scripts: ['/js/showcase.js'],
+    schema: [(abs) => breadcrumbSchema(trail, abs), showcaseSchema],
   });
 }
 

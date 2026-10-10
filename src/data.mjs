@@ -72,6 +72,18 @@ export const site = {
     nails: { src: '/images/manikura-icono-studio-praha-2.webp', srcset: '/images/manikura-icono-studio-praha-2-640.webp 640w, /images/manikura-icono-studio-praha-2.webp 1000w', width: 1000, height: 1249 },
     // real photographs of the shop front (supplied by the owner, 2026-10-07)
     entrance: { src: '/images/studio-vchod-icono-studio-praha-2-1400.webp', srcset: '/images/studio-vchod-icono-studio-praha-2-800.webp 800w, /images/studio-vchod-icono-studio-praha-2-1400.webp 1400w', width: 1400, height: 1050 },
+    // nail work shown in the interactive “Naše práce” carousel (supplied by the owner, 2026-10-10); alt + tag text: UI strings showcase.items
+    showcase: [
+      { slug: 'nail-art-bila-francie-zlate-linky', src640: '/images/work/nail-art-bila-francie-zlate-linky-icono-studio-praha-2-640.webp', src1200: '/images/work/nail-art-bila-francie-zlate-linky-icono-studio-praha-2-1200.webp', w640: 640, h640: 621, w1200: 1110, h1200: 1077, pos: '50% 55%' },
+      { slug: 'kratke-nehty-ombre-kaminky', src640: '/images/work/kratke-nehty-ombre-kaminky-icono-studio-praha-2-640.webp', src1200: '/images/work/kratke-nehty-ombre-kaminky-icono-studio-praha-2-1200.webp', w640: 640, h640: 853, w1200: 1200, h1200: 1600, pos: '45% 60%' },
+      { slug: 'mandlove-nehty-3d-masle', src640: '/images/work/mandlove-nehty-3d-masle-icono-studio-praha-2-640.webp', src1200: '/images/work/mandlove-nehty-3d-masle-icono-studio-praha-2-1200.webp', w640: 640, h640: 853, w1200: 1200, h1200: 1600, pos: '55% 50%' },
+      { slug: 'nehty-cat-eye-hneda-3d-kvet', src640: '/images/work/nehty-cat-eye-hneda-3d-kvet-icono-studio-praha-2-640.webp', src1200: '/images/work/nehty-cat-eye-hneda-3d-kvet-icono-studio-praha-2-1200.webp', w640: 640, h640: 610, w1200: 1200, h1200: 1144, pos: '50% 55%' },
+      { slug: 'nehty-cerna-francie-3d-zdobeni', src640: '/images/work/nehty-cerna-francie-3d-zdobeni-icono-studio-praha-2-640.webp', src1200: '/images/work/nehty-cerna-francie-3d-zdobeni-icono-studio-praha-2-1200.webp', w640: 640, h640: 647, w1200: 1200, h1200: 1214, pos: '50% 55%' },
+      { slug: 'stiletto-nehty-ombre-zlate-lemy', src640: '/images/work/stiletto-nehty-ombre-zlate-lemy-icono-studio-praha-2-640.webp', src1200: '/images/work/stiletto-nehty-ombre-zlate-lemy-icono-studio-praha-2-1200.webp', w640: 640, h640: 576, w1200: 1200, h1200: 1080, pos: '50% 55%' },
+      { slug: 'stiletto-nehty-ombre-oranzova', src640: '/images/work/stiletto-nehty-ombre-oranzova-icono-studio-praha-2-640.webp', src1200: '/images/work/stiletto-nehty-ombre-oranzova-icono-studio-praha-2-1200.webp', w640: 640, h640: 600, w1200: 1200, h1200: 1125, pos: '45% 55%' },
+      { slug: 'stiletto-nehty-neon-ruzova', src640: '/images/work/stiletto-nehty-neon-ruzova-icono-studio-praha-2-640.webp', src1200: '/images/work/stiletto-nehty-neon-ruzova-icono-studio-praha-2-1200.webp', w640: 640, h640: 853, w1200: 1200, h1200: 1600, pos: '50% 45%' },
+      { slug: 'nehty-ruzova-francie-malovany-design', src640: '/images/work/nehty-ruzova-francie-malovany-design-icono-studio-praha-2-640.webp', src1200: '/images/work/nehty-ruzova-francie-malovany-design-icono-studio-praha-2-1200.webp', w640: 640, h640: 648, w1200: 1200, h1200: 1215, pos: '50% 60%' },
+    ],
     // real work (supplied by the owner, 2026-10-07)
     work: [
       { key: 'workA', src: '/images/prace-platinova-blond-strih-1-1000.webp', srcset: '/images/prace-platinova-blond-strih-1-640.webp 640w, /images/prace-platinova-blond-strih-1-1000.webp 1000w', width: 1000, height: 980 },

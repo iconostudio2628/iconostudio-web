@@ -11,7 +11,7 @@ export const contentEn = {
     h1: `Manicure Prague 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Classic manicure, Gellak or CND Shellac at Bělehradská 77 in Vinohrady. Choose a simple nail treatment or a value package with hand spa.`,
     imageAlt: `Hands during a manicure with polished nails at ICONO STUDIO in Prague 2`,
-    artAlt: `Well-groomed hands with polished nails, a nail polish bottle and a file on linen – manicure at ICONO STUDIO`,
+    artAlt: `Manicure Prague 2: well-groomed hands with polished nails, a nail polish bottle and a file on linen – ICONO STUDIO`,
     intro: {
       h2: `Well-groomed hands in central Prague 2`,
       paras: [
@@ -87,7 +87,7 @@ export const contentEn = {
     h1: `Gel & Acrylic Nails Prague 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Sculpting of gel, acrylic and Gel X nails with colour. New nails from 650 CZK, refills from 590 CZK, plus a value package with hand spa.`,
     imageAlt: `Gel nails in different shapes – square, round, oval, almond and coffin`,
-    artAlt: `Hand with long almond gel nails in beige with one black accent nail`,
+    artAlt: `Gel and acrylic nails Prague 2: hand with long almond nails in beige with one black accent nail`,
     intro: {
       h2: `Nails sculpted to your taste`,
       paras: [
@@ -173,7 +173,7 @@ export const contentEn = {
     h1: `Pedicure Prague 2`, eyebrow: `Nails · Bělehradská 77`,
     lead: `Classic and polished pedicure plus medical pedicure with Footlogix at Bělehradská 77. Choose simple foot care or a value package with foot spa.`,
     imageAlt: `Foot with polished toenails – pedicure at ICONO STUDIO`,
-    artAlt: `Groomed feet with polished toenails on a cream towel next to river stones and a bowl`,
+    artAlt: `Pedicure Prague 2: groomed feet with polished toenails on a cream towel, river stones and a bowl`,
     intro: {
       h2: `Foot care in central Prague 2`,
       paras: [
@@ -248,7 +248,7 @@ export const contentEn = {
     h1: `Eyelash Extensions Prague 2`, eyebrow: `Beauty · Bělehradská 77`,
     lead: `Classic 1:1 lashes, Volume 2D–5D, Mega Volume and design effects. A new set from 990 CZK, refills from 790 CZK.`,
     imageAlt: `Eye with long lash extensions and an eyebrow`,
-    artAlt: `Close-up of a closed eye with eyelash extensions`,
+    artAlt: `Eyelash extensions Prague 2: close-up of a closed eye with lash extensions`,
     intro: {
       h2: `A more striking look without mascara`,
       paras: [
@@ -329,7 +329,7 @@ export const contentEn = {
     h1: `Brows & Facials Prague 2`, eyebrow: `Beauty · Bělehradská 77`,
     lead: `Brow shaping and tinting plus facial care with massage. Brows from 100 CZK, facial care 750 CZK.`,
     imageAlt: `Groomed eyebrow, tweezers and a jar of cosmetic cream`,
-    artAlt: `Eyebrow being brushed with a spoolie, close-up of brow and eye`,
+    artAlt: `Brow shaping and tinting Prague 2: eyebrow brushed with a spoolie, close-up of brow and eye`,
     intro: {
       h2: `Brows that suit your face`,
       paras: [
@@ -392,7 +392,7 @@ export const contentEn = {
     h1: `Head Spa Prague 2`, eyebrow: `Beauty · Bělehradská 77`,
     lead: `Relaxing care for your scalp and hair for 890 CZK: white noise therapy, massage, exfoliation, Asian-style hair washing and regenerating oil.`,
     imageAlt: `Illustration of a scalp with massage points and drops`,
-    artAlt: `Scalp massage during a head spa treatment with steam and running water`,
+    artAlt: `Head Spa Prague 2: scalp massage with steam and running water`,
     intro: {
       h2: `A moment just for your head`,
       paras: [
@@ -447,7 +447,7 @@ export const contentEn = {
     h1: `Men's Haircut Prague 2`, eyebrow: `Barber · Bělehradská 77`,
     lead: `Barber cuts from a classic haircut to VIP All Inclusive. Styling and balm or cologne are included – and every two weeks it is 100 CZK cheaper.`,
     imageAlt: `Barber fading the sides and neckline with clippers during a men's haircut`,
-    artAlt: `Barber creating a fade on the back and sides of the head with a clipper`,
+    artAlt: `Men's haircut Prague 2: barber creating a clipper fade on the back and sides of the head`,
     intro: {
       h2: `A barbershop in central Prague 2`,
       paras: [
@@ -510,7 +510,7 @@ export const contentEn = {
     h1: `Beard Trim Prague 2`, eyebrow: `Barber · Bělehradská 77`,
     lead: `A clean shape, precise lines and a well-kept beard. Beard trim 420 CZK, trimmer only 200 CZK, haircut with beard in the VIP Cut.`,
     imageAlt: `Straight razor and shaving brush`,
-    artAlt: `Straight razor, shaving brush, a bowl of shaving cream and a rolled towel on a beige background`,
+    artAlt: `Beard trim Prague 2: straight razor, shaving brush, a bowl of shaving cream and a rolled towel on a beige background`,
     intro: {
       h2: `A beard with shape`,
       paras: [
@@ -573,7 +573,7 @@ export const contentEn = {
     h1: `Men's Skincare & Hair Wash Prague 2`, eyebrow: `Barber · Bělehradská 77`,
     lead: `VIP face wash, head massage and hair wash at the barbershop. Men's skincare 850 CZK, head massage 150 CZK, hair wash from 100 CZK.`,
     imageAlt: `Tin of cream, steam and a towel – men's skincare at the barbershop`,
-    artAlt: `Rolled hot towel with steam, a jar of cream and a bowl of water on black stone`,
+    artAlt: `Men's skincare Prague 2: rolled hot towel with steam, a jar of cream and a bowl of water on black stone`,
     intro: {
       h2: `Care that goes beyond hair`,
       paras: [

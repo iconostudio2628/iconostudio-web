@@ -27,7 +27,7 @@ export const servicePagesBase = [
     h1: 'Manikúra Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Klasická manikúra, Gellak nebo CND Shellac na Bělehradské 77 ve Vinohradech. Vyberte si samotnou úpravu nehtů, nebo výhodný balíček s hand spa.',
     imageAlt: 'Ruce při manikúře s lakovanými nehty v ICONO STUDIO v Praze 2',
-    artAlt: 'Upravené ruce s nalakovanými nehty, lahvička laku a pilník na lněné látce – manikúra v ICONO STUDIO',
+    artAlt: 'Manikúra Praha 2: upravené ruce s nalakovanými nehty, lahvička laku a pilník na lněné látce – ICONO STUDIO',
     groups: ['manikura', 'zdobeni'],
     intro: {
       h2: 'Upravené ruce v centru Prahy 2',
@@ -106,7 +106,7 @@ export const servicePagesBase = [
     h1: 'Gelové a akrylové nehty Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Modelace gelových, akrylových a Gel X nehtů s barvou. Nové nehty od 650 Kč, doplnění od 590 Kč, k tomu výhodný balíček s hand spa.',
     imageAlt: 'Gelové nehty různých tvarů – čtvercové, kulaté, oválné, mandlové a coffin',
-    artAlt: 'Ruka s dlouhými mandlovými gelovými nehty v béžové barvě s jedním černým akcentem',
+    artAlt: 'Gelové a akrylové nehty Praha 2: ruka s dlouhými mandlovými nehty v béžové barvě s jedním černým akcentem',
     groups: ['modelace', 'ostatni', 'zdobeni'],
     intro: {
       h2: 'Modelace nehtů na míru',
@@ -195,7 +195,7 @@ export const servicePagesBase = [
     h1: 'Pedikúra Praha 2', eyebrow: 'Nails · Bělehradská 77',
     lead: 'Klasická i lakovaná pedikúra a medicínální pedikúra Footlogix na Bělehradské 77. Vyberte si samotnou péči o chodidla, nebo výhodný balíček s foot spa.',
     imageAlt: 'Chodidlo s lakovanými nehty na nohou – pedikúra v ICONO STUDIO',
-    artAlt: 'Upravená chodidla s nalakovanými nehty na krémovém ručníku vedle říčních kamenů a misky',
+    artAlt: 'Pedikúra Praha 2: upravená chodidla s nalakovanými nehty na krémovém ručníku, říční kameny a miska',
     groups: ['pedikura'],
     intro: {
       h2: 'Péče o chodidla v centru Prahy 2',
@@ -273,7 +273,7 @@ export const servicePagesBase = [
     h1: 'Prodlužování řas Praha 2', eyebrow: 'Beauty · Bělehradská 77',
     lead: 'Klasické řasy 1:1, Volume 2D–5D, Mega Volume i designové efekty. Nové nasazení od 990 Kč, doplnění od 790 Kč.',
     imageAlt: 'Oko s dlouhými prodlouženými řasami a obočím',
-    artAlt: 'Detail zavřeného oka s prodlouženými řasami',
+    artAlt: 'Prodlužování řas Praha 2: detail zavřeného oka s prodlouženými řasami',
     groups: ['rasy'],
     intro: {
       h2: 'Výraznější pohled bez řasenky',
@@ -357,7 +357,7 @@ export const servicePagesBase = [
     h1: 'Obočí a kosmetika Praha 2', eyebrow: 'Beauty · Bělehradská 77',
     lead: 'Úprava a barvení obočí a kosmetická péče o obličej s masáží. Obočí od 100 Kč, péče o obličej 750 Kč.',
     imageAlt: 'Upravené obočí, pinzeta a kosmetický krém',
-    artAlt: 'Úprava obočí kartáčkem, detail obočí a oka',
+    artAlt: 'Úprava a barvení obočí Praha 2: obočí upravované kartáčkem, detail obočí a oka',
     groups: ['oboci', 'kosmetika'],
     intro: {
       h2: 'Obočí, které sedí k obličeji',
@@ -423,7 +423,7 @@ export const servicePagesBase = [
     h1: 'Head Spa Praha 2', eyebrow: 'Beauty · Bělehradská 77',
     lead: 'Relaxační péče o pokožku hlavy a vlasy za 890 Kč: terapie bílým zvukem, masáž, exfoliace, asijské mytí vlasů a regenerační olej.',
     imageAlt: 'Ilustrace pokožky hlavy s body pro masáž a kapkami',
-    artAlt: 'Masáž pokožky hlavy při Head Spa, pára a stékající voda',
+    artAlt: 'Head Spa Praha 2: masáž pokožky hlavy s párou a stékající vodou',
     groups: ['headspa'],
     intro: {
       h2: 'Chvíle jen pro vaši hlavu',
@@ -482,7 +482,7 @@ export const servicePagesBase = [
     h1: 'Pánský střih Praha 2', eyebrow: 'Barber · Bělehradská 77',
     lead: 'Barber cuts od klasického střihu po VIP All Inclusive. Styling a balzám nebo kolínská jsou v ceně, každé dva týdny o 100 Kč levněji.',
     imageAlt: 'Barber upravuje boky a zátylek strojkem při pánském střihu',
-    artAlt: 'Barber strojkem dělá fade na zátylku a po stranách hlavy',
+    artAlt: 'Pánský střih Praha 2: barber dělá fade strojkem na zátylku a po stranách hlavy',
     groups: ['cuts'],
     intro: {
       h2: 'Barbershop v centru Prahy 2',
@@ -548,7 +548,7 @@ export const servicePagesBase = [
     h1: 'Úprava vousů Praha 2', eyebrow: 'Barber · Bělehradská 77',
     lead: 'Čistý tvar, precizní linie a upravené vousy. Úprava vousů 420 Kč, samotný timer 200 Kč, střih s vousy ve VIP cutu.',
     imageAlt: 'Břitva a štětka na holení',
-    artAlt: 'Břitva, štětka na holení, miska s krémem a srolovaný ručník na béžovém pozadí',
+    artAlt: 'Úprava vousů Praha 2: břitva, štětka na holení, miska s krémem a srolovaný ručník na béžovém pozadí',
     groups: ['vousy'],
     intro: {
       h2: 'Vousy, které mají tvar',
@@ -614,7 +614,7 @@ export const servicePagesBase = [
     h1: 'Pánská kosmetika a mytí hlavy Praha 2', eyebrow: 'Barber · Bělehradská 77',
     lead: 'Mytí obličeje VIP, masáž hlavy a mytí hlavy v barbershopu. Pánská kosmetika 850 Kč, masáž hlavy 150 Kč, mytí hlavy od 100 Kč.',
     imageAlt: 'Plechovka s krémem, pára a ručník – pánská kosmetika v barbershopu',
-    artAlt: 'Horký srolovaný ručník s párou, kelímek s krémem a miska s vodou na černém kameni',
+    artAlt: 'Pánská kosmetika Praha 2: horký ručník s párou, kelímek s krémem a miska s vodou na černém kameni',
     groups: ['pece'],
     intro: {
       h2: 'Péče nejen o vlasy',

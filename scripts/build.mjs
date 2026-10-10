@@ -81,7 +81,7 @@ await write('404.html', pages.notFound());
 built += 1;
 
 if (site.url) {
-  const lastmod = process.env.LASTMOD || '2026-10-09'; // content date – not the build date, so unchanged pages keep a stable lastmod
+  const lastmod = process.env.LASTMOD || '2026-10-10'; // content date – not the build date, so unchanged pages keep a stable lastmod
   const entry = (r, l) => {
     const alts = LANGS.map((x) => `    <xhtml:link rel="alternate" hreflang="${LANG_META[x].htmlLang}" href="${site.url}${pathFor(r.key, x)}"/>`);
     alts.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${site.url}${pathFor(r.key, 'cs')}"/>`);
