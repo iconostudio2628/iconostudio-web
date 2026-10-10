@@ -8,3 +8,6 @@ node_modules/
 facebookposty/*.pdf
 facebookposty/*.mp4
 public/
+
+# local working files, not part of the website
+POSTS/
