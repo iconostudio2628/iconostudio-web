@@ -877,3 +877,29 @@ h3 { font-size: 1.25rem; line-height: 1.25; }
 .lightbox-close:hover, .lightbox-arrow:hover { background: #fff; color: #000; }
 .lightbox .icon { width: 22px; height: 22px; }
 @media (prefers-reduced-motion: reduce) { .showcase-inner { transition: none; } }
+
+/* ---------- reviews marquee (home): black cards on beige, two rows, opposite directions ---------- */
+.reviews-sec { padding-inline: 0; overflow: hidden; }
+.rv-marquee { position: relative; display: grid; gap: 16px; margin-top: 28px; }
+.rv-marquee::before, .rv-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: clamp(40px, 16vw, 220px); z-index: 2; pointer-events: none; }
+.rv-marquee::before { left: 0; background: linear-gradient(90deg, var(--bg), rgba(227, 209, 179, 0)); }
+.rv-marquee::after { right: 0; background: linear-gradient(270deg, var(--bg), rgba(227, 209, 179, 0)); }
+.rv-row { display: flex; width: max-content; animation: rv-scroll 70s linear infinite; will-change: transform; }
+.rv-row--rev { animation-direction: reverse; animation-duration: 82s; }
+.rv-set { display: flex; gap: 16px; padding-right: 16px; }
+@keyframes rv-scroll { to { transform: translateX(-25%); } }
+.rv-marquee:hover .rv-row, .rv-marquee:focus-within .rv-row { animation-play-state: paused; }
+.rv-card { width: clamp(264px, 78vw, 350px); background: var(--black); color: var(--white); border-radius: 20px; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 14px; margin: 0; }
+.rv-stars { color: var(--cream); letter-spacing: 3px; font-size: 17px; line-height: 1; }
+.rv-card blockquote { font-size: 1rem; line-height: 1.55; color: #f1ebde; flex: 1; }
+.rv-card figcaption { display: flex; align-items: center; gap: 12px; }
+.rv-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--cream); color: var(--ink); display: grid; place-items: center; font-family: var(--head); font-weight: 600; font-size: 14px; flex: none; }
+.rv-who { display: grid; line-height: 1.25; }
+.rv-who strong { font-family: var(--head); font-weight: 600; font-size: 15px; }
+.rv-who small { color: var(--muted); font-size: 13px; }
+.rv-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 24px; margin-top: 28px; }
+@media (prefers-reduced-motion: reduce) {
+  .rv-row, .rv-row--rev { animation: none; width: auto; overflow-x: auto; scroll-snap-type: x proximity; padding-inline: var(--gutter); }
+  .rv-set[aria-hidden], .rv-set:not(:first-child) { display: none; }
+  .rv-marquee::before, .rv-marquee::after { display: none; }
+}

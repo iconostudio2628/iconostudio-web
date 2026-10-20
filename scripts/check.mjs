@@ -101,7 +101,8 @@ for (const lang of LANGS) {
     }
     if (lang !== 'cs') {
       if (/\bKč\b/.test(text)) warn(f, 'contains “Kč” (use CZK)');
-      const left = text.replace(CZECH_OK, '').match(CZECH_ONLY);
+      const noReviews = decode(main.replace(/<section[^>]*id="recenze"[\s\S]*?<\/section>/, ' ').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ');
+      const left = noReviews.replace(CZECH_OK, '').match(CZECH_ONLY);
       if (left) warn(f, `leftover Czech characters (${[...new Set(left)].join('')}) – untranslated text?`);
     }
     // ---- conversion layer: every page has a sticky bar; service pages have art hero, signature block, CTAs ----

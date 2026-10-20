@@ -65,7 +65,16 @@ export const site = {
   //            `service` (optional) = the service page that shows this review as well
   //   team:    [{ name: 'Jméno', role: 'Barber', src: '/images/x.webp', width: 800, height: 1000 }]
   gallery: [],
-  reviews: [],
+  // Real Google reviews (copied 2026-10-20 from the Google Business Profile; only reviews that contain text, original wording).
+  // `lang` = language of the text (it is never translated); `note: 'translated'` = Google's machine translation of a German review.
+  reviews: [
+    { text: 'Pokaždé jsem moc spokojená, moc krásné nehty.', author: 'Paulina P.', stars: 5, lang: 'cs' },
+    { text: 'Luxusní a relaxační mytí hlavy. A stříhání i vousy bez chyb, přesně jak jsem si přál. Doporučuji 10 z 10', author: 'Milan P.', stars: 5, lang: 'cs' },
+    { text: 'Friendly staff, amazing service, and well priced ☺️ we did several treatments there and definitely would recommend!', author: 'Nicole S.', stars: 5, lang: 'en' },
+    { text: 'Top stříhání, doporučuji!', author: 'Jakub H.', stars: 5, lang: 'cs' },
+    { text: 'Great nail salon, excellent and clean work.', author: 'Duong D.', stars: 5, lang: 'en', note: 'translated' },
+    { text: 'chodim k nemu uz par let a jsem vzdycky spokojenej na 100%', author: 'Matěj C.', stars: 5, lang: 'cs' },
+  ],
   team: [],
   photos: {
     barber: { src: '/images/pansky-strih-icono-studio-praha-2.webp', srcset: '/images/pansky-strih-icono-studio-praha-2-640.webp 640w, /images/pansky-strih-icono-studio-praha-2.webp 1000w', width: 1000, height: 1249 },

@@ -82,7 +82,7 @@ export default {
   faq: { heading: 'Časté dotazy', eyebrow: 'FAQ' },
   cta: { heading: 'Chcete termín? Napište nám.', text: 'Vyberte způsob, který vám vyhovuje.' },
   prices: { more: 'Více o službě' },
-  reviews: { eyebrow: 'Recenze', heading: 'Co říkají zákazníci', stars: 'z 5 hvězdiček', cta: 'Zobrazit recenze na Googlu' },
+  reviews: { eyebrow: 'Recenze', heading: 'Co říkají zákazníci', lead: 'Skutečné recenze z Google. Nehty, střihy i vousy.', stars: 'z 5 hvězdiček', source: 'Google', translated: 'přeloženo Googlem', all: 'Všechny recenze na Googlu', write: 'Napsat recenzi', aria: 'Recenze zákazníků z Googlu' },
   team: { eyebrow: 'Tým', heading: 'Lidé, ke kterým se objednáváte', at: 'v ICONO STUDIO' },
   gallery: { eyebrow: 'Galerie', heading: 'Z ICONO STUDIO' },
   schema: {

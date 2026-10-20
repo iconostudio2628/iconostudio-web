@@ -84,7 +84,7 @@ export default {
   faq: { heading: `Frequently asked questions`, eyebrow: `FAQ` },
   cta: { heading: `Want an appointment? Message us.`, text: `Choose whichever way suits you best.` },
   prices: { more: `More about this service` },
-  reviews: { eyebrow: `Reviews`, heading: `What customers say`, stars: `out of 5 stars`, cta: `Read our reviews on Google` },
+  reviews: { eyebrow: `Reviews`, heading: `What customers say`, lead: `Real Google reviews. Nails, haircuts and beards.`, stars: `out of 5 stars`, source: `Google`, translated: `translated by Google`, all: `All reviews on Google`, write: `Write a review`, aria: `Customer reviews from Google` },
   team: { eyebrow: `Team`, heading: `The people you will book with`, at: `at ICONO STUDIO` },
   gallery: { eyebrow: `Gallery`, heading: `From ICONO STUDIO` },
   schema: {

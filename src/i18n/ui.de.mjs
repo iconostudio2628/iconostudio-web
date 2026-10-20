@@ -84,7 +84,7 @@ export default {
   faq: { heading: `Häufige Fragen`, eyebrow: `FAQ` },
   cta: { heading: `Termin gewünscht? Schreiben Sie uns.`, text: `Wählen Sie den Weg, der Ihnen am besten passt.` },
   prices: { more: `Mehr zu dieser Leistung` },
-  reviews: { eyebrow: `Bewertungen`, heading: `Das sagen unsere Kunden`, stars: `von 5 Sternen`, cta: `Bewertungen auf Google ansehen` },
+  reviews: { eyebrow: `Bewertungen`, heading: `Das sagen unsere Kunden`, lead: `Echte Google-Bewertungen. Nägel, Haarschnitte und Bärte.`, stars: `von 5 Sternen`, source: `Google`, translated: `von Google übersetzt`, all: `Alle Bewertungen auf Google`, write: `Bewertung schreiben`, aria: `Kundenbewertungen von Google` },
   team: { eyebrow: `Team`, heading: `Die Menschen, bei denen Sie buchen`, at: `im ICONO STUDIO` },
   gallery: { eyebrow: `Galerie`, heading: `Aus dem ICONO STUDIO` },
   schema: {

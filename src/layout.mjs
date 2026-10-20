@@ -265,21 +265,34 @@ export const galleryGrid = (items) => `
     ${items.map((g, i) => `<figure class="gallery-item gallery-item--${i % 6}"><img src="${g.src}" alt="${esc(g.alt)}" width="${g.width}" height="${g.height}" loading="lazy" decoding="async"></figure>`).join('')}
   </div>`;
 
-export const reviewsSection = () => (site.reviews.length ? `
-  <section class="section section--light" id="recenze">
+/* ---------- reviews: two marquee rows moving in opposite directions (pure CSS, pauses on hover / focus) ---------- */
+const initials = (name) => name.replace(/\./g, '').split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+const reviewCard = (r, hidden) => `
+        <figure class="rv-card"${hidden ? ' aria-hidden="true"' : ''}>
+          <div class="rv-stars" role="img" aria-label="${r.stars || 5} ${t('reviews.stars')}">${'★'.repeat(r.stars || 5)}</div>
+          <blockquote><p lang="${r.lang || 'cs'}">${esc(r.text)}</p></blockquote>
+          <figcaption><span class="rv-avatar" aria-hidden="true">${esc(initials(r.author))}</span><span class="rv-who"><strong>${esc(r.author)}</strong><small>${t('reviews.source')}${r.note ? ` · ${t(`reviews.${r.note}`)}` : ''}</small></span></figcaption>
+        </figure>`;
+const reviewRow = (items, reverse) => `
+      <div class="rv-row${reverse ? ' rv-row--rev' : ''}">${[0, 1, 2, 3].map((k) => `<div class="rv-set">${items.map((r) => reviewCard(r, k > 0)).join('')}</div>`).join('')}
+      </div>`;
+export const reviewsSection = () => {
+  const all = site.reviews.filter((r) => r.text);
+  if (!all.length) return '';
+  const half = Math.ceil(all.length / 2);
+  return `
+  <section class="section section--light reviews-sec" id="recenze" aria-label="${esc(t('reviews.aria'))}">
     <div class="wrap">
-      <div data-reveal><p class="eyebrow">${t('reviews.eyebrow')}</p><h2>${t('reviews.heading')}</h2></div>
-      <div class="reviews" data-stagger>
-        ${site.reviews.slice(0, 6).map((r) => `
-        <figure class="review">
-          <div class="stars" role="img" aria-label="${r.stars || 5} ${t('reviews.stars')}">${'★'.repeat(r.stars || 5)}</div>
-          <blockquote>${esc(r.text)}</blockquote>
-          <figcaption><strong>${esc(r.author)}</strong><span>Google Review</span></figcaption>
-        </figure>`).join('')}
-      </div>
-      ${site.googleReviewsUrl ? `<p><a class="btn btn--dark" href="${site.googleReviewsUrl}" target="_blank" rel="noopener">${t('reviews.cta')}</a></p>` : ''}
+      <div class="section-head" data-reveal><div><p class="eyebrow">${t('reviews.eyebrow')}</p><h2>${t('reviews.heading')}</h2><p class="lead">${t('reviews.lead')}</p></div></div>
     </div>
-  </section>` : '');
+    <div class="rv-marquee">${reviewRow(all.slice(0, half), false)}${reviewRow(all.slice(half), true)}
+    </div>
+    <div class="wrap rv-links">
+      ${site.googleBusinessUrl ? `<a class="text-link" href="${site.googleBusinessUrl}" target="_blank" rel="noopener" data-track="click_reviews_all">${t('reviews.all')}</a>` : ''}
+      ${site.googleReviewsUrl ? `<a class="btn btn--dark" href="${site.googleReviewsUrl}" target="_blank" rel="noopener" data-track="click_review">${t('reviews.write')}</a>` : ''}
+    </div>
+  </section>`;
+};
 
 export const teamSection = () => (site.team.length ? `
   <section class="section section--black" id="tym">
