@@ -5,11 +5,12 @@ import {
 } from './data.mjs';
 import { getServicePages, pageBySlug, photos, areaMeta } from './content.mjs';
 import {
-  esc, icon, btnBook, btnCall, breadcrumbs, breadcrumbSchema, serviceSchema,
+  esc, icon, btnBook, btnCall, breadcrumbs, breadcrumbSchema, serviceSchema, priceListSchema,
   hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, workSection, showcaseSection, showcaseSchema, faqSection, finalCta, galleryGrid,
   reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed, svcPhoto,
 } from './layout.mjs';
 import { t, tList, getLang, pathFor, lp } from './i18n/index.mjs';
+import { articlesFor, articlesBlock, postBySlug } from './blog.mjs';
 import {
   extrasFor, renderSig, renderBand, renderCombos, chipsNav, serviceHero, optionCta, stickyFor,
   workItems, reviewItems,
@@ -37,6 +38,32 @@ const faqWhere = () => ({
 });
 const faqHours = () => ({ q: t('faqs.hours.q'), a: t('faqs.hours.a', { hours: hoursSummary() }) });
 const faqPrices = () => ({ q: t('faqs.prices.q'), a: t('faqs.prices.a') });
+
+/* ---------- internal links into the (Czech) blog: only on Czech pages, the articles are not translated ---------- */
+const articles = (slugs, opts) => (getLang() === 'cs' ? articlesBlock(slugs.map(postBySlug), opts) : '');
+const serviceArticles = (slug, opts) => (getLang() === 'cs' ? articlesBlock(articlesFor(slug), opts) : '');
+
+/* ---------- price list: quick answers to “how much does … cost” (amounts come from priceGroups, never typed) ---------- */
+const cenikAnswers = () => {
+  const p = (id, i) => { const it = itemById(id); return kc(i === undefined ? it.price : it.variants[i].price); };
+  const v = {
+    classic: p('man-classic'), gellak: p('man-gellak'), cnd: p('man-cnd'), pkClassic: p('man-pk-classic'), pkGellak: p('man-pk-gellak'), pkCnd: p('man-pk-cnd'),
+    nove: p('mod-nove'), dopl: p('mod-dopl'), gelx: p('mod-gelx'),
+    pedClassic: p('ped-classic'), pedGellak: p('ped-gellak'), pedCnd: p('ped-cnd'), fl: p('ped-med-classic'),
+    klas: p('cut-klasicky'), prem: p('cut-premium'), vip: p('cut-vip'), all: p('cut-vip-all'), student: p('cut-student'), deti: p('cut-deti'),
+    uprava: p('vous-uprava'), timer: p('vous-timer'),
+    klasik: p('ras-klasik', 0), klasikD: p('ras-klasik', 1), volume: p('ras-volume', 0), volumeD: p('ras-volume', 1), mega: p('ras-mega', 0), megaD: p('ras-mega', 1),
+    hs: p('hs'), ob: p('ob-uprava'), obB: p('ob-barveni'), kos: p('kos-oblicej'),
+    umele: p('ost-odstr-umele'), shellac: p('ost-odstr-lak', 0), gellakRem: p('ost-odstr-lak', 1),
+  };
+  const fill = (str) => str.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m));
+  // Czech only: each answer also points to the in-depth article
+  const deep = { 0: ['manikura-cena-praha-2', 'manikúra: cena'], 1: ['kolik-stoji-gelove-nehty-praha', 'kolik stojí gelové nehty'], 2: ['pedikura-footlogix-vs-klasicka', 'pedikúra Footlogix a klasická'], 3: ['pansky-strih-praha-2-cena', 'obsah a ceny cutů'], 4: ['uprava-vousu-jak-casto', 'úprava vousů: jak často'], 5: ['prodluzovani-ras-klasika-volume', 'prodlužování řas: typy a ceny'], 6: ['head-spa-co-to-je', 'Head Spa: co to je'], 7: ['sundani-gelovych-nehtu', 'sundání gelových nehtů'] };
+  return tList('cenik.answers').map((x, i) => ({
+    q: x.q,
+    a: fill(x.a) + (getLang() === 'cs' && deep[i] ? ` Podrobně: <a href="/blog/${deep[i][0]}/">${deep[i][1]}</a>.` : ''),
+  }));
+};
 
 const photo = (p, alt, cls = '', sizes = '(min-width: 900px) 50vw, 100vw') => (p ? `<img class="${cls}" src="${p.src}"${p.srcset ? ` srcset="${p.srcset}" sizes="${sizes}"` : ''} alt="${esc(alt)}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async">` : '');
 const para = (arr) => arr.map((x) => `<p>${x}</p>`).join('');
@@ -264,6 +291,7 @@ export function home() {
   ${reviewsSection()}
   ${teamSection()}
   ${locationSection({ tone: 'light', photo: false })}
+  ${articles(['kolik-stoji-gelove-nehty-praha', 'pansky-strih-praha-2-cena', 'pedikura-footlogix-vs-klasicka', 'shellac-vs-gellak'], { tone: 'light', heading: 'Praktické průvodce a ceny', id: 'pruvodci' })}
   ${faqSection([faqOrder(), faqHours(), faqWhere(), faqPrices()], { tone: 'white' })}
   ${finalCta()}`;
 
@@ -323,6 +351,7 @@ export function nailStudio() {
   ${showcaseSection('white')}
 
   ${priceTeaser(['nails', 'beauty'], { tone: 'white', heading: t('hubs.nails.teaser') })}
+  ${articles(['kolik-stoji-gelove-nehty-praha', 'manikura-cena-praha-2', 'shellac-vs-gellak', 'gel-nebo-akryl-gel-x'], { tone: 'light', heading: 'Nehty, pedikúra a péče: průvodce', id: 'pruvodci' })}
   ${faqSection([
     { q: t('hubs.nails.faqServices'), a: `${[...nails, ...beauty].map((p) => `<a href="/${p.slug}/">${esc(p.name)}</a>`).join(', ')}.` },
     faqOrder(), faqHours(), faqPrices(),
@@ -373,6 +402,7 @@ export function barbershop() {
 
   ${workSection('white')}
   ${priceTeaser(['barber'], { tone: 'light', heading: t('hubs.barber.teaser') })}
+  ${articles(['pansky-strih-praha-2-cena', 'barbershop-nebo-kadernictvi', 'uprava-vousu-jak-casto', 'head-spa-co-to-je'], { tone: 'white', heading: 'Barber: průvodce střihem a vousy', id: 'pruvodci' })}
   ${faqSection([
     { q: t('hubs.barber.faqServices'), a: `${barber.map((p) => `<a href="/${p.slug}/">${esc(p.name)}</a>`).join(', ')}.` },
     faqOrder(), faqHours(), faqPrices(),
@@ -497,6 +527,7 @@ function renderServicePage(slug) {
   ${chipsNav(chips, c)}
 ${html}
 
+  ${serviceArticles(slug, { tone: 'light', heading: `Články o službě: ${p.name.toLowerCase()}`, id: 'clanky' })}
   ${finalCta({ heading: d.final.h, text: d.final.t })}`;
   return layout({
     title: p.title, description: p.description, path: `/${p.slug}/`, body,
@@ -540,12 +571,14 @@ export function cenik() {
   ${area('nails')}
   ${area('beauty')}
   ${area('barber')}
+  ${faqSection(cenikAnswers(), { tone: 'white', heading: t('cenik.answersHeading'), eyebrow: t('cenik.answersEyebrow'), id: 'rychle-odpovedi' })}
+  ${articles(['kolik-stoji-gelove-nehty-praha', 'manikura-cena-praha-2', 'pansky-strih-praha-2-cena', 'sundani-gelovych-nehtu'], { tone: 'light', heading: 'Ceny podrobně v článcích', id: 'pruvodci' })}
   ${faqSection([faqOrder(), faqHours(), faqWhere()], { tone: 'light' })}
   ${finalCta({ heading: t('cenik.cta') })}`;
   return layout({
     title: t('cenik.title'), description: t('cenik.description'),
     path: '/cenik/', body,
-    schema: [(abs) => breadcrumbSchema(trail, abs)],
+    schema: [(abs) => breadcrumbSchema(trail, abs), priceListSchema],
   });
 }
 

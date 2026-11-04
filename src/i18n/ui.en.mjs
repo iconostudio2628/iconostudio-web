@@ -29,7 +29,7 @@ export default {
   },
   crumbs: { home: `Home`, aria: `Breadcrumb` },
   footer: {
-    servicesAria: `Services in the footer`, linksAria: `Footer links`, services: `Services`, web: `Site`, order: `Book`, blog: `Blog (in Czech)`, review: `Write a Google review`,
+    servicesAria: `Services in the footer`, linksAria: `Footer links`, services: `Services`, web: `Site`, order: `Book`, blog: `Blog (in Czech)`, faq: `FAQ (in Czech)`, review: `Write a Google review`,
   },
 
   days: { weekdays: `Mon–Fri`, sat: `Sat`, sun: `Sun` },
@@ -196,7 +196,7 @@ export default {
     barber: {
       crumb: `Barbershop`,
       title: `Barber Prague 2 near I. P. Pavlova | ICONO STUDIO`,
-      description: `Barber near I. P. Pavlova, Bělehradská 643/77, Prague 2: men's haircuts, beard trims, hair wash, men's skincare. From 100 CZK, book online.`,
+      description: `Barber near I. P. Pavlova, Prague 2: men's haircuts (Classic Cut 640 CZK), beard trims 420 CZK, hair wash, men's skincare. Prices, book online.`,
       eyebrow: `Barber · Bělehradská 77`,
       h1: `Barber Prague 2 near I. P. Pavlova`,
       lead: `Men's haircuts, beard trims, hair wash and men's skincare at Bělehradská 643/77 in Prague 2 – Vinohrady. Book online or call.`,
@@ -221,13 +221,25 @@ export default {
   },
 
   cenik: {
-    title: `Price List | ICONO STUDIO Prague 2 – Nails & Barber`,
-    description: `ICONO STUDIO price list, Bělehradská 77, Prague 2: manicure, gel nails, pedicure, lashes, brows, Head Spa, men's haircuts and beards. All prices in one place.`,
+    title: `Price List: Nail Salon & Barber Prague 2 | ICONO STUDIO`,
+    description: `Prices at ICONO STUDIO, Prague 2: manicure, gel nails, pedicure, lashes, brows, Head Spa, men's haircuts and beards. All prices in CZK, book online.`,
     h1: `ICONO STUDIO price list`,
     lead: `An overview of all services and prices: manicure, nails, pedicure, nail art, lashes, brows, Head Spa and barber. Prices are in Czech crowns (CZK); every service links to full details.`,
     chipsAria: `Quick navigation in the price list`,
     moreServices: `More about these services`,
     cta: `Made your choice? Message us.`,
+    answersEyebrow: `Quick answers`,
+    answersHeading: `How much does it cost? Price questions answered`,
+    answers: [
+      { q: `How much does a manicure cost in Prague 2?`, a: `A classic manicure costs {classic}, a manicure with Gellak gel polish {gellak} and with CND Shellac {cnd}. The packages with hand spa cost {pkClassic}, {pkGellak} and {pkCnd}. More on the <a href="/manikura-praha-2/">Manicure</a> page.` },
+      { q: `How much do gel and acrylic nails cost?`, a: `New gel or acrylic nails with colour cost {nove}, a refill {dopl} and Gel X nails {gelx}. Nail art, extra-long nails and removal are charged separately, see <a href="/gelove-akrylove-nehty-praha-2/">Gel &amp; acrylic nails</a>.` },
+      { q: `How much does a pedicure cost?`, a: `A classic pedicure costs {pedClassic}, with Gellak {pedGellak} and with CND Shellac {pedCnd}. The medical Footlogix pedicure starts at {fl}. More on the <a href="/pedikura-praha-2/">Pedicure</a> page.` },
+      { q: `How much does a men's haircut cost?`, a: `The Classic Cut costs {klas}, the Premium Cut {prem}, the VIP Cut {vip} and VIP All Inclusive {all}. The student cut (under 18) starts at {student}, children under 8 pay {deti}. More on the <a href="/panske-strihy-praha-2/">Men's haircut</a> page.` },
+      { q: `How much does a beard trim cost?`, a: `A beard trim costs {uprava}, a Timer-only touch-up {timer}. More on the <a href="/uprava-vousu-praha-2/">Beard trim</a> page.` },
+      { q: `How much do eyelash extensions cost?`, a: `Classic 1:1 lashes cost {klasik} (refill {klasikD}), Volume 2D–5D {volume} (refill {volumeD}) and Mega Volume {mega} (refill {megaD}). More on the <a href="/prodluzovani-ras-praha-2/">Eyelash extensions</a> page.` },
+      { q: `How much do Head Spa, brows and facials cost?`, a: `Head Spa costs {hs}, brow shaping {ob}, brow tinting with shaping {obB} and a facial with massage {kos}. More: <a href="/head-spa-praha-2/">Head Spa</a>, <a href="/oboci-kosmetika-praha-2/">Brows &amp; facials</a>.` },
+      { q: `How much does it cost to remove nails or gel polish?`, a: `Removing artificial nails costs {umele}, removing Shellac gel polish {shellac} and Gellak {gellakRem}. Please do not peel or pull off nails or polish yourself, it damages the natural nail.` },
+    ],
   },
 
   kontakt: {

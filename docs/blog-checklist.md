@@ -28,10 +28,10 @@ Položky označené ⚙ hlídá `npm run check`.
 ## Odkazy a média
 16. ⚙ Min. 4 interní odkazy na služby/ceník s popisným textem odkazu, jen na aktuální (kanonická) URL s lomítkem.
 17. ⚙ Obrázek se smysluplným `alt`, rozměry a lazy loading; jen skutečné fotky studia. Stránky zůstávají rychlé.
-18. Odkaz na blog **jen v patičce** ⚙ (nikde jinde než uvnitř blogu).
+18. ⚙ Interní prolinkování (změna 2026-11-04, dřív byl blog jen v patičce): každý článek má pole `services` (stránky služeb, o kterých je) a `see` (související články). Stránka každé služby v češtině dostane blok „Články o službě“, hub stránky, homepage a ceník mají vlastní výběr; každý článek má ≥3 příchozí odkazy (kontrola hlásí sirotky). EN/DE stránky na blog odkazují jen z patičky (články nejsou přeložené). Odkaz na blog a na /caste-dotazy/ je v patičce všech jazyků.
 
 ## Technické a GEO
-19. ⚙ Kanonická URL, `BlogPosting` JSON-LD (autor = organizace, publisher = @id podniku, datum, citace zdrojů), breadcrumbs.
+19. ⚙ Kanonická URL, `BlogPosting` JSON-LD (autor = organizace, publisher = @id podniku, datum, `articleSection`, `mentions` = služby, obrázek článku, citace zdrojů), breadcrumbs. FAQ v článku se do `FAQPage` JSON-LD propisuje automaticky z viditelného textu (kontrola hlídá shodu).
 20. ⚙ Zařazeno do sitemap.xml, v llms.txt; robots.txt povoluje Googlebot, Bingbot, OAI-SearchBot, Claude-SearchBot, PerplexityBot.
 21. Samostatné odpovědi (self-contained) v každé sekci; entity pojmenovány stejně v celém textu (ICONO STUDIO, Bělehradská 643/77, I. P. Pavlova).
 22. Po publikaci: přidat web do Search Console + Bing Webmaster, požádat o indexaci, po 4 týdnech zkontrolovat dotazy a pozice; články aktualizovat při změně ceníku.

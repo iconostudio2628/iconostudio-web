@@ -29,7 +29,7 @@ export default {
   },
   crumbs: { home: 'Domů', aria: 'Drobečková navigace' },
   footer: {
-    servicesAria: 'Služby v patičce', linksAria: 'Odkazy v patičce', services: 'Služby', web: 'Web', order: 'Objednání', blog: 'Blog', review: 'Napsat recenzi na Googlu',
+    servicesAria: 'Služby v patičce', linksAria: 'Odkazy v patičce', services: 'Služby', web: 'Web', order: 'Objednání', blog: 'Blog', faq: 'Časté dotazy', review: 'Napsat recenzi na Googlu',
   },
 
   days: { weekdays: 'Po–Pá', sat: 'So', sun: 'Ne' },
@@ -168,7 +168,7 @@ export default {
     nails: {
       crumb: 'Nehtové studio',
       title: 'Nail Salon Praha 2 | Manikúra a pedikúra | ICONO STUDIO',
-      description: 'Nail salon a nehtové studio u I. P. Pavlova, Bělehradská 643/77, Praha 2: manikúra, gelové nehty, pedikúra, řasy, obočí a Head Spa. Rezervace online.',
+      description: 'Nail salon a nehtové studio u I. P. Pavlova, Praha 2: manikúra od 350 Kč, gelové nehty od 590 Kč, pedikúra od 490 Kč, řasy a Head Spa. Rezervace online.',
       eyebrow: 'Nails & beauty · Bělehradská 77',
       h1: 'Nail salon a nehtové studio Praha 2',
       lead: 'Manikúra, gelové a akrylové nehty, pedikúra, prodlužování řas, obočí a Head Spa na jednom místě – na Bělehradské 77 ve Vinohradech.',
@@ -193,8 +193,8 @@ export default {
     },
     barber: {
       crumb: 'Barbershop',
-      title: 'Barber Praha 2 u I. P. Pavlova | ICONO STUDIO',
-      description: 'Barber Praha 2 u I. P. Pavlova, Bělehradská 643/77: pánský střih, úprava vousů, mytí hlavy a pánská kosmetika. Ceny od 100 Kč, rezervace online.',
+      title: 'Barber Praha 2 u I. P. Pavlova | Střih 640 Kč | ICONO STUDIO',
+      description: 'Barber Praha 2 u I. P. Pavlova, Bělehradská 643/77: pánský střih (Klasický Cut 640 Kč), úprava vousů 420 Kč, mytí hlavy a kosmetika. Rezervace online.',
       eyebrow: 'Barber · Bělehradská 77',
       h1: 'Barber Praha 2 u I. P. Pavlova',
       lead: 'Pánské střihy, úprava vousů, mytí hlavy a pánská kosmetika na Bělehradské 643/77 v Praze 2 – Vinohradech. Rezervujte si termín online, nebo zavolejte.',
@@ -219,13 +219,25 @@ export default {
   },
 
   cenik: {
-    title: 'Ceník služeb | ICONO STUDIO Praha 2 – Nails & Barber',
-    description: 'Ceník ICONO STUDIO na Bělehradské 643/77 v Praze 2: manikúra, gelové nehty, pedikúra, řasy, obočí, Head Spa, pánské střihy a vousy. Všechny ceny.',
+    title: 'Ceník manikúry, nehtů a pánských střihů | ICONO STUDIO',
+    description: 'Ceník ICONO STUDIO v Praze 2: manikúra od 350 Kč, gelové nehty 650 Kč, pedikúra od 490 Kč, pánský střih od 540 Kč, řasy, obočí a Head Spa. Rezervace online.',
     h1: 'Ceník služeb ICONO STUDIO',
     lead: 'Přehled všech služeb a cen: manikúra, nehty, pedikúra, zdobení, řasy, obočí, Head Spa a barber. Ceny jsou v korunách, u každé služby najdete odkaz na podrobnosti.',
     chipsAria: 'Rychlá navigace v ceníku',
     moreServices: 'Více o službách',
     cta: 'Vybrali jste si? Napište nám.',
+    answersEyebrow: 'Rychlé odpovědi',
+    answersHeading: 'Kolik stojí…? Nejčastější dotazy na ceny',
+    answers: [
+      { q: 'Kolik stojí manikúra v Praze 2?', a: 'Klasická manikúra stojí {classic}, manikúra s Gellakem {gellak} a s CND Shellac {cnd}. Balíček s hand spa je za {pkClassic}, {pkGellak} a {pkCnd}. Více na stránce <a href="/manikura-praha-2/">Manikúra</a>.' },
+      { q: 'Kolik stojí gelové a akrylové nehty?', a: 'Nové gelové nebo akrylové nehty s barvou stojí {nove}, doplnění {dopl} a Gel X nehty {gelx}. Zdobení, extra dlouhé nehty a odstranění se platí zvlášť, viz <a href="/gelove-akrylove-nehty-praha-2/">Gelové a akrylové nehty</a>.' },
+      { q: 'Kolik stojí pedikúra?', a: 'Klasická pedikúra stojí {pedClassic}, s Gellakem {pedGellak} a s CND Shellac {pedCnd}. Medicínální pedikúra Footlogix začíná na {fl}. Více na stránce <a href="/pedikura-praha-2/">Pedikúra</a>.' },
+      { q: 'Kolik stojí pánský střih?', a: 'Klasický Cut stojí {klas}, Premium Cut {prem}, VIP Cut {vip} a VIP All Inclusive {all}. Studentský cut do 18 let začíná na {student}, děti do 8 let platí {deti}. Více na stránce <a href="/panske-strihy-praha-2/">Pánský střih</a>.' },
+      { q: 'Kolik stojí úprava vousů?', a: 'Úprava vousů stojí {uprava}, samostatný Timer {timer}. Více na stránce <a href="/uprava-vousu-praha-2/">Úprava vousů</a>.' },
+      { q: 'Kolik stojí prodlužování řas?', a: 'Klasické řasy 1:1 stojí {klasik} (doplnění {klasikD}), Volume 2D–5D {volume} (doplnění {volumeD}) a Mega Volume {mega} (doplnění {megaD}). Více na stránce <a href="/prodluzovani-ras-praha-2/">Prodlužování řas</a>.' },
+      { q: 'Kolik stojí Head Spa, obočí a kosmetika?', a: 'Head Spa stojí {hs}, úprava obočí {ob}, barvení s úpravou obočí {obB} a péče o obličej s masáží {kos}. Více: <a href="/head-spa-praha-2/">Head Spa</a>, <a href="/oboci-kosmetika-praha-2/">Obočí a kosmetika</a>.' },
+      { q: 'Kolik stojí odstranění nehtů a gel laku?', a: 'Odstranění umělých nehtů stojí {umele}, odstranění gel laku Shellac {shellac} a Gellaku {gellakRem}. Nehty ani lak neodlupujte, poškodíte přirozený nehet.' },
+    ],
   },
 
   kontakt: {

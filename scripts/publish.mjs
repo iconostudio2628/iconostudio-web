@@ -5,6 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { routeKeys, pathFor, LANGS } from '../src/i18n/index.mjs';
 import { posts } from '../src/blog.mjs';
+import { INDEXNOW_KEY } from './indexnow-key.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'public');
@@ -13,9 +14,9 @@ const exists = (p) => access(p).then(() => true, () => false);
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 
-const dirs = new Set(['css', 'js', 'images', 'blog']);
+const dirs = new Set(['css', 'js', 'images', 'blog', 'caste-dotazy']);
 for (const l of LANGS) for (const k of routeKeys()) dirs.add(pathFor(k, l).split('/').filter(Boolean)[0] === l ? l : pathFor(k, l).split('/').filter(Boolean)[0]);
-const files = ['index.html', '404.html', 'robots.txt', 'sitemap.xml', 'llms.txt'];
+const files = ['index.html', '404.html', 'robots.txt', 'sitemap.xml', 'llms.txt', `${INDEXNOW_KEY}.txt`]; // the last one proves site ownership to IndexNow
 
 for (const f of files) if (await exists(join(root, f))) await cp(join(root, f), join(out, f));
 for (const d of dirs) if (d && await exists(join(root, d))) {

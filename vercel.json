@@ -25,5 +25,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/gelove-akrylové-nehty-praha-2/",
+      "destination": "/gelove-akrylove-nehty-praha-2/",
+      "permanent": true
+    },
+    {
+      "source": "/gelove-akrylov%C3%A9-nehty-praha-2/",
+      "destination": "/gelove-akrylove-nehty-praha-2/",
+      "permanent": true
+    }
   ]
 }

@@ -146,10 +146,22 @@ for (const lang of LANGS) {
   console.log(`  shared-text share (max over service pages): ${Math.round(worst.pct * 100)}% (${worst.key})`);
 }
 
+// FAQPage JSON-LD must mirror the visible FAQ exactly (same number of questions, same wording)
+function checkFaqSchema(f, html) {
+  const visible = [...html.matchAll(/<details class="faq-item">\s*<summary><span>([\s\S]*?)<\/span>/g)].map((m) => decode(m[1]).trim());
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => { try { return JSON.parse(m[1]); } catch { return null; } }).filter((o) => o && o['@type'] === 'FAQPage');
+  if (!visible.length) { if (blocks.length) warn(f, 'FAQPage JSON-LD without a visible FAQ'); return; }
+  if (blocks.length !== 1) { warn(f, `${blocks.length} FAQPage blocks (expected exactly 1)`); return; }
+  const names = blocks[0].mainEntity.map((q) => q.name);
+  const uniq = [...new Set(visible)];
+  if (names.length !== uniq.length || names.some((n, i) => n !== uniq[i].replace(/\s+/g, ' '))) warn(f, `FAQPage JSON-LD (${names.length}) does not match the visible FAQ (${uniq.length})`);
+  for (const q of blocks[0].mainEntity) if (!q.acceptedAnswer || !q.acceptedAnswer.text || q.acceptedAnswer.text.length < 20) warn(f, `FAQ answer too short: ${q.name}`);
+}
+
 const text100 = (m) => decode(m.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ')).split(/\s+/).filter(Boolean).slice(0, 220).join(' ');
 // ---- blog (Czech only): same hygiene as the pages, plus amounts-in-prose against the price list ----
 console.log('\n── blog ──');
-for (const f of ['blog/index.html', ...posts.map((p) => `blog/${p.slug}/index.html`)]) {
+for (const f of ['blog/index.html', 'caste-dotazy/index.html', ...posts.map((p) => `blog/${p.slug}/index.html`)]) {
   const html = await readFile(join(root, f), 'utf8');
   const title = decode((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '');
   const desc = decode((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
@@ -187,7 +199,9 @@ for (const f of ['blog/index.html', ...posts.map((p) => `blog/${p.slug}/index.ht
   }
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) warn(f, 'not exactly one <h1>');
   if (!f.endsWith('blog/index.html') && words < 800) warn(f, `only ${words} words`);
+  if (post && !(new Date(post.published || '2026-10-09') <= new Date(post.modified || '2026-11-04'))) warn(f, 'published date is after the modified date');
   if (!html.includes(`<link rel="canonical" href="${site.url}/${f.replace('index.html', '')}"`)) warn(f, 'missing/wrong canonical');
+  checkFaqSchema(f, html);
   if (html.includes('hreflang="en"') && !f.includes('/')) warn(f, 'unexpected hreflang');
   for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) { try { JSON.parse(m[1]); } catch { warn(f, 'invalid JSON-LD'); } }
   for (const m of spaced.matchAll(/(\d[\d.,  ]*\d|\d)\s?(Kč|CZK)/g)) { const n = Number(m[1].replace(/\D/g, '')); if (!priceNumbers.has(n)) warn(f, `amount ${m[0]} is not in the price list`); }
@@ -198,13 +212,41 @@ for (const f of ['blog/index.html', ...posts.map((p) => `blog/${p.slug}/index.ht
   }
   console.log(`${f.padEnd(52)} words ${String(words).padStart(5)}  title ${title.length}  desc ${desc.length}`);
 }
-// blog is linked from the footer only: no other page may link to /blog/ except the blog itself and the footers
+// Internal linking into the (Czech-only) blog: Czech pages link to it from the content, translated pages only from the
+// footer (the articles are not translated). Every Czech service page links to at least one article, every article is
+// linked from at least 3 other pages (no orphans), every page has the footer links to the blog and the FAQ hub.
+const inbound = new Map(posts.map((p) => [p.slug, new Set()]));
 for (const lang of LANGS) for (const key of keys) {
-  const html = await readFile(join(root, fileFor(pathFor(key, lang))), 'utf8');
+  const f = fileFor(pathFor(key, lang));
+  const html = await readFile(join(root, f), 'utf8');
   const nav = (html.match(/<header[\s\S]*?<\/header>/) || [''])[0] + (html.match(/<main[\s\S]*?<\/main>/) || [''])[0];
-  if (nav.includes('href="/blog/')) warn(fileFor(pathFor(key, lang)), 'links to the blog outside the footer');
-  if (!html.match(/<footer[\s\S]*href="\/blog\/"/)) warn(fileFor(pathFor(key, lang)), 'footer has no blog link');
+  const toBlog = [...nav.matchAll(/href="\/blog\/([a-z0-9-]*)\/?"/g)].map((m) => m[1]);
+  if (lang !== 'cs' && toBlog.length) warn(f, 'translated page links to the Czech blog outside the footer');
+  if (lang === 'cs') for (const slug of toBlog) if (inbound.has(slug)) inbound.get(slug).add(f);
+  if (lang === 'cs' && serviceKeys.has(key) && !toBlog.some((s) => s)) warn(f, 'service page links to no blog article');
+  if (!html.match(/<footer[\s\S]*href="\/blog\/"/)) warn(f, 'footer has no blog link');
+  if (!html.match(/<footer[\s\S]*href="\/caste-dotazy\/"/)) warn(f, 'footer has no FAQ-hub link');
+  checkFaqSchema(f, html);
 }
+for (const p of posts) {
+  const f = `blog/${p.slug}/index.html`;
+  for (const other of posts) if (other !== p) {
+    const h = await readFile(join(root, `blog/${other.slug}/index.html`), 'utf8');
+    if (h.includes(`href="/blog/${p.slug}/"`)) inbound.get(p.slug).add(`blog/${other.slug}`);
+  }
+  const hub = await readFile(join(root, 'blog/index.html'), 'utf8');
+  if (hub.includes(`href="/blog/${p.slug}/"`)) inbound.get(p.slug).add('blog/index.html');
+  const faqHub = await readFile(join(root, 'caste-dotazy/index.html'), 'utf8');
+  if (faqHub.includes(`href="/blog/${p.slug}/"`)) inbound.get(p.slug).add('caste-dotazy/index.html');
+  if (inbound.get(p.slug).size < 3) warn(f, `only ${inbound.get(p.slug).size} internal pages link to this article (need ≥3)`);
+  // the services an article is about must link back to it from the service page (kept in sync through p.services)
+  for (const sv of p.services || []) {
+    const h = await readFile(join(root, `${sv}/index.html`), 'utf8');
+    if (!h.includes(`href="/blog/${p.slug}/"`)) warn(f, `service page /${sv}/ does not link back to this article`);
+  }
+}
+const inCount = [...inbound].map(([s, set]) => `${s}:${set.size}`).join('  ');
+console.log(`\ninbound links per article → ${inCount}`);
 
 // ---- “Naše práce” carousel: 9 real photos on home and the nail hub, each with a descriptive alt ----
 for (const lang of LANGS) for (const key of ['home', 'nails']) {

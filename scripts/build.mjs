@@ -9,6 +9,7 @@ import { site } from '../src/data.mjs';
 import { servicePagesBase } from '../src/content.mjs';
 import * as pages from '../src/pages.mjs';
 import { posts, blogPost, blogIndex } from '../src/blog.mjs';
+import { faqHub } from '../src/faq-hub.mjs';
 import { LANGS, LANG_META, setLang, pathFor, fileFor } from '../src/i18n/index.mjs';
 import { translationGaps } from '../src/i18n/coverage.mjs';
 
@@ -57,7 +58,10 @@ function llmsTxt() {
 ## Služby
 ${svc}
 
-## Blog
+## Časté dotazy
+- [Časté dotazy: nehty, pedikúra, řasy a barber](${u('/caste-dotazy/')}): rychlé odpovědi na ceny, doplnění, sundání gel laku, Footlogix, Head Spa a pánský střih
+
+## Blog (články o cenách, nehtech, pedikúře a barber péči)
 ${posts.map((p) => `- [${p.h1}](${u(`/blog/${p.slug}/`)}): ${p.teaser}`).join('\n')}
 `;
 }
@@ -75,20 +79,22 @@ for (const lang of langs) {
 }
 setLang('cs');
 await write('blog/index.html', blogIndex());
+await write('caste-dotazy/index.html', faqHub());
+built += 1;
 built += 1;
 for (const p of posts) { await write(`blog/${p.slug}/index.html`, blogPost(p.slug)); built += 1; }
 await write('404.html', pages.notFound());
 built += 1;
 
 if (site.url) {
-  const lastmod = process.env.LASTMOD || '2026-10-10'; // content date – not the build date, so unchanged pages keep a stable lastmod
+  const lastmod = process.env.LASTMOD || '2026-11-04'; // content date – not the build date, so unchanged pages keep a stable lastmod
   const entry = (r, l) => {
     const alts = LANGS.map((x) => `    <xhtml:link rel="alternate" hreflang="${LANG_META[x].htmlLang}" href="${site.url}${pathFor(r.key, x)}"/>`);
     alts.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${site.url}${pathFor(r.key, 'cs')}"/>`);
     return `  <url>\n    <loc>${site.url}${pathFor(r.key, l)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <priority>${r.priority}</priority>\n${alts.join('\n')}\n  </url>`;
   };
-  const blogUrls = ['/blog/', ...posts.map((p) => `/blog/${p.slug}/`)]
-    .map((u) => `  <url>\n    <loc>${site.url}${u}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <priority>${u === '/blog/' ? '0.5' : '0.6'}</priority>\n  </url>`);
+  const blogUrls = [{ u: '/blog/', pr: '0.5', m: lastmod }, { u: '/caste-dotazy/', pr: '0.6', m: lastmod }, ...posts.map((p) => ({ u: `/blog/${p.slug}/`, pr: '0.6', m: p.modified || '2026-11-04' }))]
+    .map((x) => `  <url>\n    <loc>${site.url}${x.u}</loc>\n    <lastmod>${x.m}</lastmod>\n    <priority>${x.pr}</priority>\n  </url>`);
   await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${[...LANGS.flatMap((l) => routes.map((r) => entry(r, l))), ...blogUrls].join('\n')}

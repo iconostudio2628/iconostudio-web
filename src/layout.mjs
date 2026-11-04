@@ -142,8 +142,28 @@ export const locationSection = ({ heading = t('location.heading'), tone = 'light
 };
 
 /* ---------- FAQ / CTA ---------- */
-export const faqSection = (items, { heading = t('faq.heading'), tone = 'light', eyebrow = t('faq.eyebrow') } = {}) => `
-  <section class="section section--${tone}" id="faq">
+// Every faqSection() call also registers its questions; layout() turns them into one FAQPage JSON-LD block, so the
+// markup always matches the visible text (a hard Google requirement) and cannot drift. Google no longer shows FAQ rich
+// results, the markup is kept for other search engines and AI assistants that read structured data.
+let collectedFaq = [];
+const plain = (h) => String(h).replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;|\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+const faqSchema = () => {
+  const items = collectedFaq;
+  collectedFaq = [];
+  if (!items.length) return null;
+  const seen = new Set();
+  return (abs) => ({
+    '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: LANG_META[getLang()].locale.replace('_', '-'),
+    mainEntity: items.filter((q) => !seen.has(q.q) && seen.add(q.q)).map((q) => ({
+      '@type': 'Question', name: plain(q.q), acceptedAnswer: { '@type': 'Answer', text: plain(q.a) },
+    })),
+    publisher: { '@id': bizId(abs) },
+  });
+};
+export const faqSection = (items, { heading = t('faq.heading'), tone = 'light', eyebrow = t('faq.eyebrow'), id = 'faq' } = {}) => {
+  collectedFaq.push(...items);
+  return `
+  <section class="section section--${tone}" id="${id}">
     <div class="wrap faq-wrap">
       <div data-reveal><p class="eyebrow">${eyebrow}</p><h2>${heading}</h2></div>
       <div class="faq" data-stagger>
@@ -155,6 +175,7 @@ export const faqSection = (items, { heading = t('faq.heading'), tone = 'light', 
       </div>
     </div>
   </section>`;
+};
 
 export const finalCta = ({ heading = t('cta.heading'), text = t('cta.text') } = {}) => `
   <section class="section section--black final-cta" id="objednat">
@@ -421,12 +442,34 @@ export const websiteSchema = (absolute) => ({
   publisher: { '@id': bizId(absolute) },
 });
 
-const offerFor = (it, url) => {
+export const offerFor = (it, url) => {
   const base = { '@type': 'Offer', priceCurrency: 'CZK', url };
   if (it.variants) return it.variants.map((v) => ({ ...base, name: `${it.name} – ${v.label}`, price: String(v.price) }));
   if (it.from) return { ...base, name: it.name, priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'CZK', minPrice: it.price } };
   return { ...base, name: it.name, price: String(it.price) };
 };
+
+/** The whole price list as one OfferCatalog (price page). Amounts come straight from priceGroups. */
+export const priceListSchema = (absolute) => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: t('cenik.h1'),
+  url: absolute(pathFor('cenik')),
+  inLanguage: LANG_META[getLang()].locale.replace('_', '-'),
+  about: { '@id': bizId(absolute) },
+  mainEntity: {
+    '@type': 'OfferCatalog',
+    name: t('cenik.h1'),
+    itemListElement: priceGroups.map((g0) => {
+      const g = groupById(g0.id);
+      return {
+        '@type': 'OfferCatalog',
+        name: g.title,
+        itemListElement: g.sections.flatMap((s) => s.items).flatMap((it) => offerFor(it, absolute(pathFor('cenik')))).map((o) => ({ ...o, seller: { '@id': bizId(absolute) } })),
+      };
+    }),
+  },
+});
 
 export const serviceSchema = (page) => (absolute) => ({
   '@context': 'https://schema.org',
@@ -482,7 +525,8 @@ export function layout({ title, description, path, body, robots, schema = [], bo
   const ogUrl = site.url && (key || selfCanonical) ? `<meta property="og:url" content="${absolute(own)}">` : '';
   const ogAlt = LANGS.filter((x) => x !== l).map((x) => `<meta property="og:locale:alternate" content="${LANG_META[x].locale}">`).join('\n  ');
   const ogImage = site.url ? absolute('/images/og-image.png') : '/images/og-image.png';
-  const schemas = [localBusinessSchema(absolute), ...(home && site.url ? [websiteSchema(absolute)] : []), ...schema.map((s) => (typeof s === 'function' ? s(absolute) : s))];
+  const faq = faqSchema();
+  const schemas = [localBusinessSchema(absolute), ...(home && site.url ? [websiteSchema(absolute)] : []), ...schema.map((s) => (typeof s === 'function' ? s(absolute) : s)), ...(faq ? [faq(absolute)] : [])];
   const isActive = (href) => (href === path ? ' aria-current="page"' : '');
   const pages = getServicePages();
   const inServices = pages.some((p) => path === `/${p.slug}/`) || path === '/nail-studio-praha-2/' || path === '/barbershop-praha-2/';
@@ -596,6 +640,7 @@ ${body}
         <a href="/barbershop-praha-2/">${t('hubs.barber.crumb')}</a>
         ${nav.map((n) => `<a href="${n.href}">${t(n.key)}</a>`).join('')}
         <a href="/blog/"${l === 'cs' ? '' : ' hreflang="cs" lang="cs"'}>${t('footer.blog')}</a>
+        <a href="/caste-dotazy/"${l === 'cs' ? '' : ' hreflang="cs" lang="cs"'}>${t('footer.faq')}</a>
         <p class="footer-title footer-title--gap">${t('footer.order')}</p>
         <a href="${links.book}" target="_blank" rel="noopener" data-track="click_book">${t('btn.book')}</a>
         <a href="${links.call}" data-track="click_call">${t('btn.call')}</a>

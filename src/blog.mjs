@@ -2,44 +2,22 @@
 // service notes – amounts come from itemById() so they can never drift from the ceník – plus a few external
 // sources that were opened and verified (listed under “Zdroje” on the page). Nothing is invented.
 // Writing checklist: docs/blog-checklist.md (enforced where possible by `npm run check`).
-import { site, itemById, kc } from './data.mjs';
-import { t } from './i18n/index.mjs';
-import { esc, breadcrumbs, breadcrumbSchema, faqSection, finalCta, layout, btnBook, btnCall } from './layout.mjs';
-
-const price = (id, label) => {
-  const it = itemById(id);
-  if (label) return kc(it.variants.find((v) => v.label === label).price);
-  return kc(it.price);
-};
-const hours = () => site.hours.map((h) => `${h.dayKey === 'weekdays' ? 'Po–Pá' : 'So'} ${h.display}`).join(', ');
-const NAME = 'ICONO STUDIO';
-const PUBLISHED = '2026-10-09';
-const MODIFIED = '2026-10-09';
-const dateCs = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-const table = (caption, head, rows) => `
-<div class="cmp-wrap post-table" tabindex="0" role="region" aria-label="${esc(caption)}">
-  <table class="cmp cmp--text">
-    <caption class="visually-hidden">${esc(caption)}</caption>
-    <thead><tr>${head.map((h, i) => `<th scope="col"${i === 0 ? ' class="cmp-corner"' : ''}>${h}</th>`).join('')}</tr></thead>
-    <tbody>${rows.map((r) => `<tr><th scope="row">${r[0]}</th>${r.slice(1).map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
-  </table>
-</div>`;
-// Real photographs supplied by the owner (data.mjs → photos.work / photos.studio); alt texts are UI strings.
-const fig = (img, altKey, caption) => `
-<figure class="post-figure">
-  <img src="${img.src}" srcset="${img.srcset}" sizes="(min-width: 800px) 760px, 100vw" alt="${esc(t(altKey))}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">
-  <figcaption>${caption}</figcaption>
-</figure>`;
-const where = () => `
-<h2>Kde nás najdete a jak se objednat?</h2>
-<p>ICONO STUDIO (barber a nail salon v jednom) je na Bělehradské 643/77 v Praze 2, u metra I. P. Pavlova a v okolí náměstí Míru. Otevřeno máme ${hours()}. Termín si rezervujte online, nebo zavolejte na ${esc(site.phoneDisplay)}.</p>
-${fig(site.photos.studio.find((p) => p.key === 'studioB'), 'photos.studioB', 'Vchod do ICONO STUDIO na Bělehradské.')}`;
+import { site } from './data.mjs';
+import { breadcrumbs, breadcrumbSchema, faqSection, finalCta, layout, btnBook, btnCall, esc } from './layout.mjs';
+import {
+  NAME, PUBLISHED, MODIFIED, price, hours, dateCs, table, fig, figNail, where,
+} from './blog-kit.mjs';
+import { posts2 } from './blog-posts-2.mjs';
 
 /* ================================================================== články */
-export const posts = [
+const postsBase = [
   /* ---------------------------------------------------------------- 1 */
   {
     slug: 'shellac-vs-gellak',
+    category: 'nehty',
+    published: PUBLISHED,
+    services: ['manikura-praha-2', 'gelove-akrylove-nehty-praha-2'],
+    see: ['manikura-cena-praha-2', 'sundani-gelovych-nehtu', 'gel-nebo-akryl-gel-x'],
     keyword: ['shellac', 'gellak'],
     title: 'Shellac vs. Gellak: rozdíl, výdrž a ceny | ICONO STUDIO',
     description: 'Shellac vs. Gellak: výdrž, odstranění a ceny. Srovnání z nail salonu v Praze 2 u I. P. Pavlova a tabulka, co zvolit podle toho, jak žijete.',
@@ -81,7 +59,7 @@ ${table('Srovnání CND Shellac a Gellak', ['Vlastnost', 'CND Shellac', 'Gellak'
 
 <h2>Jak se gel lak odstraňuje?</h2>
 <p>Odstranění je místo, kde se Shellac a Gellak liší nejvíc: Shellac se odmočí, Gellak často potřebuje brusku. Ve studiu stojí odstranění Gellaku ${price('ost-odstr-lak', 'Gellak')} a Shellacu ${price('ost-odstr-lak', 'Shellac')}.</p>
-<p>Jedno pravidlo platí pro oba: <strong>gel lak neodlupujte</strong>. Odlupování nehet poškozuje. Pokud se lak začne zvedat, přijďte si ho nechat odstranit.</p>
+<p>Jedno pravidlo platí pro oba: <strong>gel lak neodlupujte</strong>. Odlupování nehet poškozuje. Pokud se lak začne zvedat, přijďte si ho nechat odstranit. Postup a ceny odstranění umělých nehtů shrnuje článek <a href="/blog/sundani-gelovych-nehtu/">sundání gelových nehtů</a>.</p>
 
 <h2>Jak návštěva probíhá?</h2>
 <ol class="post-list post-steps">
@@ -103,7 +81,7 @@ ${table('Srovnání CND Shellac a Gellak', ['Vlastnost', 'CND Shellac', 'Gellak'
   <li>Manikúra s CND Shellac: ${price('man-cnd')}, v balíčku s hand spa ${price('man-pk-cnd')}</li>
   <li>Pedikúra s Gellakem: ${price('ped-gellak')}, s CND Shellac: ${price('ped-cnd')}</li>
 </ul>
-<p>Kompletní nabídku najdete v <a href="/cenik/">ceníku</a>. Na pedikúru se hodí i <a href="/blog/pedikura-footlogix-vs-klasicka/">srovnání klasické a Footlogix pedikúry</a>.</p>
+<p>Kompletní nabídku najdete v <a href="/cenik/">ceníku</a>, přehled všech variant manikúry v článku <a href="/blog/manikura-cena-praha-2/">manikúra: cena</a>. Na pedikúru se hodí i <a href="/blog/pedikura-footlogix-vs-klasicka/">srovnání klasické a Footlogix pedikúry</a>.</p>
 ${where()}`,
     faq: () => [
       { q: 'Jak dlouho vydrží CND Shellac a Gellak?', a: 'CND Shellac vydrží přibližně od 10 dnů do 3 týdnů, Gellak obvykle déle. Skutečná výdrž závisí na kvalitě přirozených nehtů a na tom, jak často jsou ruce ve vodě nebo v kontaktu s čisticími prostředky.' },
@@ -116,6 +94,10 @@ ${where()}`,
   /* ---------------------------------------------------------------- 2 */
   {
     slug: 'pansky-strih-praha-2-cena',
+    category: 'barber',
+    published: PUBLISHED,
+    services: ['panske-strihy-praha-2', 'uprava-vousu-praha-2'],
+    see: ['barbershop-nebo-kadernictvi', 'uprava-vousu-jak-casto', 'head-spa-co-to-je'],
     keyword: ['pánský střih praha 2'],
     title: 'Pánský střih Praha 2: ceny a obsah cutů | ICONO STUDIO',
     description: 'Pánský střih Praha 2: co přesně je v ceně Klasického, Premium a VIP cutu. Tabulka obsahu a cen z barbershopu u I. P. Pavlova. Rezervace online.',
@@ -166,7 +148,7 @@ ${fig(site.photos.work[0], 'photos.workA', 'Ukázka práce z barber křesla v IC
 
 <h2>Kolik stojí střih pro studenty, děti a stálé zákazníky?</h2>
 <p>Studentský cut do 18 let začíná na ${price('cut-student')} a obsahuje střih, styling a balzám nebo kolínskou. Děti do 8 let platí ${price('cut-deti')}. Kdo chodí pravidelně každé 2 týdny, má na všechny cuty slevu 100 Kč.</p>
-<p>Kompletní barber nabídku najdete na stránce <a href="/barbershop-praha-2/">barber Praha 2</a> a v <a href="/cenik/">ceníku</a>.</p>
+<p>Kompletní barber nabídku najdete na stránce <a href="/barbershop-praha-2/">barber Praha 2</a> a v <a href="/cenik/">ceníku</a>. Rozdíl oproti kadeřnictví vysvětluje článek <a href="/blog/barbershop-nebo-kadernictvi/">barbershop nebo kadeřnictví</a>.</p>
 ${where()}`,
     faq: () => [
       { q: 'Kolik stojí pánský střih v Praze 2?', a: `V ICONO STUDIO stojí Klasický Cut ${price('cut-klasicky')}, Premium Cut ${price('cut-premium')}, VIP Cut ${price('cut-vip')} a VIP All Inclusive ${price('cut-vip-all')}. Studentský cut do 18 let začíná na ${price('cut-student')}, děti do 8 let ${price('cut-deti')}.` },
@@ -179,10 +161,14 @@ ${where()}`,
   /* ---------------------------------------------------------------- 3 */
   {
     slug: 'pedikura-footlogix-vs-klasicka',
+    category: 'pece',
+    published: PUBLISHED,
+    services: ['pedikura-praha-2'],
+    see: ['shellac-vs-gellak', 'manikura-cena-praha-2', 'head-spa-co-to-je'],
     keyword: ['pedikúra footlogix'],
-    title: 'Pedikúra Footlogix vs. klasická: ceny | ICONO STUDIO',
-    description: 'Pedikúra Footlogix vs. klasická pedikúra: rozdíl, ceny a pro koho. Nail salon Praha 2 u I. P. Pavlova. Kdy je lepší nejdřív zajít k lékaři.',
-    h1: 'Pedikúra Footlogix, nebo klasická? Co řeší a kdy se vyplatí upgrade',
+    title: 'Pedikúra Footlogix: co to je a ceny | ICONO STUDIO',
+    description: 'Pedikúra Footlogix: co to je, čím se liší od klasické pedikúry, pro koho je a kolik stojí. Nail salon v Praze 2 u I. P. Pavlova. Rezervace online.',
+    h1: 'Pedikúra Footlogix: co to je a kdy se vyplatí oproti klasické pedikúře',
     crumb: 'Pedikúra Footlogix vs. klasická',
     teaser: 'Co je Footlogix a kdy stačí klasická pedikúra. Srovnání s cenami a upozorněním, kdy jít nejdřív k lékaři.',
     about: 'Pedikúra Footlogix a klasická pedikúra',
@@ -243,6 +229,7 @@ ${table('Srovnání klasické pedikúry a pedikúry Footlogix', ['', 'Klasická 
 </ul>
 ${where()}`,
     faq: () => [
+      { q: 'Co je pedikúra Footlogix?', a: 'Pedikúra, při které se používá profesionální kosmetika Footlogix pro suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Je to kosmetická péče, ne lékařské ošetření.' },
       { q: 'Kolik stojí pedikúra v Praze 2?', a: `V ICONO STUDIO stojí klasická pedikúra ${price('ped-classic')}, pedikúra s Gellakem ${price('ped-gellak')} a s CND Shellac ${price('ped-cnd')}. Medicínální pedikúra Footlogix začíná na ${price('ped-med-classic')}.` },
       { q: 'Je Footlogix lékařské ošetření?', a: 'Ne. Je to profesionální kosmetická péče o chodidla a nenahrazuje lékařské ošetření.' },
       { q: 'Jak často chodit na pedikúru?', a: 'Obvykle jednou za čtyři až šest týdnů, podle růstu nehtů a toho, jak nohy zatěžujete.' },
@@ -251,9 +238,46 @@ ${where()}`,
   },
 ];
 
+export const posts = [...postsBase, ...posts2];
+export const postBySlug = (slug) => posts.find((x) => x.slug === slug);
+
 /* ============================================================ renderers */
 const postUrl = (p) => `/blog/${p.slug}/`;
 const authorName = `Tým ${NAME}`;
+const modifiedOf = (p) => p.modified || MODIFIED;
+
+export const CATEGORIES = [
+  { id: 'ceny', h2: 'Kolik to stojí: ceny a co je v ceně', lead: 'Konkrétní ceny z ceníku a vysvětlení, z čeho se výsledná cena skládá.' },
+  { id: 'nehty', h2: 'Nehty: gel lak, gel, akryl a Gel X', lead: 'Rozdíly mezi materiály, výdrž, odstranění a výběr podle toho, jak žijete.' },
+  { id: 'pece', h2: 'Pedikúra, řasy a relaxační péče', lead: 'Footlogix, prodlužování řas a Head Spa: co to je a pro koho.' },
+  { id: 'barber', h2: 'Barber: střih, vousy a péče', lead: 'Co je v ceně cutů, jak často za barberem a kdy zvolit barbershop.' },
+];
+
+const SERVICE_LABELS = {
+  '/manikura-praha-2/': 'Manikúra', '/pedikura-praha-2/': 'Pedikúra', '/gelove-akrylove-nehty-praha-2/': 'Gelové a akrylové nehty',
+  '/panske-strihy-praha-2/': 'Pánský střih', '/uprava-vousu-praha-2/': 'Úprava vousů', '/panska-kosmetika-praha-2/': 'Pánská kosmetika',
+  '/prodluzovani-ras-praha-2/': 'Prodlužování řas', '/oboci-kosmetika-praha-2/': 'Obočí a kosmetika', '/head-spa-praha-2/': 'Head Spa',
+  '/cenik/': 'Ceník', '/nail-studio-praha-2/': 'Nail salon Praha 2', '/barbershop-praha-2/': 'Barber Praha 2', '/kontakt/': 'Kontakt',
+};
+
+/* ---------- internal linking: articles shown on service pages, hubs, home and the price list (Czech only) ---------- */
+/** Articles about a given service page (route slug). Newest first is not wanted – the order in `posts` is editorial. */
+export const articlesFor = (serviceSlug, max = 4) => posts.filter((p) => (p.services || []).includes(serviceSlug)).slice(0, max);
+const cards = (list) => `<div class="post-cards">${list.map((o) => `<a class="post-card" href="${postUrl(o)}"><strong>${esc(o.crumb)}</strong><span>${esc(o.teaser)}</span></a>`).join('')}</div>`;
+/** “Průvodci a články” section – returns '' when there is nothing to show. `slugs` = article slugs, or pass posts directly. */
+export const articlesBlock = (list, { tone = 'light', heading = 'Související články', eyebrow = 'Průvodci', id = 'clanky' } = {}) => (list.length ? `
+  <section class="section section--${tone}" id="${id}">
+    <div class="wrap">
+      <div class="section-head" data-reveal><div><p class="eyebrow">${eyebrow}</p><h2>${heading}</h2></div><a class="text-link" href="/blog/">Všechny články</a></div>
+      ${cards(list)}
+    </div>
+  </section>` : '');
+
+const ldArticleImage = (p, abs) => {
+  const m = p.body().match(/<img src="([^"]+)"[^>]*\swidth="(\d+)"\sheight="(\d+)"/);
+  return m ? { '@type': 'ImageObject', url: abs(m[1]), width: Number(m[2]), height: Number(m[3]) } : abs('/images/og-image.png');
+};
+const textWords = (html) => html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
 
 const postSchema = (p) => (abs) => ({
   '@context': 'https://schema.org',
@@ -263,42 +287,42 @@ const postSchema = (p) => (abs) => ({
   description: p.description,
   url: abs(postUrl(p)),
   mainEntityOfPage: { '@type': 'WebPage', '@id': abs(postUrl(p)) },
-  datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  datePublished: p.published || PUBLISHED,
+  dateModified: modifiedOf(p),
   inLanguage: 'cs',
   keywords: p.keyword.join(', '),
+  articleSection: (CATEGORIES.find((c) => c.id === p.category) || {}).h2,
+  wordCount: textWords(p.body()),
   author: { '@type': 'Organization', name: authorName, '@id': abs('/#business') },
   publisher: { '@id': abs('/#business') },
-  image: abs('/images/og-image.png'),
+  image: ldArticleImage(p, abs),
   about: { '@type': 'Thing', name: p.about },
+  // the services the article talks about – ties the article to the service pages in the knowledge graph
+  mentions: (p.services || []).map((s) => ({ '@type': 'Service', name: SERVICE_LABELS[`/${s}/`], url: abs(`/${s}/`), provider: { '@id': abs('/#business') } })),
   ...(p.sources.length ? { citation: p.sources.map((s) => ({ '@type': 'CreativeWork', name: s.label, url: s.url })) } : {}),
   isPartOf: { '@type': 'Blog', '@id': abs('/blog/#blog'), name: `Blog ${NAME}`, url: abs('/blog/') },
 });
-
-const SERVICE_LABELS = {
-  '/manikura-praha-2/': 'Manikúra', '/pedikura-praha-2/': 'Pedikúra', '/gelove-akrylove-nehty-praha-2/': 'Gelové a akrylové nehty',
-  '/panske-strihy-praha-2/': 'Pánský střih', '/uprava-vousu-praha-2/': 'Úprava vousů', '/panska-kosmetika-praha-2/': 'Pánská kosmetika',
-  '/cenik/': 'Ceník', '/nail-studio-praha-2/': 'Nail salon Praha 2', '/barbershop-praha-2/': 'Barber Praha 2',
-};
 
 const authorBox = () => `
 <aside class="post-author" aria-label="O autorovi">
   <p class="eyebrow">O autorovi</p>
   <p><strong>${authorName}.</strong> ${NAME} je barber a nail salon na Bělehradské 643/77 v Praze 2 (IČO ${site.ico}). Články píšeme z vlastního ceníku a metodických podkladů studia. Ceny a popisy služeb jsou aktuální k datu aktualizace u nadpisu.</p>
-  <p><a class="text-link" href="/kontakt/">Kontakt a otevírací doba</a></p>
+  <p><a class="text-link" href="/kontakt/">Kontakt a otevírací doba</a> · <a class="text-link" href="/caste-dotazy/">Časté dotazy</a></p>
 </aside>`;
 
 export function blogPost(slug) {
-  const p = posts.find((x) => x.slug === slug);
+  const p = postBySlug(slug);
   const trail = [{ name: 'Blog', href: '/blog/' }, { name: p.crumb, href: postUrl(p) }];
-  const others = posts.filter((x) => x !== p);
+  // “Další články”: the hand-picked cross-links first, then more from the same category
+  const seen = new Set([p.slug]);
+  const next = [...(p.see || []).map(postBySlug), ...posts.filter((x) => x.category === p.category)].filter((x) => x && !seen.has(x.slug) && seen.add(x.slug)).slice(0, 4);
   const body = `
   <section class="page-hero page-hero--post">
     <div class="wrap">
       ${breadcrumbs(trail)}
       <p class="eyebrow" data-hero>Blog · ${NAME}</p>
       <h1 data-hero>${esc(p.h1)}</h1>
-      <p class="post-meta" data-hero>${authorName} · <time datetime="${PUBLISHED}">${dateCs(PUBLISHED)}</time> · aktualizováno <time datetime="${MODIFIED}">${dateCs(MODIFIED)}</time></p>
+      <p class="post-meta" data-hero>${authorName} · <time datetime="${p.published || PUBLISHED}">${dateCs(p.published || PUBLISHED)}</time> · aktualizováno <time datetime="${modifiedOf(p)}">${dateCs(modifiedOf(p))}</time></p>
     </div>
   </section>
 
@@ -318,9 +342,9 @@ export function blogPost(slug) {
   <section class="section section--light">
     <div class="wrap">
       <p class="eyebrow">Další články</p>
-      <div class="post-cards">${others.map((o) => `<a class="post-card" href="${postUrl(o)}"><strong>${esc(o.crumb)}</strong><span>${esc(o.teaser)}</span></a>`).join('')}</div>
+      <div class="post-cards">${next.map((o) => `<a class="post-card" href="${postUrl(o)}"><strong>${esc(o.crumb)}</strong><span>${esc(o.teaser)}</span></a>`).join('')}</div>
       <p class="eyebrow post-related-label">Související služby</p>
-      <div class="link-cloud">${p.related.map((href) => `<a href="${href}">${esc(SERVICE_LABELS[href] || href)}</a>`).join('')}</div>
+      <div class="link-cloud">${p.related.map((href) => `<a href="${href}">${esc(SERVICE_LABELS[href] || href)}</a>`).join('')}<a href="/blog/">Všechny články</a></div>
     </div>
   </section>
   ${finalCta()}`;
@@ -333,29 +357,47 @@ export function blogPost(slug) {
 
 export function blogIndex() {
   const trail = [{ name: 'Blog', href: '/blog/' }];
+  const card = (o) => `<a class="post-card" href="${postUrl(o)}"><strong>${esc(o.h1)}</strong><span>${esc(o.teaser)}</span><small>${dateCs(o.published || PUBLISHED)}</small></a>`;
   const body = `
   <section class="page-hero page-hero--post">
     <div class="wrap">
       ${breadcrumbs(trail)}
       <p class="eyebrow" data-hero>Blog · ${NAME}</p>
-      <h1 data-hero>Blog o nehtech a barber péči v Praze 2</h1>
-      <p class="lead" data-hero>Praktické průvodce z nail salonu a barbershopu na Bělehradské 643/77 u I. P. Pavlova. Vždy s konkrétními cenami a vysvětlením, co v ceně je.</p>
+      <h1 data-hero>Blog o nehtech, pedikúře a barber péči v Praze 2</h1>
+      <p class="lead" data-hero>Praktické průvodce z nail salonu a barbershopu na Bělehradské 643/77 u I. P. Pavlova. Vždy s konkrétními cenami z ceníku a vysvětlením, co v ceně je. Rychlé odpovědi najdete také v <a class="text-link" href="/caste-dotazy/">častých dotazech</a>.</p>
     </div>
   </section>
+  ${CATEGORIES.map((c, i) => {
+    const list = posts.filter((x) => x.category === c.id);
+    return list.length ? `
+  <section class="section section--light" id="${c.id}">
+    <div class="wrap">
+      <p class="eyebrow">${String(i + 1).padStart(2, '0')}</p>
+      <h2>${c.h2}</h2>
+      <p class="lead">${c.lead}</p>
+      <div class="post-cards post-cards--lg">${list.map(card).join('')}</div>
+    </div>
+  </section>` : '';
+  }).join('')}
   <section class="section section--light">
     <div class="wrap">
-      <div class="post-cards post-cards--lg">${posts.map((o) => `<a class="post-card" href="${postUrl(o)}"><strong>${esc(o.h1)}</strong><span>${esc(o.teaser)}</span><small>${dateCs(PUBLISHED)}</small></a>`).join('')}</div>
+      <p class="eyebrow">Služby a ceník</p>
+      <div class="link-cloud">${Object.entries(SERVICE_LABELS).map(([href, label]) => `<a href="${href}">${esc(label)}</a>`).join('')}<a href="/caste-dotazy/">Časté dotazy</a></div>
     </div>
   </section>
   ${finalCta()}`;
   return layout({
-    title: `Blog: nehty a barber péče v Praze 2 | ${NAME}`,
-    description: 'Průvodce nehty, pedikúrou a pánským střihem z nail salonu a barbershopu u I. P. Pavlova v Praze 2: srovnání služeb, ceny a co je v ceně.',
+    title: `Blog: nehty, pedikúra a barber v Praze 2 | ${NAME}`,
+    description: 'Průvodce nehty, pedikúrou, řasami a pánským střihem z nail salonu a barbershopu u I. P. Pavlova v Praze 2: ceny, srovnání služeb a co je v ceně.',
     path: '/blog/', body, selfCanonical: true,
     schema: [(abs) => breadcrumbSchema(trail, abs), (abs) => ({
-      '@context': 'https://schema.org', '@type': 'Blog', '@id': abs('/blog/#blog'), name: `Blog ${NAME}`, url: abs('/blog/'), inLanguage: 'cs',
+      '@context': 'https://schema.org', '@type': ['Blog', 'CollectionPage'], '@id': abs('/blog/#blog'), name: `Blog ${NAME}`, url: abs('/blog/'), inLanguage: 'cs',
       publisher: { '@id': abs('/#business') },
-      blogPost: posts.map((x) => ({ '@type': 'BlogPosting', headline: x.h1, url: abs(postUrl(x)), datePublished: PUBLISHED })),
+      blogPost: posts.map((x) => ({ '@type': 'BlogPosting', headline: x.h1, url: abs(postUrl(x)), datePublished: x.published || PUBLISHED, dateModified: modifiedOf(x) })),
+      mainEntity: {
+        '@type': 'ItemList', numberOfItems: posts.length,
+        itemListElement: posts.map((x, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(postUrl(x)), name: x.h1 })),
+      },
     })],
   });
 }

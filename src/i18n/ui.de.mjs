@@ -29,7 +29,7 @@ export default {
   },
   crumbs: { home: `Startseite`, aria: `Pfadnavigation` },
   footer: {
-    servicesAria: `Leistungen im Footer`, linksAria: `Links im Footer`, services: `Leistungen`, web: `Website`, order: `Termin`, blog: `Blog (auf Tschechisch)`, review: `Google-Bewertung schreiben`,
+    servicesAria: `Leistungen im Footer`, linksAria: `Links im Footer`, services: `Leistungen`, web: `Website`, order: `Termin`, blog: `Blog (auf Tschechisch)`, faq: `FAQ (auf Tschechisch)`, review: `Google-Bewertung schreiben`,
   },
 
   days: { weekdays: `Mo–Fr`, sat: `Sa`, sun: `So` },
@@ -169,8 +169,8 @@ export default {
     choose: `Was passt zu Ihnen?`,
     nails: {
       crumb: `Nagelstudio`,
-      title: `Nail Salon Prag 2 | Maniküre & Pediküre | ICONO STUDIO`,
-      description: `Nail Salon bei I. P. Pavlova, Bělehradská 643/77, Prag 2: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen und Head Spa. Online-Termin.`,
+      title: `Nagelstudio Prag 2: Maniküre, Gelnägel | ICONO STUDIO`,
+      description: `Nagelstudio bei I. P. Pavlova, Prag 2: Maniküre ab 350 CZK, Gelnägel ab 590 CZK, Pediküre ab 490 CZK, Wimpern und Head Spa. Online-Termin, Preisliste.`,
       eyebrow: `Nails & Beauty · Bělehradská 77`,
       h1: `Nail Salon & Nagelstudio Prag 2`,
       lead: `Maniküre, Gel- und Acrylnägel, Pediküre, Wimpernverlängerung, Augenbrauen und Head Spa an einem Ort – in der Bělehradská 77 in Vinohrady.`,
@@ -196,7 +196,7 @@ export default {
     barber: {
       crumb: `Barbershop`,
       title: `Barber Prag 2 bei I. P. Pavlova | ICONO STUDIO`,
-      description: `Barber bei I. P. Pavlova, Bělehradská 643/77, Prag 2: Herrenhaarschnitt, Bartpflege, Haarwäsche, Herrenkosmetik. Ab 100 CZK, Online-Termin.`,
+      description: `Barber bei I. P. Pavlova, Prag 2: Herrenhaarschnitt (Classic Cut 640 CZK), Bartpflege 420 CZK, Haarwäsche, Herrenkosmetik. Preise, Online-Termin.`,
       eyebrow: `Barber · Bělehradská 77`,
       h1: `Barber Prag 2 bei I. P. Pavlova`,
       lead: `Herrenhaarschnitte, Bartpflege, Haarwäsche und Herrenkosmetik in der Bělehradská 643/77 in Prag 2 – Vinohrady. Termin online oder per Telefon.`,
@@ -221,13 +221,25 @@ export default {
   },
 
   cenik: {
-    title: `Preisliste | ICONO STUDIO Prag 2 – Nails & Barber`,
-    description: `Preisliste ICONO STUDIO, Bělehradská 77, Prag 2: Maniküre, Gelnägel, Pediküre, Wimpern, Augenbrauen, Head Spa, Herrenschnitt und Bart. Alle Preise im Überblick.`,
+    title: `Preisliste Nagelstudio & Barber Prag 2 | ICONO STUDIO`,
+    description: `Preise im Nagelstudio & Barbershop Prag 2: Maniküre, Gelnägel, Pediküre, Wimpern, Head Spa, Herrenschnitt und Bart. Alle Preise in CZK, Termin online.`,
     h1: `Preisliste des ICONO STUDIO`,
     lead: `Übersicht aller Leistungen und Preise: Maniküre, Nägel, Pediküre, Nail Art, Wimpern, Augenbrauen, Head Spa und Barber. Die Preise sind in tschechischen Kronen (CZK) angegeben; bei jeder Leistung finden Sie einen Link zu den Details.`,
     chipsAria: `Schnellnavigation in der Preisliste`,
     moreServices: `Mehr zu diesen Leistungen`,
     cta: `Schon etwas gefunden? Schreiben Sie uns.`,
+    answersEyebrow: `Schnelle Antworten`,
+    answersHeading: `Was kostet das? Preisfragen kurz beantwortet`,
+    answers: [
+      { q: `Was kostet eine Maniküre in Prag 2?`, a: `Eine klassische Maniküre kostet {classic}, mit Gellak {gellak} und mit CND Shellac {cnd}. Die Pakete mit Hand-Spa kosten {pkClassic}, {pkGellak} und {pkCnd}. Mehr auf der Seite <a href="/manikura-praha-2/">Maniküre</a>.` },
+      { q: `Was kosten Gel- und Acrylnägel?`, a: `Neue Gel- oder Acrylnägel mit Farbe kosten {nove}, das Auffüllen {dopl} und Gel-X-Nägel {gelx}. Nail Art, extralange Nägel und das Entfernen werden separat berechnet, siehe <a href="/gelove-akrylove-nehty-praha-2/">Gel- und Acrylnägel</a>.` },
+      { q: `Was kostet eine Pediküre?`, a: `Die klassische Pediküre kostet {pedClassic}, mit Gellak {pedGellak} und mit CND Shellac {pedCnd}. Die medizinische Footlogix-Pediküre beginnt bei {fl}. Mehr auf der Seite <a href="/pedikura-praha-2/">Pediküre</a>.` },
+      { q: `Was kostet ein Herrenhaarschnitt?`, a: `Der Classic Cut kostet {klas}, der Premium Cut {prem}, der VIP Cut {vip} und VIP All Inclusive {all}. Der Schüler-Cut (unter 18) beginnt bei {student}, Kinder unter 8 Jahren zahlen {deti}. Mehr auf der Seite <a href="/panske-strihy-praha-2/">Herrenhaarschnitt</a>.` },
+      { q: `Was kostet die Bartpflege?`, a: `Die Bartpflege kostet {uprava}, nur Timer {timer}. Mehr auf der Seite <a href="/uprava-vousu-praha-2/">Bartpflege</a>.` },
+      { q: `Was kostet eine Wimpernverlängerung?`, a: `Klassische Wimpern 1:1 kosten {klasik} (Auffüllen {klasikD}), Volume 2D–5D {volume} (Auffüllen {volumeD}) und Mega Volume {mega} (Auffüllen {megaD}). Mehr auf der Seite <a href="/prodluzovani-ras-praha-2/">Wimpernverlängerung</a>.` },
+      { q: `Was kosten Head Spa, Augenbrauen und Kosmetik?`, a: `Head Spa kostet {hs}, Augenbrauen formen {ob}, Färben mit Formen {obB} und die Gesichtspflege mit Massage {kos}. Mehr: <a href="/head-spa-praha-2/">Head Spa</a>, <a href="/oboci-kosmetika-praha-2/">Augenbrauen &amp; Kosmetik</a>.` },
+      { q: `Was kostet das Entfernen von Nägeln oder Gel-Lack?`, a: `Das Entfernen künstlicher Nägel kostet {umele}, das Entfernen von Shellac {shellac} und von Gellak {gellakRem}. Bitte ziehen Sie Nägel oder Lack nicht selbst ab, das schädigt den Naturnagel.` },
+    ],
   },
 
   kontakt: {
