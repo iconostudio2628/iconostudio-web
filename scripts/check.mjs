@@ -9,7 +9,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { servicePagesBase } from '../src/content.mjs';
 import { posts } from '../src/blog.mjs';
-import { allItems, site } from '../src/data.mjs';
+import { allItems, site, promo } from '../src/data.mjs';
 import { LANGS, LANG_META, pathFor, fileFor, routeKeys } from '../src/i18n/index.mjs';
 import { translationGaps } from '../src/i18n/coverage.mjs';
 
@@ -110,8 +110,10 @@ for (const lang of LANGS) {
     // booking: service pages open their own service, every other page opens the booking page; no WhatsApp / SMS CTAs left
     const bookUrls = [...html.matchAll(/href="(https:\/\/iconostudio\.setmore\.com[^"]*)"/g)].map((m) => m[1]);
     const ownBooking = site.booking.services[key] || site.booking.page;
+    // the promotion page may also link straight to the two services it covers
+    const allowedBooking = key === 'akce' ? [site.booking.page, ...promo.slugs.map((s) => site.booking.services[s])] : [ownBooking];
     if (!bookUrls.length) warn(f, 'no booking link');
-    if (bookUrls.some((u) => u !== ownBooking)) warn(f, `booking link that does not open ${ownBooking}`);
+    if (bookUrls.some((u) => !allowedBooking.includes(u))) warn(f, `booking link that does not open ${ownBooking}`);
     if (/wa\.me\/|href="sms:/.test(html)) warn(f, 'WhatsApp / SMS link left on the page');
     if (serviceKeys.has(key)) {
       const ctas = (html.match(/data-cta="/g) || []).length;

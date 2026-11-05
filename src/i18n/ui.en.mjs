@@ -1,5 +1,6 @@
 // English UI + page copy. Same structure as ui.cs.mjs (the build checks keys, placeholders and links).
 // Strings that end up inside attributes (aria-label, alt, title …) use a plain “&” – they are escaped on output.
+import promo from './promo.en.mjs';
 export default {
   city: `Prague 2`,
   orderMessage: `I'd like to book an appointment`,
@@ -261,4 +262,5 @@ export default {
     lead: `We couldn't find that page. Head back to the home page, check the price list, or book straight away.`,
     home: `Back to the home page`,
   },
+  promo,
 };

@@ -1,0 +1,66 @@
+// Promotion copy (Czech source): 10 % off manicure and pedicure, 9–15 Nov 2026. Config lives in data.mjs (`promo`).
+export default {
+  badge: '−10 %',
+  dates: '9.–15. 11.',
+  bar: { text: 'Akce −10 % na manikúru a pedikúru · 9.–15. 11. 2026', link: 'Detail akce' },
+  pill: 'Sleva 10 % na manikúru a pedikúru · do 15. 11.',
+  footer: 'Akce: manikúra a pedikúra −10 %',
+  band: {
+    eyebrow: 'Týdenní akce · 9.–15. 11.',
+    title: 'Manikúra a pedikúra −10 %',
+    text: 'Od pondělí 9. do neděle 15. listopadu 2026 platí v ICONO STUDIO sleva 10 % na manikúru a pedikúru.',
+    more: 'Podrobnosti o akci',
+  },
+  over: {
+    title: 'Tato akce už skončila',
+    text: 'Sleva 10 % na manikúru a pedikúru platila od pondělí 9. do neděle 15. listopadu 2026. Aktuální ceny najdete v ceníku.',
+    cta: 'Zobrazit ceník',
+  },
+  words: { book: 'rezervovat online' },
+  page: {
+    title: 'Sleva 10 % na manikúru a pedikúru v Praze 2 | ICONO STUDIO',
+    description: 'Akce 9.–15. 11. 2026: sleva 10 % na manikúru a pedikúru v ICONO STUDIO, Bělehradská, Praha 2. Ceník, podmínky a rezervace online nebo telefonicky.',
+    crumb: 'Akce −10 % manikúra a pedikúra',
+    eyebrow: 'Týdenní akce · 9.–15. 11. 2026',
+    h1: 'Sleva 10 % na manikúru a pedikúru v Praze 2',
+    lead: 'Od pondělí 9. do neděle 15. listopadu 2026 platí v ICONO STUDIO na Bělehradské v Praze 2 sleva 10 % na manikúru a pedikúru. Vyberte službu z ceníku, rezervujte termín online nebo telefonicky a přijďte.',
+    micro: 'Platí na služby ze skupin Manikúra a Pedikúra v ceníku',
+    seal: 'sleva',
+    factsAria: 'Akce v kostce',
+    facts: {
+      discount: 'Sleva', discountV: '10 % z ceny služby',
+      when: 'Platnost', whenV: 'pondělí 9. 11. až neděle 15. 11. 2026',
+      what: 'Na co platí', whatV: 'manikúra a pedikúra podle ceníku',
+      where: 'Kde', whereV: '{address}',
+      book: 'Rezervace', bookV: 'online, nebo telefonicky na {phone}',
+    },
+    prices: {
+      eyebrow: 'Ceník',
+      h2: 'Na co sleva platí',
+      lead: 'Sleva 10 % platí na služby ze skupin Manikúra a Pedikúra. Níže jsou ceny z našeho ceníku, ze kterých se sleva v době akce počítá.',
+    },
+    steps: {
+      eyebrow: 'Postup',
+      h2: 'Jak akci využít',
+      items: [
+        { h: 'Vyberte službu', t: 'Podívejte se do ceníku výše a vyberte manikúru nebo pedikúru. Nevíte, která varianta se hodí? Poradíme vám na místě.' },
+        { h: 'Rezervujte termín', t: 'Termín v týdnu od 9. do 15. listopadu si můžete {book} nebo zavolat na {phone}.' },
+        { h: 'Přijďte na Bělehradskou', t: 'Najdete nás na adrese {address}, u metra I. P. Pavlova. Sleva se vztahuje na návštěvy v době akce.' },
+      ],
+    },
+    services: { eyebrow: 'Služby v akci', h2: 'Manikúra a pedikúra v ICONO STUDIO', book: 'Rezervovat: {name}' },
+    faq: {
+      eyebrow: 'FAQ',
+      heading: 'Časté dotazy k akci',
+      items: [
+        { q: 'Jak velká je sleva na manikúru a pedikúru?', a: 'Sleva je 10 %. Platí na manikúru a pedikúru v ICONO STUDIO od pondělí 9. do neděle 15. listopadu 2026.' },
+        { q: 'Do kdy akce platí?', a: 'Do neděle 15. listopadu 2026. Od pondělí 16. listopadu platí běžný <a href="/cenik/">ceník</a>.' },
+        { q: 'Na které služby se sleva vztahuje?', a: 'Na služby ze skupin Manikúra a Pedikúra v našem <a href="/cenik/">ceníku</a>. Ostatní služby, například gelové a akrylové nehty, řasy nebo barber, nejsou součástí této akce.' },
+        { q: 'Jak si termín na akci rezervuji?', a: 'Termín si můžete {book} nebo zavolat na {phone}. U každé služby na webu je odkaz rovnou na její rezervaci.' },
+        { q: 'Kolik zaplatím po slevě?', a: 'Cena služby je uvedená v ceníku výše. Sleva 10 % se v době akce uplatňuje z těchto cen. Pokud si nejste jistí, zavolejte nám na {phone}.' },
+        { q: 'Máte během akce otevřeno i o víkendu?', a: 'V týdnu máme otevřeno Po–Pá {weekdays}, v sobotu 14. listopadu {sat}. V neděli 15. listopadu je zavřeno, případně podle rezervace.' },
+        { q: 'Kde ICONO STUDIO najdu?', a: 'Na adrese {address}, u metra I. P. Pavlova a v okolí náměstí Míru. Více v sekci <a href="/kontakt/">Kontakt</a>.' },
+      ],
+    },
+  },
+};

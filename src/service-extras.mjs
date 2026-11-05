@@ -17,7 +17,7 @@ import { site, links, itemById, allItems, formatPrice, kc } from './data.mjs';
 import { t, getLang, merge, tx } from './i18n/index.mjs';
 import { getServicePages, servicePagesBase } from './content.mjs';
 import {
-  esc, icon, breadcrumbs, btnBook, btnCall, svcPhoto,
+  esc, icon, breadcrumbs, btnBook, btnCall, svcPhoto, promoPill, promoFor,
 } from './layout.mjs';
 import { extrasCs } from './i18n/extras.cs.mjs';
 import { extrasEn } from './i18n/extras.en.mjs';
@@ -467,6 +467,7 @@ export function serviceHero({ p, trail, d, c }) {
         <p class="eyebrow" data-hero>${p.eyebrow}</p>
         <h1 data-hero>${p.h1}</h1>
         <p class="lead" data-hero>${p.lead}</p>
+        ${promoFor(p.slug) ? `<p class="promo-line" data-hero>${promoPill('ink')}</p>` : ''}
         <div class="btn-row" data-hero>${btnBook(d.heroCta, 'btn--lg', 'hero')}${btnCall(t('btn.call'), 'btn--lg', 'hero')}</div>
         <p class="hero-micro" data-hero>${icon('check')}<span>${esc(c.micro)}</span></p>
       </div>

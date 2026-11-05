@@ -1,0 +1,66 @@
+// Promotion copy (German, formal “Sie”). Keep placeholders and internal links identical to promo.cs.mjs.
+export default {
+  badge: '−10 %',
+  dates: '9.–15. 11.',
+  bar: { text: '10 % Rabatt auf Maniküre & Pediküre · 9.–15. 11. 2026', link: 'Zur Aktion' },
+  pill: '10 % Rabatt auf Maniküre und Pediküre · bis 15. 11.',
+  footer: 'Aktion: Maniküre & Pediküre −10 %',
+  band: {
+    eyebrow: 'Wochenaktion · 9.–15. 11.',
+    title: 'Maniküre und Pediküre −10 %',
+    text: 'Von Montag, 9., bis Sonntag, 15. November 2026 gibt es im ICONO STUDIO 10 % Rabatt auf Maniküre und Pediküre.',
+    more: 'Details zur Aktion',
+  },
+  over: {
+    title: 'Diese Aktion ist beendet',
+    text: 'Der Rabatt von 10 % auf Maniküre und Pediküre galt von Montag, 9., bis Sonntag, 15. November 2026. Die aktuellen Preise finden Sie in der Preisliste.',
+    cta: 'Zur Preisliste',
+  },
+  words: { book: 'online reservieren' },
+  page: {
+    title: '10 % Rabatt auf Maniküre & Pediküre in Prag 2 | ICONO STUDIO',
+    description: 'Aktion 9.–15. 11. 2026: 10 % Rabatt auf Maniküre und Pediküre im ICONO STUDIO, Bělehradská, Prag 2. Preisliste und Reservierung online oder telefonisch.',
+    crumb: 'Aktion: 10 % auf Maniküre & Pediküre',
+    eyebrow: 'Wochenaktion · 9.–15. 11. 2026',
+    h1: '10 % Rabatt auf Maniküre und Pediküre in Prag 2',
+    lead: 'Von Montag, 9., bis Sonntag, 15. November 2026 gibt das ICONO STUDIO in der Bělehradská in Prag 2 10 % Rabatt auf Maniküre und Pediküre. Wählen Sie eine Behandlung aus der Preisliste, reservieren Sie online oder telefonisch und kommen Sie vorbei.',
+    micro: 'Gilt für die Gruppen Maniküre und Pediküre in der Preisliste',
+    seal: 'Rabatt',
+    factsAria: 'Die Aktion auf einen Blick',
+    facts: {
+      discount: 'Rabatt', discountV: '10 % auf den Preis der Behandlung',
+      when: 'Gültig', whenV: 'Montag, 9. 11., bis Sonntag, 15. 11. 2026',
+      what: 'Gilt für', whatV: 'Maniküre und Pediküre laut Preisliste',
+      where: 'Wo', whereV: '{address}',
+      book: 'Reservierung', bookV: 'online oder telefonisch unter {phone}',
+    },
+    prices: {
+      eyebrow: 'Preisliste',
+      h2: 'Wofür der Rabatt gilt',
+      lead: 'Der Rabatt von 10 % gilt für die Behandlungen der Gruppen Maniküre und Pediküre. Unten stehen die Preise aus unserer Preisliste, von denen der Rabatt während der Aktion abgezogen wird.',
+    },
+    steps: {
+      eyebrow: 'Ablauf',
+      h2: 'So nutzen Sie die Aktion',
+      items: [
+        { h: 'Behandlung wählen', t: 'Schauen Sie oben in die Preisliste und wählen Sie eine Maniküre oder Pediküre. Sie sind unsicher, welche Variante passt? Wir beraten Sie im Studio.' },
+        { h: 'Termin reservieren', t: 'Einen Termin zwischen dem 9. und 15. November können Sie {book} oder unter {phone} anrufen.' },
+        { h: 'In die Bělehradská kommen', t: 'Sie finden uns in der {address}, an der Metrostation I. P. Pavlova. Der Rabatt gilt für Besuche während der Aktion.' },
+      ],
+    },
+    services: { eyebrow: 'Behandlungen in der Aktion', h2: 'Maniküre und Pediküre im ICONO STUDIO', book: 'Reservieren: {name}' },
+    faq: {
+      eyebrow: 'FAQ',
+      heading: 'Häufige Fragen zur Aktion',
+      items: [
+        { q: 'Wie hoch ist der Rabatt auf Maniküre und Pediküre?', a: 'Der Rabatt beträgt 10 %. Er gilt für Maniküre und Pediküre im ICONO STUDIO von Montag, 9., bis Sonntag, 15. November 2026.' },
+        { q: 'Bis wann gilt die Aktion?', a: 'Bis Sonntag, 15. November 2026. Ab Montag, 16. November, gilt wieder die reguläre <a href="/cenik/">Preisliste</a>.' },
+        { q: 'Für welche Behandlungen gilt der Rabatt?', a: 'Für die Behandlungen der Gruppen Maniküre und Pediküre in unserer <a href="/cenik/">Preisliste</a>. Andere Leistungen, zum Beispiel Gel- und Acrylnägel, Wimpern oder Barber-Services, sind nicht Teil dieser Aktion.' },
+        { q: 'Wie reserviere ich einen Termin für die Aktion?', a: 'Sie können {book} oder unter {phone} anrufen. Jede Leistungsseite verlinkt direkt auf die passende Reservierung.' },
+        { q: 'Wie viel zahle ich nach dem Rabatt?', a: 'Der Preis jeder Behandlung steht oben in der Preisliste. Der Rabatt von 10 % wird während der Aktion von diesen Preisen abgezogen. Wenn Sie unsicher sind, rufen Sie uns unter {phone} an.' },
+        { q: 'Haben Sie während der Aktion auch am Wochenende geöffnet?', a: 'In der Woche haben wir Mo–Fr {weekdays} geöffnet, am Samstag, 14. November, {sat}. Am Sonntag, 15. November, ist geschlossen, oder nach Reservierung geöffnet.' },
+        { q: 'Wo finde ich das ICONO STUDIO?', a: 'In der {address}, an der Metrostation I. P. Pavlova und in der Nähe des Náměstí Míru. Mehr auf der Seite <a href="/kontakt/">Kontakt</a>.' },
+      ],
+    },
+  },
+};

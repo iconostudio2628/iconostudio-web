@@ -1,5 +1,6 @@
 // Deutsche UI- und Seitentexte (Sie-Form). Gleiche Struktur wie ui.cs.mjs (der Build prüft Schlüssel, Platzhalter und Links).
 // Strings, die in Attributen landen (aria-label, alt, title …), verwenden ein einfaches „&“ – sie werden beim Ausgeben maskiert.
+import promo from './promo.de.mjs';
 export default {
   city: `Prag 2`,
   orderMessage: `Ich möchte einen Termin vereinbaren`,
@@ -261,4 +262,5 @@ export default {
     lead: `Diese Seite haben wir nicht gefunden. Gehen Sie zurück zur Startseite, sehen Sie sich die Preisliste an oder buchen Sie gleich einen Termin.`,
     home: `Zur Startseite`,
   },
+  promo,
 };

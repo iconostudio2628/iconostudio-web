@@ -1,0 +1,66 @@
+// Promotion copy (English). Keep placeholders and internal links identical to promo.cs.mjs.
+export default {
+  badge: '−10%',
+  dates: '9–15 Nov',
+  bar: { text: '10% off manicure & pedicure · 9–15 Nov 2026', link: 'See the offer' },
+  pill: '10% off manicure and pedicure · until 15 Nov',
+  footer: 'Offer: manicure & pedicure −10%',
+  band: {
+    eyebrow: 'One-week offer · 9–15 Nov',
+    title: 'Manicure and pedicure −10%',
+    text: 'From Monday 9 to Sunday 15 November 2026, ICONO STUDIO gives 10% off manicure and pedicure.',
+    more: 'Offer details',
+  },
+  over: {
+    title: 'This offer has ended',
+    text: 'The 10% discount on manicure and pedicure ran from Monday 9 to Sunday 15 November 2026. Current prices are in the price list.',
+    cta: 'View the price list',
+  },
+  words: { book: 'book online' },
+  page: {
+    title: '10% Off Manicure & Pedicure in Prague 2 | ICONO STUDIO',
+    description: 'Offer 9–15 Nov 2026: 10% off manicure and pedicure at ICONO STUDIO, Bělehradská, Prague 2. Price list, details and booking online or by phone.',
+    crumb: 'Offer: 10% off manicure & pedicure',
+    eyebrow: 'One-week offer · 9–15 Nov 2026',
+    h1: '10% off manicure and pedicure in Prague 2',
+    lead: 'From Monday 9 to Sunday 15 November 2026, ICONO STUDIO on Bělehradská in Prague 2 takes 10% off manicure and pedicure. Choose a service from the price list, book online or by phone, and come in.',
+    micro: 'Applies to the Manicure and Pedicure services in the price list',
+    seal: 'off',
+    factsAria: 'The offer at a glance',
+    facts: {
+      discount: 'Discount', discountV: '10% off the price of the service',
+      when: 'Valid', whenV: 'Monday 9 Nov to Sunday 15 Nov 2026',
+      what: 'Applies to', whatV: 'manicure and pedicure from the price list',
+      where: 'Where', whereV: '{address}',
+      book: 'Booking', bookV: 'online, or by phone on {phone}',
+    },
+    prices: {
+      eyebrow: 'Price list',
+      h2: 'What the discount covers',
+      lead: 'The 10% discount applies to the services in the Manicure and Pedicure groups. Below are the prices from our price list, which the discount is taken from during the offer.',
+    },
+    steps: {
+      eyebrow: 'How it works',
+      h2: 'How to get the offer',
+      items: [
+        { h: 'Choose a service', t: 'Look through the price list above and pick a manicure or a pedicure. Not sure which one suits you? We will advise you in the studio.' },
+        { h: 'Book a time', t: 'You can {book} for a time between 9 and 15 November, or call {phone}.' },
+        { h: 'Come to Bělehradská', t: 'You will find us at {address}, by the I. P. Pavlova metro station. The discount applies to visits during the offer.' },
+      ],
+    },
+    services: { eyebrow: 'Services in the offer', h2: 'Manicure and pedicure at ICONO STUDIO', book: 'Book: {name}' },
+    faq: {
+      eyebrow: 'FAQ',
+      heading: 'Offer: frequently asked questions',
+      items: [
+        { q: 'How big is the manicure and pedicure discount?', a: 'The discount is 10%. It applies to manicure and pedicure at ICONO STUDIO from Monday 9 to Sunday 15 November 2026.' },
+        { q: 'When does the offer end?', a: 'On Sunday 15 November 2026. From Monday 16 November the regular <a href="/cenik/">price list</a> applies.' },
+        { q: 'Which services does the discount cover?', a: 'The services in the Manicure and Pedicure groups of our <a href="/cenik/">price list</a>. Other services, for example gel and acrylic nails, lashes or barber services, are not part of this offer.' },
+        { q: 'How do I book for the offer?', a: 'You can {book} or call {phone}. Every service page on the site links straight to its own booking.' },
+        { q: 'How much will I pay after the discount?', a: 'The price of each service is listed in the price list above. The 10% discount is taken from those prices during the offer. If you are not sure, call us on {phone}.' },
+        { q: 'Are you open at the weekend during the offer?', a: 'During the week we are open Mon–Fri {weekdays}, and on Saturday 14 November {sat}. On Sunday 15 November we are closed, or open by reservation.' },
+        { q: 'Where is ICONO STUDIO?', a: 'At {address}, by the I. P. Pavlova metro station and around Náměstí Míru. More on the <a href="/kontakt/">Contact</a> page.' },
+      ],
+    },
+  },
+};

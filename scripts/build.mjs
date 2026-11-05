@@ -5,11 +5,12 @@
 import { mkdir, writeFile, rm } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { site } from '../src/data.mjs';
+import { site, promo, promoOver } from '../src/data.mjs';
 import { servicePagesBase } from '../src/content.mjs';
 import * as pages from '../src/pages.mjs';
 import { posts, blogPost, blogIndex } from '../src/blog.mjs';
 import { faqHub } from '../src/faq-hub.mjs';
+import { promoPage } from '../src/promo.mjs';
 import { LANGS, LANG_META, setLang, pathFor, fileFor } from '../src/i18n/index.mjs';
 import { translationGaps } from '../src/i18n/coverage.mjs';
 
@@ -30,8 +31,10 @@ const routes = [
   ...servicePagesBase.map((p) => ({ key: p.slug, render: () => pages.servicePage(p.slug), priority: '0.8' })),
   { key: 'cenik', render: pages.cenik, priority: '0.8' },
   { key: 'kontakt', render: pages.kontakt, priority: '0.7' },
+  { key: 'akce', render: promoPage, priority: '0.7' },
 ];
 
+const czDate = (iso) => `${Number(iso.slice(8))}. ${Number(iso.slice(5, 7))}.`;
 // Plain-text fact sheet for AI assistants (optional convention; Google Search does not use it). Facts come from data.mjs only.
 function llmsTxt() {
   const u = (p) => `${site.url}${p}`;
@@ -58,7 +61,10 @@ function llmsTxt() {
 ## Služby
 ${svc}
 
-## Časté dotazy
+${promoOver() ? '' : `## Aktuální akce
+- [Sleva ${promo.percent} % na manikúru a pedikúru, ${czDate(promo.from)}–${czDate(promo.to)} 2026](${u(promo.path)}): ${promo.percent} % z ceny služeb ze skupin Manikúra a Pedikúra v ceníku, platí od pondělí ${czDate(promo.from)} do neděle ${czDate(promo.to)} 2026
+
+`}## Časté dotazy
 - [Časté dotazy: nehty, pedikúra, řasy a barber](${u('/caste-dotazy/')}): rychlé odpovědi na ceny, doplnění, sundání gel laku, Footlogix, Head Spa a pánský střih
 
 ## Blog (články o cenách, nehtech, pedikúře a barber péči)
@@ -87,7 +93,7 @@ await write('404.html', pages.notFound());
 built += 1;
 
 if (site.url) {
-  const lastmod = process.env.LASTMOD || '2026-11-04'; // content date – not the build date, so unchanged pages keep a stable lastmod
+  const lastmod = process.env.LASTMOD || '2026-11-05'; // content date – not the build date, so unchanged pages keep a stable lastmod
   const entry = (r, l) => {
     const alts = LANGS.map((x) => `    <xhtml:link rel="alternate" hreflang="${LANG_META[x].htmlLang}" href="${site.url}${pathFor(r.key, x)}"/>`);
     alts.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${site.url}${pathFor(r.key, 'cs')}"/>`);

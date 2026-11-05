@@ -1,5 +1,6 @@
 // Czech UI + page copy (the source language). Strings may contain HTML; `{name}` is filled by t(key, vars).
 // Strings that end up inside attributes (aria-label, alt, title …) use a plain “&” – they are escaped on output.
+import promo from './promo.cs.mjs';
 export default {
   city: 'Praha 2',
   orderMessage: 'chci se objednat',
@@ -259,4 +260,5 @@ export default {
     lead: 'Tuhle stránku jsme nenašli. Vraťte se na úvod, podívejte se do ceníku, nebo se rovnou objednejte.',
     home: 'Na úvodní stránku',
   },
+  promo,
 };

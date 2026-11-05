@@ -7,7 +7,7 @@ import { getServicePages, pageBySlug, photos, areaMeta } from './content.mjs';
 import {
   esc, icon, btnBook, btnCall, breadcrumbs, breadcrumbSchema, serviceSchema, priceListSchema,
   hoursList, hoursRows, hoursSummary, addressLine, openBadge, locationSection, studioSection, workSection, showcaseSection, showcaseSchema, faqSection, finalCta, galleryGrid,
-  reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed, svcPhoto,
+  reviewsSection, teamSection, priceTable, optionCards, serviceGrid, fromPrice, layout, mapEmbed, svcPhoto, promoPill, promoBand,
 } from './layout.mjs';
 import { t, tList, getLang, pathFor, lp } from './i18n/index.mjs';
 import { articlesFor, articlesBlock, postBySlug } from './blog.mjs';
@@ -180,6 +180,7 @@ export function home() {
           <span class="line" aria-hidden="true"><span>${t('home.hero.l2')}</span></span>
         </h1>
         <p class="lead" data-hero>${t('home.hero.lead')}</p>
+        <p class="promo-line" data-hero>${promoPill('ink')}</p>
         <div class="btn-row" data-hero>
           ${btnBook(t('btn.book'), 'btn--lg')}
           ${btnCall(t('btn.call'), 'btn--lg')}
@@ -229,6 +230,8 @@ export function home() {
       </div>
     </div>
   </section>
+
+  ${promoBand()}
 
   <section class="section section--white" id="sluzby-obory">
     <div class="wrap">

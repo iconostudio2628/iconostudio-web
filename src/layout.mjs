@@ -1,5 +1,5 @@
 import {
-  site, links, nav, groupById, formatPrice, kc, groupMin, itemById, priceGroups,
+  site, links, nav, groupById, formatPrice, kc, groupMin, itemById, priceGroups, promo, promoOver,
 } from './data.mjs';
 import { getServicePages, areaMeta } from './content.mjs';
 import {
@@ -54,6 +54,25 @@ export const btnBook = (label = t('btn.book'), cls = '', place = '') =>
   `<a class="btn btn--book ${cls}" href="${links.book}" target="_blank" rel="noopener" data-track="click_book"${placeAttr(place)}>${icon('calendar')}<span>${label}</span></a>`;
 export const btnCall = (label = t('btn.call'), cls = '', place = '') =>
   `<a class="btn btn--ghost ${cls}" href="${links.call}" data-track="click_call"${placeAttr(place)}>${icon('phone')}<span>${label}</span></a>`;
+
+/* ---------- time-limited promotion (10 % off manicure + pedicure) ---------- */
+// Everything promo carries `data-promo-live`: it is hidden by CSS once <html> has the class `promo-over`
+// (set at build time after the end date, and by the inline script in <head> for visitors on an older deploy).
+export const promoBadge = (cls = '') => `<span class="promo-badge${cls ? ` ${cls}` : ''}" data-promo-live><b>${t('promo.badge')}</b><span>${t('promo.dates')}</span></span>`;
+export const promoPill = (tone = 'dark') => `<a class="promo-pill promo-pill--${tone}" href="${promo.path}" data-promo-live data-track="click_promo">${promoBadge('promo-badge--inline')}<span class="promo-pill-text">${t('promo.pill')}</span>${icon('arrow')}</a>`;
+export const promoBar = () => `
+  <div class="promo-bar" data-promo-live>
+    <a href="${promo.path}" data-track="click_promo"><strong>${t('promo.badge')}</strong><span class="promo-bar-text">${t('promo.bar.text')}</span><span class="promo-bar-link">${t('promo.bar.link')} ${icon('arrow')}</span></a>
+  </div>`;
+export const promoBand = () => `
+  <section class="band promo-band" data-promo-live aria-label="${esc(t('promo.band.title'))}">
+    <div class="wrap band-in">
+      <div class="promo-band-mark" aria-hidden="true"><b>${t('promo.badge')}</b></div>
+      <div class="band-copy"><p class="eyebrow">${t('promo.band.eyebrow')}</p><p class="band-title">${t('promo.band.title')}</p><p>${t('promo.band.text')}</p></div>
+      <div class="band-actions"><a class="btn btn--light btn--lg" href="${promo.path}" data-track="click_promo">${t('promo.band.more')} ${icon('arrow')}</a>${btnBook(t('btn.book'), 'btn--lg', 'band')}</div>
+    </div>
+  </section>`;
+export const promoFor = (slug) => promo.slugs.includes(slug);
 
 /* ---------- breadcrumbs ---------- */
 export const breadcrumbs = (trail) => {
@@ -201,6 +220,7 @@ export const priceTable = (groupId, { headingTag = 'h3', link = false } = {}) =>
   <div class="ptable" id="cenik-${g.id}">
     <div class="ptable-head">
       <${headingTag}>${esc(g.title)}</${headingTag}>
+      ${promo.groups.includes(g.id) ? promoBadge() : ''}
       ${g.subtitle ? `<span class="ptable-sub">${esc(g.subtitle)}</span>` : ''}
       ${link && g.page ? `<a class="text-link" href="/${g.page}/">${t('prices.more')}</a>` : ''}
     </div>
@@ -239,7 +259,7 @@ export const artTone = (page) => (DARK_ART.has(page.art) ? 'dark' : 'light');
 
 export const serviceCard = (page, { eager = false } = {}) => `
   <a class="svc svc--${artTone(page)}" href="/${page.slug}/">
-    <span class="svc-img"><img src="${svcPhoto(page.art).src}" srcset="${svcPhoto(page.art).srcset}" sizes="(min-width: 960px) 30vw, (min-width: 600px) 45vw, 92vw" alt="" width="1120" height="1400" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
+    <span class="svc-img">${promoFor(page.slug) ? promoBadge('promo-badge--card') : ''}<img src="${svcPhoto(page.art).src}" srcset="${svcPhoto(page.art).srcset}" sizes="(min-width: 960px) 30vw, (min-width: 600px) 45vw, 92vw" alt="" width="1120" height="1400" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
     <span class="svc-body">
       <span class="svc-area">${t(`areas.${page.area}.label`)}</span>
       <h3 class="svc-name">${esc(page.name)}</h3>
@@ -533,9 +553,10 @@ export function layout({ title, description, path, body, robots, schema = [], bo
   const groups = menuGroups();
 
   const html = `<!DOCTYPE html>
-<html lang="${meta.htmlLang}">
+<html lang="${meta.htmlLang}"${promoOver() ? ' class="promo-over"' : ''}>
 <head>
   <meta charset="utf-8">
+  <script>if(Date.now()>=${Date.parse(promo.endsAt)})document.documentElement.classList.add('promo-over')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
@@ -569,7 +590,7 @@ export function layout({ title, description, path, body, robots, schema = [], bo
 </head>
 <body class="${bodyClass}" data-route="${key || ''}" data-lang="${l}">
   <a class="skip-link" href="#main">${t('skip')}</a>
-
+${promoBar()}
   <header class="site-header" data-header>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="${esc(t('brandLabel'))}">
@@ -641,6 +662,7 @@ ${body}
         ${nav.map((n) => `<a href="${n.href}">${t(n.key)}</a>`).join('')}
         <a href="/blog/"${l === 'cs' ? '' : ' hreflang="cs" lang="cs"'}>${t('footer.blog')}</a>
         <a href="/caste-dotazy/"${l === 'cs' ? '' : ' hreflang="cs" lang="cs"'}>${t('footer.faq')}</a>
+        <a href="${promo.path}" data-promo-live>${t('promo.footer')}</a>
         <p class="footer-title footer-title--gap">${t('footer.order')}</p>
         <a href="${links.book}" target="_blank" rel="noopener" data-track="click_book">${t('btn.book')}</a>
         <a href="${links.call}" data-track="click_call">${t('btn.call')}</a>
