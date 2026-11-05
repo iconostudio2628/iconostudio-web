@@ -904,7 +904,7 @@ h3 { font-size: 1.25rem; line-height: 1.25; }
   .rv-marquee::before, .rv-marquee::after { display: none; }
 }
 
-/* ---------- promotion: 10 % off manicure + pedicure (9–15 Nov 2026) ----------
+/* ---------- promotion: 15 % off manicure + pedicure (9–15 Nov 2026) ----------
    Everything with data-promo-live disappears after the end date: <html class="promo-over"> is set at build time and by
    the inline script in <head>. Colours stay within the two-background palette (cream + black). */
 [data-promo-over] { display: none; }

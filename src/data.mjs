@@ -351,12 +351,12 @@ export const nav = [
 ];
 
 /* ---------- time-limited promotion ---------- */
-// Week promotion: 10 % off manicure and pedicure, Monday 9 – Sunday 15 November 2026 (owner's brief, 2026-11-05).
+// Week promotion: 15 % off manicure and pedicure, Monday 9 – Sunday 15 November 2026 (owner's brief, 2026-11-05).
 // Badges, the top bar and the home band carry `data-promo-live`; they disappear on their own after `endsAt`
 // (client-side script + class on <html>, and again at the next build). The page /akce-manikura-pedikura/ stays online
 // and switches to an "offer has ended" notice. To retire the promotion completely delete the `promo` import in layout.mjs.
 export const promo = {
-  percent: 10,
+  percent: 15,
   from: '2026-11-09',
   to: '2026-11-15',
   startsAt: '2026-11-09T00:00:00+01:00', // Prague time (CET)

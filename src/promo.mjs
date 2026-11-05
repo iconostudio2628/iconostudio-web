@@ -1,4 +1,4 @@
-// /akce-manikura-pedikura/ – landing page of the week promotion (10 % off manicure + pedicure, 9–15 Nov 2026).
+// /akce-manikura-pedikura/ – landing page of the week promotion (15 % off manicure + pedicure, 9–15 Nov 2026).
 // Built for search and for AI answers: the answer (what, how much, when, where) is in the first paragraph and in the
 // fact list, the discount's scope is the literal ceník (price tables are rendered from priceGroups, no amounts typed
 // here), the Q&A mirrors the visible FAQ as FAQPage JSON-LD (layout does that), SaleEvent + WebPage JSON-LD carry the
