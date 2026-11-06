@@ -351,18 +351,19 @@ export const nav = [
 ];
 
 /* ---------- time-limited promotion ---------- */
-// Week promotion: 15 % off manicure and pedicure, Monday 9 – Sunday 15 November 2026 (owner's brief, 2026-11-05).
+// Week promotion: 15 % off everything except the barber, Monday 9 – Sunday 15 November 2026 (owner's brief, 2026-11-05/06).
 // Badges, the top bar and the home band carry `data-promo-live`; they disappear on their own after `endsAt`
-// (client-side script + class on <html>, and again at the next build). The page /akce-manikura-pedikura/ stays online
+// (client-side script + class on <html>, and again at the next build). The promotion page stays online
 // and switches to an "offer has ended" notice. To retire the promotion completely delete the `promo` import in layout.mjs.
+const promoGroups = priceGroups.filter((g) => g.area !== 'barber');
 export const promo = {
   percent: 15,
   from: '2026-11-09',
   to: '2026-11-15',
   startsAt: '2026-11-09T00:00:00+01:00', // Prague time (CET)
   endsAt: '2026-11-16T00:00:00+01:00', // end of Sunday 15 November
-  groups: ['manikura', 'pedikura'], // price groups the discount applies to (ceník)
-  slugs: ['manikura-praha-2', 'pedikura-praha-2'], // the service pages
-  path: '/akce-manikura-pedikura/',
+  groups: promoGroups.map((g) => g.id), // price groups the discount applies to: every nails + beauty group, no barber
+  slugs: [...new Set(promoGroups.map((g) => g.page))], // the service pages (booking links)
+  path: '/akce-15-procent/',
 };
 export const promoOver = () => (process.env.PROMO_NOW ? Date.parse(process.env.PROMO_NOW) : Date.now()) >= Date.parse(promo.endsAt);

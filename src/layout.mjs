@@ -55,7 +55,7 @@ export const btnBook = (label = t('btn.book'), cls = '', place = '') =>
 export const btnCall = (label = t('btn.call'), cls = '', place = '') =>
   `<a class="btn btn--ghost ${cls}" href="${links.call}" data-track="click_call"${placeAttr(place)}>${icon('phone')}<span>${label}</span></a>`;
 
-/* ---------- time-limited promotion (15 % off manicure + pedicure) ---------- */
+/* ---------- time-limited promotion (15 % off everything except the barber) ---------- */
 // Everything promo carries `data-promo-live`: it is hidden by CSS once <html> has the class `promo-over`
 // (set at build time after the end date, and by the inline script in <head> for visitors on an older deploy).
 export const promoBadge = (cls = '') => `<span class="promo-badge${cls ? ` ${cls}` : ''}" data-promo-live><b>${t('promo.badge')}</b><span>${t('promo.dates')}</span></span>`;

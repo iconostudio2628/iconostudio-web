@@ -36,6 +36,21 @@
       "source": "/gelove-akrylov%C3%A9-nehty-praha-2/",
       "destination": "/gelove-akrylove-nehty-praha-2/",
       "permanent": true
+    },
+    {
+      "source": "/akce-manikura-pedikura/",
+      "destination": "/akce-15-procent/",
+      "permanent": true
+    },
+    {
+      "source": "/en/manicure-pedicure-offer/",
+      "destination": "/en/offer-15-percent/",
+      "permanent": true
+    },
+    {
+      "source": "/de/manikuere-pedikuere-aktion/",
+      "destination": "/de/aktion-15-prozent/",
+      "permanent": true
     }
   ]
 }

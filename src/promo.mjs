@@ -1,4 +1,4 @@
-// /akce-manikura-pedikura/ – landing page of the week promotion (15 % off manicure + pedicure, 9–15 Nov 2026).
+// /akce-manikura-pedikura/ – landing page of the week promotion (15 % off everything except the barber, 9–15 Nov 2026).
 // Built for search and for AI answers: the answer (what, how much, when, where) is in the first paragraph and in the
 // fact list, the discount's scope is the literal ceník (price tables are rendered from priceGroups, no amounts typed
 // here), the Q&A mirrors the visible FAQ as FAQPage JSON-LD (layout does that), SaleEvent + WebPage JSON-LD carry the
@@ -57,7 +57,7 @@ export function promoPage() {
   const items = tList('promo.page.faq.items').map((x) => ({ q: x.q, a: fill(x.a) }));
   const services = promo.slugs.map(pageBySlug);
   const articles = getLang() === 'cs'
-    ? articlesBlock(['manikura-cena-praha-2', 'pedikura-footlogix-vs-klasicka', 'shellac-vs-gellak'].map(postBySlug), { tone: 'light', heading: 'Než si vyberete: průvodci manikúrou a pedikúrou', id: 'pruvodci' })
+    ? articlesBlock(['manikura-cena-praha-2', 'kolik-stoji-gelove-nehty-praha', 'prodluzovani-ras-klasika-volume', 'head-spa-co-to-je'].map(postBySlug), { tone: 'light', heading: 'Než si vyberete: průvodci a ceny', id: 'pruvodci' })
     : '';
   const body = `
   <section class="page-hero promo-hero">

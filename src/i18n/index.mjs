@@ -31,11 +31,11 @@ export const getLang = () => current;
 /* ---------------------------------------------------------------- routes */
 // Route keys: the Czech slug (service pages) or a fixed name. Czech URLs are the canonical keys.
 const CS_PATHS = {
-  home: '/', nails: '/nail-studio-praha-2/', barber: '/barbershop-praha-2/', cenik: '/cenik/', kontakt: '/kontakt/', akce: '/akce-manikura-pedikura/',
+  home: '/', nails: '/nail-studio-praha-2/', barber: '/barbershop-praha-2/', cenik: '/cenik/', kontakt: '/kontakt/', akce: '/akce-15-procent/',
 };
 const SLUGS = {
   en: {
-    nails: 'nail-studio-prague-2', barber: 'barbershop-prague-2', cenik: 'price-list', kontakt: 'contact', akce: 'manicure-pedicure-offer',
+    nails: 'nail-studio-prague-2', barber: 'barbershop-prague-2', cenik: 'price-list', kontakt: 'contact', akce: 'offer-15-percent',
     'manikura-praha-2': 'manicure-prague-2',
     'gelove-akrylove-nehty-praha-2': 'gel-acrylic-nails-prague-2',
     'pedikura-praha-2': 'pedicure-prague-2',
@@ -47,7 +47,7 @@ const SLUGS = {
     'panska-kosmetika-praha-2': 'mens-skincare-prague-2',
   },
   de: {
-    nails: 'nagelstudio-prag-2', barber: 'barbershop-prag-2', cenik: 'preisliste', kontakt: 'kontakt', akce: 'manikuere-pedikuere-aktion',
+    nails: 'nagelstudio-prag-2', barber: 'barbershop-prag-2', cenik: 'preisliste', kontakt: 'kontakt', akce: 'aktion-15-prozent',
     'manikura-praha-2': 'manikuere-prag-2',
     'gelove-akrylove-nehty-praha-2': 'gel-acryl-naegel-prag-2',
     'pedikura-praha-2': 'pedikuere-prag-2',
