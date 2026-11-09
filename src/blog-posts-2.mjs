@@ -311,7 +311,7 @@ ${where()}`,
     slug: 'head-spa-co-to-je',
     category: 'pece',
     published: PUBLISHED_2,
-    services: ['head-spa-praha-2', 'panska-kosmetika-praha-2'],
+    services: ['head-spa-praha-2', 'panska-kosmetika-praha-2', 'kosmetika-praha-2'],
     see: ['barbershop-nebo-kadernictvi', 'pansky-strih-praha-2-cena'],
     keyword: ['head spa'],
     title: 'Head Spa: co to je, co obsahuje a cena | ICONO STUDIO',
@@ -380,7 +380,7 @@ ${where()}`,
     slug: 'prodluzovani-ras-klasika-volume',
     category: 'pece',
     published: PUBLISHED_2,
-    services: ['prodluzovani-ras-praha-2', 'oboci-kosmetika-praha-2'],
+    services: ['prodluzovani-ras-praha-2', 'oboci-praha-2'],
     see: ['head-spa-co-to-je', 'kolik-stoji-gelove-nehty-praha'],
     keyword: ['prodlužování řas'],
     title: 'Prodlužování řas: klasika, Volume, ceny | ICONO STUDIO',
@@ -390,7 +390,7 @@ ${where()}`,
     teaser: 'Klasické 1:1, Volume 2D–5D, Mega Volume a designový efekt: čím se liší, kolik stojí nový set a doplnění a jak o řasy pečovat.',
     about: 'Prodlužování řas',
     tldr: () => `Klasické řasy 1:1 stojí <strong>${price('ras-klasik', 'Nový')}</strong>, Volume 2D–5D <strong>${price('ras-volume', 'Nový')}</strong>, Mega Volume <strong>${price('ras-mega', 'Nový')}</strong>. Doplnění je levnější (od ${price('ras-klasik', 'Doplnění')}). Doplňuje se obvykle po dvou až čtyřech týdnech.`,
-    related: ['/prodluzovani-ras-praha-2/', '/oboci-kosmetika-praha-2/', '/nail-studio-praha-2/', '/cenik/'],
+    related: ['/prodluzovani-ras-praha-2/', '/oboci-praha-2/', '/nail-studio-praha-2/', '/cenik/'],
     sources: [],
     body: () => `
 <p>Prodlužování řas spočívá v tom, že se na přirozenou řasu připevní umělá. Výsledkem jsou delší, hustší a výraznější řasy a ráno se obejdete bez řasenky. Otázka není, jestli, ale jakou techniku zvolit: klasické řasy 1:1, Volume 2D–5D, nebo Mega Volume.</p>
@@ -440,7 +440,7 @@ ${fig(site.photos.studio.find((p) => p.key === 'studioC'), 'photos.studioC', 'IC
   <li>Netřete si oči, nepoužívejte mechanickou kulmu a řasy netrhejte.</li>
   <li>Přijďte bez make-upu očí. Při citlivých očích, alergii nebo čočkách nám to napište předem.</li>
 </ul>
-<p>K řasám se často hodí i péče o obočí, viz <a href="/oboci-kosmetika-praha-2/">obočí a kosmetika</a>.</p>
+<p>K řasám se často hodí i péče o obočí, viz <a href="/oboci-praha-2/">úprava a barvení obočí</a>.</p>
 ${where()}`,
     faq: () => [
       { q: 'Kolik stojí prodlužování řas v Praze 2?', a: `Klasické řasy 1:1 stojí ${price('ras-klasik', 'Nový')} (doplnění ${price('ras-klasik', 'Doplnění')}), Volume 2D–5D ${price('ras-volume', 'Nový')} (doplnění ${price('ras-volume', 'Doplnění')}) a Mega Volume ${price('ras-mega', 'Nový')} (doplnění ${price('ras-mega', 'Doplnění')}).` },

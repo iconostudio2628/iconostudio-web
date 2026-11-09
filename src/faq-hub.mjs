@@ -36,7 +36,7 @@ const groups = () => [
   {
     id: 'pedikura', title: 'Pedikúra', h2: 'Pedikúra a Footlogix',
     items: [
-      { q: 'Kolik stojí pedikúra v Praze 2?', a: `Klasická pedikúra ${price('ped-classic')}, s Gellakem ${price('ped-gellak')}, s CND Shellac ${price('ped-cnd')}. Medicínální pedikúra Footlogix od ${price('ped-med-classic')}. Více na stránce <a href="/pedikura-praha-2/">Pedikúra</a>.` },
+      { q: 'Kolik stojí pedikúra v Praze 2?', a: `Klasická pedikúra ${price('ped-classic')}, s CND Shellac nebo Gellakem ${price('ped-lakem')}. Medicinální pedikúra Footlogix od ${price('ped-med-classic')}. Více na stránce <a href="/pedikura-praha-2/">Pedikúra</a>.` },
       { q: 'Co je pedikúra Footlogix?', a: 'Pedikúra s profesionální kosmetikou Footlogix pro suchou a namáhanou pokožku, ztvrdlá místa a popraskané paty. Není to lékařské ošetření. Víc v článku <a href="/blog/pedikura-footlogix-vs-klasicka/">pedikúra Footlogix</a>.' },
       { q: 'Jak často chodit na pedikúru?', a: 'Obvykle jednou za čtyři až šest týdnů, podle růstu nehtů a zátěže nohou.' },
       { q: 'Mohu na pedikúru s cukrovkou nebo plísní nehtů?', a: 'Nejdřív se poraďte s lékařem a před návštěvou nás o zdravotním stavu informujte. Pedikúra ve studiu je kosmetická péče a lékařské ošetření nenahrazuje.' },
@@ -49,7 +49,7 @@ const groups = () => [
       { q: 'Jak dlouho prodloužené řasy vydrží?', a: 'Doplňují se obvykle po dvou až čtyřech týdnech, protože umělé řasy vypadávají společně s přirozenými. Doba se liší člověk od člověka.' },
       { q: 'Čím se liší klasické a Volume řasy?', a: 'Klasické mají jednu umělou řasu na jednu přirozenou, Volume vějířek z více tenkých řas. Výsledek je hustší a výraznější.' },
       { q: 'Co je Head Spa a kolik stojí?', a: `Relaxační péče o pokožku hlavy o pěti krocích (bílý zvuk, akupunkturní body, exfoliace, asijské mytí s masáží, foukání s olejem). Stojí ${price('hs')}. Více v článku <a href="/blog/head-spa-co-to-je/">Head Spa: co to je</a>.` },
-      { q: 'Kolik stojí úprava a barvení obočí?', a: `Úprava obočí stojí ${price('ob-uprava')}, barvení s úpravou ${price('ob-barveni')}. Péče o obličej s masáží ${price('kos-oblicej')}. Více na stránce <a href="/oboci-kosmetika-praha-2/">Obočí a kosmetika</a>.` },
+      { q: 'Kolik stojí úprava a barvení obočí?', a: `Úprava obočí stojí ${price('ob-uprava')}, barvení s úpravou ${price('ob-barveni')}. Péče o obličej s masáží ${price('kos-oblicej')}. Více na stránkách <a href="/oboci-praha-2/">Obočí</a> a <a href="/kosmetika-praha-2/">Kosmetika</a>.` },
     ],
   },
   {

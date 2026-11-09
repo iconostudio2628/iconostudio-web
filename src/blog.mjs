@@ -79,7 +79,7 @@ ${table('Srovnání CND Shellac a Gellak', ['Vlastnost', 'CND Shellac', 'Gellak'
   <li>Klasická manikúra bez barvy: ${price('man-classic')}</li>
   <li>Manikúra s Gellakem: ${price('man-gellak')}, v balíčku s hand spa ${price('man-pk-gellak')}</li>
   <li>Manikúra s CND Shellac: ${price('man-cnd')}, v balíčku s hand spa ${price('man-pk-cnd')}</li>
-  <li>Pedikúra s Gellakem: ${price('ped-gellak')}, s CND Shellac: ${price('ped-cnd')}</li>
+  <li>Pedikúra s CND Shellac nebo Gellakem: ${price('ped-lakem')}</li>
 </ul>
 <p>Kompletní nabídku najdete v <a href="/cenik/">ceníku</a>, přehled všech variant manikúry v článku <a href="/blog/manikura-cena-praha-2/">manikúra: cena</a>. Na pedikúru se hodí i <a href="/blog/pedikura-footlogix-vs-klasicka/">srovnání klasické a Footlogix pedikúry</a>.</p>
 ${where()}`,
@@ -172,13 +172,13 @@ ${where()}`,
     crumb: 'Pedikúra Footlogix vs. klasická',
     teaser: 'Co je Footlogix a kdy stačí klasická pedikúra. Srovnání s cenami a upozorněním, kdy jít nejdřív k lékaři.',
     about: 'Pedikúra Footlogix a klasická pedikúra',
-    tldr: () => `<strong>Klasická pedikúra</strong> (${price('ped-classic')}) je úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky. <strong>Medicínální pedikúra Footlogix</strong> (od ${price('ped-med-classic')}) používá profesionální kosmetiku Footlogix pro suchou a namáhanou pokožku, ztvrdlá místa a popraskané paty. Není to lékařské ošetření.`,
+    tldr: () => `<strong>Klasická pedikúra</strong> (${price('ped-classic')}) je úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky. <strong>Medicinální pedikúra Footlogix</strong> (od ${price('ped-med-classic')}) používá profesionální kosmetiku Footlogix pro suchou a namáhanou pokožku, ztvrdlá místa a popraskané paty. Není to lékařské ošetření.`,
     related: ['/pedikura-praha-2/', '/manikura-praha-2/', '/nail-studio-praha-2/', '/cenik/'],
     sources: [
       { label: 'Footlogix: oficiální web značky (Toronto, Kanada)', url: 'https://www.footlogix.com/' },
     ],
     body: () => `
-<p>V ceníku nail salonu vedle sebe stojí „Pedikúra Classic“ a „Medicínální pedikúra Footlogix“. Na první pohled jde o stejnou službu s jinou cenou. Rozdíl je v tom, na co se zaměřuje a jaké produkty se používají.</p>
+<p>V ceníku nail salonu vedle sebe stojí „Pedikúra Classic“ a „Medicinální pedikúra Footlogix“. Na první pohled jde o stejnou službu s jinou cenou. Rozdíl je v tom, na co se zaměřuje a jaké produkty se používají.</p>
 <p>Tady je vysvětlení pro zákazníky našeho studia na Bělehradské 643/77 v Praze 2, kousek od I. P. Pavlova.</p>
 
 <h2>Co je pedikúra Footlogix?</h2>
@@ -187,15 +187,12 @@ ${where()}`,
 
 <h2>Jaký je rozdíl mezi klasickou a Footlogix pedikúrou?</h2>
 <p>Klasická pedikúra je pravidelná údržba zdravých nohou, Footlogix je péče pro suchou a namáhanou pokožku. V ceníku se to promítá takto:</p>
-${table('Srovnání klasické pedikúry a pedikúry Footlogix', ['', 'Klasická pedikúra', 'Medicínální pedikúra Footlogix'], [
+${table('Srovnání klasické pedikúry a pedikúry Footlogix', ['', 'Klasická pedikúra', 'Medicinální pedikúra Footlogix'], [
     ['Co řeší', 'Úprava nehtů a kůžiček, odstranění ztvrdlé kůže, ošetření pokožky', 'Péče o suchou a namáhanou pokožku, ztvrdlá místa a popraskané paty'],
     ['Pro koho', 'Pravidelná údržba, upravené nohy', 'Kdo řeší suché paty nebo namáhané nohy'],
     ['Bez laku', price('ped-classic'), price('ped-med-classic')],
-    ['S Gellakem', price('ped-gellak'), price('ped-med-gellak')],
-    ['S CND Shellac', price('ped-cnd'), price('ped-med-cnd')],
-    ['Balíček s foot spa (bez laku)', price('ped-pk-classic'), '–'],
-    ['Balíček s lakováním Gellak', price('ped-pk-gellak'), price('ped-pk-fl-gellak')],
-    ['Balíček s lakováním CND Shellac', price('ped-pk-cnd'), price('ped-pk-fl-cnd')],
+    ['S Gellakem', price('ped-lakem'), price('ped-med-gellak')],
+    ['S CND Shellac', price('ped-lakem'), price('ped-med-cnd')],
   ])}
 
 <h2>Kterou pedikúru zvolit?</h2>
@@ -203,8 +200,8 @@ ${table('Srovnání klasické pedikúry a pedikúry Footlogix', ['', 'Klasická 
 <ul class="post-list">
   <li><strong>Chcete jen upravené nohy bez barvy:</strong> klasická pedikúra za ${price('ped-classic')}.</li>
   <li><strong>Chcete upravené nohy a barvu, která vydrží:</strong> pedikúra s Gellakem nebo CND Shellac, případně samotné lakování, pokud nehty nepotřebují jinou úpravu. Rozdíl mezi nimi vysvětluje článek <a href="/blog/shellac-vs-gellak/">Shellac vs. Gellak</a>.</li>
-  <li><strong>Trápí vás suché paty nebo ztvrdlá kůže:</strong> medicínální pedikúra Footlogix.</li>
-  <li><strong>Chcete si u toho odpočinout:</strong> zvolte některý z balíčků s foot spa.</li>
+  <li><strong>Trápí vás suché paty nebo ztvrdlá kůže:</strong> medicinální pedikúra Footlogix.</li>
+  <li><strong>Chcete si u toho odpočinout:</strong> přidejte k pedikúře masáž za ${price('ped-masaz')}.</li>
 </ul>
 
 <h2>Kdy nejdřív zajít k lékaři?</h2>
@@ -212,9 +209,9 @@ ${table('Srovnání klasické pedikúry a pedikúry Footlogix', ['', 'Klasická 
 
 <h2>Jak pedikúra probíhá?</h2>
 <ol class="post-list post-steps">
-  <li><strong>Domluva a příprava.</strong> Zvolíme variantu a probereme případné potíže, například suché paty nebo zarůstající nehty. U balíčků je součástí návštěvy foot spa.</li>
+  <li><strong>Domluva a příprava.</strong> Zvolíme variantu a probereme případné potíže, například suché paty nebo zarůstající nehty.</li>
   <li><strong>Úprava nehtů a kůžiček.</strong> Nehty se zkrátí, zformují a upraví se kůžička kolem nich.</li>
-  <li><strong>Péče o pokožku chodidel.</strong> Odstraní se ztvrdlá kůže a pokožka se ošetří. U medicínální pedikúry přidáváme produkty Footlogix.</li>
+  <li><strong>Péče o pokožku chodidel.</strong> Odstraní se ztvrdlá kůže a pokožka se ošetří. U medicinální pedikúry přidáváme produkty Footlogix.</li>
   <li><strong>Lakování (volitelně).</strong> Nehty nalakujeme Gellakem nebo CND Shellac a vytvrdíme v lampě. Samotné lakování stojí ${price('ped-lak', 'Shellac')} (Shellac) nebo ${price('ped-lak', 'Gellak')} (Gellak).</li>
   <li><strong>Finální péče.</strong> Nohy se na závěr ošetří, aby byly hladké a upravené.</li>
 </ol>
@@ -230,7 +227,7 @@ ${table('Srovnání klasické pedikúry a pedikúry Footlogix', ['', 'Klasická 
 ${where()}`,
     faq: () => [
       { q: 'Co je pedikúra Footlogix?', a: 'Pedikúra, při které se používá profesionální kosmetika Footlogix pro suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Je to kosmetická péče, ne lékařské ošetření.' },
-      { q: 'Kolik stojí pedikúra v Praze 2?', a: `V ICONO STUDIO stojí klasická pedikúra ${price('ped-classic')}, pedikúra s Gellakem ${price('ped-gellak')} a s CND Shellac ${price('ped-cnd')}. Medicínální pedikúra Footlogix začíná na ${price('ped-med-classic')}.` },
+      { q: 'Kolik stojí pedikúra v Praze 2?', a: `V ICONO STUDIO stojí klasická pedikúra ${price('ped-classic')}, pedikúra s CND Shellac nebo Gellakem ${price('ped-lakem')}. Medicinální pedikúra Footlogix začíná na ${price('ped-med-classic')}.` },
       { q: 'Je Footlogix lékařské ošetření?', a: 'Ne. Je to profesionální kosmetická péče o chodidla a nenahrazuje lékařské ošetření.' },
       { q: 'Jak často chodit na pedikúru?', a: 'Obvykle jednou za čtyři až šest týdnů, podle růstu nehtů a toho, jak nohy zatěžujete.' },
       { q: 'Mohu na pedikúru s cukrovkou nebo plísní nehtů?', a: 'Nejdřív se poraďte s lékařem a před návštěvou nás o zdravotním stavu informujte. Pedikúra ve studiu je kosmetická péče a lékařské ošetření nenahrazuje.' },
@@ -256,7 +253,7 @@ export const CATEGORIES = [
 const SERVICE_LABELS = {
   '/manikura-praha-2/': 'Manikúra', '/pedikura-praha-2/': 'Pedikúra', '/gelove-akrylove-nehty-praha-2/': 'Gelové a akrylové nehty',
   '/panske-strihy-praha-2/': 'Pánský střih', '/uprava-vousu-praha-2/': 'Úprava vousů', '/panska-kosmetika-praha-2/': 'Pánská kosmetika',
-  '/prodluzovani-ras-praha-2/': 'Prodlužování řas', '/oboci-kosmetika-praha-2/': 'Obočí a kosmetika', '/head-spa-praha-2/': 'Head Spa',
+  '/prodluzovani-ras-praha-2/': 'Prodlužování řas', '/oboci-praha-2/': 'Obočí', '/kosmetika-praha-2/': 'Kosmetika', '/head-spa-praha-2/': 'Head Spa',
   '/cenik/': 'Ceník', '/nail-studio-praha-2/': 'Nail salon Praha 2', '/barbershop-praha-2/': 'Barber Praha 2', '/kontakt/': 'Kontakt',
 };
 

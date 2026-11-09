@@ -111,7 +111,7 @@ export const extrasEn = {
           { need: `I just want tidy feet`, pick: `Classic pedicure`, text: `Nail and cuticle care, removal of hardened skin and skin treatment.` },
           { need: `I want colour that lasts`, pick: `Pedicure with Gellak or CND Shellac`, text: `Gel polish is cured in a lamp. Nails are dry at once and the colour lasts longer than regular polish.` },
           { need: `I have dry heels and hardened skin`, pick: `Medical pedicure Footlogix`, text: `Professional skincare for dry and heavily used feet. Not a medical treatment.` },
-          { need: `I want to relax`, pick: `Value package with foot spa`, text: `Pampering foot care on top – in a value package.` },
+          { need: `I want to relax`, pick: `Massage`, text: `A massage on top of your pedicure – a calm moment for tired feet.` },
         ],
         note: `Diabetes, nail fungus, inflammation or wounds? See a doctor first. A pedicure at the studio does not replace medical treatment.`,
       }],
@@ -120,7 +120,7 @@ export const extrasEn = {
         lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
           { title: `Gellak pedicure + Gellak manicure`, text: `Feet and hands in one visit.` },
-          { title: `Pedicure with foot spa + Head Spa`, text: `Foot spa and Head Spa in one visit.` },
+          { title: `Pedicure + Head Spa`, text: `Care for your feet and your scalp in one visit.` },
         ],
       },
     },
@@ -154,33 +154,57 @@ export const extrasEn = {
     },
 
     /* ============================================================ BROWS & FACIALS */
-    'oboci-kosmetika-praha-2': {
+    'oboci-praha-2': {
       heroCta: `Book brows`,
-      final: { h: `Brows at Bělehradská? Book online.`, t: `Pick a time online – we confirm whether you want shaping only or a tint as well on the spot.` },
+      final: { h: `Brows at Bělehradská? Book your appointment.`, t: `Choose a time online – whether you want shaping only or tinting too, we will agree on site.` },
       bands: [
-        { h: `Shaping or tinting?`, t: `Book a time online and we will confirm the option on the spot.` },
-        { h: `Want facial care with your brows?`, t: `Call us and tell us what your skin needs. Please come without make-up if you can.` },
+        { h: `Shaping or tinting?`, t: `Book a time online and we will agree on the option on site.` },
+        { h: `Sensitive skin or allergic to dyes?`, t: `Call us in advance and we will talk through what is needed.` },
       ],
       sigs: [{
-        chip: `Comparison`, eyebrow: `Comparing the services`, h2: `Shaping, tinting or facial care?`,
-        lead: `Three services side by side – choose by what your brows and skin need.`,
-        cols: [`Brow shaping`, `Tint + shaping`, `Facial care`],
+        chip: `Comparison`, eyebrow: `Comparing the services`, h2: `Shaping, or tinting with shaping?`,
+        lead: `Two services side by side – choose by what your brows need.`,
+        cols: [`Brow shaping`, `Tint + shaping`],
         rows: [
           { label: `Brow shaping` },
-          { label: `Brow tint` },
-          { label: `Facial treatment and massage` },
+          { label: `Brow colour` },
           { label: `Price` },
-          { label: `Suits you if…`, cells: [`your brows are full and dark enough`, `your brows are light, uneven or sparse`, `you want to give your skin more than everyday washing and cream`] },
-          { label: `Good to know`, cells: [`Usually every three to five weeks`, `The tint fades gradually, so it is repeated with shaping`, `Please come without make-up if you can`] },
+          { label: `Suits you if…`, cells: [`your brows are full and dark enough`, `your brows are light, uneven or sparse`] },
+          { label: `Good to know`, cells: [`Usually every three to five weeks`, `The colour fades gradually, so it is repeated with shaping`] },
         ],
-        note: `If you are allergic to tints or have sensitive skin, please tell us in advance.`,
+        note: `If you are allergic to dyes or have sensitive skin, please tell us in advance.`,
       }],
       combos: {
         h2: `Brows and more care in one visit`,
-        lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
+        lead: `Want several services in one appointment? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
-          { title: `Brow tint + classic 1:1 lashes`, text: `Brows and lashes together give your eyes a clear frame.` },
-          { title: `Facial care + brow shaping`, text: `Skin and brows in one visit.` },
+          { title: `Brow tint + classic lashes 1:1`, text: `Together, brows and lashes give your eyes a clear frame.` },
+          { title: `Brow shaping + facial`, text: `Brows and skin in one visit.` },
+        ],
+      },
+    },
+    'kosmetika-praha-2': {
+      heroCta: `Book a facial`,
+      final: { h: `Facials at Bělehradská? Book your appointment.`, t: `Choose a time online – we will talk through what your skin needs on site. Bělehradská 77, Prague 2.` },
+      bands: [
+        { h: `Want to treat your skin?`, t: `Book a time online. Please come without make-up if you can.` },
+        { h: `Sensitive skin or allergies?`, t: `Call us in advance and we will talk through what is needed.` },
+      ],
+      sigs: [{
+        chip: `Tips`, eyebrow: `From the price list`, h2: `How to get more from your visit`,
+        lead: `Three insights straight from the price list.`,
+        items: [
+          { title: `Massage is included`, text: `Facial care and massage is one service in the price list, for {kos}.` },
+          { title: `Brows in the same visit`, text: `You can add brow shaping ({ob}) or tinting with shaping ({obB}) to your facial.` },
+          { title: `For men at the barbershop`, text: `Men's skincare with steam and a mask costs {men} in our barbershop.` },
+        ],
+      }],
+      combos: {
+        h2: `A facial and something more`,
+        lead: `Want several services in one appointment? Call us and we will arrange it. Prices are from the price list, per service.`,
+        items: [
+          { title: `Facial + brow shaping`, text: `Skin and brows in one visit.` },
+          { title: `Facial + Head Spa`, text: `Face and scalp in one visit.` },
         ],
       },
     },
@@ -205,7 +229,7 @@ export const extrasEn = {
         h2: `Head Spa and a little extra`,
         lead: `Want several services in one visit? Call us and we will arrange it. Prices are from the price list, per service.`,
         items: [
-          { title: `Head Spa + pedicure with foot spa`, text: `Feet and head – a full relaxation session in one place.` },
+          { title: `Head Spa + pedicure`, text: `Feet and head – a full relaxation session in one place.` },
           { title: `Head Spa + facial care`, text: `Head and skin in one visit.` },
         ],
       },

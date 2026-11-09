@@ -43,8 +43,8 @@ const CFG = {
       ],
     }],
     combos: [
-      { pages: ['manikura-praha-2', 'pedikura-praha-2'], items: [P('man-gellak'), P('ped-gellak')] },
-      { pages: ['manikura-praha-2', 'oboci-kosmetika-praha-2'], items: [P('man-gellak'), P('ob-barveni')] },
+      { pages: ['manikura-praha-2', 'pedikura-praha-2'], items: [P('man-gellak'), P('ped-lakem')] },
+      { pages: ['manikura-praha-2', 'oboci-praha-2'], items: [P('man-gellak'), P('ob-barveni')] },
     ],
   },
 
@@ -58,8 +58,8 @@ const CFG = {
       },
     ],
     combos: [
-      { pages: ['gelove-akrylove-nehty-praha-2', 'pedikura-praha-2'], items: [P('mod-nove'), P('ped-gellak')] },
-      { pages: ['gelove-akrylove-nehty-praha-2', 'oboci-kosmetika-praha-2'], items: [P('mod-dopl'), P('ob-barveni')] },
+      { pages: ['gelove-akrylove-nehty-praha-2', 'pedikura-praha-2'], items: [P('mod-nove'), P('ped-lakem')] },
+      { pages: ['gelove-akrylove-nehty-praha-2', 'oboci-praha-2'], items: [P('mod-dopl'), P('ob-barveni')] },
     ],
   },
 
@@ -69,14 +69,14 @@ const CFG = {
       type: 'problem',
       items: [
         { ids: [P('ped-classic')] },
-        { ids: [P('ped-gellak'), P('ped-cnd')] },
+        { ids: [P('ped-lakem')] },
         { ids: [P('ped-med-classic'), P('ped-med-gellak'), P('ped-med-cnd')] },
-        { ids: [P('ped-pk-classic'), P('ped-pk-gellak'), P('ped-pk-cnd')] },
+        { ids: [P('ped-masaz')] },
       ],
     }],
     combos: [
-      { pages: ['pedikura-praha-2', 'manikura-praha-2'], items: [P('ped-gellak'), P('man-gellak')] },
-      { pages: ['pedikura-praha-2', 'head-spa-praha-2'], items: [P('ped-pk-classic'), P('hs')] },
+      { pages: ['pedikura-praha-2', 'manikura-praha-2'], items: [P('ped-lakem'), P('man-gellak')] },
+      { pages: ['pedikura-praha-2', 'head-spa-praha-2'], items: [P('ped-classic'), P('hs')] },
     ],
   },
 
@@ -84,27 +84,42 @@ const CFG = {
     order: ['intro', 'sig0', 'options', 'steps', 'care', 'band', 'price', 'guide', 'notes', 'faq', 'combos', 'band', 'related', 'location'],
     sigs: [{ type: 'density', items: [{ k: 1, p: 'ras-klasik' }, { k: 3, p: 'ras-volume' }, { k: 5, p: 'ras-mega' }] }],
     combos: [
-      { pages: ['prodluzovani-ras-praha-2', 'oboci-kosmetika-praha-2'], items: [P('ras-klasik', 1), P('ob-barveni')] },
-      { pages: ['prodluzovani-ras-praha-2', 'oboci-kosmetika-praha-2'], items: [P('ras-volume', 0), P('ob-uprava')] },
+      { pages: ['prodluzovani-ras-praha-2', 'oboci-praha-2'], items: [P('ras-klasik', 1), P('ob-barveni')] },
+      { pages: ['prodluzovani-ras-praha-2', 'oboci-praha-2'], items: [P('ras-volume', 0), P('ob-uprava')] },
     ],
   },
 
-  'oboci-kosmetika-praha-2': {
+  'oboci-praha-2': {
     order: ['intro', 'sig0', 'price', 'band', 'options', 'guide', 'combos', 'steps', 'care', 'faq', 'band', 'related', 'location'],
     sigs: [{
       type: 'compare',
       rows: [
-        { k: 'tick', v: [true, true, false] },
-        { k: 'tick', v: [false, true, false] },
-        { k: 'tick', v: [false, false, true] },
-        { k: 'price', v: [P('ob-uprava'), P('ob-barveni'), P('kos-oblicej')] },
+        { k: 'tick', v: [true, true] },
+        { k: 'tick', v: [false, true] },
+        { k: 'price', v: [P('ob-uprava'), P('ob-barveni')] },
         { k: 'text' },
         { k: 'text' },
       ],
     }],
     combos: [
-      { pages: ['oboci-kosmetika-praha-2', 'prodluzovani-ras-praha-2'], items: [P('ob-barveni'), P('ras-klasik', 0)] },
-      { pages: ['oboci-kosmetika-praha-2'], items: [P('kos-oblicej'), P('ob-uprava')] },
+      { pages: ['oboci-praha-2', 'prodluzovani-ras-praha-2'], items: [P('ob-barveni'), P('ras-klasik', 0)] },
+      { pages: ['oboci-praha-2', 'kosmetika-praha-2'], items: [P('ob-uprava'), P('kos-oblicej')] },
+    ],
+  },
+
+  'kosmetika-praha-2': {
+    order: ['intro', 'options', 'sig0', 'band', 'guide', 'steps', 'care', 'price', 'faq', 'combos', 'band', 'related', 'location'],
+    sigs: [{
+      type: 'tips',
+      items: [
+        { vars: { kos: P('kos-oblicej') } },
+        { vars: { ob: P('ob-uprava'), obB: P('ob-barveni') } },
+        { vars: { men: P('pece-kosmetika') } },
+      ],
+    }],
+    combos: [
+      { pages: ['kosmetika-praha-2', 'oboci-praha-2'], items: [P('kos-oblicej'), P('ob-uprava')] },
+      { pages: ['kosmetika-praha-2', 'head-spa-praha-2'], items: [P('kos-oblicej'), P('hs')] },
     ],
   },
 
@@ -112,8 +127,8 @@ const CFG = {
     order: ['intro', 'sig0', 'price', 'guide', 'care', 'band', 'combos', 'faq', 'band', 'related', 'location'],
     sigs: [{ type: 'ritual', item: P('hs') }],
     combos: [
-      { pages: ['head-spa-praha-2', 'pedikura-praha-2'], items: [P('hs'), P('ped-pk-classic')] },
-      { pages: ['head-spa-praha-2', 'oboci-kosmetika-praha-2'], items: [P('hs'), P('kos-oblicej')] },
+      { pages: ['head-spa-praha-2', 'pedikura-praha-2'], items: [P('hs'), P('ped-classic')] },
+      { pages: ['head-spa-praha-2', 'kosmetika-praha-2'], items: [P('hs'), P('kos-oblicej')] },
     ],
   },
 

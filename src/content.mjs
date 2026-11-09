@@ -94,7 +94,7 @@ export const servicePagesBase = [
       { q: 'Co je hand spa?', a: 'Hand spa je hýčkací péče o ruce navíc, kterou si můžete přidat k manikúře ve výhodném balíčku. Konkrétní postup vám rádi upřesníme při objednání.' },
       { q: 'Můžu si nechat odstranit gel lak jinde nalakovaný?', a: 'Ano, odstranění Shellac / Gellak nehtů nabízíme samostatně: Shellac za 200 Kč, Gellak za 150 Kč. Neodlupujte ho prosím sami, poškodíte tím nehet.' },
     ],
-    related: ['gelove-akrylove-nehty-praha-2', 'pedikura-praha-2', 'oboci-kosmetika-praha-2'],
+    related: ['gelove-akrylove-nehty-praha-2', 'pedikura-praha-2', 'oboci-praha-2'],
   },
 
   /* ============================================================ GELOVÉ A AKRYLOVÉ NEHTY */
@@ -189,11 +189,11 @@ export const servicePagesBase = [
   /* ============================================================ PEDIKÚRA */
   {
     slug: 'pedikura-praha-2', area: 'nails', name: 'Pedikúra', art: 'pedikura', photo: null,
-    cardText: 'Classic, s gel lakem i medicínální pedikúra Footlogix.',
+    cardText: 'Classic, s gel lakem i medicinální pedikúra Footlogix.',
     title: 'Pedikúra Praha 2 – Classic, Gellak, Footlogix | ICONO STUDIO',
-    description: 'Pedikúra na Bělehradské 77 v Praze 2: klasická od 490 Kč, s gel lakem od 590 Kč, medicínální s Footlogix od 590 Kč. Výhodné balíčky s foot spa.',
+    description: 'Pedikúra na Bělehradské 77 v Praze 2: klasická 520 Kč, s CND Shellac nebo Gellakem 650 Kč, medicinální pedikúra Footlogix od 650 Kč. Rezervace online.',
     h1: 'Pedikúra Praha 2', eyebrow: 'Nails · Bělehradská 77',
-    lead: 'Klasická i lakovaná pedikúra a medicínální pedikúra Footlogix na Bělehradské 77. Vyberte si samotnou péči o chodidla, nebo výhodný balíček s foot spa.',
+    lead: 'Klasická i lakovaná pedikúra a medicinální pedikúra Footlogix na Bělehradské 77. Vyberte si samotnou péči o chodidla, lakování nebo masáž navíc.',
     imageAlt: 'Chodidlo s lakovanými nehty na nohou – pedikúra v ICONO STUDIO',
     artAlt: 'Pedikúra Praha 2: upravená chodidla s nalakovanými nehty na krémovém ručníku, říční kameny a miska',
     groups: ['pedikura'],
@@ -201,15 +201,15 @@ export const servicePagesBase = [
       h2: 'Péče o chodidla v centru Prahy 2',
       paras: [
         'Pedikúra není jen věc léta a sandálů. Pravidelná péče o chodidla a nehty na nohou znamená pohodlnější chůzi, hladkou pokožku a upravený vzhled po celý rok. V ICONO STUDIO ji děláme na Bělehradské 77 v Praze 2, kousek od I. P. Pavlova.',
-        'V nabídce je klasická pedikúra, pedikúra s lakováním gel lakem Gellak nebo CND Shellac a medicínální pedikúra s produkty Footlogix. Většinu variant najdete také ve výhodných balíčcích s foot spa, tedy s hýčkací péčí o nohy navíc. Všechny ceny jsou níže i v <a href="/cenik/">ceníku</a>.',
+        'V nabídce je klasická pedikúra, pedikúra s lakováním gel lakem Gellak nebo CND Shellac a medicinální pedikúra s produkty Footlogix. K pedikúře si můžete přidat také masáž. Všechny ceny jsou níže i v <a href="/cenik/">ceníku</a>.',
       ],
     },
     options: {
       h2: 'Typy pedikúry a ceny',
       items: [
-        { title: 'Klasická pedikúra', ids: ['ped-classic', 'ped-pk-classic'], text: 'Základ péče o chodidla: úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky. Hodí se pro pravidelnou údržbu. V balíčku je navíc foot spa.' },
-        { title: 'Pedikúra s lakováním', ids: ['ped-gellak', 'ped-cnd', 'ped-pk-gellak', 'ped-pk-cnd', 'ped-lak'], text: 'Pedikúra spojená s lakováním gel lakem Gellak nebo CND Shellac. Pokud potřebujete nohy jen nabarvit, vyberte samotné lakování. Barva drží několik týdnů a nehty jsou po aplikaci hned suché, takže jsou pohodlné do sandálů i do bot.' },
-        { title: 'Medicínální pedikúra Footlogix', ids: ['ped-med-classic', 'ped-med-gellak', 'ped-med-cnd', 'ped-pk-fl-gellak', 'ped-pk-fl-cnd'], text: 'Pedikúra s profesionální kosmetikou Footlogix, zaměřená na péči o suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Nejde o lékařské ošetření. Je k dispozici v provedení Classic bez barvy nebo s lakováním Gellak či CND Shellac.' },
+        { title: 'Klasická pedikúra', ids: ['ped-classic', 'ped-masaz'], text: 'Základ péče o chodidla: úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky. Hodí se pro pravidelnou údržbu. Pokud si chcete odpočinout, přidejte masáž.' },
+        { title: 'Pedikúra s lakováním', ids: ['ped-lakem', 'ped-lak'], text: 'Pedikúra spojená s lakováním gel lakem Gellak nebo CND Shellac. Pokud potřebujete nohy jen nabarvit, vyberte samotné lakování. Barva drží několik týdnů a nehty jsou po aplikaci hned suché, takže jsou pohodlné do sandálů i do bot.' },
+        { title: 'Medicinální pedikúra Footlogix', ids: ['ped-med-classic', 'ped-med-gellak', 'ped-med-cnd'], text: 'Pedikúra s profesionální kosmetikou Footlogix, zaměřená na péči o suchou a namáhanou pokožku nohou, ztvrdlá místa a popraskané paty. Nejde o lékařské ošetření. Je k dispozici v provedení Classic bez barvy nebo s lakováním Gellak či CND Shellac.' },
       ],
     },
     notes: {
@@ -229,16 +229,16 @@ export const servicePagesBase = [
       h2: 'Kterou pedikúru zvolit?',
       paras: [
         'Chcete jen upravené nohy bez barvy? Zvolte <strong>klasickou pedikúru</strong>. Chcete barvu, která vydrží? Vyberte <strong>pedikúru s Gellakem</strong> nebo <strong>CND Shellac</strong>, případně <strong>samotné lakování</strong>, pokud nehty nepotřebují jinou úpravu.',
-        'Pokud trápí suché paty, ztvrdlá kůže nebo namáhané nohy, je určená <strong>medicínální pedikúra Footlogix</strong>. A když si chcete odpočinout, přidejte <strong>foot spa</strong> v některém z balíčků.',
+        'Pokud trápí suché paty, ztvrdlá kůže nebo namáhané nohy, je určená <strong>medicinální pedikúra Footlogix</strong>. A když si chcete odpočinout, přidejte k pedikúře <strong>masáž</strong>.',
         '<strong>Důležité upozornění:</strong> pokud máte cukrovku, plísňové onemocnění nehtů, zánět, rány nebo jiné zdravotní potíže na nohou, poraďte se nejdřív s lékařem. Pedikúra ve studiu nenahrazuje lékařské ošetření.',
       ],
     },
     steps: {
       h2: 'Jak pedikúra probíhá',
       items: [
-        { h: 'Domluva a příprava', t: 'Zvolíme variantu a probereme případné potíže, například suché paty nebo zarůstající nehty. U balíčků je součástí návštěvy foot spa.' },
+        { h: 'Domluva a příprava', t: 'Zvolíme variantu a probereme případné potíže, například suché paty nebo zarůstající nehty.' },
         { h: 'Úprava nehtů a kůžiček', t: 'Nehty se zkrátí, zformují a upraví se kůžička kolem nich.' },
-        { h: 'Péče o pokožku chodidel', t: 'Odstraní se ztvrdlá kůže a pokožka se ošetří. U medicínální pedikúry přidáváme produkty Footlogix.' },
+        { h: 'Péče o pokožku chodidel', t: 'Odstraní se ztvrdlá kůže a pokožka se ošetří. U medicinální pedikúry přidáváme produkty Footlogix.' },
         { h: 'Lakování (volitelně)', t: 'Nehty nalakujeme gel lakem Gellak nebo CND Shellac a vytvrdíme v lampě.' },
         { h: 'Finální péče', t: 'Na závěr se nohy ošetří, aby byly hladké a upravené.' },
       ],
@@ -254,8 +254,8 @@ export const servicePagesBase = [
       ],
     },
     faq: [
-      { q: 'Kolik stojí pedikúra v Praze 2?', a: 'Klasická pedikúra stojí 490 Kč, pedikúra s Gellakem 590 Kč a pedikúra s CND Shellac 650 Kč. Medicínální pedikúra Footlogix začíná na 590 Kč. Výhodné balíčky s foot spa jsou od 590 Kč. Kompletní ceny jsou v <a href="/cenik/">ceníku</a>.' },
-      { q: 'Co je Footlogix?', a: 'Footlogix je řada profesionální kosmetiky pro péči o nohy, určená zejména pro suchou a namáhanou pokožku. V našem ceníku je medicínální pedikúra Footlogix k dispozici s lakováním Gellak nebo CND Shellac.' },
+      { q: 'Kolik stojí pedikúra v Praze 2?', a: 'Klasická pedikúra stojí 520 Kč, pedikúra s CND Shellac nebo Gellakem 650 Kč. Medicinální pedikúra Footlogix začíná na 650 Kč, masáž navíc stojí 200 Kč. Kompletní ceny jsou v <a href="/cenik/">ceníku</a>.' },
+      { q: 'Co je Footlogix?', a: 'Footlogix je řada profesionální kosmetiky pro péči o nohy, určená zejména pro suchou a namáhanou pokožku. V našem ceníku je medicinální pedikúra Footlogix k dispozici s lakováním Gellak nebo CND Shellac.' },
       { q: 'Jak často chodit na pedikúru?', a: 'Obvykle jednou za čtyři až šest týdnů, podle růstu nehtů a toho, jak nohy zatěžujete. Pokud máte lakované nehty, počítejte s udržováním podle toho, jak dlouho vám lak drží.' },
       { q: 'Mohu přijít na pedikúru s cukrovkou nebo plísní nehtů?', a: 'Nejdřív se prosím poraďte s lékařem. Pedikúra ve studiu je kosmetická péče a nenahrazuje lékařské ošetření. Před návštěvou nám případné zdravotní potíže napište.' },
       { q: 'Jak dlouho lak na nohou vydrží?', a: 'Záleží na rychlosti růstu nehtů, na obuvi, kterou nosíte, a na zvoleném laku – CND Shellac je tenčí a snáz se odmočí, Gellak je tvrdší a obvykle vydrží déle.' },
@@ -289,6 +289,7 @@ export const servicePagesBase = [
         { title: 'Volume řasy 2D–5D', ids: ['ras-volume'], text: 'Z několika tenkých řas se vytvoří vějířek, který se nasadí na jednu přirozenou řasu. 2D znamená vějířek ze dvou řas, 5D z pěti – čím vyšší číslo, tím hustší a výraznější efekt.' },
         { title: 'Mega Volume řasy', ids: ['ras-mega'], text: 'Ještě hustší vějířky z více jemných řas pro maximální hustotu a výrazný, plný pohled.' },
         { title: 'Designový efekt a odstranění', ids: ['ras-design', 'ras-odstr'], text: 'Prodloužení řas se speciálním efektem, který domluvíme při objednání. Pokud chcete řasy sundat, nechte odstranění na nás – doma by hrozilo poškození přirozených řas.' },
+        { title: 'Lifting řas', ids: ['ras-lifting'], text: 'Lifting vlastních řas bez prodlužování: přirozené řasy se natočí, takže působí delší a výraznější. Hodí se, pokud nechcete umělé řasy.' },
       ],
     },
     notes: {
@@ -339,31 +340,31 @@ export const servicePagesBase = [
       ],
     },
     faq: [
-      { q: 'Kolik stojí prodlužování řas v Praze 2?', a: 'Klasické řasy 1:1 stojí 990 Kč (doplnění 790 Kč), Volume řasy 2D–5D 1 190 Kč (doplnění 990 Kč) a Mega Volume 1 390 Kč (doplnění 1 090 Kč). Designový efekt začíná na 1 190 Kč, odstranění stojí 200 Kč. Vše je v <a href="/cenik/">ceníku</a>.' },
+      { q: 'Kolik stojí prodlužování řas v Praze 2?', a: 'Klasické řasy 1:1 stojí 990 Kč (doplnění 790 Kč), Volume řasy 2D–5D 1 190 Kč (doplnění 990 Kč) a Mega Volume 1 390 Kč (doplnění 1 090 Kč). Designový efekt začíná na 1 290 Kč, odstranění stojí 200 Kč a lifting řas 800 Kč. Vše je v <a href="/cenik/">ceníku</a>.' },
       { q: 'Jak dlouho prodloužené řasy vydrží?', a: 'Umělé řasy vypadávají společně s přirozenými v jejich růstovém cyklu, proto se doplňují obvykle po dvou až čtyřech týdnech. Doba se liší člověk od člověka.' },
       { q: 'Jaký je rozdíl mezi klasickými a Volume řasami?', a: 'U klasických řas se na jednu přirozenou řasu aplikuje jedna umělá. U Volume se na ni nasadí vějířek z více tenkých řas, výsledek je hustší a výraznější.' },
       { q: 'Poškodí prodlužování mé přirozené řasy?', a: 'Při správné aplikaci a péči by přirozené řasy poškozeny být neměly. Proto je důležité řasy doma neodstraňovat ani netrhat a svěřit odstranění studiu.' },
       { q: 'Co když mám citlivé oči nebo alergii?', a: 'Napište nám to předem. Při citlivých očích, alergii nebo zdravotních potížích se před aplikací poraďte také s lékařem.' },
     ],
-    related: ['oboci-kosmetika-praha-2', 'head-spa-praha-2', 'manikura-praha-2'],
+    related: ['oboci-praha-2', 'kosmetika-praha-2', 'head-spa-praha-2'],
   },
 
-  /* ============================================================ OBOČÍ A KOSMETIKA */
+  /* ============================================================ OBOČÍ */
   {
-    slug: 'oboci-kosmetika-praha-2', area: 'beauty', name: 'Obočí a kosmetika', art: 'oboci-kosmetika', photo: null,
-    cardText: 'Úprava a barvení obočí, péče o obličej a masáž.',
+    slug: 'oboci-praha-2', area: 'beauty', name: 'Obočí', art: 'oboci-kosmetika', photo: null,
+    cardText: 'Úprava a barvení obočí podle tvaru obličeje.',
     title: 'Úprava a barvení obočí Praha 2 | ICONO STUDIO',
-    description: 'Úprava a barvení obočí od 100 Kč a péče o obličej s masáží za 750 Kč na Bělehradské 77 v Praze 2. Rezervujte si termín online, nebo zavolejte.',
-    h1: 'Obočí a kosmetika Praha 2', eyebrow: 'Beauty · Bělehradská 77',
-    lead: 'Úprava a barvení obočí a kosmetická péče o obličej s masáží. Obočí od 100 Kč, péče o obličej 750 Kč.',
-    imageAlt: 'Upravené obočí, pinzeta a kosmetický krém',
+    description: 'Úprava obočí za 100 Kč a barvení s úpravou za 200 Kč na Bělehradské 77 v Praze 2, kousek od I. P. Pavlova. Rezervujte si termín online, nebo zavolejte.',
+    h1: 'Úprava a barvení obočí Praha 2', eyebrow: 'Beauty · Bělehradská 77',
+    lead: 'Úprava obočí podle tvaru obličeje a barvení spojené s úpravou. Úprava 100 Kč, barvení s úpravou 200 Kč.',
+    imageAlt: 'Upravené obočí a kartáček na obočí',
     artAlt: 'Úprava a barvení obočí Praha 2: obočí upravované kartáčkem, detail obočí a oka',
-    groups: ['oboci', 'kosmetika'],
+    groups: ['oboci'],
     intro: {
       h2: 'Obočí, které sedí k obličeji',
       paras: [
         'Obočí rámuje obličej a výrazně mění jeho výraz. Správně vytvarované obočí zvýrazní oči, sjednotí vzhled a ušetří vám ranní líčení. V ICONO STUDIO na Bělehradské 77 v Praze 2 nabízíme úpravu obočí i barvení spojené s úpravou.',
-        'K tomu přidáváme kosmetickou péči: <strong>péči o obličej a masáž</strong>. Je to příjemný způsob, jak pleti věnovat pozornost – a kromě ní i sobě. Ceny najdete níže a v <a href="/cenik/">ceníku</a>.',
+        'Tvar vybíráme podle obličeje a vašeho přání – někomu sedí přirozené, mírně upravené obočí, jiný chce výraznější linku. Ceny najdete níže a v <a href="/cenik/">ceníku</a>.',
       ],
     },
     options: {
@@ -371,17 +372,16 @@ export const servicePagesBase = [
       items: [
         { title: 'Úprava obočí', ids: ['ob-uprava'], text: 'Vytvarování obočí podle tvaru obličeje a vašich představ. Hodí se pro pravidelnou údržbu, aby obočí zůstalo upravené.' },
         { title: 'Barvení a úprava obočí', ids: ['ob-barveni'], text: 'Úprava tvaru spojená s barvením. Barva sjednotí odstín, zvýrazní tvar a pomáhá, když je obočí světlé nebo řídké.' },
-        { title: 'Péče o obličej a masáž', ids: ['kos-oblicej'], text: 'Kosmetické ošetření obličeje spojené s masáží. Přesný postup přizpůsobujeme typu pleti, takže nám při objednání napište, co vaše pleť potřebuje.' },
       ],
     },
     guide: {
       h2: 'Úprava, nebo barvení s úpravou?',
       paras: [
-        'Pokud máte hustší a dostatečně tmavé obočí, často stačí samotná <strong>úprava</strong>. Pokud je obočí světlé, nestejnoměrné nebo řídké, vyplatí se <strong>barvení s úpravou</strong>. Rozdíl v ceně je 100 Kč.',
+        'Pokud máte hustší a dostatečně tmavé obočí, často stačí samotná <strong>úprava</strong>. Pokud je obočí světlé, nestejnoměrné nebo řídké, vyplatí se <strong>barvení s úpravou</strong>.',
         'Obočí se obvykle upravuje jednou za tři až pět týdnů, podle růstu chloupků. Před důležitou událostí raději počítejte s termínem několik dní předem, aby obočí stihlo dostat přirozený vzhled.',
         '<strong>Barvení – co čekat:</strong> barva sjednotí odstín obočí, zvýrazní jeho tvar a vizuálně ho zahustí. Hodí se, pokud se vám obočí na obličeji „ztrácí“, nebo nechcete každé ráno používat tužku či stíny. Odstín vybereme podle barvy vlasů a vašeho přání.',
-        '<strong>Péče o obličej – pro koho:</strong> pro každého, kdo chce pleti věnovat víc než běžné mytí a krém. Masáž obličeje navíc přináší příjemné uvolnění. Napište nám, co vaše pleť potřebuje, a postup přizpůsobíme.',
-        'Obočí se skvěle doplňuje s <a href="/prodluzovani-ras-praha-2/">prodlužováním řas</a> – obojí společně dává pohledu jasný rám. A pokud si chcete dopřát víc, podívejte se na <a href="/head-spa-praha-2/">Head Spa</a>.',
+        '<strong>Necháváte obočí dorůst?</strong> Řekněte nám to. Při úpravě pak odstraníme jen to nejnutnější a tvar budeme postupně dotvářet při dalších návštěvách.',
+        'Obočí se skvěle doplňuje s <a href="/prodluzovani-ras-praha-2/">prodlužováním řas</a> – obojí společně dává pohledu jasný rám. A pokud chcete dopřát péči i pleti, podívejte se na <a href="/kosmetika-praha-2/">kosmetiku</a>.',
       ],
     },
     steps: {
@@ -390,7 +390,7 @@ export const servicePagesBase = [
         { h: 'Domluva tvaru', t: 'Společně vybereme tvar obočí podle tvaru obličeje a vašeho přání.' },
         { h: 'Úprava', t: 'Obočí se vytvaruje a zbaví nežádoucích chloupků.' },
         { h: 'Barvení (volitelně)', t: 'Pokud jste zvolili barvení, barva se nanese a nechá působit, aby se jí obočí dobře ujalo.' },
-        { h: 'Péče o obličej (volitelně)', t: 'Součástí návštěvy může být i péče o obličej a masáž.' },
+        { h: 'Kontrola výsledku', t: 'Na závěr společně zkontrolujeme tvar a odstín a poradíme, kdy přijít příště.' },
       ],
     },
     care: {
@@ -399,19 +399,83 @@ export const servicePagesBase = [
         'Po úpravě se prvních několik hodin vyhněte líčení v oblasti obočí, aby pokožka nebyla podrážděná.',
         'Po barvení obočí nepoužívejte hned intenzivní peeling a vyhýbejte se saunám, aby barva držela déle.',
         'Pokud máte alergii nebo citlivou pokožku, napište nám to před barvením.',
-        'K péči o obličej přijďte raději bez make-upu, aby se pleť mohla dobře očistit.',
+        'Odličovače s olejem barvu obočí rychleji vymývají. Kolem obočí je používejte s mírou.',
         'Mezi návštěvami obočí raději sami nevytrhávejte. Tvar, který jsme společně vytvořili, tak zůstane čistý a udržíte ho při příští návštěvě.',
       ],
     },
     faq: [
-      { q: 'Kolik stojí úprava obočí v Praze 2?', a: 'Samotná úprava obočí stojí 100 Kč, barvení spojené s úpravou 200 Kč. Péče o obličej s masáží stojí 750 Kč. Vše najdete v <a href="/cenik/">ceníku</a>.' },
+      { q: 'Kolik stojí úprava obočí v Praze 2?', a: 'Samotná úprava obočí stojí 100 Kč, barvení spojené s úpravou 200 Kč. Vše najdete v <a href="/cenik/">ceníku</a>.' },
       { q: 'Jak dlouho barva na obočí vydrží?', a: 'Obvykle několik týdnů, podle typu pleti a péče. Barva se postupně vytrácí, proto se barvení opakuje společně s úpravou.' },
-      { q: 'Co všechno péče o obličej zahrnuje?', a: 'Je to kosmetické ošetření obličeje spojené s masáží. Postup přizpůsobujeme typu pleti a rádi vám ho upřesníme při objednání.' },
       { q: 'Jak často chodit na úpravu obočí?', a: 'Obvykle jednou za tři až pět týdnů, podle toho, jak rychle vám chloupky dorůstají.' },
       { q: 'Pro koho je barvení obočí vhodné?', a: 'Pro každého, kdo má světlé, nestejnoměrné nebo řídké obočí a chce výraznější tvar bez každodenního líčení. Pokud máte alergii na barvy, napište nám to předem.' },
-      { q: 'Můžu přijít s make-upem?', a: 'Na úpravu obočí ano, na péči o obličej a masáž ale raději bez make-upu. Pokožka se tak lépe očistí a ošetření je účinnější.' },
+      { q: 'Můžu přijít nalíčená?', a: 'Ano, make-up mimo oblast obočí nevadí. Obočí samotné raději nechte bez tužky a stínů, ať je dobře vidět jeho přirozený tvar.' },
+      { q: 'Můžu si k obočí přidat i jinou službu?', a: 'Ano. Obočí se často kombinuje s <a href="/prodluzovani-ras-praha-2/">prodlužováním řas</a> nebo s <a href="/kosmetika-praha-2/">péčí o obličej a masáží</a>. Zavolejte nám a domluvíme vhodný čas.' },
     ],
-    related: ['prodluzovani-ras-praha-2', 'head-spa-praha-2', 'manikura-praha-2'],
+    related: ['prodluzovani-ras-praha-2', 'kosmetika-praha-2', 'manikura-praha-2'],
+  },
+
+  /* ============================================================ KOSMETIKA */
+  {
+    slug: 'kosmetika-praha-2', area: 'beauty', name: 'Kosmetika', art: 'panska-kosmetika', photo: null,
+    cardText: 'Péče o obličej a masáž pro upravenou pleť i chvíli klidu.',
+    title: 'Kosmetika Praha 2 – péče o obličej a masáž | ICONO STUDIO',
+    description: 'Kosmetika v Praze 2: péče o obličej a masáž za 750 Kč na Bělehradské 77, kousek od I. P. Pavlova. Postup přizpůsobíme vaší pleti. Rezervace online.',
+    h1: 'Kosmetika Praha 2', eyebrow: 'Beauty · Bělehradská 77',
+    lead: 'Péče o obličej spojená s masáží za 750 Kč. Postup přizpůsobíme typu vaší pleti a tomu, co právě potřebuje.',
+    imageAlt: 'Ručník, pára a krém – péče o obličej v ICONO STUDIO',
+    artAlt: 'Kosmetika Praha 2: srolovaný teplý ručník, pára, miska s vodou a kelímek krému',
+    groups: ['kosmetika'],
+    intro: {
+      h2: 'Chvíle pro pleť i pro vás',
+      paras: [
+        'Kosmetická péče o obličej není jen pro zvláštní příležitosti. Pleť každý den zatěžuje make-up, městský vzduch, klimatizace i nedostatek spánku. V ICONO STUDIO na Bělehradské 77 v Praze 2, kousek od I. P. Pavlova, nabízíme <strong>péči o obličej a masáž</strong> – ošetření, při kterém si odpočine pleť i vy.',
+        'Postup přizpůsobujeme typu pleti a tomu, co právě potřebuje. Při objednání nám napište, jestli máte pleť suchou, citlivou nebo naopak mastnou, a na místě to společně probereme. Cenu najdete níže a v <a href="/cenik/">ceníku</a>.',
+      ],
+    },
+    options: {
+      h2: 'Služba a cena',
+      items: [
+        { title: 'Péče o obličej a masáž', ids: ['kos-oblicej'], text: 'Kosmetické ošetření obličeje spojené s masáží. Přesný postup přizpůsobujeme typu pleti, takže nám při objednání napište, co vaše pleť potřebuje.' },
+      ],
+    },
+    guide: {
+      h2: 'Pro koho je péče o obličej',
+      paras: [
+        '<strong>Když je pleť unavená.</strong> Po náročném týdnu, cestování nebo v zimě, kdy pleť vysušuje topení, je péče o obličej příjemný restart. Masáž obličeje navíc pomáhá uvolnit napětí, které si v obličeji často ani neuvědomujeme.',
+        '<strong>Když si chcete odpočinout.</strong> Ošetření je i chvíle klidu: ležíte, nic neřešíte a o pleť se postará někdo jiný. Hodí se jako odměna pro sebe i jako dárek pro někoho blízkého.',
+        '<strong>Před důležitou událostí.</strong> Chystáte svatbu, focení nebo jinou akci? Objednejte se s několikadenním předstihem, ať má pleť čas se zklidnit.',
+        '<strong>Citlivá pleť nebo alergie?</strong> Napište nám to předem. Při kožním onemocnění, zánětu nebo podráždění se nejdřív poraďte s lékařem – kosmetická péče lékařské ošetření nenahrazuje.',
+        'Péči o obličej můžete spojit s <a href="/oboci-praha-2/">úpravou obočí</a> nebo s <a href="/head-spa-praha-2/">Head Spa</a>. Pro pány máme v barbershopu také <a href="/panska-kosmetika-praha-2/">pánskou kosmetiku</a>.',
+      ],
+    },
+    steps: {
+      h2: 'Jak návštěva probíhá',
+      items: [
+        { h: 'Krátká domluva', t: 'Zeptáme se, jakou máte pleť, co vás trápí a jestli máte na něco alergii.' },
+        { h: 'Péče o pleť', t: 'Pleť ošetříme postupem, který odpovídá jejímu typu a aktuálnímu stavu.' },
+        { h: 'Masáž obličeje', t: 'Součástí služby je masáž obličeje, při které se můžete na chvíli úplně uvolnit.' },
+        { h: 'Doporučení domů', t: 'Na závěr vám rádi poradíme, jak o pleť pečovat mezi návštěvami.' },
+      ],
+    },
+    care: {
+      h2: 'Jak se připravit a co po ošetření',
+      items: [
+        'Přijďte raději bez make-upu, pleť se tak lépe očistí a ošetření je účinnější.',
+        'Den před ošetřením nepoužívejte intenzivní peeling ani nové, nevyzkoušené přípravky.',
+        'Po ošetření dejte pleti klid: ideálně se ten den už nelíčte a vynechte saunu.',
+        'Pleť chraňte před sluncem. Krém s ochranným faktorem se vyplatí v každém ročním období.',
+        'Pijte dostatek vody a pleť pravidelně hydratujte krémem, který jí sedí.',
+      ],
+    },
+    faq: [
+      { q: 'Kolik stojí kosmetika v Praze 2?', a: 'Péče o obličej a masáž stojí 750 Kč. Úprava obočí, kterou si můžete přidat, stojí 100 Kč, barvení s úpravou 200 Kč. Vše najdete v <a href="/cenik/">ceníku</a>.' },
+      { q: 'Co všechno péče o obličej zahrnuje?', a: 'Je to kosmetické ošetření obličeje spojené s masáží. Postup přizpůsobujeme typu pleti a rádi vám ho upřesníme při objednání.' },
+      { q: 'Můžu přijít s make-upem?', a: 'Raději ne. Bez make-upu se pleť lépe očistí a ošetření je účinnější.' },
+      { q: 'Je péče o obličej vhodná i pro citlivou pleť?', a: 'Postup přizpůsobujeme typu pleti, citlivou pleť nebo alergii nám ale napište předem. Při kožním onemocnění nebo zánětu se nejdřív poraďte s lékařem.' },
+      { q: 'Je kosmetika i pro muže?', a: 'Ano, péči o obličej a masáž si může objednat každý. Pánové mohou v našem barbershopu zvolit také <a href="/panska-kosmetika-praha-2/">pánskou kosmetiku</a>.' },
+      { q: 'Jak často na kosmetiku chodit?', a: 'Záleží na pleti a na tom, co od péče čekáte. Rádi vám poradíme při návštěvě.' },
+    ],
+    related: ['oboci-praha-2', 'head-spa-praha-2', 'prodluzovani-ras-praha-2'],
   },
 
   /* ============================================================ HEAD SPA */

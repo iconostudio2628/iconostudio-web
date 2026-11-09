@@ -35,17 +35,11 @@ export const pricesEn = {
   'Gel X nehty': 'Gel X nails',
 
   /* pedikúra */
-  'Výhodný balíček pedikúra classic + foot spa': 'Value package: classic pedicure + foot spa',
-  'Výhodný balíček Footlogix CND Shellac': 'Value package: Footlogix CND Shellac',
-  'Výhodný balíček Footlogix s lakováním Gellak': 'Value package: Footlogix with Gellak polish',
-  'Výhodný balíček s lakováním CND + foot spa': 'Value package: with CND polish + foot spa',
-  'Výhodný balíček s lakováním gellak + foot spa': 'Value package: with Gellak polish + foot spa',
-  'Medicínální pedikúra Footlogix CND Shellac': 'Medical pedicure Footlogix CND Shellac',
-  'Medicínální pedikúra Footlogix Gellak': 'Medical pedicure Footlogix Gellak',
-  'Medicínální pedikúra Footlogix Classic': 'Medical pedicure Footlogix Classic',
+  'Medicinální pedikúra Footlogix CND Shellac': 'Medical pedicure Footlogix CND Shellac',
+  'Medicinální pedikúra Footlogix Gellak': 'Medical pedicure Footlogix Gellak',
+  'Medicinální pedikúra Footlogix Classic': 'Medical pedicure Footlogix Classic',
   'Pedikúra Classic': 'Classic pedicure',
-  'Pedikúra – Gellak': 'Pedicure – Gellak',
-  'Pedikúra – CND Shellac': 'Pedicure – CND Shellac',
+  'Pedikúra – CND Shellac / Gellak': 'Pedicure – CND Shellac / Gellak',
   'Samotné lakování Shellac / Gellak': 'Polish only – Shellac / Gellak',
 
   /* zdobení */
@@ -76,6 +70,7 @@ export const pricesEn = {
   'Mega Volume řasy': 'Mega Volume lashes',
   'Prodloužení řas – designový efekt': 'Lash extensions – design effect',
   'Odstranění prodloužených řas': 'Lash extension removal',
+  'Lifting řas': 'Lash lift',
   'Nový': 'New',
   'Doplnění': 'Refill',
 

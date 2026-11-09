@@ -169,22 +169,22 @@ export const contentEn = {
     name: `Pedicure`,
     cardText: `Classic, with gel polish and medical pedicure with Footlogix.`,
     title: `Pedicure Prague 2 | Classic & Footlogix | ICONO STUDIO`,
-    description: `Pedicure at Bělehradská 77 in Prague 2: classic from 490 CZK, with gel polish from 590 CZK, medical pedicure with Footlogix from 590 CZK. Foot spa packages.`,
+    description: `Pedicure at Bělehradská 77 in Prague 2: classic 520 CZK, with CND Shellac or Gellak 650 CZK, medical pedicure with Footlogix from 650 CZK. Book online.`,
     h1: `Pedicure Prague 2`, eyebrow: `Nails · Bělehradská 77`,
-    lead: `Classic and polished pedicure plus medical pedicure with Footlogix at Bělehradská 77. Choose simple foot care or a value package with foot spa.`,
+    lead: `Classic and polished pedicure plus medical pedicure with Footlogix at Bělehradská 77. Choose simple foot care, polish or an added massage.`,
     imageAlt: `Foot with polished toenails – pedicure at ICONO STUDIO`,
     artAlt: `Pedicure Prague 2: groomed feet with polished toenails on a cream towel, river stones and a bowl`,
     intro: {
       h2: `Foot care in central Prague 2`,
       paras: [
         `Pedicure is not just for summer and sandals. Regular care of your feet and toenails means more comfortable walking, smooth skin and a tidy look all year round. At ICONO STUDIO we do it at Bělehradská 77 in Prague 2, close to I. P. Pavlova.`,
-        `We offer a classic pedicure, a pedicure with Gellak or CND Shellac gel polish and a medical pedicure with Footlogix products. Most options are also available in value packages with foot spa – pampering foot care on top. All prices are below and in the <a href="/cenik/">price list</a>.`,
+        `We offer a classic pedicure, a pedicure with Gellak or CND Shellac gel polish and a medical pedicure with Footlogix products. You can also add a massage to your pedicure. All prices are below and in the <a href="/cenik/">price list</a>.`,
       ],
     },
     options: {
       h2: `Pedicure types and prices`,
       items: [
-        { title: `Classic pedicure`, text: `The foundation of foot care: nail and cuticle care, removal of hardened skin and skin treatment. Suitable for regular maintenance. The package adds a foot spa.` },
+        { title: `Classic pedicure`, text: `The foundation of foot care: nail and cuticle care, removal of hardened skin and skin treatment. Suitable for regular maintenance. If you want to relax, add a massage.` },
         { title: `Pedicure with polish`, text: `A pedicure combined with Gellak or CND Shellac gel polish. If you only need your toes coloured, choose polish only. The colour lasts several weeks and the nails are dry right after application, so they are comfortable in sandals and in shoes.` },
         { title: `Medical pedicure with Footlogix`, text: `A pedicure using Footlogix professional skincare, focused on dry and stressed skin, hardened areas and cracked heels. This is not a medical treatment. It is available as a Classic version without colour or with Gellak or CND Shellac polish.` },
       ],
@@ -206,14 +206,14 @@ export const contentEn = {
       h2: `Which pedicure should you choose?`,
       paras: [
         `Just want tidy feet without colour? Choose a <strong>classic pedicure</strong>. Want colour that lasts? Choose a <strong>pedicure with Gellak</strong> or <strong>CND Shellac</strong>, or <strong>polish only</strong> if your nails need no other treatment.`,
-        `If dry heels, hardened skin or stressed feet bother you, the <strong>medical pedicure with Footlogix</strong> is designed for that. And if you want to relax, add a <strong>foot spa</strong> with one of the packages.`,
+        `If dry heels, hardened skin or stressed feet bother you, the <strong>medical pedicure with Footlogix</strong> is designed for that. And if you want to relax, add a <strong>massage</strong> to your pedicure.`,
         `<strong>Important notice:</strong> if you have diabetes, a fungal nail infection, inflammation, wounds or other health problems with your feet, consult a doctor first. A pedicure at the studio does not replace medical treatment.`,
       ],
     },
     steps: {
       h2: `How a pedicure works`,
       items: [
-        { h: `Consultation and preparation`, t: `We choose the option and talk through any problems, such as dry heels or ingrown nails. With the packages, a foot spa is part of the visit.` },
+        { h: `Consultation and preparation`, t: `We choose the option and talk through any problems, such as dry heels or ingrown nails.` },
         { h: `Nail and cuticle care`, t: `Nails are shortened and shaped and the cuticles around them are tidied.` },
         { h: `Skin care for your feet`, t: `Hardened skin is removed and the skin is treated. With the medical pedicure we add Footlogix products.` },
         { h: `Polish (optional)`, t: `We polish the nails with Gellak or CND Shellac gel polish and cure it in a lamp.` },
@@ -231,7 +231,7 @@ export const contentEn = {
       ],
     },
     faq: [
-      { q: `How much does a pedicure cost in Prague 2?`, a: `A classic pedicure costs 490 CZK, a pedicure with Gellak 590 CZK and a pedicure with CND Shellac 650 CZK. A medical pedicure with Footlogix starts at 590 CZK. Value packages with foot spa start at 590 CZK. The full prices are in the <a href="/cenik/">price list</a>.` },
+      { q: `How much does a pedicure cost in Prague 2?`, a: `A classic pedicure costs 520 CZK, a pedicure with CND Shellac or Gellak 650 CZK. A medical pedicure with Footlogix starts at 650 CZK, and an added massage costs 200 CZK. The full prices are in the <a href="/cenik/">price list</a>.` },
       { q: `What is Footlogix?`, a: `Footlogix is a range of professional foot skincare, designed above all for dry and stressed skin. In our price list, the medical pedicure with Footlogix is available with Gellak or CND Shellac polish.` },
       { q: `How often should I get a pedicure?`, a: `Usually once every four to six weeks, depending on how fast your nails grow and how hard you are on your feet. If your nails are polished, plan maintenance according to how long your polish lasts.` },
       { q: `Can I get a pedicure if I have diabetes or a fungal nail infection?`, a: `Please consult a doctor first. A pedicure at the studio is cosmetic care and does not replace medical treatment. Before your visit, please tell us about any health problems.` },
@@ -263,6 +263,7 @@ export const contentEn = {
         { title: `Volume lashes 2D–5D`, text: `Several thin lashes are made into a fan which is attached to a single natural lash. 2D means a fan of two lashes, 5D of five – the higher the number, the fuller and more striking the effect.` },
         { title: `Mega Volume lashes`, text: `Even fuller fans made of more fine lashes for maximum density and a bold, full look.` },
         { title: `Design effect and removal`, text: `Lash extensions with a special effect that we agree when you book. If you want your lashes taken off, leave the removal to us – at home you risk damaging your natural lashes.` },
+        { title: `Lash lift`, text: `A lift of your own lashes without extensions: the natural lashes are curled so they look longer and more defined. A good option if you do not want artificial lashes.` },
       ],
     },
     notes: {
@@ -313,7 +314,7 @@ export const contentEn = {
       ],
     },
     faq: [
-      { q: `How much do eyelash extensions cost in Prague 2?`, a: `Classic lashes 1:1 cost 990 CZK (refill 790 CZK), Volume lashes 2D–5D 1,190 CZK (refill 990 CZK) and Mega Volume 1,390 CZK (refill 1,090 CZK). The design effect starts at 1,190 CZK, removal costs 200 CZK. Everything is in the <a href="/cenik/">price list</a>.` },
+      { q: `How much do eyelash extensions cost in Prague 2?`, a: `Classic lashes 1:1 cost 990 CZK (refill 790 CZK), Volume lashes 2D–5D 1,190 CZK (refill 990 CZK) and Mega Volume 1,390 CZK (refill 1,090 CZK). The design effect starts at 1,290 CZK, removal costs 200 CZK and a lash lift 800 CZK. Everything is in the <a href="/cenik/">price list</a>.` },
       { q: `How long do lash extensions last?`, a: `Artificial lashes fall out together with the natural ones in their growth cycle, which is why they are usually refilled every two to four weeks. The timing varies from person to person.` },
       { q: `What is the difference between classic and Volume lashes?`, a: `With classic lashes, one artificial lash is applied to each natural lash. With Volume, a fan of several thin lashes is attached to it, giving a fuller, more striking result.` },
       { q: `Will lash extensions damage my natural lashes?`, a: `With correct application and care, your natural lashes should not be damaged. That is why it is important not to remove or pull the lashes at home and to leave removal to the studio.` },
@@ -321,20 +322,20 @@ export const contentEn = {
     ],
   },
 
-  'oboci-kosmetika-praha-2': {
-    name: `Brows & facials`,
-    cardText: `Brow shaping and tinting, facial care and massage.`,
+  'oboci-praha-2': {
+    name: `Brows`,
+    cardText: `Brow shaping and tinting to suit your face.`,
     title: `Brow Shaping & Tinting Prague 2 | ICONO STUDIO`,
-    description: `Brow shaping and tinting from 100 CZK and a facial with massage for 750 CZK at Bělehradská 77 in Prague 2. Book online or call.`,
-    h1: `Brows & Facials Prague 2`, eyebrow: `Beauty · Bělehradská 77`,
-    lead: `Brow shaping and tinting plus facial care with massage. Brows from 100 CZK, facial care 750 CZK.`,
-    imageAlt: `Groomed eyebrow, tweezers and a jar of cosmetic cream`,
+    description: `Brow shaping for 100 CZK and tinting with shaping for 200 CZK at Bělehradská 77 in Prague 2, near I. P. Pavlova. Book online or give us a call.`,
+    h1: `Brow Shaping & Tinting Prague 2`, eyebrow: `Beauty · Bělehradská 77`,
+    lead: `Brow shaping to suit your face and tinting combined with shaping. Shaping 100 CZK, tinting with shaping 200 CZK.`,
+    imageAlt: `Groomed eyebrow and a brow brush`,
     artAlt: `Brow shaping and tinting Prague 2: eyebrow brushed with a spoolie, close-up of brow and eye`,
     intro: {
       h2: `Brows that suit your face`,
       paras: [
         `Eyebrows frame the face and change its expression significantly. Well-shaped brows accentuate the eyes, unify your look and save you morning make-up. At ICONO STUDIO, Bělehradská 77 in Prague 2, we offer brow shaping as well as tinting combined with shaping.`,
-        `We add cosmetic care to that: <strong>facial care and massage</strong>. It is a pleasant way of giving your skin attention – and yourself too. You will find the prices below and in the <a href="/cenik/">price list</a>.`,
+        `We choose the shape according to your face and your wishes – some people suit natural, lightly groomed brows, others want a more defined line. You will find the prices below and in the <a href="/cenik/">price list</a>.`,
       ],
     },
     options: {
@@ -342,17 +343,16 @@ export const contentEn = {
       items: [
         { title: `Brow shaping`, text: `Shaping your brows to suit your face and your ideas. Good for regular maintenance so your brows stay groomed.` },
         { title: `Brow tinting and shaping`, text: `Shaping combined with tinting. The colour evens out the shade, accentuates the shape and helps when brows are light or sparse.` },
-        { title: `Facial care and massage`, text: `A cosmetic facial treatment combined with massage. We adapt the exact procedure to your skin type, so tell us what your skin needs when you book.` },
       ],
     },
     guide: {
       h2: `Shaping, or tinting with shaping?`,
       paras: [
-        `If your brows are fuller and dark enough, <strong>shaping</strong> alone is often enough. If your brows are light, uneven or sparse, <strong>tinting with shaping</strong> is worth it. The difference in price is 100 CZK.`,
+        `If your brows are fuller and dark enough, <strong>shaping</strong> alone is often enough. If your brows are light, uneven or sparse, <strong>tinting with shaping</strong> is worth it.`,
         `Brows are usually shaped every three to five weeks, depending on how fast the hairs grow. Before an important event, plan your appointment a few days in advance so that your brows have time to settle into a natural look.`,
         `<strong>Tinting – what to expect:</strong> the colour evens out the shade of your brows, accentuates their shape and visually thickens them. It works well if your brows “disappear” on your face or you do not want to use a pencil or powder every morning. We choose the shade according to your hair colour and your wishes.`,
-        `<strong>Facial care – who it is for:</strong> anyone who wants to give their skin more than the usual wash and cream. Facial massage also brings pleasant relaxation. Tell us what your skin needs and we will adapt the procedure.`,
-        `Brows go very well with <a href="/prodluzovani-ras-praha-2/">eyelash extensions</a> – together they give your eyes a clear frame. And if you want to treat yourself to more, take a look at <a href="/head-spa-praha-2/">Head Spa</a>.`,
+        `<strong>Growing your brows out?</strong> Tell us. We will then remove only what is necessary and refine the shape gradually over your next visits.`,
+        `Brows go very well with <a href="/prodluzovani-ras-praha-2/">eyelash extensions</a> – together they give your eyes a clear frame. And if you want to treat your skin as well, take a look at our <a href="/kosmetika-praha-2/">facials</a>.`,
       ],
     },
     steps: {
@@ -361,7 +361,7 @@ export const contentEn = {
         { h: `Agreeing the shape`, t: `Together we choose the brow shape according to your face shape and your wishes.` },
         { h: `Shaping`, t: `The brows are shaped and freed from unwanted hairs.` },
         { h: `Tinting (optional)`, t: `If you have chosen tinting, the colour is applied and left to work so that the brows take it well.` },
-        { h: `Facial care (optional)`, t: `Facial care and massage can be part of your visit.` },
+        { h: `Checking the result`, t: `Finally, we check the shape and shade together and suggest when to come back.` },
       ],
     },
     care: {
@@ -370,17 +370,78 @@ export const contentEn = {
         `After shaping, avoid make-up around the brows for the first few hours so the skin is not irritated.`,
         `After tinting, do not use an intensive peeling straight away and avoid saunas so the colour lasts longer.`,
         `If you have an allergy or sensitive skin, tell us before tinting.`,
-        `For facial care, please come without make-up so your skin can be cleansed properly.`,
+        `Oil-based make-up removers wash brow tint out faster. Use them sparingly around the brows.`,
         `Between visits, please do not pluck your brows yourself. That way the shape we created together stays clean and we can maintain it at your next visit.`,
       ],
     },
     faq: [
-      { q: `How much does brow shaping cost in Prague 2?`, a: `Brow shaping alone costs 100 CZK, tinting combined with shaping 200 CZK. Facial care with massage costs 750 CZK. You will find everything in the <a href="/cenik/">price list</a>.` },
+      { q: `How much does brow shaping cost in Prague 2?`, a: `Brow shaping alone costs 100 CZK, tinting combined with shaping 200 CZK. You will find everything in the <a href="/cenik/">price list</a>.` },
       { q: `How long does brow tint last?`, a: `Usually several weeks, depending on your skin type and care. The colour fades gradually, which is why tinting is repeated together with shaping.` },
-      { q: `What does facial care include?`, a: `It is a cosmetic facial treatment combined with massage. We adapt the procedure to your skin type and are happy to explain it when you book.` },
       { q: `How often should I have my brows shaped?`, a: `Usually once every three to five weeks, depending on how fast your hairs grow back.` },
       { q: `Who is brow tinting suitable for?`, a: `For anyone with light, uneven or sparse brows who wants a more defined shape without daily make-up. If you are allergic to dyes, please tell us in advance.` },
-      { q: `Can I come in wearing make-up?`, a: `For brow shaping, yes; for facial care and massage, please come without make-up. The skin cleanses better that way and the treatment is more effective.` },
+      { q: `Can I come in wearing make-up?`, a: `Yes, make-up elsewhere on your face is fine. Please leave the brows themselves without pencil or powder so we can see their natural shape.` },
+      { q: `Can I add another service to my brows?`, a: `Yes. Brows are often combined with <a href="/prodluzovani-ras-praha-2/">eyelash extensions</a> or a <a href="/kosmetika-praha-2/">facial with massage</a>. Call us and we will find a suitable time.` },
+    ],
+  },
+
+  'kosmetika-praha-2': {
+    name: `Facials`,
+    cardText: `Facial care and massage for well-kept skin and a moment of calm.`,
+    title: `Facials Prague 2 – Facial Care & Massage | ICONO STUDIO`,
+    description: `Facials in Prague 2: facial care and massage for 750 CZK at Bělehradská 77, near I. P. Pavlova. We adapt the treatment to your skin. Book online.`,
+    h1: `Facials Prague 2`, eyebrow: `Beauty · Bělehradská 77`,
+    lead: `Facial care combined with massage for 750 CZK. We adapt the treatment to your skin type and what it needs right now.`,
+    imageAlt: `Towel, steam and cream – facial care at ICONO STUDIO`,
+    artAlt: `Facials Prague 2: rolled warm towel, steam, a bowl of water and a jar of cream`,
+    intro: {
+      h2: `A moment for your skin – and for you`,
+      paras: [
+        `A facial is not only for special occasions. Every day your skin has to cope with make-up, city air, air conditioning and too little sleep. At ICONO STUDIO, Bělehradská 77 in Prague 2, near I. P. Pavlova, we offer <strong>facial care and massage</strong> – a treatment that lets both your skin and you relax.`,
+        `We adapt the treatment to your skin type and what it needs right now. When you book, tell us whether your skin is dry, sensitive or rather oily, and we will talk it through on site. You will find the price below and in the <a href="/cenik/">price list</a>.`,
+      ],
+    },
+    options: {
+      h2: `Service and price`,
+      items: [
+        { title: `Facial care and massage`, text: `A cosmetic facial treatment combined with massage. We adapt the exact procedure to your skin type, so tell us what your skin needs when you book.` },
+      ],
+    },
+    guide: {
+      h2: `Who a facial is for`,
+      paras: [
+        `<strong>When your skin looks tired.</strong> After a demanding week, travelling or in winter, when heating dries the skin out, a facial is a pleasant reset. Facial massage also helps release tension we often do not even notice in our face.`,
+        `<strong>When you want to relax.</strong> The treatment is also a moment of calm: you lie down, switch off and someone else takes care of your skin. It is a treat for yourself or a gift for someone close to you.`,
+        `<strong>Before an important event.</strong> Planning a wedding, a photo shoot or another occasion? Book a few days in advance so your skin has time to settle.`,
+        `<strong>Sensitive skin or allergies?</strong> Tell us in advance. With a skin condition, inflammation or irritation, please consult a doctor first – a cosmetic treatment does not replace medical care.`,
+        `You can combine a facial with <a href="/oboci-praha-2/">brow shaping</a> or with <a href="/head-spa-praha-2/">Head Spa</a>. For men, our barbershop also offers <a href="/panska-kosmetika-praha-2/">men's skincare</a>.`,
+      ],
+    },
+    steps: {
+      h2: `How a visit works`,
+      items: [
+        { h: `A short chat`, t: `We ask about your skin type, what bothers you and whether you are allergic to anything.` },
+        { h: `Skin care`, t: `We treat your skin with a procedure that suits its type and current condition.` },
+        { h: `Facial massage`, t: `A facial massage is part of the service, so you can fully relax for a while.` },
+        { h: `Tips for home`, t: `Finally, we are happy to advise you on how to care for your skin between visits.` },
+      ],
+    },
+    care: {
+      h2: `How to prepare and what to do afterwards`,
+      items: [
+        `Please come without make-up if you can – the skin cleanses better and the treatment is more effective.`,
+        `The day before, avoid intensive peeling and new products you have not tried yet.`,
+        `After the treatment, give your skin a rest: ideally skip make-up for the rest of the day and avoid the sauna.`,
+        `Protect your skin from the sun. A cream with SPF is worth it in every season.`,
+        `Drink enough water and moisturise your skin regularly with a cream that suits it.`,
+      ],
+    },
+    faq: [
+      { q: `How much does a facial cost in Prague 2?`, a: `Facial care and massage costs 750 CZK. Brow shaping, which you can add, costs 100 CZK, tinting with shaping 200 CZK. You will find everything in the <a href="/cenik/">price list</a>.` },
+      { q: `What does facial care include?`, a: `It is a cosmetic facial treatment combined with massage. We adapt the procedure to your skin type and are happy to explain it when you book.` },
+      { q: `Can I come in wearing make-up?`, a: `Preferably not. Without make-up the skin cleanses better and the treatment is more effective.` },
+      { q: `Is a facial suitable for sensitive skin?`, a: `We adapt the procedure to your skin type, but please tell us in advance about sensitive skin or allergies. With a skin condition or inflammation, consult a doctor first.` },
+      { q: `Are facials for men too?`, a: `Yes, anyone can book facial care and massage. Men can also choose <a href="/panska-kosmetika-praha-2/">men's skincare</a> in our barbershop.` },
+      { q: `How often should I have a facial?`, a: `It depends on your skin and what you expect from the treatment. We are happy to advise you during your visit.` },
     ],
   },
 

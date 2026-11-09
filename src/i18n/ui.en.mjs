@@ -189,7 +189,7 @@ export default {
       choose: [
         { h: `Well-groomed hands`, t: `Just want care and a clean look? See <a href="/manikura-praha-2/">manicure</a>. Want colour that lasts? Choose Gellak or CND Shellac.` },
         { h: `Length and shape`, t: `Want longer nails? Choose <a href="/gelove-akrylove-nehty-praha-2/">gel or acrylic nails</a>, or Gel X.` },
-        { h: `Comfort and relaxation`, t: `For your feet there is <a href="/pedikura-praha-2/">pedicure</a>, for your scalp <a href="/head-spa-praha-2/">Head Spa</a>, for your eyes <a href="/prodluzovani-ras-praha-2/">lashes</a> and <a href="/oboci-kosmetika-praha-2/">brows</a>.` },
+        { h: `Comfort and relaxation`, t: `For your feet there is <a href="/pedikura-praha-2/">pedicure</a>, for your scalp <a href="/head-spa-praha-2/">Head Spa</a>, for your eyes <a href="/prodluzovani-ras-praha-2/">lashes</a> and <a href="/oboci-praha-2/">brows</a>, for your skin <a href="/kosmetika-praha-2/">facials</a>.` },
       ],
       teaser: `Nail and beauty prices`,
       faqServices: `Which nail and beauty services do you offer?`,
@@ -234,11 +234,11 @@ export default {
     answers: [
       { q: `How much does a manicure cost in Prague 2?`, a: `A classic manicure costs {classic}, a manicure with Gellak gel polish {gellak} and with CND Shellac {cnd}. The packages with hand spa cost {pkClassic}, {pkGellak} and {pkCnd}. More on the <a href="/manikura-praha-2/">Manicure</a> page.` },
       { q: `How much do gel and acrylic nails cost?`, a: `New gel or acrylic nails with colour cost {nove}, a refill {dopl} and Gel X nails {gelx}. Nail art, extra-long nails and removal are charged separately, see <a href="/gelove-akrylove-nehty-praha-2/">Gel &amp; acrylic nails</a>.` },
-      { q: `How much does a pedicure cost?`, a: `A classic pedicure costs {pedClassic}, with Gellak {pedGellak} and with CND Shellac {pedCnd}. The medical Footlogix pedicure starts at {fl}. More on the <a href="/pedikura-praha-2/">Pedicure</a> page.` },
+      { q: `How much does a pedicure cost?`, a: `A classic pedicure costs {pedClassic}, with CND Shellac or Gellak {pedLak}. The medical Footlogix pedicure starts at {fl}. More on the <a href="/pedikura-praha-2/">Pedicure</a> page.` },
       { q: `How much does a men's haircut cost?`, a: `The Classic Cut costs {klas}, the Premium Cut {prem}, the VIP Cut {vip} and VIP All Inclusive {all}. The student cut (under 18) starts at {student}, children under 8 pay {deti}. More on the <a href="/panske-strihy-praha-2/">Men's haircut</a> page.` },
       { q: `How much does a beard trim cost?`, a: `A beard trim costs {uprava}, a Timer-only touch-up {timer}. More on the <a href="/uprava-vousu-praha-2/">Beard trim</a> page.` },
       { q: `How much do eyelash extensions cost?`, a: `Classic 1:1 lashes cost {klasik} (refill {klasikD}), Volume 2D–5D {volume} (refill {volumeD}) and Mega Volume {mega} (refill {megaD}). More on the <a href="/prodluzovani-ras-praha-2/">Eyelash extensions</a> page.` },
-      { q: `How much do Head Spa, brows and facials cost?`, a: `Head Spa costs {hs}, brow shaping {ob}, brow tinting with shaping {obB} and a facial with massage {kos}. More: <a href="/head-spa-praha-2/">Head Spa</a>, <a href="/oboci-kosmetika-praha-2/">Brows &amp; facials</a>.` },
+      { q: `How much do Head Spa, brows and facials cost?`, a: `Head Spa costs {hs}, brow shaping {ob}, brow tinting with shaping {obB} and a facial with massage {kos}. More: <a href="/head-spa-praha-2/">Head Spa</a>, <a href="/oboci-praha-2/">Brows</a>, <a href="/kosmetika-praha-2/">Facials</a>.` },
       { q: `How much does it cost to remove nails or gel polish?`, a: `Removing artificial nails costs {umele}, removing Shellac gel polish {shellac} and Gellak {gellakRem}. Please do not peel or pull off nails or polish yourself, it damages the natural nail.` },
     ],
   },

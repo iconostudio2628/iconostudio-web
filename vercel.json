@@ -28,6 +28,21 @@
   ],
   "redirects": [
     {
+      "source": "/oboci-kosmetika-praha-2/",
+      "destination": "/oboci-praha-2/",
+      "permanent": true
+    },
+    {
+      "source": "/en/brows-facials-prague-2/",
+      "destination": "/en/brows-prague-2/",
+      "permanent": true
+    },
+    {
+      "source": "/de/augenbrauen-kosmetik-prag-2/",
+      "destination": "/de/augenbrauen-prag-2/",
+      "permanent": true
+    },
+    {
       "source": "/gelove-akrylové-nehty-praha-2/",
       "destination": "/gelove-akrylove-nehty-praha-2/",
       "permanent": true

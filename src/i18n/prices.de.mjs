@@ -35,17 +35,11 @@ export const pricesDe = {
   'Gel X nehty': 'Gel-X-Nägel',
 
   /* pedikúra */
-  'Výhodný balíček pedikúra classic + foot spa': 'Vorteilspaket: klassische Pediküre + Fuß-Spa',
-  'Výhodný balíček Footlogix CND Shellac': 'Vorteilspaket: Footlogix CND Shellac',
-  'Výhodný balíček Footlogix s lakováním Gellak': 'Vorteilspaket: Footlogix mit Gellak-Lackierung',
-  'Výhodný balíček s lakováním CND + foot spa': 'Vorteilspaket: mit CND-Lackierung + Fuß-Spa',
-  'Výhodný balíček s lakováním gellak + foot spa': 'Vorteilspaket: mit Gellak-Lackierung + Fuß-Spa',
-  'Medicínální pedikúra Footlogix CND Shellac': 'Medical-Pediküre Footlogix CND Shellac',
-  'Medicínální pedikúra Footlogix Gellak': 'Medical-Pediküre Footlogix Gellak',
-  'Medicínální pedikúra Footlogix Classic': 'Medical-Pediküre Footlogix Classic',
+  'Medicinální pedikúra Footlogix CND Shellac': 'Medical-Pediküre Footlogix CND Shellac',
+  'Medicinální pedikúra Footlogix Gellak': 'Medical-Pediküre Footlogix Gellak',
+  'Medicinální pedikúra Footlogix Classic': 'Medical-Pediküre Footlogix Classic',
   'Pedikúra Classic': 'Klassische Pediküre',
-  'Pedikúra – Gellak': 'Pediküre – Gellak',
-  'Pedikúra – CND Shellac': 'Pediküre – CND Shellac',
+  'Pedikúra – CND Shellac / Gellak': 'Pediküre – CND Shellac / Gellak',
   'Samotné lakování Shellac / Gellak': 'Nur Lackierung – Shellac / Gellak',
 
   /* zdobení */
@@ -76,6 +70,7 @@ export const pricesDe = {
   'Mega Volume řasy': 'Mega-Volumen-Wimpern',
   'Prodloužení řas – designový efekt': 'Wimpernverlängerung – Design-Effekt',
   'Odstranění prodloužených řas': 'Entfernen der Wimpernverlängerung',
+  'Lifting řas': 'Wimpernlifting',
   'Nový': 'Neu',
   'Doplnění': 'Auffüllen',
 

@@ -49,7 +49,7 @@ const cenikAnswers = () => {
   const v = {
     classic: p('man-classic'), gellak: p('man-gellak'), cnd: p('man-cnd'), pkClassic: p('man-pk-classic'), pkGellak: p('man-pk-gellak'), pkCnd: p('man-pk-cnd'),
     nove: p('mod-nove'), dopl: p('mod-dopl'), gelx: p('mod-gelx'),
-    pedClassic: p('ped-classic'), pedGellak: p('ped-gellak'), pedCnd: p('ped-cnd'), fl: p('ped-med-classic'),
+    pedClassic: p('ped-classic'), pedLak: p('ped-lakem'), fl: p('ped-med-classic'),
     klas: p('cut-klasicky'), prem: p('cut-premium'), vip: p('cut-vip'), all: p('cut-vip-all'), student: p('cut-student'), deti: p('cut-deti'),
     uprava: p('vous-uprava'), timer: p('vous-timer'),
     klasik: p('ras-klasik', 0), klasikD: p('ras-klasik', 1), volume: p('ras-volume', 0), volumeD: p('ras-volume', 1), mega: p('ras-mega', 0), megaD: p('ras-mega', 1),
@@ -103,7 +103,7 @@ const orderSteps = (tone = 'white') => `
   </section>`;
 
 const priceTeaserItems = {
-  nails: ['man-classic', 'man-gellak', 'mod-nove', 'mod-dopl', 'ped-classic', 'ped-gellak'],
+  nails: ['man-classic', 'man-gellak', 'mod-nove', 'mod-dopl', 'ped-classic', 'ped-lakem'],
   beauty: ['ras-klasik', 'ras-volume', 'ob-uprava', 'ob-barveni', 'kos-oblicej', 'hs'],
   barber: ['cut-klasicky', 'cut-premium', 'cut-vip', 'vous-uprava', 'pece-kosmetika', 'cut-deti'],
 };

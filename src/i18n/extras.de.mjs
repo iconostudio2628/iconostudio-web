@@ -111,7 +111,7 @@ export const extrasDe = {
           { need: `Ich möchte einfach gepflegte Füße`, pick: `Klassische Pediküre`, text: `Pflege von Nägeln und Nagelhaut, Entfernen von Hornhaut und Hautpflege.` },
           { need: `Ich möchte Farbe, die hält`, pick: `Pediküre mit Gellak oder CND Shellac`, text: `Gel-Lack wird in der Lampe ausgehärtet. Die Nägel sind sofort trocken und die Farbe hält länger als bei normalem Lack.` },
           { need: `Ich habe trockene Fersen und Hornhaut`, pick: `Medizinische Pediküre Footlogix`, text: `Professionelle Kosmetik für trockene und stark beanspruchte Füße. Keine ärztliche Behandlung.` },
-          { need: `Ich möchte mich entspannen`, pick: `Vorteilspaket mit Fuß-Spa`, text: `Verwöhnende Fußpflege on top – im Vorteilspaket.` },
+          { need: `Ich möchte mich entspannen`, pick: `Massage`, text: `Eine Massage zusätzlich zur Pediküre – ein ruhiger Moment für müde Füße.` },
         ],
         note: `Diabetes, Nagelpilz, Entzündung oder Wunden? Fragen Sie zuerst Ihren Arzt. Eine Pediküre im Studio ersetzt keine ärztliche Behandlung.`,
       }],
@@ -120,7 +120,7 @@ export const extrasDe = {
         lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Gellak-Pediküre + Gellak-Maniküre`, text: `Füße und Hände in einem Termin.` },
-          { title: `Pediküre mit Fuß-Spa + Head Spa`, text: `Fuß-Spa und Head Spa in einem Besuch.` },
+          { title: `Pediküre + Head Spa`, text: `Pflege für Füße und Kopfhaut in einem Besuch.` },
         ],
       },
     },
@@ -154,24 +154,23 @@ export const extrasDe = {
     },
 
     /* ============================================================ AUGENBRAUEN & KOSMETIK */
-    'oboci-kosmetika-praha-2': {
+    'oboci-praha-2': {
       heroCta: `Augenbrauen buchen`,
-      final: { h: `Augenbrauen in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – ob nur Zupfen oder auch Färben, klären wir vor Ort.` },
+      final: { h: `Augenbrauen in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – ob nur Formen oder auch Färben, klären wir vor Ort.` },
       bands: [
-        { h: `Zupfen oder Färben?`, t: `Buchen Sie online einen Termin, die Variante klären wir vor Ort.` },
-        { h: `Zu den Augenbrauen auch Gesichtspflege?`, t: `Rufen Sie uns an und sagen Sie uns, was Ihre Haut braucht. Kommen Sie am besten ungeschminkt.` },
+        { h: `Formen oder Färben?`, t: `Buchen Sie online einen Termin, die Variante klären wir vor Ort.` },
+        { h: `Empfindliche Haut oder Allergie gegen Farben?`, t: `Rufen Sie uns vorab an, und wir besprechen, was nötig ist.` },
       ],
       sigs: [{
-        chip: `Vergleich`, eyebrow: `Die Leistungen im Vergleich`, h2: `Zupfen, Färben oder Gesichtspflege?`,
-        lead: `Drei Leistungen nebeneinander – wählen Sie danach, was Ihre Augenbrauen und Ihre Haut brauchen.`,
-        cols: [`Augenbrauen zupfen`, `Färben + Zupfen`, `Gesichtspflege`],
+        chip: `Vergleich`, eyebrow: `Die Leistungen im Vergleich`, h2: `Formen oder Färben mit Formen?`,
+        lead: `Zwei Leistungen nebeneinander – wählen Sie danach, was Ihre Augenbrauen brauchen.`,
+        cols: [`Augenbrauen formen`, `Färben + Formen`],
         rows: [
           { label: `Formen der Augenbrauen` },
           { label: `Farbe für die Augenbrauen` },
-          { label: `Gesichtsbehandlung und Massage` },
           { label: `Preis` },
-          { label: `Passt, wenn …`, cells: [`Ihre Augenbrauen dicht und dunkel genug sind`, `Ihre Augenbrauen hell, uneinheitlich oder licht sind`, `Sie Ihrer Haut mehr gönnen möchten als Waschen und Creme`] },
-          { label: `Gut zu wissen`, cells: [`Meist alle drei bis fünf Wochen`, `Die Farbe verblasst nach und nach, daher wird sie mit dem Zupfen wiederholt`, `Kommen Sie am besten ungeschminkt`] },
+          { label: `Passt, wenn …`, cells: [`Ihre Augenbrauen dicht und dunkel genug sind`, `Ihre Augenbrauen hell, uneinheitlich oder licht sind`] },
+          { label: `Gut zu wissen`, cells: [`Meist alle drei bis fünf Wochen`, `Die Farbe verblasst nach und nach, daher wird sie mit dem Formen wiederholt`] },
         ],
         note: `Bei einer Allergie gegen Farben oder empfindlicher Haut sagen Sie uns das bitte vorab.`,
       }],
@@ -180,7 +179,32 @@ export const extrasDe = {
         lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
           { title: `Augenbrauen färben + Wimpern 1:1`, text: `Augenbrauen und Wimpern geben dem Blick gemeinsam einen klaren Rahmen.` },
-          { title: `Gesichtspflege + Augenbrauen zupfen`, text: `Haut und Augenbrauen in einem Besuch.` },
+          { title: `Augenbrauen formen + Gesichtspflege`, text: `Augenbrauen und Haut in einem Besuch.` },
+        ],
+      },
+    },
+    'kosmetika-praha-2': {
+      heroCta: `Kosmetik buchen`,
+      final: { h: `Kosmetik in der Bělehradská? Buchen Sie online.`, t: `Wählen Sie online einen Termin – was Ihre Haut braucht, besprechen wir vor Ort. Bělehradská 77, Prag 2.` },
+      bands: [
+        { h: `Möchten Sie Ihrer Haut etwas Gutes tun?`, t: `Buchen Sie online einen Termin. Kommen Sie am besten ungeschminkt.` },
+        { h: `Empfindliche Haut oder Allergien?`, t: `Rufen Sie uns vorab an, und wir besprechen, was nötig ist.` },
+      ],
+      sigs: [{
+        chip: `Tipps`, eyebrow: `Aus der Preisliste`, h2: `So holen Sie mehr aus Ihrem Besuch`,
+        lead: `Drei Hinweise direkt aus der Preisliste.`,
+        items: [
+          { title: `Die Massage gehört dazu`, text: `Gesichtspflege und Massage ist in der Preisliste eine Leistung für {kos}.` },
+          { title: `Augenbrauen im selben Termin`, text: `Zur Gesichtspflege können Sie Augenbrauen formen ({ob}) oder Färben mit Formen ({obB}) dazubuchen.` },
+          { title: `Für Herren im Barbershop`, text: `Herrenkosmetik mit Dampf und Maske kostet in unserem Barbershop {men}.` },
+        ],
+      }],
+      combos: {
+        h2: `Kosmetik und etwas mehr`,
+        lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
+        items: [
+          { title: `Gesichtspflege + Augenbrauen formen`, text: `Haut und Augenbrauen in einem Besuch.` },
+          { title: `Gesichtspflege + Head Spa`, text: `Gesicht und Kopfhaut in einem Besuch.` },
         ],
       },
     },
@@ -205,7 +229,7 @@ export const extrasDe = {
         h2: `Head Spa und etwas on top`,
         lead: `Mehrere Leistungen in einem Besuch? Rufen Sie uns an und wir vereinbaren es. Die Preise stammen aus der Preisliste, je Leistung.`,
         items: [
-          { title: `Head Spa + Pediküre mit Fuß-Spa`, text: `Füße und Kopf – die ganze Entspannung an einem Ort.` },
+          { title: `Head Spa + Pediküre`, text: `Füße und Kopf – die ganze Entspannung an einem Ort.` },
           { title: `Head Spa + Gesichtspflege`, text: `Kopf und Haut in einem Besuch.` },
         ],
       },

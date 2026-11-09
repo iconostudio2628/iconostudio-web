@@ -115,8 +115,8 @@ export const extrasCs = {
         items: [
           { need: `Chci jen upravené nohy`, pick: `Klasická pedikúra`, text: `Úprava nehtů a kůžiček, odstranění ztvrdlé kůže a ošetření pokožky.` },
           { need: `Chci barvu, která vydrží`, pick: `Pedikúra s Gellakem nebo CND Shellac`, text: `Gel lak se vytvrzuje v lampě. Nehty jsou hned suché a barva drží déle než u běžného laku.` },
-          { need: `Trápí mě suché paty a ztvrdlá kůže`, pick: `Medicínální pedikúra Footlogix`, text: `Profesionální kosmetika pro suchou a namáhanou pokožku nohou. Nejde o lékařské ošetření.` },
-          { need: `Chci si odpočinout`, pick: `Výhodný balíček s foot spa`, text: `Hýčkací péče o nohy navíc – ve výhodném balíčku.` },
+          { need: `Trápí mě suché paty a ztvrdlá kůže`, pick: `Medicinální pedikúra Footlogix`, text: `Profesionální kosmetika pro suchou a namáhanou pokožku nohou. Nejde o lékařské ošetření.` },
+          { need: `Chci si odpočinout`, pick: `Masáž`, text: `Masáž navíc k pedikúře – chvíle klidu pro unavené nohy.` },
         ],
         note: `Cukrovka, plíseň nehtů, zánět nebo rány? Nejdřív se poraďte s lékařem. Pedikúra ve studiu nenahrazuje lékařské ošetření.`,
       }],
@@ -125,7 +125,7 @@ export const extrasCs = {
         lead: `Chcete víc služeb v jednom termínu? Zavolejte nám a domluvíme to. Ceny jsou z ceníku, každá služba zvlášť.`,
         items: [
           { title: `Pedikúra Gellak + manikúra Gellak`, text: `Nohy i ruce v jednom termínu.` },
-          { title: `Pedikúra s foot spa + Head Spa`, text: `Foot spa a Head Spa na jednu návštěvu.` },
+          { title: `Pedikúra + Head Spa`, text: `Péče o nohy i o hlavu na jednu návštěvu.` },
         ],
       },
     },
@@ -158,25 +158,24 @@ export const extrasCs = {
       },
     },
 
-    /* ============================================================ OBOČÍ A KOSMETIKA */
-    'oboci-kosmetika-praha-2': {
+    /* ============================================================ OBOČÍ */
+    'oboci-praha-2': {
       heroCta: `Rezervovat obočí`,
       final: { h: `Obočí na Bělehradské? Rezervujte si termín.`, t: `Vyberte si termín online, jestli chcete jen úpravu, nebo i barvení, upřesníme na místě.` },
       bands: [
         { h: `Úprava, nebo barvení?`, t: `Rezervujte si termín online, variantu upřesníme na místě.` },
-        { h: `Chcete k obočí i péči o obličej?`, t: `Zavolejte nám, co vaše pleť potřebuje. Přijďte raději bez make-upu.` },
+        { h: `Máte citlivou pokožku nebo alergii na barvy?`, t: `Zavolejte nám předem a probereme, co je potřeba.` },
       ],
       sigs: [{
-        chip: `Porovnání`, eyebrow: `Porovnání služeb`, h2: `Úprava, barvení, nebo péče o obličej?`,
-        lead: `Tři služby vedle sebe – vyberte podle toho, co obočí a pleť potřebují.`,
-        cols: [`Úprava obočí`, `Barvení + úprava`, `Péče o obličej`],
+        chip: `Porovnání`, eyebrow: `Porovnání služeb`, h2: `Úprava, nebo barvení s úpravou?`,
+        lead: `Dvě služby vedle sebe – vyberte podle toho, co vaše obočí potřebuje.`,
+        cols: [`Úprava obočí`, `Barvení + úprava`],
         rows: [
           { label: `Tvarování obočí` },
           { label: `Barva na obočí` },
-          { label: `Ošetření a masáž obličeje` },
           { label: `Cena` },
-          { label: `Hodí se, když…`, cells: [`obočí je husté a dostatečně tmavé`, `obočí je světlé, nestejnoměrné nebo řídké`, `chcete pleti dopřát víc než běžné mytí a krém`] },
-          { label: `Dobré vědět`, cells: [`Obvykle jednou za tři až pět týdnů`, `Barva se postupně vytrácí, proto se opakuje s úpravou`, `Přijďte raději bez make-upu`] },
+          { label: `Hodí se, když…`, cells: [`obočí je husté a dostatečně tmavé`, `obočí je světlé, nestejnoměrné nebo řídké`] },
+          { label: `Dobré vědět`, cells: [`Obvykle jednou za tři až pět týdnů`, `Barva se postupně vytrácí, proto se opakuje s úpravou`] },
         ],
         note: `Při alergii na barvy nebo citlivé pokožce nám to řekněte předem.`,
       }],
@@ -185,7 +184,34 @@ export const extrasCs = {
         lead: `Chcete víc služeb v jednom termínu? Zavolejte nám a domluvíme to. Ceny jsou z ceníku, každá služba zvlášť.`,
         items: [
           { title: `Barvení obočí + řasy 1:1`, text: `Obočí a řasy společně dávají pohledu jasný rám.` },
+          { title: `Úprava obočí + péče o obličej`, text: `Obočí a pleť v jedné návštěvě.` },
+        ],
+      },
+    },
+
+    /* ============================================================ KOSMETIKA */
+    'kosmetika-praha-2': {
+      heroCta: `Rezervovat kosmetiku`,
+      final: { h: `Kosmetika na Bělehradské? Rezervujte si termín.`, t: `Vyberte si termín online, co vaše pleť potřebuje, probereme na místě. Bělehradská 77, Praha 2.` },
+      bands: [
+        { h: `Chcete pleti dopřát péči?`, t: `Rezervujte si termín online. Přijďte raději bez make-upu.` },
+        { h: `Máte citlivou pleť nebo alergii?`, t: `Zavolejte nám předem a probereme, co je potřeba.` },
+      ],
+      sigs: [{
+        chip: `Tipy`, eyebrow: `Z ceníku`, h2: `Jak z návštěvy vytěžit víc`,
+        lead: `Tři postřehy, které vyplývají přímo z ceníku.`,
+        items: [
+          { title: `Masáž je součástí`, text: `Péče o obličej a masáž je v ceníku jedna služba za {kos}.` },
+          { title: `Obočí ve stejném termínu`, text: `K péči o obličej můžete přidat úpravu obočí ({ob}) nebo barvení s úpravou ({obB}).` },
+          { title: `Pro pány v barbershopu`, text: `Pánská kosmetika s párou a maskou stojí v našem barbershopu {men}.` },
+        ],
+      }],
+      combos: {
+        h2: `Kosmetika a něco navíc`,
+        lead: `Chcete víc služeb v jednom termínu? Zavolejte nám a domluvíme to. Ceny jsou z ceníku, každá služba zvlášť.`,
+        items: [
           { title: `Péče o obličej + úprava obočí`, text: `Pleť a obočí v jedné návštěvě.` },
+          { title: `Péče o obličej + Head Spa`, text: `Obličej i pokožka hlavy na jednu návštěvu.` },
         ],
       },
     },
@@ -210,7 +236,7 @@ export const extrasCs = {
         h2: `Head Spa a něco navíc`,
         lead: `Chcete víc služeb v jednom termínu? Zavolejte nám a domluvíme to. Ceny jsou z ceníku, každá služba zvlášť.`,
         items: [
-          { title: `Head Spa + pedikúra s foot spa`, text: `Nohy i hlava – celá relaxace na jednom místě.` },
+          { title: `Head Spa + pedikúra`, text: `Nohy i hlava – celá relaxace na jednom místě.` },
           { title: `Head Spa + péče o obličej`, text: `Hlava i pleť v jedné návštěvě.` },
         ],
       },

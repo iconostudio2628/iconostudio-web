@@ -44,7 +44,9 @@ export const site = {
       'gelove-akrylove-nehty-praha-2': 'https://iconostudio.setmore.com/services/7d7ede64-7cad-45c1-977b-7d749a67588d',
       'pedikura-praha-2': 'https://iconostudio.setmore.com/services/10b1a4e1-39e2-4244-b6a7-f84ee6c5a9d1',
       'prodluzovani-ras-praha-2': 'https://iconostudio.setmore.com/services/811a8397-9b73-4e64-a775-21b92c876048',
-      'oboci-kosmetika-praha-2': 'https://iconostudio.setmore.com/services/3dec34dc-6945-4fbf-b765-2e0dd2ed41ba',
+      // obočí + kosmetika share one Setmore service (“Obočí a kosmetika”) until the owner splits it in Setmore
+      'oboci-praha-2': 'https://iconostudio.setmore.com/services/3dec34dc-6945-4fbf-b765-2e0dd2ed41ba',
+      'kosmetika-praha-2': 'https://iconostudio.setmore.com/services/3dec34dc-6945-4fbf-b765-2e0dd2ed41ba',
       'head-spa-praha-2': 'https://iconostudio.setmore.com/services/76bfc9c7-b6b8-463c-81ab-ffd677d27852',
       'panske-strihy-praha-2': 'https://iconostudio.setmore.com/services/0bebd399-0ae6-40c3-aded-c44d8c338f78',
       'uprava-vousu-praha-2': 'https://iconostudio.setmore.com/services/9b550f16-bedd-4ce9-9a0c-94f25449f1bf',
@@ -149,21 +151,14 @@ export const priceGroups = [
   {
     id: 'pedikura', area: 'nails', title: 'Pedikúra', page: 'pedikura-praha-2',
     sections: [
-      { label: 'Výhodné balíčky', items: [
-        { id: 'ped-pk-classic', name: 'Výhodný balíček pedikúra classic + foot spa', price: 590 },
-        { id: 'ped-pk-fl-cnd', name: 'Výhodný balíček Footlogix CND Shellac', price: 1050 },
-        { id: 'ped-pk-fl-gellak', name: 'Výhodný balíček Footlogix s lakováním Gellak', price: 950 },
-        { id: 'ped-pk-cnd', name: 'Výhodný balíček s lakováním CND + foot spa', price: 850 },
-        { id: 'ped-pk-gellak', name: 'Výhodný balíček s lakováním gellak + foot spa', price: 790 },
-      ] },
-      { label: 'Jednotlivé služby', items: [
-        { id: 'ped-med-cnd', name: 'Medicínální pedikúra Footlogix CND Shellac', price: 850 },
-        { id: 'ped-med-gellak', name: 'Medicínální pedikúra Footlogix Gellak', price: 750 },
-        { id: 'ped-med-classic', name: 'Medicínální pedikúra Footlogix Classic', price: 590 },
-        { id: 'ped-classic', name: 'Pedikúra Classic', price: 490 },
-        { id: 'ped-gellak', name: 'Pedikúra – Gellak', price: 590 },
-        { id: 'ped-cnd', name: 'Pedikúra – CND Shellac', price: 650 },
+      { items: [
+        { id: 'ped-med-classic', name: 'Medicinální pedikúra Footlogix Classic', price: 650 },
+        { id: 'ped-med-cnd', name: 'Medicinální pedikúra Footlogix CND Shellac', price: 850 },
+        { id: 'ped-med-gellak', name: 'Medicinální pedikúra Footlogix Gellak', price: 750 },
+        { id: 'ped-classic', name: 'Pedikúra Classic', price: 520 },
+        { id: 'ped-lakem', name: 'Pedikúra – CND Shellac / Gellak', price: 650 },
         { id: 'ped-lak', addon: true, name: 'Samotné lakování Shellac / Gellak', variants: [{ label: 'Shellac', price: 400 }, { label: 'Gellak', price: 350 }] },
+        { id: 'ped-masaz', addon: true, name: 'Masáž', price: 200 },
       ] },
     ],
   },
@@ -203,13 +198,14 @@ export const priceGroups = [
         { id: 'ras-klasik', name: 'Klasické řasy 1:1', variants: [{ label: 'Nový', price: 990 }, { label: 'Doplnění', price: 790 }] },
         { id: 'ras-volume', name: 'Volume řasy 2D–5D', variants: [{ label: 'Nový', price: 1190 }, { label: 'Doplnění', price: 990 }] },
         { id: 'ras-mega', name: 'Mega Volume řasy', variants: [{ label: 'Nový', price: 1390 }, { label: 'Doplnění', price: 1090 }] },
-        { id: 'ras-design', name: 'Prodloužení řas – designový efekt', price: 1190, from: true },
+        { id: 'ras-design', name: 'Prodloužení řas – designový efekt', price: 1290, from: true },
         { id: 'ras-odstr', addon: true, name: 'Odstranění prodloužených řas', price: 200 },
+        { id: 'ras-lifting', name: 'Lifting řas', price: 800 },
       ] },
     ],
   },
   {
-    id: 'oboci', area: 'beauty', title: 'Obočí', page: 'oboci-kosmetika-praha-2',
+    id: 'oboci', area: 'beauty', title: 'Obočí', page: 'oboci-praha-2',
     sections: [
       { items: [
         { id: 'ob-uprava', name: 'Úprava obočí', price: 100 },
@@ -218,7 +214,7 @@ export const priceGroups = [
     ],
   },
   {
-    id: 'kosmetika', area: 'beauty', title: 'Kosmetika', page: 'oboci-kosmetika-praha-2',
+    id: 'kosmetika', area: 'beauty', title: 'Kosmetika', page: 'kosmetika-praha-2',
     sections: [
       { items: [{ id: 'kos-oblicej', name: 'Péče o obličej a masáž', price: 750 }] },
     ],

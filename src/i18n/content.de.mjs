@@ -169,22 +169,22 @@ export const contentDe = {
     name: `Pediküre`,
     cardText: `Klassisch, mit Gel-Lack sowie Medical-Pediküre mit Footlogix.`,
     title: `Pediküre Prag 2 | Klassisch & Footlogix | ICONO STUDIO`,
-    description: `Pediküre in der Bělehradská 77 in Prag 2: klassisch ab 490 CZK, mit Gel-Lack ab 590 CZK, Medical-Pediküre mit Footlogix ab 590 CZK. Vorteilspakete mit Fuß-Spa.`,
+    description: `Pediküre in der Bělehradská 77 in Prag 2: klassisch 520 CZK, mit CND Shellac oder Gellak 650 CZK, Medical-Pediküre mit Footlogix ab 650 CZK. Online buchen.`,
     h1: `Pediküre Prag 2`, eyebrow: `Nails · Bělehradská 77`,
-    lead: `Klassische und lackierte Pediküre sowie Medical-Pediküre mit Footlogix in der Bělehradská 77. Wählen Sie die reine Fußpflege oder ein Vorteilspaket mit Fuß-Spa.`,
+    lead: `Klassische und lackierte Pediküre sowie Medical-Pediküre mit Footlogix in der Bělehradská 77. Wählen Sie die reine Fußpflege, eine Lackierung oder eine Massage dazu.`,
     imageAlt: `Fuß mit lackierten Fußnägeln – Pediküre im ICONO STUDIO`,
     artAlt: `Pediküre Prag 2: gepflegte Füße mit lackierten Zehennägeln auf cremefarbenem Handtuch, Kieselsteine und Schale`,
     intro: {
       h2: `Fußpflege im Zentrum von Prag 2`,
       paras: [
         `Pediküre ist nicht nur etwas für Sommer und Sandalen. Regelmäßige Pflege von Füßen und Fußnägeln bedeutet bequemeres Gehen, glatte Haut und ein gepflegtes Aussehen das ganze Jahr über. Im ICONO STUDIO machen wir sie in der Bělehradská 77 in Prag 2, ganz in der Nähe von I. P. Pavlova.`,
-        `Im Angebot sind die klassische Pediküre, die Pediküre mit Lackierung mit Gellak oder CND Shellac und die Medical-Pediküre mit Footlogix-Produkten. Die meisten Varianten gibt es auch in Vorteilspaketen mit Fuß-Spa, also mit verwöhnender Fußpflege obendrauf. Alle Preise finden Sie unten und in der <a href="/cenik/">Preisliste</a>.`,
+        `Im Angebot sind die klassische Pediküre, die Pediküre mit Lackierung mit Gellak oder CND Shellac und die Medical-Pediküre mit Footlogix-Produkten. Zur Pediküre können Sie auch eine Massage dazubuchen. Alle Preise finden Sie unten und in der <a href="/cenik/">Preisliste</a>.`,
       ],
     },
     options: {
       h2: `Pediküre-Arten und Preise`,
       items: [
-        { title: `Klassische Pediküre`, text: `Die Grundlage der Fußpflege: Pflege von Nägeln und Nagelhaut, Entfernen von Hornhaut und Hautpflege. Geeignet für regelmäßige Pflege. Im Paket ist zusätzlich ein Fuß-Spa enthalten.` },
+        { title: `Klassische Pediküre`, text: `Die Grundlage der Fußpflege: Pflege von Nägeln und Nagelhaut, Entfernen von Hornhaut und Hautpflege. Geeignet für regelmäßige Pflege. Wenn Sie sich entspannen möchten, ergänzen Sie eine Massage.` },
         { title: `Pediküre mit Lackierung`, text: `Pediküre kombiniert mit der Lackierung mit Gellak oder CND Shellac. Wenn Sie Ihre Zehennägel nur färben möchten, wählen Sie die reine Lackierung. Die Farbe hält mehrere Wochen, und die Nägel sind nach dem Auftragen sofort trocken – bequem in Sandalen und in Schuhen.` },
         { title: `Medical-Pediküre mit Footlogix`, text: `Pediküre mit der professionellen Kosmetik Footlogix, ausgerichtet auf die Pflege trockener und strapazierter Fußhaut, Hornhautstellen und rissiger Fersen. Es handelt sich nicht um eine ärztliche Behandlung. Sie ist als Classic-Variante ohne Farbe oder mit Gellak- bzw. CND-Shellac-Lackierung erhältlich.` },
       ],
@@ -206,14 +206,14 @@ export const contentDe = {
       h2: `Welche Pediküre ist die richtige?`,
       paras: [
         `Sie möchten nur gepflegte Füße ohne Farbe? Wählen Sie die <strong>klassische Pediküre</strong>. Sie möchten Farbe, die hält? Wählen Sie die <strong>Pediküre mit Gellak</strong> oder <strong>CND Shellac</strong>, oder die <strong>reine Lackierung</strong>, wenn Ihre Nägel keine weitere Pflege brauchen.`,
-        `Wenn trockene Fersen, Hornhaut oder strapazierte Füße Sie stören, ist die <strong>Medical-Pediküre mit Footlogix</strong> dafür gedacht. Und wenn Sie sich entspannen möchten, ergänzen Sie ein <strong>Fuß-Spa</strong> in einem der Pakete.`,
+        `Wenn trockene Fersen, Hornhaut oder strapazierte Füße Sie stören, ist die <strong>Medical-Pediküre mit Footlogix</strong> dafür gedacht. Und wenn Sie sich entspannen möchten, ergänzen Sie die Pediküre um eine <strong>Massage</strong>.`,
         `<strong>Wichtiger Hinweis:</strong> Wenn Sie Diabetes, eine Pilzerkrankung der Nägel, Entzündungen, Wunden oder andere gesundheitliche Probleme an den Füßen haben, sprechen Sie zuerst mit Ihrem Arzt. Eine Pediküre im Studio ersetzt keine ärztliche Behandlung.`,
       ],
     },
     steps: {
       h2: `So läuft die Pediküre ab`,
       items: [
-        { h: `Beratung und Vorbereitung`, t: `Wir wählen die Variante und besprechen eventuelle Beschwerden, zum Beispiel trockene Fersen oder eingewachsene Nägel. Bei den Paketen gehört das Fuß-Spa zum Termin.` },
+        { h: `Beratung und Vorbereitung`, t: `Wir wählen die Variante und besprechen eventuelle Beschwerden, zum Beispiel trockene Fersen oder eingewachsene Nägel.` },
         { h: `Nagel- und Nagelhautpflege`, t: `Die Nägel werden gekürzt und geformt, die Nagelhaut wird gepflegt.` },
         { h: `Hautpflege der Füße`, t: `Hornhaut wird entfernt und die Haut gepflegt. Bei der Medical-Pediküre verwenden wir zusätzlich Footlogix-Produkte.` },
         { h: `Lackieren (optional)`, t: `Wir lackieren die Nägel mit Gellak oder CND Shellac und härten sie in der Lampe aus.` },
@@ -231,7 +231,7 @@ export const contentDe = {
       ],
     },
     faq: [
-      { q: `Was kostet eine Pediküre in Prag 2?`, a: `Die klassische Pediküre kostet 490 CZK, die Pediküre mit Gellak 590 CZK und die Pediküre mit CND Shellac 650 CZK. Die Medical-Pediküre mit Footlogix beginnt bei 590 CZK. Vorteilspakete mit Fuß-Spa gibt es ab 590 CZK. Die vollständigen Preise stehen in der <a href="/cenik/">Preisliste</a>.` },
+      { q: `Was kostet eine Pediküre in Prag 2?`, a: `Die klassische Pediküre kostet 520 CZK, die Pediküre mit CND Shellac oder Gellak 650 CZK. Die Medical-Pediküre mit Footlogix beginnt bei 650 CZK, eine Massage dazu kostet 200 CZK. Die vollständigen Preise stehen in der <a href="/cenik/">Preisliste</a>.` },
       { q: `Was ist Footlogix?`, a: `Footlogix ist eine Linie professioneller Fußkosmetik, vor allem für trockene und strapazierte Haut. In unserer Preisliste ist die Medical-Pediküre mit Footlogix mit Gellak oder CND Shellac erhältlich.` },
       { q: `Wie oft sollte ich zur Pediküre gehen?`, a: `In der Regel alle vier bis sechs Wochen, je nach Nagelwachstum und Beanspruchung der Füße. Bei lackierten Nägeln richten Sie sich nach der Haltbarkeit Ihres Lacks.` },
       { q: `Kann ich mit Diabetes oder Nagelpilz zur Pediküre kommen?`, a: `Bitte sprechen Sie zuerst mit Ihrem Arzt. Die Pediküre im Studio ist Kosmetik und ersetzt keine ärztliche Behandlung. Teilen Sie uns eventuelle gesundheitliche Probleme vor dem Termin mit.` },
@@ -263,6 +263,7 @@ export const contentDe = {
         { title: `Volumen-Wimpern 2D–5D`, text: `Aus mehreren dünnen Wimpern wird ein Fächer geformt, der an einer Naturwimper befestigt wird. 2D bedeutet einen Fächer aus zwei Wimpern, 5D aus fünf – je höher die Zahl, desto dichter und ausdrucksstärker der Effekt.` },
         { title: `Mega-Volumen-Wimpern`, text: `Noch dichtere Fächer aus mehr feinen Wimpern für maximale Dichte und einen auffälligen, vollen Blick.` },
         { title: `Design-Effekt und Entfernen`, text: `Wimpernverlängerung mit einem besonderen Effekt, den wir bei der Terminvereinbarung besprechen. Wenn Sie die Wimpern entfernen lassen möchten, überlassen Sie das uns – zu Hause drohen Schäden an den Naturwimpern.` },
+        { title: `Wimpernlifting`, text: `Ein Lifting Ihrer eigenen Wimpern ohne Verlängerung: Die Naturwimpern werden geschwungen und wirken dadurch länger und ausdrucksstärker. Ideal, wenn Sie keine künstlichen Wimpern möchten.` },
       ],
     },
     notes: {
@@ -313,7 +314,7 @@ export const contentDe = {
       ],
     },
     faq: [
-      { q: `Was kostet eine Wimpernverlängerung in Prag 2?`, a: `Klassische Wimpern 1:1 kosten 990 CZK (Auffüllen 790 CZK), Volumen-Wimpern 2D–5D 1.190 CZK (Auffüllen 990 CZK) und Mega Volumen 1.390 CZK (Auffüllen 1.090 CZK). Der Design-Effekt beginnt bei 1.190 CZK, das Entfernen kostet 200 CZK. Alles steht in der <a href="/cenik/">Preisliste</a>.` },
+      { q: `Was kostet eine Wimpernverlängerung in Prag 2?`, a: `Klassische Wimpern 1:1 kosten 990 CZK (Auffüllen 790 CZK), Volumen-Wimpern 2D–5D 1.190 CZK (Auffüllen 990 CZK) und Mega Volumen 1.390 CZK (Auffüllen 1.090 CZK). Der Design-Effekt beginnt bei 1.290 CZK, das Wimpernlifting kostet 800 CZK, das Entfernen kostet 200 CZK. Alles steht in der <a href="/cenik/">Preisliste</a>.` },
       { q: `Wie lange halten verlängerte Wimpern?`, a: `Künstliche Wimpern fallen zusammen mit den natürlichen in deren Wachstumszyklus aus, deshalb werden sie in der Regel nach zwei bis vier Wochen aufgefüllt. Die Dauer ist von Mensch zu Mensch verschieden.` },
       { q: `Was ist der Unterschied zwischen klassischen und Volumen-Wimpern?`, a: `Bei klassischen Wimpern wird an jeder Naturwimper eine künstliche angebracht. Bei Volumen wird ein Fächer aus mehreren dünnen Wimpern befestigt, das Ergebnis ist dichter und ausdrucksstärker.` },
       { q: `Schädigt die Verlängerung meine Naturwimpern?`, a: `Bei fachgerechter Anbringung und Pflege sollten die Naturwimpern keinen Schaden nehmen. Deshalb ist es wichtig, die Wimpern zu Hause nicht zu entfernen oder abzuziehen und das Entfernen dem Studio zu überlassen.` },
@@ -321,20 +322,20 @@ export const contentDe = {
     ],
   },
 
-  'oboci-kosmetika-praha-2': {
-    name: `Augenbrauen & Kosmetik`,
-    cardText: `Augenbrauen formen und färben, Gesichtspflege und Massage.`,
+  'oboci-praha-2': {
+    name: `Augenbrauen`,
+    cardText: `Augenbrauen formen und färben, passend zu Ihrem Gesicht.`,
     title: `Augenbrauen formen & färben Prag 2 | ICONO STUDIO`,
-    description: `Augenbrauen formen und färben ab 100 CZK sowie Gesichtspflege mit Massage für 750 CZK in der Bělehradská 77 in Prag 2. Termin online oder per Telefon.`,
-    h1: `Augenbrauen & Kosmetik Prag 2`, eyebrow: `Beauty · Bělehradská 77`,
-    lead: `Augenbrauen formen und färben sowie kosmetische Gesichtspflege mit Massage. Augenbrauen ab 100 CZK, Gesichtspflege 750 CZK.`,
-    imageAlt: `Gepflegte Augenbrauen, Pinzette und Kosmetikcreme`,
+    description: `Augenbrauen formen für 100 CZK und färben mit Formen für 200 CZK in der Bělehradská 77 in Prag 2, nahe I. P. Pavlova. Termin online oder per Telefon.`,
+    h1: `Augenbrauen formen & färben Prag 2`, eyebrow: `Beauty · Bělehradská 77`,
+    lead: `Augenbrauen formen passend zur Gesichtsform und Färben in Verbindung mit Formen. Formen 100 CZK, Färben mit Formen 200 CZK.`,
+    imageAlt: `Gepflegte Augenbraue und Augenbrauenbürstchen`,
     artAlt: `Augenbrauen formen und färben Prag 2: Braue wird mit einem Bürstchen in Form gebracht, Nahaufnahme von Braue und Auge`,
     intro: {
       h2: `Augenbrauen, die zu Ihrem Gesicht passen`,
       paras: [
-        `Augenbrauen rahmen das Gesicht ein und verändern seinen Ausdruck erheblich. Gut geformte Brauen betonen die Augen, vereinheitlichen den Look und ersparen Ihnen das morgendliche Schminken. Im ICONO STUDIO in der Bělehradská 77 in Prag 2 bieten wir das Formen der Augenbrauen sowie das Färben in Kombination mit dem Formen an.`,
-        `Dazu kommt kosmetische Pflege: <strong>Gesichtspflege und Massage</strong>. Das ist eine angenehme Art, der Haut Aufmerksamkeit zu schenken – und sich selbst auch. Die Preise finden Sie unten und in der <a href="/cenik/">Preisliste</a>.`,
+        `Augenbrauen rahmen das Gesicht ein und verändern seinen Ausdruck erheblich. Gut geformte Brauen betonen die Augen, vereinheitlichen den Look und ersparen Ihnen das morgendliche Schminken. Im ICONO STUDIO in der Bělehradská 77 in Prag 2 bieten wir das Formen der Augenbrauen sowie Färben in Verbindung mit Formen an.`,
+        `Die Form wählen wir nach Ihrem Gesicht und Ihren Wünschen – manchen stehen natürliche, leicht gepflegte Brauen, andere möchten eine markantere Linie. Die Preise finden Sie unten und in der <a href="/cenik/">Preisliste</a>.`,
       ],
     },
     options: {
@@ -342,45 +343,105 @@ export const contentDe = {
       items: [
         { title: `Augenbrauen formen`, text: `Formen der Augenbrauen passend zur Gesichtsform und nach Ihren Vorstellungen. Geeignet für die regelmäßige Pflege, damit die Brauen gepflegt bleiben.` },
         { title: `Augenbrauen färben und formen`, text: `Formen kombiniert mit Färben. Die Farbe vereinheitlicht den Farbton, betont die Form und hilft, wenn die Brauen hell oder spärlich sind.` },
-        { title: `Gesichtspflege und Massage`, text: `Kosmetische Gesichtsbehandlung in Verbindung mit einer Massage. Den genauen Ablauf stimmen wir auf Ihren Hauttyp ab – schreiben Sie uns bei der Terminvereinbarung, was Ihre Haut braucht.` },
       ],
     },
     guide: {
       h2: `Formen oder Färben mit Formen?`,
       paras: [
-        `Wenn Ihre Brauen dichter und dunkel genug sind, genügt oft das <strong>Formen</strong> allein. Wenn Ihre Brauen hell, ungleichmäßig oder spärlich sind, lohnt sich das <strong>Färben mit Formen</strong>. Der Preisunterschied beträgt 100 CZK.`,
+        `Wenn Ihre Brauen dichter und dunkel genug sind, genügt oft das <strong>Formen</strong> allein. Wenn Ihre Brauen hell, ungleichmäßig oder spärlich sind, lohnt sich das <strong>Färben mit Formen</strong>.`,
         `Augenbrauen werden in der Regel alle drei bis fünf Wochen in Form gebracht, je nach Haarwuchs. Planen Sie vor einem wichtigen Anlass den Termin einige Tage vorher ein, damit die Brauen ein natürliches Aussehen bekommen.`,
-        `<strong>Färben – was Sie erwartet:</strong> Die Farbe vereinheitlicht den Farbton der Brauen, betont ihre Form und lässt sie optisch dichter wirken. Das passt, wenn Ihre Brauen im Gesicht „verschwinden“ oder Sie nicht jeden Morgen Stift oder Puder verwenden möchten. Den Farbton wählen wir passend zu Ihrer Haarfarbe und Ihren Wünschen.`,
-        `<strong>Gesichtspflege – für wen:</strong> für alle, die ihrer Haut mehr als das übliche Waschen und Eincremen gönnen möchten. Die Gesichtsmassage sorgt zusätzlich für angenehme Entspannung. Sagen Sie uns, was Ihre Haut braucht, und wir passen den Ablauf an.`,
-        `Augenbrauen ergänzen sich hervorragend mit der <a href="/prodluzovani-ras-praha-2/">Wimpernverlängerung</a> – zusammen geben sie dem Blick einen klaren Rahmen. Und wenn Sie sich mehr gönnen möchten, werfen Sie einen Blick auf <a href="/head-spa-praha-2/">Head Spa</a>.`,
+        `<strong>Färben – was Sie erwartet:</strong> Die Farbe vereinheitlicht den Farbton der Brauen, betont ihre Form und lässt sie optisch dichter wirken. Das passt, wenn Ihre Brauen im Gesicht „verschwinden“ oder Sie nicht jeden Morgen Stift oder Puder verwenden möchten. Den Farbton wählen wir passend zu Ihrer Haarfarbe und Ihrem Wunsch.`,
+        `<strong>Sie lassen Ihre Brauen wachsen?</strong> Sagen Sie es uns. Dann entfernen wir nur das Nötigste und bauen die Form bei den nächsten Besuchen schrittweise auf.`,
+        `Augenbrauen passen hervorragend zur <a href="/prodluzovani-ras-praha-2/">Wimpernverlängerung</a> – zusammen geben sie dem Blick einen klaren Rahmen. Und wenn Sie auch Ihrer Haut etwas Gutes tun möchten, sehen Sie sich unsere <a href="/kosmetika-praha-2/">Kosmetik</a> an.`,
       ],
     },
     steps: {
-      h2: `So läuft der Termin ab`,
+      h2: `So läuft der Besuch ab`,
       items: [
-        { h: `Form festlegen`, t: `Gemeinsam wählen wir die Brauenform passend zu Ihrer Gesichtsform und Ihren Wünschen.` },
-        { h: `Formen`, t: `Die Brauen werden geformt und von unerwünschten Härchen befreit.` },
-        { h: `Färben (optional)`, t: `Wenn Sie das Färben gewählt haben, wird die Farbe aufgetragen und einwirken gelassen, damit sie gut annimmt.` },
-        { h: `Gesichtspflege (optional)`, t: `Gesichtspflege und Massage können Teil Ihres Termins sein.` },
+        { h: `Form besprechen`, t: `Gemeinsam wählen wir die Brauenform passend zu Ihrer Gesichtsform und Ihren Wünschen.` },
+        { h: `Formen`, t: `Die Brauen werden in Form gebracht und von unerwünschten Härchen befreit.` },
+        { h: `Färben (optional)`, t: `Wenn Sie das Färben gewählt haben, wird die Farbe aufgetragen und einwirken gelassen, damit die Brauen sie gut annehmen.` },
+        { h: `Ergebnis prüfen`, t: `Zum Schluss prüfen wir gemeinsam Form und Farbton und empfehlen Ihnen, wann Sie wiederkommen sollten.` },
       ],
     },
     care: {
       h2: `Pflege nach dem Formen und Färben`,
       items: [
-        `Vermeiden Sie nach dem Formen in den ersten Stunden Make-up im Brauenbereich, damit die Haut nicht gereizt wird.`,
-        `Verwenden Sie nach dem Färben nicht sofort ein intensives Peeling und meiden Sie Saunen, damit die Farbe länger hält.`,
+        `Verzichten Sie nach dem Formen in den ersten Stunden auf Make-up im Bereich der Brauen, damit die Haut nicht gereizt wird.`,
+        `Verwenden Sie nach dem Färben nicht sofort ein intensives Peeling und meiden Sie die Sauna, damit die Farbe länger hält.`,
         `Wenn Sie eine Allergie oder empfindliche Haut haben, sagen Sie uns das vor dem Färben.`,
-        `Kommen Sie zur Gesichtspflege am besten ungeschminkt, damit die Haut gut gereinigt werden kann.`,
-        `Zupfen Sie zwischen den Terminen Ihre Brauen bitte nicht selbst. So bleibt die Form, die wir gemeinsam geschaffen haben, sauber, und wir können sie beim nächsten Termin pflegen.`,
+        `Ölhaltige Make-up-Entferner waschen die Brauenfarbe schneller aus. Verwenden Sie sie rund um die Brauen sparsam.`,
+        `Zupfen Sie Ihre Brauen zwischen den Terminen bitte nicht selbst. So bleibt die gemeinsam geschaffene Form sauber und wir können sie beim nächsten Besuch pflegen.`,
       ],
     },
     faq: [
-      { q: `Was kostet das Formen der Augenbrauen in Prag 2?`, a: `Das Formen allein kostet 100 CZK, das Färben in Verbindung mit dem Formen 200 CZK. Die Gesichtspflege mit Massage kostet 750 CZK. Alles finden Sie in der <a href="/cenik/">Preisliste</a>.` },
-      { q: `Wie lange hält die Brauenfarbe?`, a: `In der Regel mehrere Wochen, je nach Hauttyp und Pflege. Die Farbe verblasst allmählich, deshalb wird das Färben zusammen mit dem Formen wiederholt.` },
-      { q: `Was beinhaltet die Gesichtspflege?`, a: `Es ist eine kosmetische Gesichtsbehandlung in Verbindung mit einer Massage. Den Ablauf stimmen wir auf Ihren Hauttyp ab und erklären ihn Ihnen gern bei der Terminvereinbarung.` },
+      { q: `Was kostet Augenbrauen formen in Prag 2?`, a: `Das Formen der Augenbrauen allein kostet 100 CZK, Färben in Verbindung mit Formen 200 CZK. Alles finden Sie in der <a href="/cenik/">Preisliste</a>.` },
+      { q: `Wie lange hält die Augenbrauenfarbe?`, a: `In der Regel einige Wochen, je nach Hauttyp und Pflege. Die Farbe verblasst nach und nach, deshalb wird das Färben zusammen mit dem Formen wiederholt.` },
       { q: `Wie oft sollte ich meine Augenbrauen formen lassen?`, a: `In der Regel alle drei bis fünf Wochen, je nachdem, wie schnell Ihre Härchen nachwachsen.` },
-      { q: `Für wen eignet sich das Färben der Augenbrauen?`, a: `Für alle mit hellen, ungleichmäßigen oder spärlichen Brauen, die eine ausgeprägtere Form ohne tägliches Schminken wünschen. Bei einer Allergie gegen Farbstoffe teilen Sie uns das bitte vorab mit.` },
-      { q: `Kann ich mit Make-up kommen?`, a: `Zum Formen der Augenbrauen ja, zur Gesichtspflege mit Massage aber besser ungeschminkt. So wird die Haut besser gereinigt, und die Behandlung ist wirksamer.` },
+      { q: `Für wen eignet sich das Augenbrauenfärben?`, a: `Für alle, die helle, ungleichmäßige oder spärliche Brauen haben und eine ausdrucksstärkere Form ohne tägliches Schminken möchten. Wenn Sie gegen Farbstoffe allergisch sind, sagen Sie es uns bitte vorab.` },
+      { q: `Darf ich geschminkt kommen?`, a: `Ja, Make-up im übrigen Gesicht stört nicht. Lassen Sie die Brauen selbst aber bitte ohne Stift und Puder, damit wir ihre natürliche Form gut sehen.` },
+      { q: `Kann ich zu den Augenbrauen eine weitere Leistung buchen?`, a: `Ja. Augenbrauen werden oft mit der <a href="/prodluzovani-ras-praha-2/">Wimpernverlängerung</a> oder mit <a href="/kosmetika-praha-2/">Gesichtspflege und Massage</a> kombiniert. Rufen Sie uns an, und wir finden einen passenden Termin.` },
+    ],
+  },
+
+  'kosmetika-praha-2': {
+    name: `Kosmetik`,
+    cardText: `Gesichtspflege und Massage für gepflegte Haut und einen ruhigen Moment.`,
+    title: `Kosmetik Prag 2 – Gesichtspflege & Massage | ICONO STUDIO`,
+    description: `Kosmetik in Prag 2: Gesichtspflege und Massage für 750 CZK in der Bělehradská 77, nahe I. P. Pavlova. Wir passen die Behandlung Ihrer Haut an. Online buchen.`,
+    h1: `Kosmetik Prag 2`, eyebrow: `Beauty · Bělehradská 77`,
+    lead: `Gesichtspflege in Verbindung mit Massage für 750 CZK. Wir passen die Behandlung Ihrem Hauttyp an und dem, was Ihre Haut gerade braucht.`,
+    imageAlt: `Handtuch, Dampf und Creme – Gesichtspflege im ICONO STUDIO`,
+    artAlt: `Kosmetik Prag 2: gerolltes warmes Handtuch, Dampf, eine Schale Wasser und eine Cremedose`,
+    intro: {
+      h2: `Ein Moment für Ihre Haut – und für Sie`,
+      paras: [
+        `Kosmetische Gesichtspflege ist nicht nur etwas für besondere Anlässe. Jeden Tag belasten Make-up, Stadtluft, Klimaanlage und zu wenig Schlaf Ihre Haut. Im ICONO STUDIO in der Bělehradská 77 in Prag 2, nahe I. P. Pavlova, bieten wir <strong>Gesichtspflege und Massage</strong> an – eine Behandlung, bei der Ihre Haut und Sie selbst zur Ruhe kommen.`,
+        `Den Ablauf passen wir Ihrem Hauttyp an und dem, was Ihre Haut gerade braucht. Schreiben Sie uns bei der Buchung, ob Ihre Haut trocken, empfindlich oder eher fettig ist – vor Ort besprechen wir alles gemeinsam. Den Preis finden Sie unten und in der <a href="/cenik/">Preisliste</a>.`,
+      ],
+    },
+    options: {
+      h2: `Leistung und Preis`,
+      items: [
+        { title: `Gesichtspflege und Massage`, text: `Kosmetische Gesichtsbehandlung in Verbindung mit einer Massage. Den genauen Ablauf stimmen wir auf Ihren Hauttyp ab – schreiben Sie uns bei der Terminvereinbarung, was Ihre Haut braucht.` },
+      ],
+    },
+    guide: {
+      h2: `Für wen ist die Gesichtspflege gedacht?`,
+      paras: [
+        `<strong>Wenn die Haut müde wirkt.</strong> Nach einer anstrengenden Woche, nach Reisen oder im Winter, wenn die Heizungsluft die Haut austrocknet, ist eine Gesichtspflege ein angenehmer Neustart. Die Gesichtsmassage hilft zudem, Spannungen zu lösen, die wir im Gesicht oft gar nicht bemerken.`,
+        `<strong>Wenn Sie abschalten möchten.</strong> Die Behandlung ist auch ein ruhiger Moment: Sie liegen, denken an nichts und jemand anderes kümmert sich um Ihre Haut. Ideal als Belohnung für sich selbst oder als Geschenk für einen lieben Menschen.`,
+        `<strong>Vor einem wichtigen Anlass.</strong> Sie planen eine Hochzeit, ein Fotoshooting oder ein anderes Ereignis? Buchen Sie einige Tage vorher, damit sich Ihre Haut beruhigen kann.`,
+        `<strong>Empfindliche Haut oder Allergien?</strong> Sagen Sie es uns vorab. Bei Hauterkrankungen, Entzündungen oder Reizungen sprechen Sie bitte zuerst mit Ihrem Arzt – kosmetische Pflege ersetzt keine ärztliche Behandlung.`,
+        `Die Gesichtspflege können Sie mit <a href="/oboci-praha-2/">Augenbrauen formen</a> oder mit <a href="/head-spa-praha-2/">Head Spa</a> verbinden. Für Herren bietet unser Barbershop außerdem <a href="/panska-kosmetika-praha-2/">Herrenkosmetik</a> an.`,
+      ],
+    },
+    steps: {
+      h2: `So läuft der Besuch ab`,
+      items: [
+        { h: `Kurzes Gespräch`, t: `Wir fragen nach Ihrem Hauttyp, nach Beschwerden und ob Sie auf etwas allergisch sind.` },
+        { h: `Hautpflege`, t: `Wir behandeln Ihre Haut mit einem Ablauf, der zu ihrem Typ und ihrem aktuellen Zustand passt.` },
+        { h: `Gesichtsmassage`, t: `Eine Gesichtsmassage gehört zur Leistung, damit Sie sich eine Weile ganz entspannen können.` },
+        { h: `Tipps für zu Hause`, t: `Zum Schluss beraten wir Sie gern, wie Sie Ihre Haut zwischen den Besuchen pflegen.` },
+      ],
+    },
+    care: {
+      h2: `Vorbereitung und Pflege danach`,
+      items: [
+        `Kommen Sie am besten ungeschminkt – so lässt sich die Haut besser reinigen und die Behandlung wirkt besser.`,
+        `Verzichten Sie am Vortag auf intensive Peelings und neue, noch nicht getestete Produkte.`,
+        `Gönnen Sie Ihrer Haut nach der Behandlung Ruhe: Schminken Sie sich an dem Tag möglichst nicht mehr und meiden Sie die Sauna.`,
+        `Schützen Sie Ihre Haut vor der Sonne. Eine Creme mit Lichtschutzfaktor lohnt sich zu jeder Jahreszeit.`,
+        `Trinken Sie ausreichend Wasser und versorgen Sie Ihre Haut regelmäßig mit einer Feuchtigkeitscreme, die zu ihr passt.`,
+      ],
+    },
+    faq: [
+      { q: `Was kostet Kosmetik in Prag 2?`, a: `Gesichtspflege und Massage kostet 750 CZK. Augenbrauen formen, das Sie dazubuchen können, kostet 100 CZK, Färben mit Formen 200 CZK. Alles finden Sie in der <a href="/cenik/">Preisliste</a>.` },
+      { q: `Was umfasst die Gesichtspflege?`, a: `Es ist eine kosmetische Gesichtsbehandlung in Verbindung mit einer Massage. Den Ablauf passen wir Ihrem Hauttyp an und erklären ihn Ihnen gern bei der Buchung.` },
+      { q: `Darf ich geschminkt kommen?`, a: `Lieber nicht. Ohne Make-up lässt sich die Haut besser reinigen und die Behandlung wirkt besser.` },
+      { q: `Ist die Gesichtspflege auch für empfindliche Haut geeignet?`, a: `Wir passen den Ablauf Ihrem Hauttyp an, sagen Sie uns empfindliche Haut oder Allergien aber bitte vorab. Bei Hauterkrankungen oder Entzündungen sprechen Sie zuerst mit Ihrem Arzt.` },
+      { q: `Ist Kosmetik auch etwas für Männer?`, a: `Ja, Gesichtspflege und Massage kann jeder buchen. Herren können in unserem Barbershop außerdem <a href="/panska-kosmetika-praha-2/">Herrenkosmetik</a> wählen.` },
+      { q: `Wie oft sollte ich zur Kosmetik gehen?`, a: `Das hängt von Ihrer Haut ab und davon, was Sie sich von der Pflege erwarten. Wir beraten Sie gern beim Besuch.` },
     ],
   },
 
